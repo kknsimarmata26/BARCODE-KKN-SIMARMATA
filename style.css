@@ -342,23 +342,21 @@ img{
 }
 
 .level{
-    display:flex;
+    display:grid;
+    gap:25px;
     justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-    width:100%;
 }
 
 .level.dua{
-    justify-content:space-evenly;
+    grid-template-columns:repeat(2,280px);
 }
 
 .level.empat{
-    justify-content:space-between;
+    grid-template-columns:repeat(4,250px);
 }
 
 .level.tiga{
-    justify-content:space-evenly;
+    grid-template-columns:repeat(3,250px);
 }
 
 .line{
@@ -419,6 +417,30 @@ img{
 
 .dusun{
     border-top:5px solid #198754;
+}
+
+@media(max-width:992px){
+
+.level.dua,
+.level.empat,
+.level.tiga{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.level.dua,
+.level.empat,
+.level.tiga{
+    grid-template-columns:1fr;
+}
+
+.org-card{
+    width:100%;
+}
+
 }
 
 @media(max-width:768px){
