@@ -1,0 +1,443 @@
+/* ===========================================
+   WEBSITE DESA SIMARMATA
+   Theme Color : #7c0e0e
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8f9fa;
+    color:#333;
+}
+
+.container{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+/* Navbar */
+
+.navbar{
+    background:linear-gradient(90deg,#7c0e0e,#a11414)!important;
+    box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
+
+.navbar-brand{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-link{
+    color:white!important;
+    margin-left:10px;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:#ffd54f!important;
+}
+
+.nav-link.active{
+    color:#ffd54f!important;
+    font-weight:bold;
+}
+
+/* Header */
+
+.bg-primary{
+    background:linear-gradient(90deg,#7c0e0e,#a11414)!important;
+}
+
+section{
+    padding:30px 0;
+}
+
+/* Hero */
+
+.hero{
+    height:55vh;
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:60px;
+    font-weight:bold;
+    text-shadow:3px 3px 8px rgba(0,0,0,.5);
+}
+
+.hero p{
+    font-size:22px;
+}
+
+/* Card */
+
+.card{
+    border:none;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 25px rgba(0,0,0,.2);
+}
+
+.card img{
+    height:230px;
+    object-fit:cover;
+}
+
+.card-body h4,
+.card-body h5{
+    color:#7c0e0e;
+    font-weight:bold;
+}
+
+/* Tombol */
+
+.btn-primary{
+    background:#7c0e0e;
+    border:#7c0e0e;
+}
+
+.btn-primary:hover{
+    background:#5b0909;
+}
+
+.btn-outline-primary{
+    color:#7c0e0e;
+    border-color:#7c0e0e;
+}
+
+.btn-outline-primary:hover{
+    background:#7c0e0e;
+    color:white;
+}
+
+.btn-success{
+    background:#25D366;
+    border:none;
+}
+
+.btn-success:hover{
+    background:#1ebc59;
+}
+
+/* Heading */
+
+h2{
+    color:#7c0e0e;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+h3{
+    color:#7c0e0e;
+    font-weight:bold;
+}
+
+h4{
+    font-weight:bold;
+}
+
+/* Statistik */
+
+.text-primary{
+    color:#7c0e0e!important;
+}
+
+/* Table */
+
+.table{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+/* List */
+
+.list-group-item{
+    border:none;
+    border-left:5px solid #7c0e0e;
+    margin-bottom:8px;
+}
+
+/* Form */
+
+.form-control{
+    border-radius:10px;
+    padding:12px;
+}
+
+.form-control:focus{
+    border-color:#7c0e0e;
+    box-shadow:0 0 0 .25rem rgba(124,14,14,.25);
+}
+
+textarea{
+    resize:none;
+}
+
+/* Maps */
+
+iframe{
+    border-radius:15px;
+}
+
+/* Footer */
+
+footer{
+    background:linear-gradient(90deg,#7c0e0e,#a11414)!important;
+    color:white;
+    padding:20px 0;
+    margin-top:15px;
+}
+
+footer h4{
+    color:white;
+}
+
+/* Gambar */
+
+img{
+    max-width:100%;
+}
+
+.gallery img{
+    border-radius:10px;
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* Shadow */
+
+.shadow{
+    box-shadow:0 10px 20px rgba(0,0,0,.15)!important;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#ececec;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#7c0e0e;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#5b0909;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.hero h1{
+font-size:45px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+height:60vh;
+}
+
+.hero h1{
+font-size:35px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.card img{
+height:200px;
+}
+
+}
+
+@media(max-width:576px){
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+section{
+padding:40px 15px;
+}
+
+.card img{
+height:180px;
+}
+
+.navbar-brand{
+font-size:20px;
+}
+
+}
+
+p{
+    margin-bottom:10px;
+}
+
+.row{
+    margin-bottom:10px;
+}
+
+.card{
+    margin-bottom:20px;
+}
+
+img{
+    display:block;
+}
+
+/* ===========================
+   STRUKTUR ORGANISASI
+=========================== */
+
+.struktur{
+    background:#f8f9fa;
+}
+
+.org-chart{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.level{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    width:100%;
+}
+
+.level.dua{
+    justify-content:space-evenly;
+}
+
+.level.empat{
+    justify-content:space-between;
+}
+
+.level.tiga{
+    justify-content:space-evenly;
+}
+
+.line{
+    width:4px;
+    height:40px;
+    background:#7c0e0e;
+    margin:15px 0;
+    border-radius:5px;
+}
+
+.org-card{
+    width:240px;
+    background:#fff;
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    transition:.35s;
+    border-top:5px solid #7c0e0e;
+}
+
+.org-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(124,14,14,.25);
+}
+
+.org-card i{
+    font-size:45px;
+    color:#7c0e0e;
+    margin-bottom:15px;
+}
+
+.org-card h5,
+.org-card h6{
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.org-card p{
+    margin:0;
+    color:#666;
+    font-weight:500;
+}
+
+.kepala{
+    background:linear-gradient(135deg,#7c0e0e,#b32020);
+    color:#fff;
+}
+
+.kepala i,
+.kepala p{
+    color:#fff;
+}
+
+.sekretaris{
+    border-top:5px solid #0d6efd;
+}
+
+.dusun{
+    border-top:5px solid #198754;
+}
+
+@media(max-width:768px){
+
+.level,
+.level.dua,
+.level.empat,
+.level.tiga{
+    flex-direction:column;
+    align-items:center;
+}
+
+.org-card{
+    width:100%;
+    max-width:330px;
+}
+
+.line{
+    height:25px;
+}
+
+}
