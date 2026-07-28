@@ -442,24 +442,3 @@ img{
 }
 
 }
-
-@media(max-width:768px){
-
-.level,
-.level.dua,
-.level.empat,
-.level.tiga{
-    flex-direction:column;
-    align-items:center;
-}
-
-.org-card{
-    width:100%;
-    max-width:330px;
-}
-
-.line{
-    height:25px;
-}
-
-}
