@@ -7,505 +7,505 @@
     <title>UMKM | Desa Simarmata</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ===========================================
+           WEBSITE DESA SIMARMATA
+           Theme Color : #7c0e0e
+        ============================================ */
 
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin-left: 10px;
+            transition: .3s;
+        }
+
+        .nav-link:hover {
+            color: #ffd54f !important;
+        }
+
+        .nav-link.active {
+            color: #ffd54f !important;
+            font-weight: bold;
+        }
+
+        /* ===== HEADER ===== */
+        .bg-primary {
+            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+        }
+
+        section {
+            padding: 30px 0;
+        }
+
+        /* ===== HEADING ===== */
+        h1 {
+            color: #7c0e0e;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #7c0e0e;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            color: #7c0e0e;
+            font-weight: bold;
+        }
+
+        /* ===== CARD ===== */
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: .4s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+        }
+
+        .card img {
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .card-body h4,
+        .card-body h5 {
+            color: #7c0e0e;
+            font-weight: bold;
+        }
+
+        /* ===== TOMBOL ===== */
+        .btn-primary {
+            background: #7c0e0e;
+            border: #7c0e0e;
+        }
+
+        .btn-primary:hover {
+            background: #5b0909;
+        }
+
+        .btn-success {
+            background: #25D366;
+            border: none;
+        }
+
+        .btn-success:hover {
+            background: #1ebc59;
+        }
+
+        /* ===== SHADOW ===== */
+        .shadow {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .15) !important;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ececec;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #7c0e0e;
+            border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5b0909;
+        }
+
+        /* ===== GAMBAR ===== */
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .row {
+            margin-bottom: 10px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+            color: white;
+            padding: 20px 0;
+            margin-top: 15px;
+        }
+
+        footer h4,
+        footer h5 {
+            color: white;
+        }
+
+        footer a {
+            color: #ffd54f !important;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white !important;
+        }
+
+        /* ===== STATISTIK ===== */
+        .statistik h2 {
+            color: #7c0e0e;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .statistik p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:992px) {
+            .hero h1 {
+                font-size: 45px;
+            }
+            .hero p {
+                font-size: 20px;
+            }
+        }
+
+        @media(max-width:768px) {
+            .hero {
+                height: 60vh;
+            }
+            .hero h1 {
+                font-size: 35px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            .card img {
+                height: 200px;
+            }
+        }
+
+        @media(max-width:576px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            section {
+                padding: 40px 15px;
+            }
+            .card img {
+                height: 180px;
+            }
+            .navbar-brand {
+                font-size: 20px;
+            }
+            .statistik h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* ===== LIST ===== */
+        .list-unstyled li {
+            margin-bottom: 5px;
+        }
+
+        ul li {
+            list-style: none;
+            margin-bottom: 3px;
+        }
+
+        ul li i {
+            color: #25D366;
+        }
+    </style>
 
 </head>
 
 <body>
 
-<!-- Navbar -->
-
-<!-- Navbar -->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
-
-<div class="container">
-
-<a class="navbar-brand fw-bold" href="index.html">
-<i class="bi bi-shop"></i> Desa Simarmata
-</a>
-
-
-<button class="navbar-toggler" 
-type="button"
-data-bs-toggle="collapse" 
-data-bs-target="#menu">
-
-<span class="navbar-toggler-icon"></span>
-
-</button>
-
-
-<div class="collapse navbar-collapse" id="menu">
-
-<ul class="navbar-nav ms-auto">
-
-
-<li class="nav-item">
-<a class="nav-link" href="index.html">
-Home
-</a>
-</li>
-
-
-<li class="nav-item">
-<a class="nav-link" href="profil.html">
-Profil
-</a>
-</li>
-
-
-<li class="nav-item">
-<a class="nav-link" href="sejarah.html">
-Sejarah
-</a>
-</li>
-
-
-<li class="nav-item">
-<a class="nav-link" href="wisata.html">
-Wisata
-</a>
-</li>
-
-
-<li class="nav-item">
-<a class="nav-link" href="budaya.html">
-Budaya
-</a>
-</li>
-
-
-<li class="nav-item">
-<a class="nav-link active" href="umkm.html">
-UMKM
-</a>
-</li>
-
-
-<li class="nav-item">
-<a class="nav-link" href="homestay.html">
-Homestay
-</a>
-</li>
-
-
-<li class="nav-item">
-<a class="nav-link" href="galeri.html">
-Galeri
-</a>
-</li>
-
-
-<li class="nav-item">
-<a class="nav-link" href="kontak.html">
-Kontak
-</a>
-</li>
-
-
-</ul>
-
-</div>
-
-</div>
-
-</nav>
-
-<!-- Header -->
-
-<section class="bg-primary text-white text-center py-5">
-
-<div class="container">
-
-<h1>UMKM Desa Simarmata</h1>
-
-<p>Mendukung Produk Lokal dan Ekonomi Masyarakat</p>
-
-</div>
-
-</section>
-
-<!-- UMKM -->
-
-<section class="container py-5">
-
-<div class="row">
-
-<!-- UMKM 1 -->
-
-<div class="col-lg-4 col-md-6 mb-4">
-
-<div class="card shadow h-100">
-
-<img src="assets/img/ulos.jpg" class="card-img-top">
-
-<div class="card-body">
-
-<h4>Kerajinan Ulos</h4>
-
-<p>Kain tenun khas Batak Toba hasil karya masyarakat Desa Simarmata.</p>
-
-<p><strong>Kategori:</strong> Kerajinan</p>
-
-<p><strong>Harga:</strong> Mulai Rp150.000</p>
-
-<a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20memesan%20Kerajinan%20Ulos."
-target="_blank"
-class="btn btn-success w-100">
-
-<i class="bi bi-whatsapp"></i>
-Pesan Sekarang
-
-</a>
-</div>
-
-</div>
-
-</div>
-
-<!-- UMKM 2 -->
-
-<div class="col-lg-4 col-md-6 mb-4">
-
-<div class="card shadow h-100">
-
-<img src="assets/img/kopi.jpg" class="card-img-top">
-
-<div class="card-body">
-
-<h4>Kopi Samosir</h4>
-
-<p>Kopi Arabika pilihan dari dataran tinggi Samosir.</p>
-
-<p><strong>Kategori:</strong> Minuman</p>
-
-<p><strong>Harga:</strong> Mulai Rp50.000</p>
-
-<a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20memesan%20Kerajinan%20Ulos."
-target="_blank"
-class="btn btn-success w-100">
-
-<i class="bi bi-whatsapp"></i>
-Pesan Sekarang
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- UMKM 3 -->
-
-<div class="col-lg-4 col-md-6 mb-4">
-
-<div class="card shadow h-100">
-
-<img src="assets/img/makanan.jpg" class="card-img-top">
-
-<div class="card-body">
-
-<h4>Makanan Tradisional</h4>
-
-<p>Berbagai makanan khas Batak Toba seperti Ombus-ombus dan Lapet.</p>
-
-<p><strong>Kategori:</strong> Kuliner</p>
-
-<p><strong>Harga:</strong> Mulai Rp10.000</p>
-
-<a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20memesan%20Kerajinan%20Ulos."
-target="_blank"
-class="btn btn-success w-100">
-
-<i class="bi bi-whatsapp"></i>
-Pesan Sekarang
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- UMKM 4 -->
-
-<div class="col-lg-4 col-md-6 mb-4">
-
-<div class="card shadow h-100">
-
-<img src="assets/img/souvenir.jpg" class="card-img-top">
-
-<div class="card-body">
-
-<h4>Souvenir Danau Toba</h4>
-
-<p>Berbagai cendera mata khas Desa Simarmata dan Danau Toba.</p>
-
-<p><strong>Kategori:</strong> Souvenir</p>
-
-<p><strong>Harga:</strong> Mulai Rp25.000</p>
-
-<a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20memesan%20Kerajinan%20Ulos."
-target="_blank"
-class="btn btn-success w-100">
-
-<i class="bi bi-whatsapp"></i>
-Pesan Sekarang
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- UMKM 5 -->
-
-<div class="col-lg-4 col-md-6 mb-4">
-
-<div class="card shadow h-100">
-
-<img src="assets/img/madu.jpg" class="card-img-top">
-
-<div class="card-body">
-
-<h4>Madu Hutan</h4>
-
-<p>Madu alami hasil hutan kawasan Samosir.</p>
-
-<p><strong>Kategori:</strong> Produk Alam</p>
-
-<p><strong>Harga:</strong> Mulai Rp80.000</p>
-
-<a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20memesan%20Kerajinan%20Ulos."
-target="_blank"
-class="btn btn-success w-100">
-
-<i class="bi bi-whatsapp"></i>
-Pesan Sekarang
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- UMKM 6 -->
-
-<div class="col-lg-4 col-md-6 mb-4">
-
-<div class="card shadow h-100">
-
-<img src="assets/img/anyaman.jpg" class="card-img-top">
-
-<div class="card-body">
-
-<h4>Anyaman Bambu</h4>
-
-<p>Keranjang, tikar, dan berbagai produk anyaman tradisional.</p>
-
-<p><strong>Kategori:</strong> Kerajinan</p>
-
-<p><strong>Harga:</strong> Mulai Rp35.000</p>
-
-<a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20memesan%20Kerajinan%20Ulos."
-target="_blank"
-class="btn btn-success w-100">
-
-<i class="bi bi-whatsapp"></i>
-Pesan Sekarang
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Statistik -->
-
-<section class="bg-light py-5">
-
-<div class="container">
-
-<div class="row text-center">
-
-<div class="col-md-3">
-<h2>20+</h2>
-<p>UMKM Aktif</p>
-</div>
-
-<div class="col-md-3">
-<h2>50+</h2>
-<p>Produk Lokal</p>
-</div>
-
-<div class="col-md-3">
-<h2>100+</h2>
-<p>Pelanggan</p>
-</div>
-
-<div class="col-md-3">
-<h2>6</h2>
-<p>Kategori Produk</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Footer KKN -->
-
-<footer class="bg-primary text-white pt-5 pb-3">
-
-<div class="container">
-
-<div class="row">
-
-
-<!-- Alamat -->
-
-<div class="col-md-4 mb-4">
-
-<h5>
-<i class="bi bi-geo-alt-fill"></i>
-Alamat Desa
-</h5>
-
-<p>
-Desa Simarmata<br>
-Kecamatan Simanindo<br>
-Kabupaten Samosir<br>
-Provinsi Sumatera Utara<br>
-Kode Pos: 22395
-</p>
-
-</div>
-
-
-<!-- Menu -->
-
-<div class="col-md-4 mb-4">
-
-<h5>
-<i class="bi bi-list"></i>
-Menu
-</h5>
-
-<ul class="list-unstyled">
-
-<li>
-<a href="index.html" class="text-white text-decoration-none">
-Home
-</a>
-</li>
-
-<li>
-<a href="profil.html" class="text-white text-decoration-none">
-Profil Desa
-</a>
-</li>
-
-<li>
-<a href="sejarah.html" class="text-white text-decoration-none">
-Sejarah
-</a>
-</li>
-
-<li>
-<a href="wisata.html" class="text-white text-decoration-none">
-Wisata
-</a>
-</li>
-
-<li>
-<a href="budaya.html" class="text-white text-decoration-none">
-Budaya
-</a>
-</li>
-
-<li>
-<a href="umkm.html" class="text-white text-decoration-none">
-UMKM
-</a>
-</li>
-
-</ul>
-
-</div>
-
-
-<!-- Media Sosial -->
-
-<div class="col-md-4 mb-4">
-
-<h5>
-<i class="bi bi-share-fill"></i>
-Media Sosial
-</h5>
-
-
-<p>
-Instagram:
-<br>
-<a href="#" class="text-white text-decoration-none">
-<i class="bi bi-instagram"></i>
-@kkn.simarmata26
-</a>
-</p>
-
-
-<p>
-TikTok:
-<br>
-<a href="#" class="text-white text-decoration-none">
-<i class="bi bi-tiktok"></i>
-@kkn.simarmata26
-</a>
-</p>
-
-
-</div>
-
-
-</div>
-
-
-<hr>
-
-
-<div class="text-center">
-
-<small>
-© 2026 KKN Desa Simarmata Kecamatan Simanindo *
-</small>
-
-<br>
-
-<small>
-Dibuat untuk Program KKN UNIMED 2026
-</small>
-
-</div>
-
-
-</div>
-
-</footer>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-shop"></i> Desa Simarmata
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profil.html">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sejarah.html">Sejarah</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="wisata.html">Wisata</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="budaya.html">Budaya</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="umkm.html">UMKM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="homestay.html">Homestay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeri.html">Galeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontak.html">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HEADER ===== -->
+    <section class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="text-white">UMKM Desa Simarmata</h1>
+            <p>Mendukung Produk Lokal dan Ekonomi Masyarakat</p>
+        </div>
+    </section>
+
+    <!-- ===== UMKM ===== -->
+    <section class="container py-5">
+        <div class="row">
+
+            <!-- UMKM 1 - Ulos -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow h-100">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSI1MCIgeT0iNTAiIHdpZHRoPSI1MCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNmZmQ1NDgiLz48cmVjdCB4PSIxMjAiIHk9IjcwIiB3aWR0aD0iNTAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmQ1NDgiLz48cmVjdCB4PSIxOTAiIHk9IjUwIiB3aWR0aD0iNTAiIGhlaWdodD0iMTAwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iMjYwIiB5PSI4MCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjcwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iMzMwIiB5PSI2MCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjkwIiBmaWxsPSIjZmZkNTQ4Ii8+PHRleHQgeD0iNTAiIHk9IjIzMCIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+S2VyYWppbmFuIFVsb3M8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Kerajinan Ulos">
+                    <div class="card-body">
+                        <h4>Kerajinan Ulos</h4>
+                        <p>Kain tenun khas Batak Toba hasil karya masyarakat Desa Simarmata.</p>
+                        <p><strong>Kategori:</strong> Kerajinan</p>
+                        <p><strong>Harga:</strong> Mulai Rp150.000</p>
+                        <a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20memesan%20Kerajinan%20Ulos." target="_blank" class="btn btn-success w-100">
+                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 2 - Kopi -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow h-100">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMjAiIHI9IjcwIiBmaWxsPSIjZmZkNTQ4Ii8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTIwIiByPSI0MCIgZmlsbD0iIzc4NDIwMCIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPktvcGkgU2Ftb3NpcjwvdGV4dD48L3N2Zz4=" class="card-img-top" alt="Kopi Samosir">
+                    <div class="card-body">
+                        <h4>Kopi Samosir</h4>
+                        <p>Kopi Arabika pilihan dari dataran tinggi Samosir.</p>
+                        <p><strong>Kategori:</strong> Minuman</p>
+                        <p><strong>Harga:</strong> Mulai Rp50.000</p>
+                        <a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20memesan%20Kopi%20Samosir." target="_blank" class="btn btn-success w-100">
+                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 3 - Makanan Tradisional -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow h-100">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSIxMjAiIGN5PSIxMjAiIHI9IjUwIiBmaWxsPSIjZmZkNTQ4Ii8+PGNpcmNsZSBjeD0iMjgwIiBjeT0iMTIwIiByPSI1MCIgZmlsbD0iI2ZmZDU0OCIvPjxyZWN0IHg9IjE1MCIgeT0iMTUwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjcwIiBmaWxsPSIjZmZkNTQ4Ii8+PHRleHQgeD0iNTAiIHk9IjIzMCIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+TWFrYW5hbiBUcmFkaXNpb25hbDwvdGV4dD48L3N2Zz4=" class="card-img-top" alt="Makanan Tradisional">
+                    <div class="card-body">
+                        <h4>Makanan Tradisional</h4>
+                        <p>Berbagai makanan khas Batak Toba seperti Ombus-ombus dan Lapet.</p>
+                        <p><strong>Kategori:</strong> Kuliner</p>
+                        <p><strong>Harga:</strong> Mulai Rp10.000</p>
+                        <a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20memesan%20Makanan%20Tradisional." target="_blank" class="btn btn-success w-100">
+                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 4 - Souvenir -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow h-100">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSI4MCIgeT0iODAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2ZmZDU0OCIvPjxyZWN0IHg9IjIwMCIgeT0iMTAwIiB3aWR0aD0iODAiIGhlaWdodD0iNjAiIGZpbGw9IiNmZmQ1NDgiLz48cmVjdCB4PSIzMDAiIHk9IjcwIiB3aWR0aD0iNzAiIGhlaWdodD0iOTAiIGZpbGw9IiNmZmQ1NDgiLz48dGV4dCB4PSI1MCIgeT0iMjMwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyMCIgZm9udC1mYW1pbHk9IkFyaWFsIj5Tb3V2ZW5pciBEYW5hdSBUb2JhPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Souvenir Danau Toba">
+                    <div class="card-body">
+                        <h4>Souvenir Danau Toba</h4>
+                        <p>Berbagai cendera mata khas Desa Simarmata dan Danau Toba.</p>
+                        <p><strong>Kategori:</strong> Souvenir</p>
+                        <p><strong>Harga:</strong> Mulai Rp25.000</p>
+                        <a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20memesan%20Souvenir%20Danau%20Toba." target="_blank" class="btn btn-success w-100">
+                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 5 - Madu Hutan -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow h-100">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMjAiIHI9IjYwIiBmaWxsPSIjZmZkNTQ4Ii8+PGNpcmNsZSBjeD0iMTcwIiBjeT0iOTAiIHI9IjEwIiBmaWxsPSIjN2MwZTBlIi8+PGNpcmNsZSBjeD0iMjMwIiBjeT0iOTAiIHI9IjEwIiBmaWxsPSIjN2MwZTBlIi8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTUwIiByPSIxMCIgZmlsbD0iIzdjMGUwZSIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPk1hZHUgSHV0YW48L3RleHQ+PC9zdmc+" class="card-img-top" alt="Madu Hutan">
+                    <div class="card-body">
+                        <h4>Madu Hutan</h4>
+                        <p>Madu alami hasil hutan kawasan Samosir.</p>
+                        <p><strong>Kategori:</strong> Produk Alam</p>
+                        <p><strong>Harga:</strong> Mulai Rp80.000</p>
+                        <a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20memesan%20Madu%20Hutan." target="_blank" class="btn btn-success w-100">
+                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UMKM 6 - Anyaman Bambu -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow h-100">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48bGluZSB4MT0iNTAiIHkxPSI4MCIgeDI9IjM1MCIgeTI9IjgwIiBzdHJva2U9IiNmZmQ1NDgiIHN0cm9rZS13aWR0aD0iNCIvPjxsaW5lIHgxPSI1MCIgeTE9IjEyMCIgeDI9IjM1MCIgeTI9IjEyMCIgc3Ryb2tlPSIjZmZkNTQ4IiBzdHJva2Utd2lkdGg9IjQiLz48bGluZSB4MT0iNTAiIHkxPSIxNjAiIHgyPSIzNTAiIHkyPSIxNjAiIHN0cm9rZT0iI2ZmZDU0OCIgc3Ryb2tlLXdpZHRoPSI0Ii8+PGxpbmUgeDE9IjUwIiB5MT0iMjAwIiB4Mj0iMzUwIiB5Mj0iMjAwIiBzdHJva2U9IiNmZmQ1NDgiIHN0cm9rZS13aWR0aD0iNCIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjIwIiBmb250LWZhbWlseT0iQXJpYWwiPkFueWFtYW4gQmFtYnU8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Anyaman Bambu">
+                    <div class="card-body">
+                        <h4>Anyaman Bambu</h4>
+                        <p>Keranjang, tikar, dan berbagai produk anyaman tradisional.</p>
+                        <p><strong>Kategori:</strong> Kerajinan</p>
+                        <p><strong>Harga:</strong> Mulai Rp35.000</p>
+                        <a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20memesan%20Anyaman%20Bambu." target="_blank" class="btn btn-success w-100">
+                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== STATISTIK ===== -->
+    <section class="bg-light py-5 statistik">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <h2>20+</h2>
+                    <p>UMKM Aktif</p>
+                </div>
+                <div class="col-md-3">
+                    <h2>50+</h2>
+                    <p>Produk Lokal</p>
+                </div>
+                <div class="col-md-3">
+                    <h2>100+</h2>
+                    <p>Pelanggan</p>
+                </div>
+                <div class="col-md-3">
+                    <h2>6</h2>
+                    <p>Kategori Produk</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+
+                <!-- Alamat -->
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
+                    <p>
+                        Desa Simarmata<br>
+                        Kecamatan Simanindo<br>
+                        Kabupaten Samosir<br>
+                        Provinsi Sumatera Utara<br>
+                        Kode Pos: 22395
+                    </p>
+                </div>
+
+                <!-- Menu -->
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-list"></i> Menu</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="profil.html">Profil Desa</a></li>
+                        <li><a href="sejarah.html">Sejarah</a></li>
+                        <li><a href="wisata.html">Wisata</a></li>
+                        <li><a href="budaya.html">Budaya</a></li>
+                        <li><a href="umkm.html">UMKM</a></li>
+                    </ul>
+                </div>
+
+                <!-- Media Sosial -->
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
+                    <p>
+                        Instagram:<br>
+                        <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
+                    </p>
+                    <p>
+                        TikTok:<br>
+                        <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
+                    </p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-center">
+                <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
+                <br>
+                <small>Dibuat untuk Program KKN UNIMED 2026</small>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>
