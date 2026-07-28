@@ -1,520 +1,420 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desa Simarmata · Website Resmi</title>
-    <!-- Bootstrap 5 + Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        /* ===========================================
-           WEBSITE DESA SIMARMATA
-           Warna Tema : #7c0e0e (Merah Gelap)
-        =========================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+/* ===========================================
+   WEBSITE DESA SIMARMATA
+   Theme Color : #7c0e0e
+=========================================== */
 
-        html {
-            scroll-behavior: smooth;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        body {
-            background: #f8f9fa;
-            color: #333;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        .container {
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
+body {
+    background: #f8f9fa;
+    color: #333;
+}
 
-        /* Navbar */
-        .navbar {
-            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
-        }
+.container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
-        .navbar-brand {
-            font-size: 24px;
-            font-weight: bold;
-        }
+/* ===== NAVBAR ===== */
+.navbar {
+    background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+}
 
-        .nav-link {
-            color: white !important;
-            margin-left: 10px;
-            transition: .3s;
-        }
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
 
-        .nav-link:hover {
-            color: #ffd54f !important;
-        }
+.nav-link {
+    color: white !important;
+    margin-left: 10px;
+    transition: .3s;
+}
 
-        .nav-link.active {
-            color: #ffd54f !important;
-            font-weight: bold;
-        }
+.nav-link:hover {
+    color: #ffd54f !important;
+}
 
-        /* Hero */
-        .hero {
-            height: 55vh;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48cmVjdCB3aWR0aD0iODAiIGhlaWdodD0iODAiIGZpbGw9IiM3YzBlMGUiLz48cGF0aCBkPSJNMzAgMTBoMjB2MjBIMzB6TTEwIDMwaDIwdjIwSDEwek01MCAzMGgyMHYyMEg1MHpNMzAgNTBoMjB2MjBIMzB6IiBmaWxsPSIjZmZkNTQ4Ii8+PC9zdmc+');
-            background-blend-mode: overlay;
-        }
+.nav-link.active {
+    color: #ffd54f !important;
+    font-weight: bold;
+}
 
-        .hero h1 {
-            font-size: 60px;
-            font-weight: bold;
-            text-shadow: 3px 3px 8px rgba(0, 0, 0, .5);
-        }
+/* ===== HEADER ===== */
+.bg-primary {
+    background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+}
 
-        .hero p {
-            font-size: 22px;
-        }
+section {
+    padding: 30px 0;
+}
 
-        /* Card */
-        .card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: .4s;
-        }
+/* ===== HERO ===== */
+.hero {
+    height: 55vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/img/hero-bg.jpg');
+    background-blend-mode: overlay;
+}
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
-        }
+.hero h1 {
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, .5);
+}
 
-        .card img {
-            height: 230px;
-            object-fit: cover;
-        }
+.hero p {
+    font-size: 22px;
+}
 
-        .card-body h4,
-        .card-body h5 {
-            color: #7c0e0e;
-            font-weight: bold;
-        }
+/* ===== CARD ===== */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: .4s;
+}
 
-        /* Tombol */
-        .btn-primary {
-            background: #7c0e0e;
-            border: #7c0e0e;
-        }
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+}
 
-        .btn-primary:hover {
-            background: #5b0909;
-        }
+.card img {
+    height: 230px;
+    object-fit: cover;
+}
 
-        .btn-outline-primary {
-            color: #7c0e0e;
-            border-color: #7c0e0e;
-        }
+.card-body h4,
+.card-body h5 {
+    color: #7c0e0e;
+    font-weight: bold;
+}
 
-        .btn-outline-primary:hover {
-            background: #7c0e0e;
-            color: white;
-        }
+/* ===== TOMBOL ===== */
+.btn-primary {
+    background: #7c0e0e;
+    border: #7c0e0e;
+}
 
-        .btn-success {
-            background: #25D366;
-            border: none;
-        }
+.btn-primary:hover {
+    background: #5b0909;
+}
 
-        .btn-success:hover {
-            background: #1ebc59;
-        }
+.btn-outline-primary {
+    color: #7c0e0e;
+    border-color: #7c0e0e;
+}
 
-        /* Heading */
-        h2 {
-            color: #7c0e0e;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+.btn-outline-primary:hover {
+    background: #7c0e0e;
+    color: white;
+}
 
-        h3 {
-            color: #7c0e0e;
-            font-weight: bold;
-        }
+.btn-success {
+    background: #25D366;
+    border: none;
+}
 
-        /* Statistik */
-        .text-primary {
-            color: #7c0e0e !important;
-        }
+.btn-success:hover {
+    background: #1ebc59;
+}
 
-        /* List */
-        .list-group-item {
-            border: none;
-            border-left: 5px solid #7c0e0e;
-            margin-bottom: 8px;
-        }
+/* ===== HEADING ===== */
+h2 {
+    color: #7c0e0e;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
 
-        /* Form */
-        .form-control:focus {
-            border-color: #7c0e0e;
-            box-shadow: 0 0 0 .25rem rgba(124, 14, 14, .25);
-        }
+h3 {
+    color: #7c0e0e;
+    font-weight: bold;
+}
 
-        /* Footer */
-        footer {
-            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
-            color: white;
-            padding: 20px 0;
-            margin-top: 15px;
-        }
+h4 {
+    font-weight: bold;
+}
 
-        footer h4 {
-            color: white;
-        }
+/* ===== STATISTIK ===== */
+.text-primary {
+    color: #7c0e0e !important;
+}
 
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #ececec;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #7c0e0e;
-            border-radius: 20px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #5b0909;
-        }
+/* ===== TABLE ===== */
+.table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
-        /* Responsive */
-        @media(max-width:992px) {
-            .hero h1 { font-size: 45px; }
-            .hero p { font-size: 20px; }
-        }
-        @media(max-width:768px) {
-            .hero { height: 60vh; }
-            .hero h1 { font-size: 35px; }
-            .hero p { font-size: 18px; }
-            .card img { height: 200px; }
-        }
-        @media(max-width:576px) {
-            .hero h1 { font-size: 28px; }
-            .hero p { font-size: 16px; }
-            section { padding: 40px 15px; }
-            .card img { height: 180px; }
-            .navbar-brand { font-size: 20px; }
-        }
+.table th {
+    background: #7c0e0e;
+    color: white;
+}
 
-        p { margin-bottom: 10px; }
-        .row { margin-bottom: 10px; }
-        .card { margin-bottom: 20px; }
+/* ===== LIST ===== */
+.list-group-item {
+    border: none;
+    border-left: 5px solid #7c0e0e;
+    margin-bottom: 8px;
+}
 
-        /* ===========================
-           STRUKTUR ORGANISASI
-        =========================== */
-        .org-chart {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
+/* ===== FORM ===== */
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+}
 
-        .level {
-            display: grid;
-            justify-content: center;
-            gap: 25px;
-        }
+.form-control:focus {
+    border-color: #7c0e0e;
+    box-shadow: 0 0 0 .25rem rgba(124, 14, 14, .25);
+}
 
-        .level:first-child {
-            grid-template-columns: 260px;
-        }
-        .level.dua {
-            grid-template-columns: repeat(2, 280px);
-        }
-        .level.empat {
-            grid-template-columns: repeat(4, 240px);
-        }
-        .level.tiga {
-            grid-template-columns: repeat(3, 240px);
-        }
+textarea {
+    resize: none;
+}
 
-        .line {
-            width: 4px;
-            height: 35px;
-            background: #7c0e0e;
-            border-radius: 10px;
-        }
+/* ===== MAPS ===== */
+iframe {
+    border-radius: 15px;
+}
 
-        .org-card {
-            background: #fff;
-            border-radius: 18px;
-            padding: 22px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
-            border-top: 5px solid #7c0e0e;
-            transition: .3s;
-        }
+/* ===== FOOTER ===== */
+footer {
+    background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+    color: white;
+    padding: 20px 0;
+    margin-top: 15px;
+}
 
-        .org-card:hover {
-            transform: translateY(-8px);
-        }
+footer h4 {
+    color: white;
+}
 
-        .org-card i {
-            font-size: 42px;
-            color: #7c0e0e;
-            margin-bottom: 12px;
-        }
+footer a {
+    color: #ffd54f !important;
+    text-decoration: none;
+}
 
-        .org-card h5, .org-card h6 {
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
+footer a:hover {
+    color: white !important;
+}
 
-        .org-card p {
-            margin: 0;
-            color: #666;
-        }
+/* ===== GAMBAR ===== */
+img {
+    max-width: 100%;
+    display: block;
+}
 
-        .kepala {
-            background: linear-gradient(135deg, #7c0e0e, #a11414);
-            color: #fff;
-        }
-        .kepala i, .kepala p { color: #fff; }
+.gallery img {
+    border-radius: 10px;
+    transition: .4s;
+}
 
-        .sekretaris { border-top-color: #0d6efd; }
-        .dusun { border-top-color: #198754; }
+.gallery img:hover {
+    transform: scale(1.05);
+}
 
-        @media (max-width:1200px) {
-            .level.empat { grid-template-columns: repeat(2, 240px); }
-            .level.tiga { grid-template-columns: repeat(2, 240px); }
-        }
+/* ===== SHADOW ===== */
+.shadow {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .15) !important;
+}
 
-        @media (max-width:768px) {
-            .level, .level.dua, .level.empat, .level.tiga {
-                grid-template-columns: 1fr;
-            }
-            .org-card { width: 320px; }
-        }
-    </style>
-</head>
-<body>
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 10px;
+}
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#"><i class="bi bi-house-fill me-2"></i>Desa Simarmata</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
-                <li class="nav-item"><a class="nav-link" href="#profil">Profil</a></li>
-                <li class="nav-item"><a class="nav-link" href="#struktur">Struktur</a></li>
-                <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
-                <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+::-webkit-scrollbar-track {
+    background: #ececec;
+}
 
-<!-- Hero -->
-<section id="beranda" class="hero">
-    <div class="container">
-        <h1>Selamat Datang di Desa Simarmata</h1>
-        <p>Maju Bersama, Sejahtera Bersama</p>
-        <a href="#profil" class="btn btn-light btn-lg mt-3"><i class="bi bi-arrow-down-circle"></i> Kenali Kami</a>
-    </div>
-</section>
+::-webkit-scrollbar-thumb {
+    background: #7c0e0e;
+    border-radius: 20px;
+}
 
-<div class="container">
+::-webkit-scrollbar-thumb:hover {
+    background: #5b0909;
+}
 
-    <!-- Profil -->
-    <section id="profil">
-        <h2 class="text-center"><i class="bi bi-info-circle-fill me-2"></i>Profil Desa</h2>
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjAwIDQwMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48cGF0aCBkPSJNMCAwaDYwMHY0MDBIMHoiIGZpbGw9IiM5YzFhMWEiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxNTAiIHI9IjUwIiBmaWxsPSIjZmZkNTQ4Ii8+PGNpcmNsZSBjeD0iNDUwIiBjeT0iMjUwIiByPSI3MCIgZmlsbD0iI2ZmZDU0OCIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjMwMCIgcj0iNDAiIGZpbGw9IiNmZmQ1NDgiLz48L3N2Zz4=" alt="Desa Simarmata" class="img-fluid rounded shadow">
-            </div>
-            <div class="col-lg-6">
-                <h3>Desa yang Nyaman dan Berbudaya</h3>
-                <p>Desa Simarmata terletak di dataran tinggi dengan udara sejuk. Masyarakatnya menjunjung tinggi gotong royong dan kearifan lokal. Kami terus berinovasi untuk kesejahteraan bersama.</p>
-                <div class="row mt-4 text-center">
-                    <div class="col-4">
-                        <h3 class="text-primary">1.200+</h3>
-                        <p>Jiwa</p>
-                    </div>
-                    <div class="col-4">
-                        <h3 class="text-primary">320</h3>
-                        <p>Kepala Keluarga</p>
-                    </div>
-                    <div class="col-4">
-                        <h3 class="text-primary">85%</h3>
-                        <p>Penduduk Bekerja</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+/* ===========================
+   STRUKTUR ORGANISASI
+=========================== */
+.struktur {
+    background: #f8f9fa;
+}
 
-    <!-- Struktur Organisasi -->
-    <section id="struktur" class="struktur">
-        <h2 class="text-center"><i class="bi bi-diagram-3-fill me-2"></i>Struktur Organisasi</h2>
-        <div class="org-chart">
-            <!-- Kepala Desa -->
-            <div class="level">
-                <div class="org-card kepala">
-                    <i class="bi bi-person-badge"></i>
-                    <h5>Kepala Desa</h5>
-                    <h6>Bapak Simarmata</h6>
-                    <p>Memimpin pemerintahan desa</p>
-                </div>
-            </div>
-            <div class="line"></div>
+.org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-            <!-- Sekretaris & Bendahara -->
-            <div class="level dua">
-                <div class="org-card sekretaris">
-                    <i class="bi bi-file-earmark-text"></i>
-                    <h5>Sekretaris Desa</h5>
-                    <h6>Ibu Sihotang</h6>
-                    <p>Administrasi & kesekretariatan</p>
-                </div>
-                <div class="org-card sekretaris">
-                    <i class="bi bi-cash-coin"></i>
-                    <h5>Bendahara Desa</h5>
-                    <h6>Bapak Gurning</h6>
-                    <p>Pengelolaan keuangan desa</p>
-                </div>
-            </div>
-            <div class="line"></div>
+.level {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+}
 
-            <!-- 4 Kepala Seksi -->
-            <div class="level empat">
-                <div class="org-card">
-                    <i class="bi bi-tools"></i>
-                    <h6>Seksi Pembangunan</h6>
-                    <p>Bapak Sinaga</p>
-                </div>
-                <div class="org-card">
-                    <i class="bi bi-people"></i>
-                    <h6>Seksi Kesejahteraan</h6>
-                    <p>Ibu Marbun</p>
-                </div>
-                <div class="org-card">
-                    <i class="bi bi-shield-check"></i>
-                    <h6>Seksi Keamanan</h6>
-                    <p>Bapak Sitorus</p>
-                </div>
-                <div class="org-card">
-                    <i class="bi bi-mortarboard"></i>
-                    <h6>Seksi Pendidikan</h6>
-                    <p>Ibu Manurung</p>
-                </div>
-            </div>
-            <div class="line"></div>
+.level.dua {
+    justify-content: space-evenly;
+}
 
-            <!-- 3 Kepala Dusun -->
-            <div class="level tiga">
-                <div class="org-card dusun">
-                    <i class="bi bi-tree"></i>
-                    <h6>Dusun I</h6>
-                    <p>Bapak Nainggolan</p>
-                </div>
-                <div class="org-card dusun">
-                    <i class="bi bi-flower1"></i>
-                    <h6>Dusun II</h6>
-                    <p>Bapak Pardede</p>
-                </div>
-                <div class="org-card dusun">
-                    <i class="bi bi-water"></i>
-                    <h6>Dusun III</h6>
-                    <p>Ibu Hutapea</p>
-                </div>
-            </div>
-        </div>
-    </section>
+.level.empat {
+    justify-content: space-between;
+}
 
-    <!-- Layanan -->
-    <section id="layanan">
-        <h2 class="text-center"><i class="bi bi-grid-3x3-gap-fill me-2"></i>Layanan Desa</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card text-center p-3 shadow">
-                    <i class="bi bi-file-earmark-pdf" style="font-size:48px; color:#7c0e0e;"></i>
-                    <h5 class="mt-2">Surat Keterangan</h5>
-                    <p>KK, KTP, domisili, dll.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-center p-3 shadow">
-                    <i class="bi bi-building" style="font-size:48px; color:#7c0e0e;"></i>
-                    <h5 class="mt-2">Perizinan</h5>
-                    <p>IMB, rekomendasi usaha</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-center p-3 shadow">
-                    <i class="bi bi-heart-pulse" style="font-size:48px; color:#7c0e0e;"></i>
-                    <h5 class="mt-2">Kesehatan</h5>
-                    <p>Posyandu, BPJS, stunting</p>
-                </div>
-            </div>
-        </div>
-    </section>
+.level.tiga {
+    justify-content: space-evenly;
+}
 
-    <!-- Kontak -->
-    <section id="kontak">
-        <h2 class="text-center"><i class="bi bi-envelope-fill me-2"></i>Hubungi Kami</h2>
-        <div class="row">
-            <div class="col-lg-6">
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control" placeholder="Masukkan nama">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" placeholder="email@contoh.com">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Pesan</label>
-                        <textarea class="form-control" rows="4" placeholder="Tulis pesan Anda..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Kirim <i class="bi bi-send"></i></button>
-                </form>
-            </div>
-            <div class="col-lg-6">
-                <div class="card p-4 shadow">
-                    <h5><i class="bi bi-geo-alt-fill text-primary"></i> Alamat Kantor</h5>
-                    <p>Jalan Raya Simarmata No. 1, Kec. Simarmata, Kab. Samosir</p>
-                    <h5><i class="bi bi-telephone-fill text-primary"></i> Telepon</h5>
-                    <p>+62 812 3456 7890</p>
-                    <h5><i class="bi bi-whatsapp text-success"></i> WhatsApp</h5>
-                    <p><a href="#" class="btn btn-success btn-sm"><i class="bi bi-whatsapp"></i> Chat Admin</a></p>
-                    <!-- Maps -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127267.51263403126!2d98.604103786985!3d2.674729848502238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3030e4e0b2c5f431%3A0x451c8f3d2f8171b!2sSamosir%2C%20Sumatera%20Utara!5e0!3m2!1sid!2sid!4v1743278271709" height="200" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
+.line {
+    width: 4px;
+    height: 40px;
+    background: #7c0e0e;
+    margin: 15px 0;
+    border-radius: 5px;
+}
 
-<!-- Footer -->
-<footer class="text-center">
-    <div class="container">
-        <p class="mb-0">© 2026 <strong>Desa Simarmata</strong> · Dibangun dengan <i class="bi bi-heart-fill text-danger"></i> untuk masyarakat</p>
-        <small>Web Developer: Tim IT Desa Simarmata</small>
-    </div>
-</footer>
+.org-card {
+    width: 240px;
+    background: #fff;
+    border-radius: 18px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+    transition: .35s;
+    border-top: 5px solid #7c0e0e;
+}
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+.org-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(124, 14, 14, .25);
+}
+
+.org-card i {
+    font-size: 45px;
+    color: #7c0e0e;
+    margin-bottom: 15px;
+}
+
+.org-card h5,
+.org-card h6 {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.org-card p {
+    margin: 0;
+    color: #666;
+    font-weight: 500;
+}
+
+.kepala {
+    background: linear-gradient(135deg, #7c0e0e, #b32020);
+    color: #fff;
+}
+
+.kepala i,
+.kepala p {
+    color: #fff;
+}
+
+.sekretaris {
+    border-top: 5px solid #0d6efd;
+}
+
+.dusun {
+    border-top: 5px solid #198754;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:992px) {
+    .hero h1 {
+        font-size: 45px;
+    }
+    .hero p {
+        font-size: 20px;
+    }
+}
+
+@media(max-width:768px) {
+    .hero {
+        height: 60vh;
+    }
+    .hero h1 {
+        font-size: 35px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+    .card img {
+        height: 200px;
+    }
+
+    .level,
+    .level.dua,
+    .level.empat,
+    .level.tiga {
+        flex-direction: column;
+        align-items: center;
+    }
+    .org-card {
+        width: 100%;
+        max-width: 330px;
+    }
+    .line {
+        height: 25px;
+    }
+}
+
+@media(max-width:576px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    section {
+        padding: 40px 15px;
+    }
+    .card img {
+        height: 180px;
+    }
+    .navbar-brand {
+        font-size: 20px;
+    }
+}
+
+/* ===== UTILITY ===== */
+p {
+    margin-bottom: 10px;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.card {
+    margin-bottom: 20px;
+}
