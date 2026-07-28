@@ -6,345 +6,449 @@
     <title>Kontak | Desa Simarmata</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ===========================================
+           WEBSITE DESA SIMARMATA
+           Theme Color : #7c0e0e
+        ============================================ */
 
-    <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin-left: 10px;
+            transition: .3s;
+        }
+
+        .nav-link:hover {
+            color: #ffd54f !important;
+        }
+
+        .nav-link.active {
+            color: #ffd54f !important;
+            font-weight: bold;
+        }
+
+        /* ===== HEADER ===== */
+        .bg-primary {
+            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+        }
+
+        section {
+            padding: 30px 0;
+        }
+
+        /* ===== HEADING ===== */
+        h1 {
+            color: #7c0e0e;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #7c0e0e;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #7c0e0e;
+            font-weight: bold;
+        }
+
+        /* ===== CARD ===== */
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: .4s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+        }
+
+        .card-body h4,
+        .card-body h5 {
+            color: #7c0e0e;
+            font-weight: bold;
+        }
+
+        /* ===== SHADOW ===== */
+        .shadow {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .15) !important;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ececec;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #7c0e0e;
+            border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5b0909;
+        }
+
+        /* ===== GAMBAR ===== */
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .row {
+            margin-bottom: 10px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+            color: white;
+            padding: 20px 0;
+            margin-top: 15px;
+        }
+
+        footer h4,
+        footer h5 {
+            color: white;
+        }
+
+        footer a {
+            color: #ffd54f !important;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white !important;
+        }
+
+        /* ===== KONTAK ===== */
+        .kontak-icon {
+            color: #7c0e0e;
+            font-size: 1.2rem;
+        }
+
+        .kontak-icon:hover {
+            transform: scale(1.1);
+            transition: .3s;
+        }
+
+        .text-primary {
+            color: #7c0e0e !important;
+        }
+
+        .text-danger {
+            color: #dc3545 !important;
+        }
+
+        .text-success {
+            color: #198754 !important;
+        }
+
+        hr {
+            border-color: #e0e0e0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:992px) {
+            .hero h1 {
+                font-size: 45px;
+            }
+            .hero p {
+                font-size: 20px;
+            }
+        }
+
+        @media(max-width:768px) {
+            .hero {
+                height: 60vh;
+            }
+            .hero h1 {
+                font-size: 35px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+        }
+
+        @media(max-width:576px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            section {
+                padding: 40px 15px;
+            }
+            .navbar-brand {
+                font-size: 20px;
+            }
+        }
+
+        /* ===== MAPS ===== */
+        .ratio-16x9 {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        iframe {
+            border: none;
+        }
+    </style>
+
 </head>
-
-<script src="js/script.js"></script>
 
 <body>
 
-<!-- Navbar -->
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-geo-alt-fill"></i>
+                Desa Simarmata
+            </a>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="container">
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profil.html">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sejarah.html">Sejarah</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="wisata.html">Wisata</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="budaya.html">Budaya</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="umkm.html">UMKM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="homestay.html">Homestay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeri.html">Galeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="kontak.html">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-        <a class="navbar-brand fw-bold" href="index.html">
-            <i class="bi bi-geo-alt-fill"></i>
-            Desa Simarmata
-        </a>
+    <!-- ===== HEADER ===== -->
+    <section class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="text-white">Hubungi Kami</h1>
+            <p>Desa Simarmata - Kecamatan Simanindo - Kabupaten Samosir</p>
+        </div>
+    </section>
 
-        <button class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menu"
-            aria-controls="menu"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
+    <!-- ===== KONTAK ===== -->
+    <section class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h3 class="text-center mb-4">Informasi Kontak</h3>
 
-            <span class="navbar-toggler-icon"></span>
+                <div class="card shadow">
+                    <div class="card-body p-4">
 
-        </button>
+                        <!-- Alamat -->
+                        <p>
+                            <i class="bi bi-geo-alt-fill kontak-icon"></i>
+                            <strong>Alamat</strong><br>
+                            Desa Simarmata, Kecamatan Simanindo,<br>
+                            Kabupaten Samosir,<br>
+                            Provinsi Sumatera Utara 22395
+                        </p>
 
-        <div class="collapse navbar-collapse" id="menu">
+                        <hr>
 
-            <ul class="navbar-nav ms-auto">
+                        <!-- Telepon -->
+                        <p>
+                            <i class="bi bi-telephone-fill kontak-icon"></i>
+                            <strong>Telepon</strong><br>
+                            +62 822-6859-2713
+                        </p>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
+                        <hr>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="profil.html">Profil</a>
-                </li>
+                        <!-- Email -->
+                        <p>
+                            <i class="bi bi-envelope-fill kontak-icon"></i>
+                            <strong>Email</strong><br>
+                            jhonbrendi2019@gmail.com
+                        </p>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="sejarah.html">Sejarah</a>
-                </li>
+                        <hr>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="wisata.html">Wisata</a>
-                </li>
+                        <!-- Website -->
+                        <p>
+                            <i class="bi bi-globe kontak-icon"></i>
+                            <strong>Website</strong><br>
+                            www.desasimarmata.id
+                        </p>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="budaya.html">Budaya</a>
-                </li>
+                        <hr>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="umkm.html">UMKM</a>
-                </li>
+                        <!-- Instagram -->
+                        <p>
+                            <i class="bi bi-instagram kontak-icon"></i>
+                            <strong>Instagram</strong><br>
+                            @kkn.simarmata26
+                        </p>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="homestay.html">Homestay</a>
-                </li>
+                        <!-- TikTok -->
+                        <p>
+                            <i class="bi bi-tiktok kontak-icon"></i>
+                            <strong>TikTok</strong><br>
+                            @kkn.simarmata26
+                        </p>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="galeri.html">Galeri</a>
-                </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <li class="nav-item">
-                    <a class="nav-link active" href="kontak.html">Kontak</a>
-                </li>
+    <!-- ===== MAPS ===== -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">
+                <i class="bi bi-map-fill"></i>
+                Peta Digital Wisata Desa Simarmata
+            </h2>
+            <p class="text-center mb-4">
+                Temukan lokasi wisata, budaya, UMKM, homestay, dan fasilitas Desa Simarmata.
+            </p>
 
-            </ul>
+            <div class="card shadow">
+                <div class="card-body p-2">
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="https://www.google.com/maps/d/embed?mid=1P2RzGWf7c-gA99lna0Xd9fWNW-W_nkE&ehbc=2E312F"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
 
         </div>
-
-    </div>
-
-</nav>
-
-<!-- Header -->
-
-<section class="bg-primary text-white text-center py-5">
-
-<div class="container">
-
-<h1>Hubungi Kami</h1>
-
-<p>Desa Simarmata - Kecamatan Simanindo - Kabupaten Samosir</p>
-
-</div>
-
-</section>
-
-<!-- Kontak -->
-
-<section class="container py-5">
-
-<div class="row justify-content-center">
-
-<div class="col-lg-8">
-
-<h3 class="text-center mb-4">
-Informasi Kontak
-</h3>
-
-<div class="card shadow">
-
-<div class="card-body p-4">
-
-<p>
-<i class="bi bi-geo-alt-fill text-danger"></i>
-<strong> Alamat</strong><br>
-Desa Simarmata, Kecamatan Simanindo,<br>
-Kabupaten Samosir,<br>
-Provinsi Sumatera Utara 22395
-</p>
-
-<hr>
-
-<p>
-<i class="bi bi-telephone-fill text-success"></i>
-<strong> Telepon</strong><br>
-+62 822-6859-2713
-</p>
-
-<hr>
-
-<p>
-<i class="bi bi-envelope-fill text-primary"></i>
-<strong> Email</strong><br>
-jhonbrendi2019@gmail.com
-</p>
-
-<hr>
-
-<p>
-<i class="bi bi-globe"></i>
-<strong> Website</strong><br>
-www.desasimarmata.id
-</p>
-
-<hr>
-
-<p>
-<i class="bi bi-instagram text-danger"></i>
-<strong> Instagram</strong><br>
-@kkn.simarmata26
-</p>
-
-<p>
-<i class="bi bi-tiktok"></i>
-<strong> TikTok</strong><br>
-@kkn.simarmata26
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Maps -->
-
-<!-- Maps Google My Maps -->
-
-<section class="bg-light py-5">
-
-<div class="container">
-
-<h2 class="text-center mb-4">
-<i class="bi bi-map-fill"></i>
-Peta Digital Wisata Desa Simarmata
-</h2>
-
-<p class="text-center mb-4">
-Temukan lokasi wisata, budaya, UMKM, homestay, dan fasilitas Desa Simarmata.
-</p>
-
-
-<div class="card shadow">
-
-<div class="card-body p-2">
-
-<div class="ratio ratio-16x9">
-
-<iframe
-    src="https://www.google.com/maps/d/embed?mid=1P2RzGWf7c-gA99lna0Xd9fWNW-W_nkE&ehbc=2E312F"
-    style="border:0;"
-    allowfullscreen
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-<!-- Footer KKN -->
-
-<footer class="bg-primary text-white pt-5 pb-3">
-
-<div class="container">
-
-<div class="row">
-
-
-<!-- Alamat -->
-
-<div class="col-md-4 mb-4">
-
-<h5>
-<i class="bi bi-geo-alt-fill"></i>
-Alamat Desa
-</h5>
-
-<p>
-Desa Simarmata<br>
-Kecamatan Simanindo<br>
-Kabupaten Samosir<br>
-Provinsi Sumatera Utara<br>
-Kode Pos: 22395
-</p>
-
-</div>
-
-
-<!-- Menu -->
-
-<div class="col-md-4 mb-4">
-
-<h5>
-<i class="bi bi-list"></i>
-Menu
-</h5>
-
-<ul class="list-unstyled">
-
-<li>
-<a href="index.html" class="text-white text-decoration-none">
-Home
-</a>
-</li>
-
-<li>
-<a href="profil.html" class="text-white text-decoration-none">
-Profil Desa
-</a>
-</li>
-
-<li>
-<a href="sejarah.html" class="text-white text-decoration-none">
-Sejarah
-</a>
-</li>
-
-<li>
-<a href="wisata.html" class="text-white text-decoration-none">
-Wisata
-</a>
-</li>
-
-<li>
-<a href="budaya.html" class="text-white text-decoration-none">
-Budaya
-</a>
-</li>
-
-<li>
-<a href="umkm.html" class="text-white text-decoration-none">
-UMKM
-</a>
-</li>
-
-</ul>
-
-</div>
-
-
-<!-- Media Sosial -->
-
-<div class="col-md-4 mb-4">
-
-<h5>
-<i class="bi bi-share-fill"></i>
-Media Sosial
-</h5>
-
-
-<p>
-<i class="bi bi-instagram text-danger"></i>
-Instagram :
-@kkn.simarmata26
-</p>
-
-<p>
-<i class="bi bi-tiktok"></i>
-TikTok :
-@kkn.simarmata26
-</p>
-
-</div>
-
-
-</div>
-
-
-<hr>
-
-
-<div class="text-center">
-
-<small>
-© 2026 KKN Desa Simarmata Kecamatan Simanindo *
-</small>
-
-<br>
-
-<small>
-Dibuat untuk Program KKN UNIMED 2026
-</small>
-
-</div>
-
-
-</div>
-
-</footer>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+
+                <!-- Alamat -->
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
+                    <p>
+                        Desa Simarmata<br>
+                        Kecamatan Simanindo<br>
+                        Kabupaten Samosir<br>
+                        Provinsi Sumatera Utara<br>
+                        Kode Pos: 22395
+                    </p>
+                </div>
+
+                <!-- Menu -->
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-list"></i> Menu</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="profil.html">Profil Desa</a></li>
+                        <li><a href="sejarah.html">Sejarah</a></li>
+                        <li><a href="wisata.html">Wisata</a></li>
+                        <li><a href="budaya.html">Budaya</a></li>
+                        <li><a href="umkm.html">UMKM</a></li>
+                    </ul>
+                </div>
+
+                <!-- Media Sosial -->
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
+                    <p>
+                        <i class="bi bi-instagram"></i> Instagram : @kkn.simarmata26
+                    </p>
+                    <p>
+                        <i class="bi bi-tiktok"></i> TikTok : @kkn.simarmata26
+                    </p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-center">
+                <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
+                <br>
+                <small>Dibuat untuk Program KKN UNIMED 2026</small>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>
