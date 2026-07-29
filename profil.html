@@ -334,9 +334,20 @@
         .card {
             margin-bottom: 20px;
         }
+        
+        /* PERBAIKAN UTAMA BAGIAN GAMBAR */
         img {
             display: block;
             max-width: 100%;
+            height: auto; /* Menjaga rasio aspek gambar */
+        }
+        
+        /* Jika ingin gambar peta memiliki batasan tinggi agar tidak terlalu panjang di desktop */
+        .peta-gambar {
+            max-height: 500px;
+            width: 100%;
+            object-fit: contain; /* Menampilkan gambar utuh tanpa terpotong */
+            background-color: #f0f0f0; /* Memberi warna latar jika gambar lebih kecil dari kotak */
         }
     </style>
 
@@ -422,7 +433,7 @@
         </div>
     </section>
 
-    <!-- ==================== PETA ADMINISTRASI ==================== -->
+    <!-- ==================== PETA ADMINISTRASI (SUDAH DIPERBAIKI) ==================== -->
     <section class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-7">
@@ -436,7 +447,8 @@
             </div>
             <div class="col-lg-5">
                 <div class="card shadow">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/peta-desa-simarmata.jpg" class="card-img-top" alt="Peta Administrasi Desa Simarmata" style="height: 400px; object-fit: cover;">
+                    <!-- PERBAIKAN ADA DI SINI (class="peta-gambar" dihapuskan height & object-fit paksa) -->
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/peta-desa-simarmata.jpg" class="card-img-top peta-gambar" alt="Peta Administrasi Desa Simarmata">
                     <div class="card-body text-center">
                         <small class="text-muted">Peta Administrasi Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir</small>
                     </div>
