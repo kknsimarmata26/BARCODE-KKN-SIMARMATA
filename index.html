@@ -43,17 +43,28 @@
         .navbar {
             background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
             box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+            padding: 5px 0;
         }
 
         .navbar-brand {
-            font-size: 24px;
-            font-weight: bold;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
 
         .nav-link {
             color: white !important;
             margin-left: 10px;
             transition: .3s;
+            font-size: 15px;
         }
 
         .nav-link:hover {
@@ -209,13 +220,6 @@
             color: white !important;
         }
 
-        /* ===== LOGO NAVBAR ===== */
-        .navbar-logo {
-            height: 40px;
-            width: auto;
-            margin-right: 8px;
-        }
-
         /* ============================================================
            HERO SECTION DENGAN SLIDESHOW BACKGROUND (5 FOTO)
         ============================================================ */
@@ -275,10 +279,10 @@
         }
 
         .hero-section h1 {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: bold;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .hero-section .lead {
@@ -294,6 +298,9 @@
             .hero-section .lead {
                 font-size: 1.4rem;
             }
+            .navbar-brand img {
+                height: 50px;
+            }
         }
 
         @media(max-width:768px) {
@@ -306,6 +313,12 @@
             .card img {
                 height: 200px;
             }
+            .navbar-brand img {
+                height: 45px;
+            }
+            .nav-link {
+                font-size: 14px;
+            }
         }
 
         @media(max-width:576px) {
@@ -315,17 +328,18 @@
             .card img {
                 height: 180px;
             }
-            .navbar-brand {
-                font-size: 20px;
-            }
             .hero-section h1 {
                 font-size: 1.8rem;
             }
-            .navbar-logo {
-                height: 30px;
-            }
             .hero-section .lead {
                 font-size: 1rem;
+            }
+            .navbar-brand img {
+                height: 38px;
+            }
+            .nav-link {
+                font-size: 13px;
+                margin-left: 5px;
             }
         }
     </style>
@@ -337,11 +351,10 @@
     <!-- ================= NAVBAR ================= -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <!-- LOGO -->
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSIzOCIgZmlsbD0iI2ZmZDU0OCIvPjxwYXRoIGQ9Ik0yMCAyMGwxMCAxMGwtMTAgMTB6IiBmaWxsPSIjN2MwZTBlIi8+PHBhdGggZD0iTTYwIDIwbC0xMCAxMGwxMCAxMHoiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSIxMCIgZmlsbD0iIzdjMGUwZSIvPjwvc3ZnPg=="
-                     alt="Logo Desa Simarmata" class="navbar-logo">
-                <span>Desa Simarmata</span>
+            <a class="navbar-brand" href="index.html">
+                <!-- LOGO DARI GITHUB - TANPA TULISAN -->
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9d01db11173e316b6cd4543a631806958c03ea39/logo%203%20web.png"
+                     alt="Logo KKN Desa Simarmata - UNIMED">
             </a>
 
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -379,7 +392,7 @@
         </div>
     </nav>
 
-    <!-- ================= HERO DENGAN SLIDESHOW (FOTO DARI GITHUB) ================= -->
+    <!-- ================= HERO DENGAN SLIDESHOW ================= -->
     <section class="hero-section">
         <!-- Slideshow Background - 5 Foto dari GitHub -->
         <div class="hero-slideshow" id="heroSlideshow">
@@ -391,7 +404,7 @@
             <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.27.jpeg');"></div>
             <!-- Slide 4 -->
             <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.23.jpeg');"></div>
-            <!-- Slide 5 (menggunakan ulang foto 1 karena hanya ada 4 link unik) -->
+            <!-- Slide 5 (menggunakan ulang foto 1) -->
             <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.20.jpeg');"></div>
         </div>
 
