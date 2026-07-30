@@ -209,28 +209,99 @@
             color: white !important;
         }
 
-        /* ===== HERO ===== */
+        /* ===== LOGO NAVBAR ===== */
+        .navbar-logo {
+            height: 40px;
+            width: auto;
+            margin-right: 8px;
+        }
+
+        /* ============================================================
+           HERO SECTION DENGAN SLIDESHOW BACKGROUND (5 FOTO)
+        ============================================================ */
         .hero-section {
-            background: linear-gradient(135deg, #7c0e0e, #a11414);
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
             color: white;
+            overflow: hidden;
+        }
+
+        /* Container untuk gambar slideshow */
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-slideshow .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .hero-slideshow .slide.active {
+            opacity: 1;
+        }
+
+        /* Overlay gelap di atas gambar agar teks terbaca */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
+
+        /* Konten hero berada di atas overlay */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
         }
 
         .hero-section h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .hero-section .lead {
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
         }
 
         /* ===== RESPONSIVE ===== */
         @media(max-width:992px) {
             .hero-section h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
+            }
+            .hero-section .lead {
+                font-size: 1.4rem;
             }
         }
 
         @media(max-width:768px) {
             .hero-section h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            .hero-section .lead {
+                font-size: 1.1rem;
             }
             .card img {
                 height: 200px;
@@ -250,6 +321,12 @@
             .hero-section h1 {
                 font-size: 1.8rem;
             }
+            .navbar-logo {
+                height: 30px;
+            }
+            .hero-section .lead {
+                font-size: 1rem;
+            }
         }
     </style>
 
@@ -260,9 +337,11 @@
     <!-- ================= NAVBAR ================= -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-geo-alt-fill"></i>
-                Desa Simarmata
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <!-- LOGO -->
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSIzOCIgZmlsbD0iI2ZmZDU0OCIvPjxwYXRoIGQ9Ik0yMCAyMGwxMCAxMGwtMTAgMTB6IiBmaWxsPSIjN2MwZTBlIi8+PHBhdGggZD0iTTYwIDIwbC0xMCAxMGwxMCAxMHoiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSIxMCIgZmlsbD0iIzdjMGUwZSIvPjwvc3ZnPg=="
+                     alt="Logo Desa Simarmata" class="navbar-logo">
+                <span>Desa Simarmata</span>
             </a>
 
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -271,9 +350,6 @@
 
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="profil.html">Profil</a>
                     </li>
@@ -303,9 +379,27 @@
         </div>
     </nav>
 
-    <!-- ================= HERO ================= -->
-    <section class="hero-section text-center py-5">
-        <div class="container py-5">
+    <!-- ================= HERO DENGAN SLIDESHOW (FOTO DARI GITHUB) ================= -->
+    <section class="hero-section">
+        <!-- Slideshow Background - 5 Foto dari GitHub -->
+        <div class="hero-slideshow" id="heroSlideshow">
+            <!-- Slide 1 -->
+            <div class="slide active" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.20.jpeg');"></div>
+            <!-- Slide 2 -->
+            <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.30.jpeg');"></div>
+            <!-- Slide 3 -->
+            <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.27.jpeg');"></div>
+            <!-- Slide 4 -->
+            <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.23.jpeg');"></div>
+            <!-- Slide 5 (menggunakan ulang foto 1 karena hanya ada 4 link unik) -->
+            <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.20.jpeg');"></div>
+        </div>
+
+        <!-- Overlay gelap -->
+        <div class="hero-overlay"></div>
+
+        <!-- Konten -->
+        <div class="hero-content container">
             <h1 class="display-4 fw-bold">Selamat Datang di Desa Simarmata</h1>
             <p class="lead">Desa Wisata • Desa Budaya • Desa Digital</p>
             <a href="wisata.html" class="btn btn-warning btn-lg mt-3">
@@ -343,7 +437,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjAwIDQwMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSI1MCIgeT0iNTAiIHdpZHRoPSI1MDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iMTAwIiB5PSIxODAiIHdpZHRoPSI0MDAiIGhlaWdodDCIgZmlsbD0iI2ZmZDU0OCIvPjx0ZXh0IHg9IjUwIiB5PSIzNTAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlNlamFyYWggRGVzYSBTaW1hcm1hdGE8L3RleHQ+PC9zdmc+" class="img-fluid rounded shadow" alt="Sejarah Desa Simarmata">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjAwIDQwMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSI1MCIgeT0iNTAiIHdpZHRoPSI1MDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iMTAwIiB5PSIxODAiIHdpZHRoPSI0MDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmQ1NDgiLz48dGV4dCB4PSI1MCIgeT0iMzUwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsIj5TZWphcmFoIERlc2EgU2ltYXJtYXRhPC90ZXh0Pjwvc3ZnPg==" class="img-fluid rounded shadow" alt="Sejarah Desa Simarmata">
                 </div>
                 <div class="col-lg-6">
                     <h2>Sejarah Desa Simarmata</h2>
@@ -420,9 +514,9 @@
                     </div>
                 </div>
 
-                             <div class="col-md-4">
+                <div class="col-md-4">
                     <div class="card shadow">
-                       <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg" class="img-fluid rounded shadow mb-4" alt="Tugu Ompu Simataraja Simarmata" style="width: 100%; max-height: 500px; object-fit: cover;">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg" class="card-img-top" alt="Tugu Ompu Simataraja Simarmata" style="height:230px; object-fit:cover;">
                         <div class="card-body">
                             <h5>Tugu Simarmata</h5>
                             <p>Tugu Simarmata merupakan salah satu simbol sejarah dan identitas marga Simarmata.</p>
@@ -492,6 +586,34 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- ===== SLIDESHOW SCRIPT - 5 FOTO BERULANG SETIAP 3 DETIK ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slideshow .slide');
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            // Pastikan hanya slide pertama yang aktif
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === 0);
+            });
+
+            function changeSlide() {
+                // Hapus class active dari slide saat ini
+                slides[currentIndex].classList.remove('active');
+
+                // Pindah ke slide berikutnya (loop kembali ke 0 setelah slide terakhir)
+                currentIndex = (currentIndex + 1) % totalSlides;
+
+                // Tambahkan class active ke slide baru
+                slides[currentIndex].classList.add('active');
+            }
+
+            // Ganti slide setiap 3 detik (3000ms)
+            setInterval(changeSlide, 3000);
+        });
     </script>
 
 </body>
