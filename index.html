@@ -223,6 +223,8 @@
 
         /* ============================================================
            HERO SECTION DENGAN SLIDESHOW BACKGROUND (5 FOTO)
+           - Menggunakan background-size: contain agar tidak terpotong
+           - Background-position: center untuk posisi tengah
         ============================================================ */
         .hero-section {
             position: relative;
@@ -250,7 +252,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             opacity: 0;
@@ -324,6 +326,9 @@
                 font-size: 14px;
                 margin-left: 8px;
             }
+            .hero-slideshow .slide {
+                background-size: cover;
+            }
         }
 
         @media(max-width:576px) {
@@ -345,6 +350,9 @@
             .nav-link {
                 font-size: 13px;
                 margin-left: 5px;
+            }
+            .hero-slideshow .slide {
+                background-size: cover;
             }
         }
     </style>
@@ -408,7 +416,7 @@
             <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.30.jpeg');"></div>
             <!-- Slide 3 -->
             <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.27.jpeg');"></div>
-            <!-- Slide 4 (menggunakan ulang foto 3 karena link yang diberikan sama) -->
+            <!-- Slide 4 -->
             <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.27.jpeg');"></div>
             <!-- Slide 5 -->
             <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.23.jpeg');"></div>
