@@ -418,3 +418,18 @@ p {
 .card {
     margin-bottom: 20px;
 }
+
+/* Menghilangkan efek transisi slide pada carousel */
+.carousel-item {
+    transition: none !important;
+}
+.carousel-item.active {
+    transition: none !important;
+}
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active,
+.carousel-item-start,
+.carousel-item-end {
+    transform: none !important;
+}
