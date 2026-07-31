@@ -226,6 +226,7 @@
 
         /* ============================================================
            HERO SECTION DENGAN SLIDESHOW BACKGROUND (5 FOTO)
+           PERBAIKAN: gambar selalu di tengah tanpa crop berlebihan
         ============================================================ */
         .hero-section {
             position: relative;
@@ -253,12 +254,13 @@
             left: 0;
             width: 100%;
             height: 100%;
+            /* PERBAIKAN UTAMA: cover + center + background-color */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-color: #1a1a1a;
             opacity: 0;
             transition: opacity 1.5s ease-in-out;
-            background-color: #1a1a1a;
         }
 
         .hero-slideshow .slide.active {
@@ -308,11 +310,21 @@
         }
 
         /* Efek untuk item dengan delay berbeda */
-        .scroll-animate.delay-1 { transition-delay: 0.1s; }
-        .scroll-animate.delay-2 { transition-delay: 0.2s; }
-        .scroll-animate.delay-3 { transition-delay: 0.3s; }
-        .scroll-animate.delay-4 { transition-delay: 0.4s; }
-        .scroll-animate.delay-5 { transition-delay: 0.5s; }
+        .scroll-animate.delay-1 {
+            transition-delay: 0.1s;
+        }
+        .scroll-animate.delay-2 {
+            transition-delay: 0.2s;
+        }
+        .scroll-animate.delay-3 {
+            transition-delay: 0.3s;
+        }
+        .scroll-animate.delay-4 {
+            transition-delay: 0.4s;
+        }
+        .scroll-animate.delay-5 {
+            transition-delay: 0.5s;
+        }
 
         /* ===== RESPONSIVE ===== */
         @media(max-width:992px) {
@@ -426,10 +438,15 @@
     <!-- ================= HERO DENGAN SLIDESHOW ================= -->
     <section class="hero-section" id="hero">
         <div class="hero-slideshow" id="heroSlideshow">
+            <!-- Slide 1 -->
             <div class="slide active" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.20.jpeg');"></div>
+            <!-- Slide 2 -->
             <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.30.jpeg');"></div>
+            <!-- Slide 3 -->
             <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.27.jpeg');"></div>
+            <!-- Slide 4 -->
             <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.27.jpeg');"></div>
+            <!-- Slide 5 -->
             <div class="slide" style="background-image: url('https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.23.jpeg');"></div>
         </div>
 
@@ -448,9 +465,9 @@
     <section class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-6 scroll-animate">
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/kantor-desa.jpeg" 
-                     class="img-fluid rounded shadow" 
-                     alt="Kantor Desa Simarmata" 
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/kantor-desa.jpeg"
+                     class="img-fluid rounded shadow"
+                     alt="Kantor Desa Simarmata"
                      style="width:100%; height:350px; object-fit:cover;">
             </div>
             <div class="col-lg-6 scroll-animate delay-2">
@@ -476,8 +493,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 scroll-animate">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/gorga%20batak.jpeg" 
-                         class="img-fluid rounded shadow" 
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/gorga%20batak.jpeg"
+                         class="img-fluid rounded shadow"
                          alt="Gorga Batak - Sejarah Desa Simarmata"
                          style="width:100%; height:350px; object-fit:cover;">
                 </div>
@@ -536,8 +553,8 @@
 
                 <div class="col-md-4 scroll-animate delay-1">
                     <div class="card shadow">
-                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/huta%20adat.jpeg" 
-                             class="card-img-top" 
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/huta%20adat.jpeg"
+                             class="card-img-top"
                              alt="Huta Adat Simarmata"
                              style="height:230px; object-fit:cover;">
                         <div class="card-body">
@@ -550,8 +567,8 @@
 
                 <div class="col-md-4 scroll-animate delay-2">
                     <div class="card shadow">
-                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg" 
-                             class="card-img-top" 
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
+                             class="card-img-top"
                              alt="Danau Toba"
                              style="height:230px; object-fit:cover;">
                         <div class="card-body">
@@ -564,8 +581,8 @@
 
                 <div class="col-md-4 scroll-animate delay-3">
                     <div class="card shadow">
-                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg" 
-                             class="card-img-top" 
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
+                             class="card-img-top"
                              alt="Tugu Ompu Simataraja Simarmata"
                              style="height:230px; object-fit:cover;">
                         <div class="card-body">
