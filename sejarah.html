@@ -258,17 +258,45 @@
             transform: scale(1.1);
             transition: .3s;
         }
+
+        /* ===========================================
+           ANIMASI SCROLL REVEAL (Transisi Naik/Turun)
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal.reverse {
+            transform: translateY(-50px);
+        }
+
+        .reveal.reverse.visible {
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
     </style>
 
 </head>
 
 <body>
 
-    <!-- ===== NAVBAR ===== -->
+    <!-- ===== NAVBAR (Logo Samping Dihapus) ===== -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-bank"></i> Desa Simarmata
+                Desa Simarmata
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -310,21 +338,23 @@
     </nav>
 
     <!-- ===== HEADER ===== -->
-    <section class="bg-primary text-white text-center py-5">
+    <section class="bg-primary text-white text-center py-5 reveal">
         <div class="container">
             <h1 class="text-white">Sejarah Desa Simarmata</h1>
             <p>Melestarikan sejarah sebagai identitas dan warisan budaya masyarakat.</p>
         </div>
     </section>
 
-    <!-- ===== SEJARAH ===== -->
+    <!-- ===== SEJARAH (Asal Usul) ===== -->
     <section class="container py-5">
-        <div class="row">
-            <div class="col-lg-6">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjAwIDQwMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSI1MCIgeT0iNTAiIHdpZHRoPSI1MDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iMTAwIiB5PSIxODAiIHdpZHRoPSI0MDAiIGhlaWdodDCIgZmlsbD0iI2ZmZDU0OCIvPjx0ZXh0IHg9IjUwIiB5PSIzNTAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlNlamFyYWggRGVzYSBTaW1hcm1hdGE8L3RleHQ+PC9zdmc+" class="img-fluid rounded shadow" alt="Sejarah Desa">
+        <div class="row align-items-center">
+            <div class="col-lg-6 reveal delay-1">
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/6b4e93c2aa7d0a0b32e870b82eb0c8a84a2692fe/desa6.jpg" 
+                     class="img-fluid rounded shadow" 
+                     alt="Sejarah Desa">
             </div>
-            <div class="col-lg-6">
-                               <h2>Asal Usul Desa</h2>
+            <div class="col-lg-6 reveal delay-2">
+                <h2>Asal Usul Desa</h2>
                 <p style="text-align:justify;">
                     Masyarakat Simarmata sejak dahulu hidup berdampingan dengan alam dan menggantungkan kehidupan pada sektor pertanian serta perikanan Danau Toba. Kehidupan masyarakat juga diatur oleh lembaga adat <strong>Bius Sitolu Tali</strong>, yang menjadi simbol persatuan sekaligus pedoman dalam menjaga ketertiban, budaya, dan keharmonisan masyarakat.
                 </p>
@@ -337,13 +367,15 @@
 
     <!-- ===== LOKASI BERSEJARAH ===== -->
     <section class="container py-5">
-        <h2 class="text-center mb-4">Lokasi Bersejarah Desa Simarmata</h2>
+        <h2 class="text-center mb-4 reveal">Lokasi Bersejarah Desa Simarmata</h2>
         <div class="row">
 
             <!-- Huta Adat Simarmata -->
             <div class="col-lg-6 col-md-6 mb-4">
-                <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSI1MCIgeT0iNTAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iMjUwIiB5PSI4MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNmZmQ1NDgiLz48dGV4dCB4PSI1MCIgeT0iMjMwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyMCIgZm9udC1mYW1pbHk9IkFyaWFsIj5IdXRhIEFkYXQgU2ltYXJtYXRhPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Huta Adat Simarmata">
+                <div class="card shadow h-100 reveal delay-1">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/182b2895e297116b381d99b4ce23780a7bd9eed2/desa7.jpeg" 
+                         class="card-img-top" 
+                         alt="Huta Adat Simarmata">
                     <div class="card-body">
                         <h5>Huta Adat Simarmata</h5>
                         <p>Kawasan adat yang menjadi bagian penting dari sejarah dan budaya masyarakat Simarmata.</p>
@@ -356,8 +388,10 @@
 
             <!-- Rumah Adat Batak -->
             <div class="col-lg-6 col-md-6 mb-4">
-                <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cG9seWdvbiBwb2ludHM9IjIwMCw1MCA3MCwxOTAgMzMwLDE5MCIgZmlsbD0iI2ZmZDU0OCIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjIwIiBmb250LWZhbWlseT0iQXJpYWwiPlJ1bWFoIEFkYXQgQmF0YWs8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Rumah Adat Batak">
+                <div class="card shadow h-100 reveal delay-2">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/cc39a7a332929c052b2294e761686d258e3d5de1/desa8.jpeg" 
+                         class="card-img-top" 
+                         alt="Rumah Adat Batak">
                     <div class="card-body">
                         <h5>Rumah Adat Batak</h5>
                         <p>Warisan arsitektur tradisional Batak Toba yang memiliki nilai budaya tinggi.</p>
@@ -370,8 +404,11 @@
 
             <!-- Tugu Simarmata -->
             <div class="col-lg-6 col-md-6 mb-4">
-                <div class="card shadow h-100">
-                  <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg" class="card-img-top" alt="Tugu Simarmata" style="height: 250px; object-fit: cover;">
+                <div class="card shadow h-100 reveal delay-3">
+                  <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg" 
+                       class="card-img-top" 
+                       alt="Tugu Simarmata" 
+                       style="height: 250px; object-fit: cover;">
                     <div class="card-body">
                         <h5>Tugu Simarmata</h5>
                         <p>Tugu Simarmata merupakan salah satu simbol sejarah dan identitas marga Simarmata yang menjadi pengingat asal-usul, silsilah, serta warisan budaya masyarakat Batak Toba di Desa Simarmata.</p>
@@ -384,8 +421,11 @@
 
             <!-- Sopo Ni Opung Sisaurmatua Simarmata -->
             <div class="col-lg-6 col-md-6 mb-4">
-                <div class="card shadow h-100">
-                   <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/soponiopung.jpg" class="card-img-top" alt="Sopo Ni Opung Sisaurmatua Simarmata" style="height: 250px; object-fit: cover;">
+                <div class="card shadow h-100 reveal delay-4">
+                   <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/soponiopung.jpg" 
+                        class="card-img-top" 
+                        alt="Sopo Ni Opung Sisaurmatua Simarmata" 
+                        style="height: 250px; object-fit: cover;">
                     <div class="card-body">
                         <h5>Sopo Ni Opung Sisaurmatua Simarmata</h5>
                         <p>Sopo Ni Opung Sisaurmatua Simarmata merupakan salah satu situs bersejarah yang menjadi simbol penghormatan kepada leluhur marga Simarmata serta warisan budaya yang masih dijaga hingga saat ini.</p>
@@ -399,13 +439,13 @@
         </div>
     </section>
 
-        <!-- ===== PERJALANAN SEJARAH ===== -->
+    <!-- ===== PERJALANAN SEJARAH ===== -->
     <section class="bg-light py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Perjalanan Sejarah</h2>
+            <h2 class="text-center mb-5 reveal">Perjalanan Sejarah</h2>
 
             <!-- Awal Permukiman -->
-            <div class="card shadow mb-4">
+            <div class="card shadow mb-4 reveal delay-1">
                 <div class="card-body">
                     <h4><i class="bi bi-clock-history text-primary"></i> Awal Permukiman</h4>
                     <p style="text-align:justify;">
@@ -429,7 +469,7 @@
             </div>
 
             <!-- Sistem Adat Bius Sitolu Tali -->
-            <div class="card shadow mb-4">
+            <div class="card shadow mb-4 reveal delay-2">
                 <div class="card-body">
                     <h4><i class="bi bi-people-fill text-primary"></i> Sistem Adat Bius Sitolu Tali</h4>
                     <p style="text-align:justify;">
@@ -439,7 +479,7 @@
             </div>
 
             <!-- Masa Kolonial -->
-            <div class="card shadow mb-4">
+            <div class="card shadow mb-4 reveal delay-3">
                 <div class="card-body">
                     <h4><i class="bi bi-building text-primary"></i> Masa Kolonial dan Perubahan Pemerintahan</h4>
                     <p style="text-align:justify;">
@@ -453,19 +493,19 @@
 
     <!-- ===== TOKOH ===== -->
     <section class="container py-5">
-        <h2 class="text-center mb-5">Tokoh dan Warisan Budaya</h2>
+        <h2 class="text-center mb-5 reveal">Tokoh dan Warisan Budaya</h2>
         <div class="row text-center">
-            <div class="col-md-4">
+            <div class="col-md-4 reveal delay-1">
                 <i class="bi bi-person-circle tokoh-icon"></i>
                 <h4>Raja Simarmata</h4>
                 <p>Tokoh yang dikenal dalam sejarah dan silsilah marga Simarmata.</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 reveal delay-2">
                 <i class="bi bi-house-heart-fill tokoh-icon"></i>
                 <h4>Rumah Adat</h4>
                 <p>Warisan arsitektur Batak Toba yang masih terjaga.</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 reveal delay-3">
                 <i class="bi bi-music-note-beamed tokoh-icon"></i>
                 <h4>Budaya Batak</h4>
                 <p>Tortor, Gondang, Ulos, dan berbagai tradisi adat masih dilaksanakan.</p>
@@ -532,6 +572,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
-</body>
+    <!-- ===== JAVASCRIPT SCROLL REVEAL ===== -->
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < (window.innerHeight || document.documentElement.clientHeight) - 50 && rect.bottom > 50;
+        }
 
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('visible');
+                    el.classList.remove('reverse');
+                } else {
+                    el.classList.remove('visible');
+                    el.classList.add('reverse');
+                }
+            });
+        }
+
+        window.addEventListener('load', handleScrollReveal);
+        window.addEventListener('scroll', handleScrollReveal);
+        window.addEventListener('resize', handleScrollReveal);
+    </script>
+
+</body>
 </html>
