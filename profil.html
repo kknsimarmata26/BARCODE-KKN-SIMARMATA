@@ -45,6 +45,15 @@
         .navbar-brand {
             font-size: 24px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-brand img {
+            height: 45px;
+            width: auto;
+            border-radius: 8px;
         }
 
         .nav-link {
@@ -323,6 +332,9 @@
             .navbar-brand {
                 font-size: 20px;
             }
+            .navbar-brand img {
+                height: 35px;
+            }
         }
 
         p {
@@ -339,16 +351,45 @@
         img {
             display: block;
             max-width: 100%;
-            height: auto; /* Menjaga rasio aspek gambar */
+            height: auto;
         }
         
-        /* Jika ingin gambar peta memiliki batasan tinggi agar tidak terlalu panjang di desktop */
         .peta-gambar {
             max-height: 500px;
             width: 100%;
-            object-fit: contain; /* Menampilkan gambar utuh tanpa terpotong */
-            background-color: #f0f0f0; /* Memberi warna latar jika gambar lebih kecil dari kotak */
+            object-fit: contain;
+            background-color: #f0f0f0;
         }
+
+        /* ===========================================
+           ANIMASI SCROLL REVEAL
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Saat scroll ke atas (reverse) */
+        .reveal.reverse {
+            transform: translateY(-50px);
+        }
+
+        .reveal.reverse.visible {
+            transform: translateY(0);
+        }
+
+        /* Delay untuk efek berurutan */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
     </style>
 
 </head>
@@ -359,6 +400,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark shadow">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
+                <!-- LOGO DI SAMPING KANAN TULISAN -->
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/logo%203%20web.jpeg" 
+                     alt="Logo Desa Simarmata" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48cmVjdCB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNmZmQ1NDgiLz48dGV4dCB4PSIxMCcgeT0iMzUnIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM3YzBlMGUiPkxPR088L3RleHQ+PC9zdmc+'">
                 <i class="bi bi-house-fill"></i>
                 Desa Simarmata
             </a>
@@ -412,10 +457,13 @@
     <!-- ==================== TENTANG DESA ==================== -->
     <section class="container py-5">
         <div class="row align-items-center">
-            <div class="col-lg-6">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjAwIDQwMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48cGF0aCBkPSJNMCAwaDYwMHY0MDBIMHoiIGZpbGw9IiM5YzFhMWEiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxNTAiIHI9IjUwIiBmaWxsPSIjZmZkNTQ4Ii8+PGNpcmNsZSBjeD0iNDUwIiBjeT0iMjUwIiByPSI3MCIgZmlsbD0iI2ZmZDU0OCIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjMwMCIgcj0iNDAiIGZpbGw9IiNmZmQ1NDgiLz48L3N2Zz4=" class="img-fluid rounded shadow" alt="Desa Simarmata">
+            <div class="col-lg-6 reveal">
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/kantor-desa.jpeg" 
+                     class="img-fluid rounded shadow" 
+                     alt="Kantor Desa Simarmata"
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjAwIDQwMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48cGF0aCBkPSJNMCAwaDYwMHY0MDBIMHoiIGZpbGw9IiM5YzFhMWEiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxNTAiIHI9IjUwIiBmaWxsPSIjZmZkNTQ4Ii8+PGNpcmNsZSBjeD0iNDUwIiBjeT0iMjUwIiByPSI3MCIgZmlsbD0iI2ZmZDU0OCIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjMwMCIgcj0iNDAiIGZpbGw9IiNmZmQ1NDgiLz48L3N2Zz4='">
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 reveal delay-1">
                 <h2>Tentang Desa</h2>
                 <p style="text-align:justify;">
                     Desa Simarmata merupakan salah satu desa yang berada di Kecamatan Simanindo, Kabupaten Samosir, Provinsi Sumatera Utara. Desa ini terletak di kawasan strategis Danau Toba dan dikenal sebagai desa yang kaya akan sejarah, budaya Batak Toba, serta memiliki potensi wisata alam dan budaya yang masih terjaga hingga saat ini.
@@ -433,10 +481,10 @@
         </div>
     </section>
 
-    <!-- ==================== PETA ADMINISTRASI (SUDAH DIPERBAIKI) ==================== -->
+    <!-- ==================== PETA ADMINISTRASI ==================== -->
     <section class="container py-5">
         <div class="row align-items-center">
-            <div class="col-lg-7">
+            <div class="col-lg-7 reveal">
                 <h2>Peta Administrasi Desa Simarmata</h2>
                 <p style="text-align:justify;">
                     Peta administrasi Desa Simarmata menunjukkan letak dan batas wilayah Desa Simarmata yang berada di Kecamatan Simanindo, Kabupaten Samosir, Provinsi Sumatera Utara. Desa ini terdiri atas tiga dusun, yaitu <strong>Dusun I Simarmata</strong>, <strong>Dusun II Galungan</strong>, dan <strong>Dusun III Sidaji</strong>. Secara geografis, Desa Simarmata berbatasan dengan Desa Dosroha, Desa Sihusapi, dan Desa Cinta Dame, serta memiliki wilayah yang berbatasan langsung dengan Danau Toba di bagian barat. Peta juga menampilkan jaringan jalan dan aliran sungai yang menghubungkan setiap dusun sehingga mendukung mobilitas masyarakat.
@@ -445,10 +493,11 @@
                     Selain itu, peta administrasi memperlihatkan persebaran berbagai fasilitas umum yang terdapat di Desa Simarmata, antara lain <strong>Kantor Desa Simarmata</strong> sebagai pusat pemerintahan desa, <strong>Gereja GKPI Galungan</strong> sebagai sarana ibadah masyarakat, <strong>SD Negeri 6 Simarmata</strong> dan <strong>SD Negeri 18 Galungan</strong> sebagai fasilitas pendidikan dasar, serta beberapa titik penting seperti Binanga Sisia-sia dan Binanga Rajabosi. Informasi penggunaan lahan pada peta menunjukkan adanya kawasan permukiman, pertanian lahan kering, dan pertanian lahan basah yang mencerminkan karakteristik wilayah desa yang didominasi oleh aktivitas pertanian dan permukiman penduduk. Peta administrasi ini menjadi acuan penting dalam perencanaan dan pelaksanaan program KKN karena memberikan gambaran mengenai kondisi wilayah, persebaran fasilitas, serta aksesibilitas antarwilayah di Desa Simarmata.
                 </p>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-5 reveal delay-1">
                 <div class="card shadow">
-                    <!-- PERBAIKAN ADA DI SINI (class="peta-gambar" dihapuskan height & object-fit paksa) -->
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/peta-desa-simarmata.jpg" class="card-img-top peta-gambar" alt="Peta Administrasi Desa Simarmata">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/peta-desa-simarmata.jpg" 
+                         class="card-img-top peta-gambar" 
+                         alt="Peta Administrasi Desa Simarmata">
                     <div class="card-body text-center">
                         <small class="text-muted">Peta Administrasi Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir</small>
                     </div>
@@ -460,11 +509,11 @@
     <!-- ==================== VISI ==================== -->
     <section class="bg-light py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Visi Desa</h2>
-            <p class="text-center fs-5 fw-semibold">
+            <h2 class="text-center mb-4 reveal">Visi Desa</h2>
+            <p class="text-center fs-5 fw-semibold reveal delay-1">
                 "Damai Negeriku, Sejahtera Desaku, Membangun Bersama Kita Menuju Masyarakat yang Adil dan Sejahtera."
             </p>
-            <p style="text-align:justify;">
+            <p style="text-align:justify;" class="reveal delay-2">
                 Visi ini menjadi arah pembangunan Desa Simarmata dalam mewujudkan kehidupan masyarakat yang hidup rukun, damai, dan saling menghormati berdasarkan nilai-nilai budaya Batak, khususnya falsafah <i>Dalihan Na Tolu</i>. Melalui semangat kebersamaan, pemerintah desa berkomitmen membangun desa secara transparan, adil, dan berkelanjutan demi terciptanya masyarakat yang semakin maju, makmur, dan sejahtera.
             </p>
         </div>
@@ -472,9 +521,9 @@
 
     <!-- ==================== MISI ==================== -->
     <section class="container py-5">
-        <h2 class="text-center mb-5">Misi Desa</h2>
+        <h2 class="text-center mb-5 reveal">Misi Desa</h2>
         <div class="row g-4">
-            <div class="col-md-6">
+            <div class="col-md-6 reveal delay-1">
                 <div class="card shadow h-100">
                     <div class="card-body">
                         <h5 class="text-primary">1. Mewujudkan kehidupan masyarakat yang aman, tertib, rukun, dan harmonis</h5>
@@ -482,7 +531,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 reveal delay-2">
                 <div class="card shadow h-100">
                     <div class="card-body">
                         <h5 class="text-primary">2. Meningkatkan kualitas kesehatan dan kebersihan lingkungan desa</h5>
@@ -490,7 +539,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 reveal delay-3">
                 <div class="card shadow h-100">
                     <div class="card-body">
                         <h5 class="text-primary">3. Meningkatkan kesejahteraan masyarakat melalui penguatan ekonomi desa</h5>
@@ -498,7 +547,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 reveal delay-4">
                 <div class="card shadow h-100">
                     <div class="card-body">
                         <h5 class="text-primary">4. Memberdayakan potensi sumber daya manusia dan sumber daya alam</h5>
@@ -506,7 +555,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 reveal delay-5">
                 <div class="card shadow">
                     <div class="card-body">
                         <h5 class="text-primary">5. Mewujudkan tata kelola pemerintahan desa yang profesional, transparan, dan akuntabel</h5>
@@ -520,8 +569,8 @@
     <!-- ==================== DATA DESA ==================== -->
     <section class="bg-light py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Data Desa</h2>
-            <table class="table table-bordered table-striped">
+            <h2 class="text-center mb-5 reveal">Data Desa</h2>
+            <table class="table table-bordered table-striped reveal delay-1">
                 <tr><th>Nama Desa</th><td>Desa Simarmata</td></tr>
                 <tr><th>Kecamatan</th><td>Simanindo</td></tr>
                 <tr><th>Kabupaten</th><td>Samosir</td></tr>
@@ -536,9 +585,9 @@
 
     <!-- ==================== POTENSI DESA ==================== -->
     <section class="container py-5">
-        <h2 class="text-center mb-5">Potensi Desa</h2>
+        <h2 class="text-center mb-5 reveal">Potensi Desa</h2>
         <div class="row g-4">
-            <div class="col-lg-4">
+            <div class="col-lg-4 reveal delay-1">
                 <div class="card shadow h-100">
                     <div class="card-body">
                         <h4 class="text-success"><i class="bi bi-flower1"></i> Pertanian</h4>
@@ -552,7 +601,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 reveal delay-2">
                 <div class="card shadow h-100">
                     <div class="card-body">
                         <h4 class="text-primary"><i class="bi bi-water"></i> Perikanan</h4>
@@ -563,7 +612,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 reveal delay-3">
                 <div class="card shadow h-100">
                     <div class="card-body">
                         <h4 class="text-warning"><i class="bi bi-emoji-smile"></i> Peternakan</h4>
@@ -581,9 +630,9 @@
     <!-- ==================== PARIWISATA ==================== -->
     <section class="bg-light py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Potensi Pariwisata</h2>
+            <h2 class="text-center mb-5 reveal">Potensi Pariwisata</h2>
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-8 reveal delay-1">
                     <div class="card shadow">
                         <div class="card-body">
                             <h4 class="text-primary"><i class="bi bi-geo-alt-fill"></i> Objek Wisata dan Budaya</h4>
@@ -599,11 +648,11 @@
         </div>
     </section>
 
-      <!-- ==================== PENDIDIKAN ==================== -->
+    <!-- ==================== PENDIDIKAN ==================== -->
     <section class="container py-5">
-        <h2 class="text-center mb-5">Pendidikan</h2>
+        <h2 class="text-center mb-5 reveal">Pendidikan</h2>
         <div class="row justify-content-center">
-            <div class="col-lg-8">
+            <div class="col-lg-8 reveal delay-1">
                 <div class="card shadow">
                     <div class="card-body">
                         <p style="text-align:justify;">
@@ -620,14 +669,13 @@
             </div>
         </div>
     </section>
-  
 
     <!-- ==================== SARANA & PRASARANA ==================== -->
     <section class="bg-light py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Sarana dan Prasarana</h2>
+            <h2 class="text-center mb-5 reveal">Sarana dan Prasarana</h2>
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-md-4 reveal delay-1">
                     <div class="card shadow h-100">
                         <div class="card-body">
                             <h5 class="text-primary"><i class="bi bi-building"></i> Fasilitas Pemerintahan</h5>
@@ -638,7 +686,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 reveal delay-2">
                     <div class="card shadow h-100">
                         <div class="card-body">
                             <h5 class="text-success"><i class="bi bi-hospital"></i> Fasilitas Umum</h5>
@@ -653,7 +701,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 reveal delay-3">
                     <div class="card shadow h-100">
                         <div class="card-body">
                             <h5 class="text-warning"><i class="bi bi-signpost-2"></i> Infrastruktur</h5>
@@ -672,7 +720,7 @@
     <!-- ==================== STRUKTUR PEMERINTAHAN ==================== -->
     <section class="struktur py-5">
         <div class="container">
-            <h2 class="text-center fw-bold mb-5">
+            <h2 class="text-center fw-bold mb-5 reveal">
                 <i class="bi bi-diagram-3-fill text-danger"></i>
                 Struktur Organisasi Pemerintah Desa Simarmata
             </h2>
@@ -680,7 +728,7 @@
             <div class="org-chart">
 
                 <!-- Kepala Desa -->
-                <div class="level">
+                <div class="level reveal delay-1">
                     <div class="org-card kepala">
                         <i class="bi bi-person-badge-fill"></i>
                         <h5>Kepala Desa</h5>
@@ -688,10 +736,10 @@
                     </div>
                 </div>
 
-                <div class="line"></div>
+                <div class="line reveal delay-2"></div>
 
                 <!-- Level 2 -->
-                <div class="level dua">
+                <div class="level dua reveal delay-3">
                     <div class="org-card">
                         <i class="bi bi-bank2"></i>
                         <h5>BPD</h5>
@@ -704,10 +752,10 @@
                     </div>
                 </div>
 
-                <div class="line"></div>
+                <div class="line reveal delay-4"></div>
 
                 <!-- Level 3 -->
-                <div class="level empat">
+                <div class="level empat reveal delay-5">
                     <div class="org-card">
                         <i class="bi bi-building"></i>
                         <h6>Kasi Pemerintahan</h6>
@@ -730,10 +778,10 @@
                     </div>
                 </div>
 
-                <div class="line"></div>
+                <div class="line reveal delay-1"></div>
 
                 <!-- Kepala Dusun -->
-                <div class="level tiga">
+                <div class="level tiga reveal delay-2">
                     <div class="org-card dusun">
                         <i class="bi bi-house-door-fill"></i>
                         <h6>Kepala Dusun I</h6>
@@ -814,6 +862,43 @@
 
         </div>
     </footer>
+
+    <!-- ==================== JAVASCRIPT UNTUK SCROLL REVEAL ==================== -->
+    <script>
+        // Fungsi untuk mengecek apakah elemen terlihat di viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top < (window.innerHeight || document.documentElement.clientHeight) - 50 &&
+                rect.bottom > 50
+            );
+        }
+
+        // Fungsi untuk menangani animasi scroll
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('visible');
+                    el.classList.remove('reverse');
+                } else {
+                    // Saat elemen keluar viewport (scroll ke atas), tambahkan class reverse
+                    el.classList.remove('visible');
+                    el.classList.add('reverse');
+                }
+            });
+        }
+
+        // Jalankan saat pertama kali load
+        window.addEventListener('load', handleScrollReveal);
+        
+        // Jalankan saat scroll
+        window.addEventListener('scroll', handleScrollReveal);
+        
+        // Jalankan saat resize (untuk keamanan)
+        window.addEventListener('resize', handleScrollReveal);
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
