@@ -44,6 +44,15 @@
         .navbar-brand {
             font-size: 24px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-brand img {
+            height: 45px;
+            width: auto;
+            border-radius: 8px;
         }
 
         .nav-link {
@@ -62,10 +71,6 @@
         }
 
         /* ===== HEADER ===== */
-        .bg-primary {
-            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
-        }
-
         section {
             padding: 30px 0;
         }
@@ -201,37 +206,13 @@
         }
 
         /* ===== RESPONSIVE ===== */
-        @media(max-width:992px) {
-            .hero h1 {
-                font-size: 45px;
-            }
-            .hero p {
-                font-size: 20px;
-            }
-        }
-
         @media(max-width:768px) {
-            .hero {
-                height: 60vh;
-            }
-            .hero h1 {
-                font-size: 35px;
-            }
-            .hero p {
-                font-size: 18px;
-            }
             .card img {
                 height: 200px;
             }
         }
 
         @media(max-width:576px) {
-            .hero h1 {
-                font-size: 28px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
             section {
                 padding: 40px 15px;
             }
@@ -240,6 +221,9 @@
             }
             .navbar-brand {
                 font-size: 20px;
+            }
+            .navbar-brand img {
+                height: 35px;
             }
         }
 
@@ -260,7 +244,7 @@
         }
 
         /* ===========================================
-           ANIMASI SCROLL REVEAL (Transisi Naik/Turun)
+           ANIMASI SCROLL REVEAL
            ============================================ */
         .reveal {
             opacity: 0;
@@ -292,10 +276,12 @@
 
 <body>
 
-    <!-- ===== NAVBAR (Logo Samping Dihapus) ===== -->
+    <!-- ===== NAVBAR (Dengan Logo di Samping Kiri) ===== -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef969438973ac8f198dc8c488428a20c54fe8bd6/logo%203%20web.png" 
+                     alt="Logo Desa Simarmata">
                 Desa Simarmata
             </a>
 
@@ -337,12 +323,36 @@
         </div>
     </nav>
 
-    <!-- ===== HEADER ===== -->
-    <section class="bg-primary text-white text-center py-5 reveal">
-        <div class="container">
-            <h1 class="text-white">Sejarah Desa Simarmata</h1>
-            <p>Melestarikan sejarah sebagai identitas dan warisan budaya masyarakat.</p>
+    <!-- ===== HEADER (Dengan Carousel Background dan Tanpa Latar Merah) ===== -->
+    <section class="position-relative py-5 text-white text-center" style="min-height: 300px; overflow: hidden;">
+        
+        <!-- Carousel Background -->
+        <div id="headerCarousel" class="carousel slide carousel-fade position-absolute top-0 start-0 w-100 h-100" data-bs-ride="carousel" data-bs-interval="1000" style="z-index: 0;">
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/18d9a98e36da9126dfbe75f8700c40760c3d4ec6/desa9.jpeg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Background 1">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/18d9a98e36da9126dfbe75f8700c40760c3d4ec6/desa10.jpeg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Background 2">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/77a1581bf703b4c909a284ff27b3ad03ecc395bc/desa11.jpeg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Background 3">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/77a1581bf703b4c909a284ff27b3ad03ecc395bc/desa12.jpeg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Background 4">
+                </div>
+                <div class="carousel-item h-100">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/77a1581bf703b4c909a284ff27b3ad03ecc395bc/desa13.jpeg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Background 5">
+                </div>
+            </div>
         </div>
+
+        <!-- Konten Teks (Latar merah dihapus, diganti text-shadow agar tetap terbaca) -->
+        <div class="container position-relative" style="z-index: 1;">
+            <h1 class="text-white" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">Sejarah Desa Simarmata</h1>
+            <p class="lead mb-0" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">Melestarikan sejarah sebagai identitas dan warisan budaya masyarakat.</p>
+        </div>
+
     </section>
 
     <!-- ===== SEJARAH (Asal Usul) ===== -->
@@ -370,10 +380,10 @@
         <h2 class="text-center mb-4 reveal">Lokasi Bersejarah Desa Simarmata</h2>
         <div class="row">
 
-            <!-- Huta Adat Simarmata -->
+            <!-- Huta Adat Simarmata (Gambar Baru) -->
             <div class="col-lg-6 col-md-6 mb-4">
                 <div class="card shadow h-100 reveal delay-1">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/182b2895e297116b381d99b4ce23780a7bd9eed2/desa7.jpeg" 
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg" 
                          class="card-img-top" 
                          alt="Huta Adat Simarmata">
                     <div class="card-body">
@@ -386,10 +396,10 @@
                 </div>
             </div>
 
-            <!-- Rumah Adat Batak -->
+            <!-- Rumah Adat Batak (Gambar Baru) -->
             <div class="col-lg-6 col-md-6 mb-4">
                 <div class="card shadow h-100 reveal delay-2">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/cc39a7a332929c052b2294e761686d258e3d5de1/desa8.jpeg" 
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa14.jpeg" 
                          class="card-img-top" 
                          alt="Rumah Adat Batak">
                     <div class="card-body">
