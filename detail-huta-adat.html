@@ -1,167 +1,388 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Huta Adat Simarmata</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huta Adat Simarmata | Desa Simarmata</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<style>
-    /* ===========================================
-       WEBSITE DESA SIMARMATA
-       Theme Color : #7c0e0e
-    ============================================ */
+    <style>
+        /* ===========================================
+           WEBSITE DESA SIMARMATA
+           Theme Color : #7c0e0e
+        ============================================ */
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        background: #f8f9fa;
-        color: #333;
-    }
-
-    .container {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    /* ===== HEADING ===== */
-    h1 {
-        color: #7c0e0e;
-        font-weight: bold;
-    }
-
-    h2 {
-        color: #7c0e0e;
-        font-weight: bold;
-        margin-bottom: 15px;
-    }
-
-    h3 {
-        color: #7c0e0e;
-        font-weight: bold;
-    }
-
-    h4 {
-        font-weight: bold;
-    }
-
-    /* ===== TOMBOL ===== */
-    .btn-primary {
-        background: #7c0e0e;
-        border: #7c0e0e;
-    }
-
-    .btn-primary:hover {
-        background: #5b0909;
-    }
-
-    .btn-outline-primary {
-        color: #7c0e0e;
-        border-color: #7c0e0e;
-    }
-
-    .btn-outline-primary:hover {
-        background: #7c0e0e;
-        color: white;
-    }
-
-    /* ===== SHADOW ===== */
-    .shadow {
-        box-shadow: 0 10px 20px rgba(0, 0, 0, .15) !important;
-    }
-
-    /* ===== SCROLLBAR ===== */
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #ececec;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #7c0e0e;
-        border-radius: 20px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: #5b0909;
-    }
-
-    /* ===== GAMBAR ===== */
-    img {
-        max-width: 100%;
-        display: block;
-    }
-
-    p {
-        margin-bottom: 10px;
-    }
-
-    .row {
-        margin-bottom: 10px;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media(max-width:576px) {
-        section {
-            padding: 40px 15px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-    }
-</style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-brand img {
+            height: 45px;
+            width: auto;
+            border-radius: 8px;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin-left: 10px;
+            transition: .3s;
+        }
+
+        .nav-link:hover {
+            color: #ffd54f !important;
+        }
+
+        .nav-link.active {
+            color: #ffd54f !important;
+            font-weight: bold;
+        }
+
+        /* ===== HEADER ===== */
+        .bg-primary {
+            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+        }
+
+        section {
+            padding: 30px 0;
+        }
+
+        /* ===== HEADING ===== */
+        h1 {
+            color: #7c0e0e;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #7c0e0e;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            font-weight: bold;
+        }
+
+        /* ===== TOMBOL ===== */
+        .btn-primary {
+            background: #7c0e0e;
+            border: #7c0e0e;
+        }
+
+        .btn-primary:hover {
+            background: #5b0909;
+        }
+
+        .btn-outline-primary {
+            color: #7c0e0e;
+            border-color: #7c0e0e;
+        }
+
+        .btn-outline-primary:hover {
+            background: #7c0e0e;
+            color: white;
+        }
+
+        /* ===== SHADOW ===== */
+        .shadow {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .15) !important;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ececec;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #7c0e0e;
+            border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5b0909;
+        }
+
+        /* ===== GAMBAR ===== */
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+            color: white;
+            padding: 20px 0;
+            margin-top: 15px;
+        }
+
+        footer a {
+            color: #ffd54f !important;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white !important;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:768px) {
+            .navbar-brand {
+                font-size: 20px;
+            }
+            .navbar-brand img {
+                height: 35px;
+            }
+        }
+
+        @media(max-width:576px) {
+            section {
+                padding: 40px 15px;
+            }
+        }
+
+        /* ===== INFO CARD ===== */
+        .info-card {
+            border-left: 4px solid #7c0e0e;
+            padding-left: 15px;
+            margin-bottom: 15px;
+        }
+
+        .info-card h5 {
+            color: #7c0e0e;
+            font-weight: bold;
+        }
+
+        /* ===========================================
+           ANIMASI SCROLL REVEAL
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal.reverse {
+            transform: translateY(-50px);
+        }
+
+        .reveal.reverse.visible {
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+    </style>
 
 </head>
 
 <body>
 
-<div class="container py-5">
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/28e102b5e877c1f41ab210e479c150db5ca184a9/logo%203%20web.png" 
+                     alt="Logo Desa Simarmata">
+                Desa Simarmata
+            </a>
 
-    <!-- Tombol Kembali -->
-    <a href="sejarah.html" class="btn btn-primary mb-4">
-        <i class="bi bi-arrow-left"></i> Kembali ke Sejarah
-    </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <!-- Judul -->
-    <h1 class="mb-4">Huta Adat Simarmata</h1>
-
-    <!-- Gambar (placeholder) -->
-   <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg" 
-
-    <!-- Deskripsi -->
-    <p style="text-align:justify;">
-        Huta Adat Simarmata merupakan kawasan pemukiman tradisional Batak Toba yang masih mempertahankan bentuk rumah adat, tata ruang kampung, dan nilai-nilai budaya yang diwariskan secara turun-temurun. Kawasan ini menjadi salah satu bukti perjalanan sejarah masyarakat Simarmata serta menjadi daya tarik wisata budaya di Desa Simarmata.
-    </p>
-
-    <!-- Tambahan informasi -->
-    <div class="row mt-4">
-        <div class="col-md-6">
-            <div class="card shadow p-3">
-                <h4><i class="bi bi-house-fill text-primary"></i> Rumah Adat</h4>
-                <p>Rumah tradisional Batak Toba dengan arsitektur khas yang masih terjaga keasliannya.</p>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="sejarah.html">Sejarah</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card shadow p-3">
-                <h4><i class="bi bi-people-fill text-primary"></i> Masyarakat Adat</h4>
-                <p>Masyarakat yang masih menjunjung tinggi adat istiadat dan gotong royong.</p>
+    </nav>
+
+    <!-- ===== HEADER ===== -->
+    <section class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="text-white">Huta Adat Simarmata</h1>
+            <p>Kawasan Pemukiman Tradisional dan Warisan Budaya Batak Toba</p>
+        </div>
+    </section>
+
+    <!-- ===== ISI ===== -->
+    <section class="container py-5">
+
+        <!-- Tombol Kembali -->
+        <a href="sejarah.html" class="btn btn-primary mb-4 reveal delay-1">
+            <i class="bi bi-arrow-left"></i> Kembali ke Sejarah
+        </a>
+
+        <!-- Gambar -->
+        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
+             class="img-fluid rounded shadow mb-4 reveal delay-2"
+             alt="Huta Adat Simarmata">
+
+        <!-- Info Singkat -->
+        <div class="row mb-4">
+            <div class="col-md-4 reveal delay-3">
+                <div class="info-card">
+                    <h5><i class="bi bi-geo-alt-fill text-primary"></i> Lokasi</h5>
+                    <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir</p>
+                </div>
+            </div>
+            <div class="col-md-4 reveal delay-4">
+                <div class="info-card">
+                    <h5><i class="bi bi-clock-history text-primary"></i> Status</h5>
+                    <p>Kawasan cagar budaya dan wisata adat</p>
+                </div>
+            </div>
+            <div class="col-md-4 reveal delay-5">
+                <div class="info-card">
+                    <h5><i class="bi bi-building-fill text-primary"></i> Keunikan</h5>
+                    <p>Arsitektur tradisional Batak Toba yang masih utuh</p>
+                </div>
             </div>
         </div>
-    </div>
 
-</div>
+        <!-- Deskripsi -->
+        <div class="reveal delay-1">
+            <p>
+                <strong>Huta Adat Simarmata</strong> merupakan kawasan pemukiman tradisional Batak Toba yang masih mempertahankan bentuk rumah adat, tata ruang kampung, dan nilai-nilai budaya yang diwariskan secara turun-temurun. Kawasan ini menjadi salah satu bukti perjalanan sejarah masyarakat Simarmata serta menjadi daya tarik wisata budaya di Desa Simarmata.
+            </p>
+        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="reveal delay-2">
+            <p>
+                Di dalam kawasan ini, pengunjung dapat melihat langsung arsitektur rumah adat Batak Toba yang khas, dengan bentuk panggung, ukiran-ukiran tradisional, serta tatanan kampung yang masih mempertahankan konsep <strong>huta</strong> (kampung) kuno. Setiap rumah memiliki filosofi dan makna tersendiri yang mencerminkan kearifan lokal masyarakat setempat.
+            </p>
+        </div>
+
+        <div class="reveal delay-3">
+            <p>
+                Masyarakat Huta Adat Simarmata hingga kini masih menjunjung tinggi adat istiadat, gotong royong, dan sistem musyawarah dalam menyelesaikan berbagai persoalan. Hal ini menjadikan kawasan ini bukan sekadar tempat tinggal, tetapi juga pusat pelestarian budaya Batak Toba.
+            </p>
+        </div>
+
+        <div class="reveal delay-4">
+            <p>
+                Selain sebagai kawasan pemukiman, Huta Adat Simarmata juga sering digunakan sebagai tempat pelaksanaan berbagai upacara adat, seperti perkawinan, kematian, dan ritual tahunan yang melibatkan seluruh warga. Hal ini membuat suasana di huta adat tetap hidup dan sarat akan nilai-nilai tradisi.
+            </p>
+        </div>
+
+        <!-- Fakta & Aktivitas -->
+        <div class="row mt-4">
+            <div class="col-md-6 reveal delay-3">
+                <div class="card shadow p-3">
+                    <h4><i class="bi bi-info-circle-fill text-primary"></i> Fakta Menarik</h4>
+                    <ul>
+                        <li>Rumah adat berbentuk panggung dengan tiang tinggi</li>
+                        <li>Setiap rumah memiliki makna filosofis berdasarkan posisi dalam keluarga</li>
+                        <li>Masih menggunakan sistem adat Bius Sitolu Tali</li>
+                        <li>Dihuni oleh keturunan Simarmata dari berbagai cabang</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 reveal delay-4">
+                <div class="card shadow p-3">
+                    <h4><i class="bi bi-calendar-event-fill text-primary"></i> Aktivitas Adat</h4>
+                    <ul>
+                        <li>Upacara perkawinan adat Batak</li>
+                        <li>Ritual kematian (saur matua)</li>
+                        <li>Mangongkal holi (pengambilan tulang leluhur)</li>
+                        <li>Perayaan tahunan seperti Pesta Panen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="text-center">
+                <p>© 2026 KKN Desa Simarmata Kecamatan Simanindo</p>
+                <p>Dibuat untuk Program KKN UNIMED 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- ===== JAVASCRIPT SCROLL REVEAL ===== -->
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < (window.innerHeight || document.documentElement.clientHeight) - 50 && rect.bottom > 50;
+        }
+
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('visible');
+                    el.classList.remove('reverse');
+                } else {
+                    el.classList.remove('visible');
+                    el.classList.add('reverse');
+                }
+            });
+        }
+
+        window.addEventListener('load', handleScrollReveal);
+        window.addEventListener('scroll', handleScrollReveal);
+        window.addEventListener('resize', handleScrollReveal);
+    </script>
 
 </body>
 </html>
