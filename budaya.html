@@ -45,6 +45,15 @@
         .navbar-brand {
             font-size: 24px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-brand img {
+            height: 45px;
+            width: auto;
+            border-radius: 8px;
         }
 
         .nav-link {
@@ -63,12 +72,34 @@
         }
 
         /* ===== HEADER ===== */
-        .bg-primary {
+        .bg-header {
             background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
         }
 
         section {
             padding: 30px 0;
+        }
+
+        /* ===== HEADING ===== */
+        h1 {
+            color: #7c0e0e;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #7c0e0e;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            color: #7c0e0e;
+            font-weight: bold;
+        }
+
+        h5 {
+            color: #7c0e0e;
+            font-weight: bold;
         }
 
         /* ===== CARD ===== */
@@ -95,37 +126,24 @@
             font-weight: bold;
         }
 
-        /* ===== HEADING ===== */
-        h2 {
+        /* ===== TOMBOL ===== */
+        .btn-primary {
+            background: #7c0e0e;
+            border: #7c0e0e;
+        }
+
+        .btn-primary:hover {
+            background: #5b0909;
+        }
+
+        .btn-outline-primary {
             color: #7c0e0e;
-            font-weight: bold;
-            margin-bottom: 15px;
+            border-color: #7c0e0e;
         }
 
-        h4 {
-            font-weight: bold;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+        .btn-outline-primary:hover {
+            background: #7c0e0e;
             color: white;
-            padding: 20px 0;
-            margin-top: 15px;
-        }
-
-        footer h4,
-        footer h5 {
-            color: white;
-        }
-
-        footer a {
-            color: #ffd54f !important;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: white !important;
         }
 
         /* ===== SHADOW ===== */
@@ -151,47 +169,10 @@
             background: #5b0909;
         }
 
-        /* ===== RESPONSIVE ===== */
-        @media(max-width:992px) {
-            .hero h1 {
-                font-size: 45px;
-            }
-            .hero p {
-                font-size: 20px;
-            }
-        }
-
-        @media(max-width:768px) {
-            .hero {
-                height: 60vh;
-            }
-            .hero h1 {
-                font-size: 35px;
-            }
-            .hero p {
-                font-size: 18px;
-            }
-            .card img {
-                height: 200px;
-            }
-        }
-
-        @media(max-width:576px) {
-            .hero h1 {
-                font-size: 28px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
-            section {
-                padding: 40px 15px;
-            }
-            .card img {
-                height: 180px;
-            }
-            .navbar-brand {
-                font-size: 20px;
-            }
+        /* ===== GAMBAR ===== */
+        img {
+            max-width: 100%;
+            display: block;
         }
 
         p {
@@ -202,19 +183,105 @@
             margin-bottom: 10px;
         }
 
-        .card {
-            margin-bottom: 20px;
+        /* ===== FOOTER ===== */
+        footer {
+            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+            color: white;
+            padding: 20px 0;
+            margin-top: 15px;
         }
 
-        img {
-            display: block;
-            max-width: 100%;
+        footer h4,
+        footer h5 {
+            color: white;
         }
 
-        /* ===== VIDEO ===== */
-        iframe {
-            border-radius: 15px;
-            border: none;
+        footer a {
+            color: #ffd54f !important;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white !important;
+        }
+
+        /* ===== TEXT PRIMARY ===== */
+        .text-primary {
+            color: #7c0e0e !important;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:768px) {
+            .card img {
+                height: 200px;
+            }
+        }
+
+        @media(max-width:576px) {
+            section {
+                padding: 40px 15px;
+            }
+            .card img {
+                height: 180px;
+            }
+            .navbar-brand {
+                font-size: 20px;
+            }
+            .navbar-brand img {
+                height: 35px;
+            }
+        }
+
+        /* ===== LIST ===== */
+        .list-unstyled li {
+            margin-bottom: 5px;
+        }
+
+        /* ===========================================
+           ANIMASI SCROLL REVEAL
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal.reverse {
+            transform: translateY(-50px);
+        }
+
+        .reveal.reverse.visible {
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+
+        /* ===== MODAL KONTEN ===== */
+        .modal-body h6 {
+            margin-top: 18px;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        .modal-body ul {
+            padding-left: 20px;
+        }
+        .modal-body ul li {
+            margin-bottom: 8px;
+        }
+        .text-danger {
+            color: #7c0e0e !important;
+        }
+        .btn-close:focus {
+            box-shadow: none;
         }
     </style>
 
@@ -223,10 +290,11 @@
 <body>
 
     <!-- ===== NAVBAR ===== -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-house-fill"></i>
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef969438973ac8f198dc8c488428a20c54fe8bd6/logo%203%20web.png" 
+                     alt="Logo Desa Simarmata">
                 Desa Simarmata
             </a>
 
@@ -268,48 +336,57 @@
         </div>
     </nav>
 
-    <!-- ===== HEADER ===== -->
-    <section class="bg-primary text-white text-center py-5">
+    <!-- ===== HEADER (Polos Merah, Tanpa Carousel) ===== -->
+    <section class="bg-header text-white text-center py-5">
         <div class="container">
-            <h1>Budaya Desa Simarmata</h1>
-            <p>Melestarikan Warisan Budaya Batak Toba</p>
+            <h1 class="text-white">Budaya Desa Simarmata</h1>
+            <p class="lead mb-0">Melestarikan Warisan Budaya Batak Toba</p>
         </div>
     </section>
 
-        <!-- ===== BUDAYA ===== -->
+    <!-- ===== BUDAYA (Dengan Scroll Reveal) ===== -->
     <section class="container py-5">
 
         <!-- BARIS 1: 3 Budaya -->
         <div class="row">
             <!-- Budaya 1 - Ulos -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4 reveal delay-1">
                 <div class="card shadow h-100">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlVsb3M8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Ulos">
                     <div class="card-body">
                         <h4>Ulos</h4>
                         <p>Ulos merupakan kain tenun tradisional Batak yang memiliki makna penghormatan, kasih sayang, dan doa dalam setiap acara adat.</p>
+                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalUlos">
+                            <i class="bi bi-eye"></i> Lihat Detail
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- Budaya 2 - Tari Tortor -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4 reveal delay-2">
                 <div class="card shadow h-100">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlRhcmkgVG9ydG9yPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Tari Tortor">
                     <div class="card-body">
                         <h4>Tari Tortor</h4>
                         <p>Tortor adalah tarian adat Batak Toba yang ditampilkan pada acara adat, penyambutan tamu, dan pesta budaya.</p>
+                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalTortor">
+                            <i class="bi bi-eye"></i> Lihat Detail
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- Budaya 3 - Gondang Batak -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6 mb-4 reveal delay-3">
                 <div class="card shadow h-100">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPkdvbmRhbmcgQmF0YWs8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Gondang Batak">
                     <div class="card-body">
                         <h4>Gondang Batak</h4>
                         <p>Musik tradisional Batak yang dimainkan menggunakan taganing, ogung, sarune, dan alat musik tradisional lainnya.</p>
+                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalGondang">
+                            <i class="bi bi-eye"></i> Lihat Detail
+                        </button>
                     </div>
                 </div>
             </div>
@@ -318,23 +395,29 @@
         <!-- BARIS 2: 2 Budaya -->
         <div class="row">
             <!-- Budaya 4 - Rumah Bolon -->
-            <div class="col-lg-6 col-md-6 mb-4">
+            <div class="col-lg-6 col-md-6 mb-4 reveal delay-4">
                 <div class="card shadow h-100">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlJ1bWFoIEJvbG9uPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Rumah Bolon">
                     <div class="card-body">
                         <h4>Rumah Bolon</h4>
                         <p>Rumah adat Batak Toba yang menjadi simbol persatuan keluarga dan kekayaan budaya masyarakat Batak.</p>
+                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalRumahBolon">
+                            <i class="bi bi-eye"></i> Lihat Detail
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- Budaya 5 - Upacara Adat -->
-            <div class="col-lg-6 col-md-6 mb-4">
+            <div class="col-lg-6 col-md-6 mb-4 reveal delay-5">
                 <div class="card shadow h-100">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlVwYWNhcmEgQWRhdDwvdGV4dD48L3N2Zz4=" class="card-img-top" alt="Upacara Adat">
                     <div class="card-body">
                         <h4>Upacara Adat</h4>
                         <p>Berbagai upacara adat seperti pernikahan, mangulosi, dan pesta adat masih dilestarikan oleh masyarakat Desa Simarmata.</p>
+                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalUpacara">
+                            <i class="bi bi-eye"></i> Lihat Detail
+                        </button>
                     </div>
                 </div>
             </div>
@@ -342,15 +425,215 @@
 
     </section>
 
-
-    <!-- ===== VIDEO ===== -->
+    <!-- ===== VIDEO BUDAYA ===== -->
     <section class="bg-light py-5">
         <div class="container text-center">
-            <h2>Video Budaya</h2>
-            <p>Video promosi budaya Desa Simarmata dapat ditampilkan di sini.</p>
-            <iframe width="100%" height="500" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Budaya" allowfullscreen></iframe>
+            <h2 class="reveal delay-1">Video Budaya</h2>
+            <p class="reveal delay-2">Video promosi budaya Desa Simarmata dapat ditampilkan di sini.</p>
+            <div class="reveal delay-3">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Budaya" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
+
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 1: ULOS ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalUlos" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger"><i class="bi bi-brush-fill"></i> Ulos – Kain Tenun Batak</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjQwIiBmb250LWZhbWlseT0iQXJpYWwiPkltYWdlIFVsb3M8L3RleHQ+PC9zdmc+" class="img-fluid rounded mb-3 w-100" alt="Ulos">
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                    <p><strong>Ulos</strong> adalah kain tenun tradisional masyarakat Batak Toba yang memiliki nilai sakral dan filosofis mendalam. Kata "Ulos" sendiri berasal dari bahasa Batak yang berarti "selimut" atau "penutup", melambangkan perlindungan dan kehangatan.</p>
+                    <p>Proses pembuatan Ulos dilakukan secara manual dengan alat tenun tradisional yang disebut <em>gedokan</em>. Pewarnaannya menggunakan bahan-bahan alami seperti kunyit, kayu secang, dan daun indigo, menghasilkan warna-warna khas seperti merah marun, hitam, kuning, dan putih.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-tag-fill"></i> Jenis & Fungsi</h6>
+                    <ul>
+                        <li><strong>Ulos Ragi Hotang</strong> – Digunakan untuk upacara pernikahan sebagai simbol pengikat kasih sayang.</li>
+                        <li><strong>Ulos Bintang Maratur</strong> – Melambangkan kejayaan dan kemakmuran, sering diberikan pada acara penghormatan.</li>
+                        <li><strong>Ulos Sadum</strong> – Ulos dengan corak khas yang digunakan untuk kegiatan sehari-hari maupun acara adat.</li>
+                        <li><strong>Ulos Mangiring</strong> – Digunakan pada upacara kematian sebagai simbol penghormatan terakhir.</li>
+                    </ul>
+
+                    <h6 class="text-danger"><i class="bi bi-lightbulb-fill"></i> Makna Filosofis</h6>
+                    <p>Setiap helai benang dan motif pada Ulos mengandung doa dan harapan. Memberikan Ulos berarti memberikan berkat, kasih sayang, dan perlindungan kepada penerima. Masyarakat Batak percaya bahwa Ulos dapat "menutupi" kesedihan dan "menghangatkan" hubungan kekeluargaan.</p>
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Fakta menarik:</strong> Di Desa Simarmata, tradisi menenun Ulos masih diwariskan turun-temurun dari generasi ke generasi, terutama oleh para perempuan tua yang mahir menjaga keaslian motif kuno.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 2: TARI TORTOR ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalTortor" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger"><i class="bi bi-music-note-beamed"></i> Tari Tortor – Tarian Adat Batak</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjQwIiBmb250LWZhbWlseT0iQXJpYWwiPkltYWdlIFRvcnRvcjwvdGV4dD48L3N2Zz4=" class="img-fluid rounded mb-3 w-100" alt="Tari Tortor">
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                    <p><strong>Tari Tortor</strong> adalah tarian adat Batak Toba yang penuh dengan gerakan dinamis dan gemulai. Tarian ini biasanya ditampilkan dalam berbagai upacara adat seperti pernikahan, penyambutan tamu kehormatan, hingga upacara kematian (tortor sapu).</p>
+                    <p>Gerakan Tortor pada dasarnya adalah ekspresi rasa syukur dan penghormatan kepada Tuhan, leluhur, serta sesama manusia. Setiap gerakan tangan, langkah kaki, dan anggukan kepala memiliki makna tersendiri yang menggambarkan siklus kehidupan.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-person-fill"></i> Tata Cara & Kostum</h6>
+                    <ul>
+                        <li><strong>Penari Pria:</strong> Memakai ulos yang disampirkan di pundak, baju adat (baju naga), dan penutup kepala (tengkuluk).</li>
+                        <li><strong>Penari Wanita:</strong> Mengenakan ulos di bahu, baju adat dengan aksesoris emas atau perak, serta mahkota (ampe-ampe atau bulang-bulang).</li>
+                        <li><strong>Gerakan Khas:</strong> Jari-jari tangan bergerak lembut mengikuti irama Gondang, kaki berpijak tegas di tanah sebagai simbol keseimbangan hidup.</li>
+                    </ul>
+
+                    <h6 class="text-danger"><i class="bi bi-lightbulb-fill"></i> Filosofi</h6>
+                    <p>Dalam adat Batak, Tortor bukan sekadar tarian, melainkan media komunikasi antara manusia dengan Pencipta dan roh leluhur. Irama Gondang yang mengiringi Tortor dipercaya dapat "memanggil" berkah dan "mengantarkan" doa kepada leluhur yang telah meninggal.</p>
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Fakta menarik:</strong> Di Desa Simarmata, Tortor tetap dilestarikan dan diajarkan kepada generasi muda melalui sanggar-sanggar budaya setempat sebagai bentuk upaya menjaga identitas Batak.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 3: GONDANG BATAK ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalGondang" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger"><i class="bi bi-drum-fill"></i> Gondang Batak – Musik Tradisional</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjQwIiBmb250LWZhbWlseT0iQXJpYWwiPkltYWdlIEdvbmRhbmc8L3RleHQ+PC9zdmc+" class="img-fluid rounded mb-3 w-100" alt="Gondang Batak">
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                    <p><strong>Gondang Batak</strong> adalah ansambel musik tradisional yang menjadi pengiring utama dalam setiap upacara adat Batak Toba. Kata "Gondang" merujuk pada set peralatan musik yang dimainkan secara bersamaan dengan harmoni yang khas dan sakral.</p>
+                    <p>Gondang tidak hanya berfungsi sebagai hiburan, tetapi memiliki nilai sakral yang mengiringi doa dan ritus adat. Dalam kepercayaan Batak, Gondang adalah "jembatan" yang menghubungkan alam manusia dengan alam spiritual.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-music-note-list"></i> Instrumen-instrumen Gondang</h6>
+                    <ul>
+                        <li><strong>Taganing:</strong> Seperangkat 5 gendang dengan nada berbeda (dari rendah ke tinggi).</li>
+                        <li><strong>Oloan:</strong> Gendang terbesar yang memainkan melodi utama (bass).</li>
+                        <li><strong>Panggora:</strong> Gendang yang berfungsi sebagai ritme pengiring (tenor).</li>
+                        <li><strong>Doal:</strong> Gendang kecil yang memainkan ritme cepat (sopran).</li>
+                        <li><strong>Sarune:</strong> Alat musik tiup (sejenis oboe) yang memainkan melodi merdu.</li>
+                        <li><strong>Ogung:</strong> Alat musik pukul (seperti gong) yang memberikan aksen ritmis.</li>
+                        <li><strong>Hesek:</strong> Alat musik gesek (rebab) yang menambah keindahan harmoni.</li>
+                    </ul>
+
+                    <h6 class="text-danger"><i class="bi bi-lightbulb-fill"></i> Filosofi</h6>
+                    <p>Setiap instrumen dalam Gondang saling melengkapi, mengajarkan nilai kebersamaan dan gotong royong. Tidak ada instrumen yang lebih penting dari yang lain, semuanya bersatu menghasilkan harmoni yang indah – seperti halnya masyarakat Batak yang hidup rukun dalam keberagaman.</p>
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Fakta menarik:</strong> Hingga kini, masyarakat Desa Simarmata masih menggunakan Gondang dalam setiap pesta adat. Para pemain Gondang biasanya adalah orang-orang tua yang memiliki pengetahuan turun-temurun tentang tabuhan yang benar.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 4: RUMAH BOLON ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalRumahBolon" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger"><i class="bi bi-house-fill"></i> Rumah Bolon – Arsitektur Adat Batak</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjQwIiBmb250LWZhbWlseT0iQXJpYWwiPkltYWdlIFJ1bWFoIEJvbG9uPC90ZXh0Pjwvc3ZnPg==" class="img-fluid rounded mb-3 w-100" alt="Rumah Bolon">
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                    <p><strong>Rumah Bolon</strong> adalah rumah adat khas Batak Toba yang berbentuk panggung dengan atap melengkung menyerupai perahu. Kata "Bolon" berarti "besar", sehingga Rumah Bolon adalah rumah besar yang menjadi pusat kediaman dan kegiatan adat satu marga.</p>
+                    <p>Konstruksi Rumah Bolon dibangun tanpa menggunakan paku, melainkan menggunakan pasak kayu dan sistem sambungan yang sangat kuat. Bahan utamanya adalah kayu pilihan seperti kayu beringin atau kayu ulin yang terkenal awet.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-grid-fill"></i> Struktur & Pembagian Ruang</h6>
+                    <ul>
+                        <li><strong>Jabu (Ruang Depan):</strong> Tempat menerima tamu dan bermusyawarah.</li>
+                        <li><strong>Tano (Ruang Tengah):</strong> Tempat berkumpul anggota keluarga, juga tempat perapian.</li>
+                        <li><strong>Dapur (Belakang):</strong> Tempat memasak dan kegiatan domestik lainnya.</li>
+                        <li><strong>Kolong Panggung:</strong> Digunakan untuk menyimpan ternak atau alat-alat pertanian.</li>
+                    </ul>
+                    <p>Ornamen ukiran <strong>Gorga</strong> (ukiran khas Batak) terdapat di dinding dan tiang rumah. Motif-motif Gorga meliputi bentuk ular, cicak, wajah manusia, dan pola geometris yang melambangkan perlindungan dan kesuburan.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-lightbulb-fill"></i> Filosofi</h6>
+                    <p>Atap Rumah Bolon yang melengkung ke atas melambangkan hubungan manusia dengan Tuhan (Langit). Tiang-tiang rumah yang kokoh melambangkan kebersamaan keluarga yang saling menyangga. Rumah Bolon mengajarkan bahwa keluarga adalah fondasi utama kehidupan.</p>
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Fakta menarik:</strong> Di Desa Simarmata, masih terdapat beberapa Rumah Bolon asli yang berusia lebih dari 100 tahun. Masyarakat setempat terus merawat dan melestarikannya sebagai warisan budaya yang tak ternilai.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 5: UPACARA ADAT ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalUpacara" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger"><i class="bi bi-gem-fill"></i> Upacara Adat Batak – Tradisi Leluhur</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjQwIiBmb250LWZhbWlseT0iQXJpYWwiPkltYWdlIFVwYWNhcmEgQWRhdDwvdGV4dD48L3N2Zz4=" class="img-fluid rounded mb-3 w-100" alt="Upacara Adat">
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                    <p>Masyarakat Desa Simarmata hingga kini masih memegang teguh berbagai <strong>upacara adat Batak Toba</strong> yang diwariskan secara turun-temurun. Upacara-upacara ini tidak hanya sebagai seremoni, tetapi merupakan wujud nyata dari filosofi hidup "Dalihan Na Tolu" (tiga tungku) yang mengatur hubungan antara keluarga, masyarakat, dan Tuhan.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-calendar-event-fill"></i> Jenis-jenis Upacara Adat</h6>
+                    <ul>
+                        <li>
+                            <strong>Pernikahan Adat (Mangulosi):</strong><br>
+                            Upacara pernikahan diawali dengan musyawarah antar keluarga (marbuat), kemudian dilanjutkan dengan pemberian Ulos dari kedua belah pihak sebagai tanda ikatan keluarga. Puncaknya adalah pesta adat yang diiringi Tortor dan Gondang.
+                        </li>
+                        <li>
+                            <strong>Mangulosi (Pemberian Berkat):</strong><br>
+                            Proses pemberian Ulos sebagai simbol berkat, perlindungan, dan kasih sayang, biasanya dilakukan pada acara kelahiran, pernikahan, atau keberangkatan seseorang ke tempat jauh.
+                        </li>
+                        <li>
+                            <strong>Upacara Kematian (Saur Matua):</strong><br>
+                            Upacara kematian yang dilakukan secara adat dengan serangkaian ritual, termasuk pemberian Ulos Mangiring, Tortor Sapu, dan doa-doa adat untuk mengantar roh ke alam leluhur.
+                        </li>
+                        <li>
+                            <strong>Horja (Pesta Syukuran):</strong><br>
+                            Pesta besar yang biasanya dilakukan untuk mensyukuri hasil panen atau membangun rumah adat baru, diikuti oleh seluruh warga huta dengan gotong royong.
+                        </li>
+                    </ul>
+
+                    <h6 class="text-danger"><i class="bi bi-lightbulb-fill"></i> Filosofi</h6>
+                    <p>Setiap upacara adat mengajarkan nilai-nilai <strong>gotong royong, rasa hormat kepada orang tua, dan kekompakan keluarga</strong>. Melalui upacara adat, generasi muda diajarkan untuk mengenali akar budayanya dan menjaga keharmonisan antara manusia, alam, dan Sang Pencipta.</p>
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Fakta menarik:</strong> Di Desa Simarmata, prosesi adat selalu melibatkan seluruh elemen masyarakat, dari tua hingga muda. Hal ini menjadi wadah penguatan persatuan dan menjaga agar tradisi tetap hidup sepanjang masa.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer class="pt-5 pb-3">
@@ -408,8 +691,32 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- ===== JAVASCRIPT SCROLL REVEAL ===== -->
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < (window.innerHeight || document.documentElement.clientHeight) - 50 && rect.bottom > 50;
+        }
+
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('visible');
+                    el.classList.remove('reverse');
+                } else {
+                    el.classList.remove('visible');
+                    el.classList.add('reverse');
+                }
+            });
+        }
+
+        window.addEventListener('load', handleScrollReveal);
+        window.addEventListener('scroll', handleScrollReveal);
+        window.addEventListener('resize', handleScrollReveal);
     </script>
 
 </body>
