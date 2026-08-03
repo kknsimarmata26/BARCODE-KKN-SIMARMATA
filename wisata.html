@@ -274,6 +274,19 @@
             transform: scale(1.02);
             opacity: 0.9;
         }
+
+        /* ===== MODAL KONTEN ===== */
+        .modal-body h6 {
+            margin-top: 18px;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        .modal-body ul {
+            padding-left: 20px;
+        }
+        .modal-body ul li {
+            margin-bottom: 8px;
+        }
     </style>
 
 </head>
@@ -339,7 +352,7 @@
     <section class="container py-5">
         <div class="row">
 
-            <!-- Wisata 1 - Huta Adat Simarmata -->
+            <!-- Wisata 1 - Huta Adat Simarmata (POP MODAL) -->
             <div class="col-lg-6 col-md-6 mb-4 reveal delay-1">
                 <div class="card shadow h-100">
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg" 
@@ -348,14 +361,15 @@
                         <h4>Huta Adat Simarmata</h4>
                         <p>Kawasan rumah adat Batak Toba yang masih terjaga dan menjadi pusat wisata budaya.</p>
                         <p><b>Jam Buka :</b> 08.00 - 17.00 WIB</p>
-                        <a href="detail-huta-adat.html" class="btn btn-primary w-100">
+                        <!-- TOMBOL MODAL -->
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalHutaAdat">
                             <i class="bi bi-eye"></i> Lihat Detail
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Wisata 2 - Danau Toba -->
+            <!-- Wisata 2 - Danau Toba (POP MODAL) -->
             <div class="col-lg-6 col-md-6 mb-4 reveal delay-2">
                 <div class="card shadow h-100">
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
@@ -364,14 +378,15 @@
                         <h4>Danau Toba</h4>
                         <p>Menikmati panorama Danau Toba dengan udara sejuk dan pemandangan yang indah.</p>
                         <p><b>Tiket :</b> Gratis</p>
-                        <a href="#" class="btn btn-primary w-100">
+                        <!-- TOMBOL MODAL -->
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalDanauToba">
                             <i class="bi bi-eye"></i> Lihat Detail
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Wisata 3 - Makam Raja Simarmata (GAMBAR DIGANTI & BISA DIKLIK) -->
+            <!-- Wisata 3 - Makam Raja Simarmata (POP MODAL) -->
             <div class="col-lg-6 col-md-6 mb-4 reveal delay-3">
                 <div class="card shadow h-100">
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg" 
@@ -380,16 +395,18 @@
                          data-bs-toggle="modal" data-bs-target="#modalMakamRaja">
                     <div class="card-body">
                         <h4>Makam Raja Simarmata</h4>
-                        <p>Wisata sejarah yang menjadi bagian penting dari asal-usul marga Simarmata.</p>
+                        <p>Wisata sejarah yang menjadi bagian penting dari asal‑usul marga Simarmata. Makam ini berupa <strong>sarkofagus</strong> batu berusia ratusan tahun yang dikenal dengan nama <strong>Batu Munung</strong>.</p>
+                        <p><b>Lokasi :</b> Huta Simarmata, Desa Simarmata, Kec. Simanindo, Samosir</p>
                         <p><b>Tiket :</b> Gratis</p>
-                        <a href="#" class="btn btn-primary w-100">
+                        <!-- TOMBOL MODAL -->
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalMakamRaja">
                             <i class="bi bi-eye"></i> Lihat Detail
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Wisata 4 - Tugu Simarmata -->
+            <!-- Wisata 4 - Tugu Simarmata (POP MODAL) -->
             <div class="col-lg-6 col-md-6 mb-4 reveal delay-4">
                 <div class="card shadow h-100">
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg" 
@@ -398,9 +415,10 @@
                         <h4>Tugu Simarmata</h4>
                         <p>Tugu Simarmata merupakan monumen bersejarah yang menjadi simbol persatuan, identitas, dan penghormatan kepada leluhur marga Simarmata di Desa Simarmata.</p>
                         <p><b>Lokasi :</b> Toguan, Negeri Simarmata</p>
-                        <a href="detail-tugu-simarmata.html" class="btn btn-primary w-100">
+                        <!-- TOMBOL MODAL -->
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalTuguSimarmata">
                             <i class="bi bi-eye"></i> Lihat Detail
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -491,23 +509,264 @@
         </div>
     </footer>
 
-    <!-- ===== MODAL UNTUK MAKAM RAJA ===== -->
-    <div class="modal fade" id="modalMakamRaja" tabindex="-1" aria-hidden="true">
+
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 1: HUTA ADAT SIMARMATA ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalHutaAdat" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-danger">Makam Raja Simarmata</h5>
+                    <h5 class="modal-title text-danger">
+                        <i class="bi bi-house-fill"></i> Huta Adat Simarmata
+                    </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body text-center">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg"
-                         class="img-fluid"
-                         alt="Makam Raja Simarmata">
+                <div class="modal-body">
+
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
+                         class="img-fluid rounded mb-3 w-100" alt="Huta Adat Simarmata">
+
+                    <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                    <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                    <p>
+                        <strong>Huta Adat Simarmata</strong> adalah kawasan pemukiman tradisional Batak Toba 
+                        yang masih mempertahankan keaslian arsitektur leluhur. Di sini, pengunjung dapat melihat 
+                        deretan <strong>rumah adat Batak</strong> dengan ornamen khas, <em>sopo</em> (lumbung padi), 
+                        serta <em>parik</em> (pagar batu) yang mengelilingi huta. 
+                    </p>
+                    <p>
+                        Selain itu, terdapat <strong>losung</strong> (lesung batu) yang menjadi pusat aktivitas 
+                        menumbuk padi, mencerminkan tradisi agraris dan pola hidup komunal masyarakat setempat.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-clock"></i> Jam Operasional</h6>
+                    <p>Setiap hari: <strong>08.00 – 17.00 WIB</strong></p>
+
+                    <h6 class="text-danger"><i class="bi bi-ticket-perforated-fill"></i> Tiket</h6>
+                    <p><strong>Gratis</strong> (dengan donasi sukarela untuk pelestarian budaya).</p>
+
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Tips:</strong> Datanglah pagi hari untuk menikmati 
+                        suasana adat yang lebih tenang dan berkesempatan berinteraksi dengan masyarakat setempat.
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 2: DANAU TOBA ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalDanauToba" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">
+                        <i class="bi bi-water"></i> Danau Toba – Pesona Kaldera
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
+                         class="img-fluid rounded mb-3 w-100" alt="Danau Toba">
+
+                    <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                    <p>Kawasan Danau Toba, tepatnya di pesisir Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                    <p>
+                        <strong>Danau Toba</strong> adalah danau vulkanik terbesar di Asia Tenggara dan salah 
+                        satu keajaiban alam dunia. Berada di ketinggian sekitar 900 mdpl, udaranya terasa sejuk 
+                        dan segar. Dari Desa Simarmata, pengunjung dapat menikmati pemandangan danau yang tenang 
+                        dengan latar belakang Pulau Samosir di kejauhan.
+                    </p>
+                    <p>
+                        Aktivitas yang dapat dilakukan antara lain <strong>fotografi</strong> lanskap, 
+                        <strong>berperahu</strong> menyusuri danau, atau sekadar duduk santai menikmati 
+                        angin danau yang menenangkan. Saat matahari terbenam, pemandangan menjadi sangat 
+                        magis dengan gradasi warna jingga keemasan di atas permukaan air.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-ticket-perforated-fill"></i> Tiket</h6>
+                    <p><strong>Gratis</strong> (akses umum terbuka untuk semua wisatawan).</p>
+
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Rekomendasi:</strong> Jangan lupa membawa 
+                        jaket karena suhu di sekitar danau cukup dingin, terutama pada pagi dan sore hari.
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 3: MAKAM RAJA SIMARMATA (BATU MUNUNG) ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalMakamRaja" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">
+                        <i class="bi bi-building"></i> Makam Raja Simarmata – Batu Munung
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg"
+                         class="img-fluid rounded mb-3 w-100" alt="Makam Raja Simarmata">
+
+                    <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                    <p>
+                        <strong>Huta Simarmata</strong>, Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, 
+                        Sumatera Utara.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi Fisik</h6>
+                    <p>
+                        <strong>Batu Munung</strong> adalah sebuah <strong>sarkofagus</strong> (peti kubur batu) 
+                        peninggalan leluhur. Batu besar ini dihiasi dengan ukiran rumah adat Batak Toba 
+                        serta pahatan <strong>figur manusia dalam posisi jongkok</strong> yang mencerminkan 
+                        kepercayaan Batak kuno. Sarkofagus ini termasuk salah satu yang terbesar dan terbaik 
+                        di kawasan Danau Toba.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-clock-history"></i> Sejarah &amp; Usia</h6>
+                    <p>
+                        Makam ini diperkirakan sudah ada sejak <strong>250–400 tahun yang lalu</strong>, 
+                        berdasarkan silsilah keturunan dari <strong>8 generasi</strong> (<em>Walu Sundut</em>). 
+                        Dahulu, tempat ini disebut sebagai <strong>Tugu</strong> (makam) para tokoh atau 
+                        raja huta Simarmata, dan berfungsi sebagai tempat <em>saring‑saring</em> (pemakaman) 
+                        bagi pemuka adat.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-exclamation-triangle-fill"></i> Peristiwa Penting</h6>
+                    <p>
+                        Pada tahun <strong>1963</strong>, makam ini pernah dibongkar oleh pihak yang menduga 
+                        ada harta karun di dalamnya. Namun, isinya hanya berupa tulang belulang. Sejak saat itu, 
+                        makam tetap dijaga dan dihormati oleh keturunan marga Simarmata.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-book-fill"></i> Filosofi &amp; Nasihat Leluhur</h6>
+                    <p>
+                        Ompu Simataraja Raja Simarmata meninggalkan <strong>Tona (Amanah)</strong> dan 
+                        <strong>Poda (Nasihat)</strong> bagi seluruh keturunannya:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Tona (Amanah):</strong><br>
+                            <em>“Sada ma hamu tu dolok tu toruan di desa naualu, denggan ma hamu marsiurupan, 
+                            marsiiring‑iringan, marsiolo‑oluan.”</em><br>
+                            <small class="text-muted">(Bersatulah kalian, saling membantu, saling mengiring, 
+                            saling menuruti.)</small>
+                        </li>
+                        <li>
+                            <strong>Poda (Nasihat):</strong><br>
+                            <em>“Hamu anakku natolu, marsianju‑anjuan ma hamu, jala rap ma hamu sapangan 
+                            sian TATUAN na hutinggalhon i, dibagasan sada ni roha.”</em><br>
+                            <small class="text-muted">(Kamu anakku bertiga, berpeganganlah, dan bersama‑samalah 
+                            makan dari warisan yang kutinggalkan, dengan satu hati.)</small>
+                        </li>
+                    </ul>
+
+                    <h6 class="text-danger"><i class="bi bi-trophy-fill"></i> Status &amp; Penghargaan</h6>
+                    <p>
+                        Berdasarkan <strong>Keputusan Bupati Samosir Nomor 9 Tahun 2021</strong>, Batu Munung 
+                        telah ditetapkan sebagai <strong>Cagar Budaya tingkat Kabupaten</strong> dan sedang 
+                        diusulkan menjadi Cagar Budaya Nasional. 
+                        Menteri Kebudayaan RI, <strong>Fadli Zon</strong>, setelah meninjau langsung pada 
+                        Februari 2026, menyatakan: 
+                        <em>“Saya baru melihat sarkofagus sebesar ini. Ini termasuk salah satu yang paling 
+                        bagus dan gagah.”</em>
+                    </p>
+
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Catatan:</strong> Makam ini merupakan situs 
+                        sejarah yang dihormati. Pengunjung diharapkan menjaga kesopanan dan kebersihan 
+                        saat berkunjung.
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 4: TUGU SIMARMATA ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalTuguSimarmata" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">
+                        <i class="bi bi-trophy-fill"></i> Tugu Simarmata – Monumen Persatuan
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
+                         class="img-fluid rounded mb-3 w-100" alt="Tugu Simarmata">
+
+                    <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                    <p><strong>Tanah Toguan</strong>, Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-clock-history"></i> Sejarah Pembangunan</h6>
+                    <p>
+                        Tugu ini dibangun sebagai monumen pemersatu bagi seluruh keturunan marga Simarmata di dunia. 
+                        Pembangunan dimulai dengan pembentukan panitia pada <strong>28 Januari 1973</strong>, 
+                        peletakan batu pertama pada <strong>26 Juni 1973</strong>, dan baru selesai seluruhnya 
+                        pada tahun <strong>1990</strong>. Proses pembangunan memakan waktu <strong>17 tahun</strong> 
+                        penuh tantangan.
+                    </p>
+                    <p>
+                        Tinggi tugu mencapai <strong>17 meter</strong>, yang melambangkan 17 tahun perjuangan 
+                        pembangunan. Penggagas utama adalah <strong>MA. Simarmata</strong> (Ketua Panitia) 
+                        dan <strong>Manik Simarmata</strong> (Ketua Umum Punguan Pomparan Ompu Simataraja).
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-person-fill"></i> Patung &amp; Filosofi</h6>
+                    <p>
+                        Di atas tugu terdapat patung <strong>Ompu Simataraja</strong> dan istrinya, 
+                        <strong>Ompu Boru Lahatma Limbong Sihole</strong>. Monumen ini menjadi simbol 
+                        <strong>persatuan</strong>, <strong>identitas</strong>, dan penghormatan kepada 
+                        leluhur marga Simarmata. Tugu ini juga menjadi pusat kegiatan adat dan pertemuan 
+                        keluarga besar Simarmata dari berbagai penjuru.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-ticket-perforated-fill"></i> Tiket</h6>
+                    <p><strong>Gratis</strong> untuk umum.</p>
+
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Fakta menarik:</strong> Tugu ini berdiri 
+                        di atas lahan seluas ±1 hektar dengan batas: Timur (Jalan Raya), Barat (Tepian Danau Toba), 
+                        Selatan (Kampung Lumban Toguan), dan Utara (Parit).
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
