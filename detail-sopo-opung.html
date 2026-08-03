@@ -44,6 +44,15 @@
         .navbar-brand {
             font-size: 24px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-brand img {
+            height: 45px;
+            width: auto;
+            border-radius: 8px;
         }
 
         .nav-link {
@@ -123,6 +132,7 @@
 
         p {
             margin-bottom: 10px;
+            text-align: justify;
         }
 
         /* ===== FOOTER ===== */
@@ -177,6 +187,9 @@
             .navbar-brand {
                 font-size: 20px;
             }
+            .navbar-brand img {
+                height: 35px;
+            }
         }
 
         /* ===== INFO CARD ===== */
@@ -190,6 +203,34 @@
             color: #7c0e0e;
             font-weight: bold;
         }
+
+        /* ===========================================
+           ANIMASI SCROLL REVEAL
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal.reverse {
+            transform: translateY(-50px);
+        }
+
+        .reveal.reverse.visible {
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
     </style>
 
 </head>
@@ -200,7 +241,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark shadow">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-bank"></i>
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/28e102b5e877c1f41ab210e479c150db5ca184a9/logo%203%20web.png" 
+                     alt="Logo Desa Simarmata">
                 Desa Simarmata
             </a>
 
@@ -230,100 +272,121 @@
     <section class="container py-5">
 
         <!-- Tombol Kembali -->
-        <a href="sejarah.html" class="btn btn-primary mb-4">
+        <a href="sejarah.html" class="btn btn-primary mb-4 reveal delay-1">
             <i class="bi bi-arrow-left"></i> Kembali ke Sejarah
         </a>
 
-                <!-- Gambar -->
-       <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/soponiopung.jpg"
-        
+        <!-- Gambar -->
+        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/soponiopung.jpg"
+             class="img-fluid rounded shadow mb-4 reveal delay-2" 
+             alt="Sopo Ni Opung Sisaurmatua Simarmata">
+
         <!-- Info Singkat -->
         <div class="row mb-4">
-            <div class="col-md-4">
+            <div class="col-md-4 reveal delay-3">
                 <div class="info-card">
                     <h5><i class="bi bi-geo-alt-fill text-primary"></i> Lokasi</h5>
                     <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 reveal delay-4">
                 <div class="info-card">
                     <h5><i class="bi bi-clock-history text-primary"></i> Dibangun</h5>
-                    <p>Renovasi terakhir tahun 2012</p>
+                    <p>Renovasi terakhir tahun 2012 (awalnya berbentuk payung)</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 reveal delay-5">
                 <div class="info-card">
                     <h5><i class="bi bi-people-fill text-primary"></i> Pemilik Adat</h5>
-                    <p>Simarmata Ijuk, Rudang, dan Sibodil</p>
+                    <p>Keturunan OP. JORLANG SIMARMATA (pomparan)</p>
                 </div>
             </div>
         </div>
 
-        <p style="text-align:justify;">
-            Soponi Opung Sisaurmatua Simarmata merupakan salah satu situs adat yang diwariskan secara turun-temurun oleh pomparan Opung Sorlang Simarmata. Bagi masyarakat Simarmata, tempat ini bukan sekadar bangunan adat, melainkan ruang yang menyimpan sejarah, nilai spiritual, serta jejak perjalanan para leluhur yang masih dijaga hingga saat ini.
-        </p>
+        <!-- ===== PARAGRAF BARU SESUAI TEKS ===== -->
+        <div class="reveal delay-1">
+            <p>
+                <strong>SOPONI OPUNG SISAURMATUA SIMARMATA</strong> merupakan salah satu situs adat yang diwariskan secara turun-temurun oleh pomparan <strong>OP. JORLANG SIMARMATA</strong>. Bagi masyarakat Simarmata, tempat ini menjadi simbol penghormatan kepada leluhur sekaligus pusat pelestarian nilai adat dan budaya.
+            </p>
+        </div>
 
-        <p style="text-align:justify;">
-            Menurut penuturan para tetua adat, sejarah tempat ini berawal dari sebuah danau yang diyakini memiliki keterkaitan dengan kehidupan leluhur Simarmata. Danau tersebut menjadi lokasi berbagai peristiwa yang kemudian diwariskan sebagai cerita turun-temurun. Salah satu kisah yang paling dikenal menceritakan tentang seorang leluhur yang merasa diperlakukan tidak adil oleh keluarganya ketika membagi hasil tangkapan ikan. Dalam pengembaraannya, ia dibawa ke daerah Galungan oleh Opung Par Kapal Galungan. Perjalanan tersebut menjadi bagian penting dalam sejarah kawasan ini.
-        </p>
+        <div class="reveal delay-2">
+            <p>
+                Dalam proses pelestarian yang masih dilaksanakan sampai sekarang, SOPO NI OPPUNG SISAURMATUA SIMARMATA masih diurus dan hak kepemilikannya masih dipegang oleh keturunan OP. JORLANG SIMARMATA dan tidak mencakup keseluruhan keturunan SIMATARAJA SIMARMATA, akan tetapi tidak membatasi dan menutup kemungkinan seluruh marga Simarmata untuk melakukan proses ziarah dan pelaksanaan ritual budaya di sana.
+            </p>
+        </div>
 
-        <p style="text-align:justify;">
-            Menurut cerita masyarakat, dari danau tersebut muncul sehelai kain tenun sepanjang kurang lebih tujuh meter yang dipercaya sebagai benda pusaka pemberian leluhur. Kain itu kemudian diwariskan kepada keturunannya dan hingga kini dianggap memiliki nilai sejarah, adat, dan budaya yang tinggi.
-        </p>
+        <div class="reveal delay-3">
+            <p>
+                Bangunan Sopo pada awalnya berbentuk seperti payung. Berdasarkan petunjuk yang dipercaya diterima oleh para leluhur, bangunan tersebut kemudian diubah menjadi sebuah sopo. Renovasi terakhir dilakukan pada tahun <strong>2012</strong> sehingga bentuknya seperti yang terlihat saat ini. Kesakralan Soponi Op. Sisaurmatua Simarmata masih dijaga hingga sekarang. Pengunjung diharapkan menghormati aturan adat, datang bersama pendamping yang memahami tata cara setempat, serta tidak menggunakan dua tempat duduk yang dipercaya sebagai tempat pasukan penjaga.
+            </p>
+        </div>
 
-        <p style="text-align:justify;">
-            Kawasan Par Galungan bukan merupakan milik seluruh keturunan marga Simarmata. Berdasarkan adat yang diwariskan, hak kepemilikan kawasan tersebut berada pada tiga garis keturunan, yaitu <strong>Simarmata Ijuk, Simarmata Rudang, dan Simarmata Sibodil</strong>. Ketiga keturunan inilah yang bertanggung jawab menjaga serta melestarikan warisan adat tersebut.
-        </p>
+        <div class="reveal delay-4">
+            <p>
+                Untuk keturunan OP. JORLANG SIMARMATA itu sendiri merupakan keturunan marga Simarmata yang berdomisili di <strong>Siopat Huta</strong> Kenegerian Simarmata (Desa Simarmata) dan dibagi di 4 wilayah, yaitu:
+            </p>
+            <ul>
+                <li><strong>Sidaji</strong></li>
+                <li><strong>Galungan</strong></li>
+                <li><strong>Lumban Gaol</strong></li>
+                <li><strong>Sitolong (Sihusapi)</strong></li>
+            </ul>
+        </div>
 
-        <p style="text-align:justify;">
-            Tidak jauh dari sopo terdapat <strong>Mual Paridian Opung Sisaurmatua Simarmata</strong>, yaitu mata air yang menurut cerita masyarakat dahulu digunakan oleh Opung Sisaurmatua Simarmata untuk mandi dan membersihkan diri. Mata air tersebut hingga kini masih dijaga sebagai bagian yang tidak terpisahkan dari kawasan situs adat.
-        </p>
+        <div class="reveal delay-5">
+            <p>
+                Selain itu ada kisah di mana saat seorang nelayan memancing di danau, kail pancingnya tersangkut pada sehelai kain tenun sepanjang sekitar tujuh meter. Kain tersebut kemudian diangkat, disimpan, dan diwariskan sebagai benda pusaka yang memiliki nilai sejarah dan adat yang dipercaya menjadi salah satu pusaka dari OP. SORLANG dan disimpan di salah satu rumah salah satu keturunan dari OP. SORLANG bersama dengan pusaka-pusaka lainnya.
+            </p>
+        </div>
 
-        <p style="text-align:justify;">
-            Bangunan yang sekarang dikenal sebagai Soponi Opung Sisaurmatua Simarmata pada awalnya hanya berbentuk seperti payung. Berdasarkan petunjuk yang dipercaya berasal dari penghuni gaib penjaga tempat tersebut, masyarakat kemudian mengubahnya menjadi sebuah sopo. Renovasi terakhir dilakukan pada tahun <strong>2012</strong> sehingga bentuknya seperti yang dapat dilihat saat ini.
-        </p>
+        <div class="reveal delay-1">
+            <p>
+                Tidak jauh dari sopo terdapat <strong>MUAL PARIDIAN OP. SISAURMATUA SIMARMATA</strong>, yaitu mata air yang diyakini dahulu digunakan oleh OP. SISAURMATUA SIMARMATA untuk mandi dan membersihkan diri. Karena berkaitan langsung dengan kehidupan leluhur, mata air tersebut hingga kini dipandang sebagai bagian yang tidak terpisahkan dari kawasan sopo. Keberadaannya menjadi pelengkap sejarah situs adat ini sekaligus menjadi bukti bahwa kawasan tersebut dahulu merupakan bagian dari ruang kehidupan para leluhur Simarmata secara khusus untuk keturunan OP. JORLANG SIMARMATA. Hingga saat ini, Mual Paridian masih dikenal dan dijaga keberadaannya sebagai salah satu peninggalan bersejarah yang memiliki nilai adat dan budaya bagi masyarakat setempat.
+            </p>
+        </div>
 
-        <p style="text-align:justify;">
-            Kesakralan tempat ini masih sangat dijaga. Pengunjung diharapkan datang bersama warga setempat yang memahami tata cara adat. Di dalam bangunan terdapat dua tempat duduk yang dipercaya sebagai tempat pasukan penjaga. Oleh karena itu, setiap pengunjung diharapkan menjaga sikap, tutur kata, serta menghormati seluruh aturan adat yang berlaku.
-        </p>
+        <div class="reveal delay-2">
+            <p>
+                Kesakralan tempat ini masih sangat dijaga oleh masyarakat. Oleh sebab itu, setiap orang yang datang diharapkan menghormati aturan adat yang berlaku. Pengunjung tidak dianjurkan datang sendiri, melainkan didampingi oleh warga setempat dari keturunan langsung OP. JORLANG SIMARMATA yang memahami tata cara memasuki kawasan sopo. Di dalam bangunan terdapat dua tempat duduk yang dipercaya sebagai tempat pasukan penjaga. Masyarakat meyakini bahwa siapa pun yang duduk di tempat tersebut tanpa hak dapat mengalami sakit atau hal-hal yang tidak diinginkan. Karena itu, setiap pengunjung diharapkan menjaga sikap, tutur kata, dan perilaku selama berada di kawasan sopo. Walaupun tempat ini berkaitan erat dengan keturunan OP. SORLANG, SOPONI OPUNG SISAURMATUA SIMARMATA tetap terbuka bagi siapa saja yang ingin berkunjung, tanpa membedakan marga, selama menghormati adat dan kesakralan tempat tersebut.
+            </p>
+        </div>
 
-        <p style="text-align:justify;">
-            Dalam sejarahnya, Opung Sorlang dikenal memiliki empat huta, yaitu <strong>Huta Sidaji, Huta Galungan, Huta Lumban Gaol, dan Huta Sihu Sapi</strong>. Keempat huta tersebut menjadi bagian penting dari perkembangan awal wilayah adat Simarmata.
-        </p>
+        <div class="reveal delay-3">
+            <p>
+                Apabila masyarakat hendak melaksanakan <strong>ulaon</strong> atau upacara adat di tempat ini, terdapat ketentuan yang tetap dipertahankan hingga sekarang. Persembahan yang digunakan harus berupa seekor babi <strong>DALU</strong> (babi yang berwarna hitam keseluruhan, tidak ada cacat dan belum dikebiri). Hewan tersebut dipersembahkan sesuai dengan tata cara adat yang diwariskan oleh leluhur. Pelaksanaan ulaon tidak ditentukan berdasarkan hari tertentu, tetapi dilakukan setelah tercapai kesepakatan di antara para keturunan dan tokoh adat.
+            </p>
+        </div>
 
-        <p style="text-align:justify;">
-            Apabila masyarakat melaksanakan ulaon atau upacara adat di tempat ini, persembahan yang digunakan harus berupa <strong>seekor babi hitam yang masih utuh</strong> sesuai ketentuan adat. Pelaksanaan ulaon dilakukan berdasarkan kesepakatan para keturunan dan tokoh adat.
-        </p>
+        <div class="reveal delay-4">
+            <p>
+                Dalam sejarahnya, Kenegerian Simarmata dikenal memiliki empat huta (Siopat Huta), yaitu Huta Sidaji, Huta Galungan, Huta Lumban Gaol, dan Huta SihuSapi (Sitolong). Dahulu wilayah tersebut dipimpin oleh seorang Kepala Negeri, kemudian dibagi menjadi 3 wilayah yaitu Sidaji, Galungan, dan Simarmata dan kemudian disatukan menjadi satu desa yaitu <strong>Desa Simarmata</strong>. Hingga kini, sistem bius masih dipertahankan di Desa Simarmata sebagai bagian dari pelestarian adat. Bagi masyarakat Simarmata, SOPONI SI SAURMATUA SIMARMATA beserta MUAL PARIDIAN bukan hanya peninggalan sejarah, tetapi juga menjadi simbol penghormatan kepada leluhur, identitas masyarakat, serta warisan adat yang terus dijaga dan dilestarikan dari generasi ke generasi.
+            </p>
+        </div>
 
-        <p style="text-align:justify;">
-            Meskipun sistem pemerintahan telah berubah, sebagian aturan adat masih tetap dipertahankan. Hingga saat ini sistem bius masih dijalankan di Dusun I Desa Simarmata sebagai bentuk pelestarian adat yang diwariskan oleh para leluhur.
-        </p>
-
-        <p style="text-align:justify;">
-            Bagi masyarakat Simarmata, Soponi Opung Sisaurmatua Simarmata bukan hanya peninggalan sejarah, tetapi juga simbol penghormatan kepada leluhur, pengingat nilai keadilan, kebersamaan, serta adat istiadat yang terus dijaga agar tetap lestari bagi generasi mendatang.
-        </p>
-
-        <!-- Fakta Menarik -->
+        <!-- Fakta Menarik & Aturan Adat -->
         <div class="row mt-4">
-            <div class="col-md-6">
+            <div class="col-md-6 reveal delay-3">
                 <div class="card shadow p-3">
                     <h5 class="text-primary"><i class="bi bi-info-circle-fill"></i> Fakta Menarik</h5>
                     <ul>
-                        <li>Dahulu berbentuk seperti payung</li>
-                        <li>Renovasi terakhir tahun 2012</li>
-                        <li>Ada mata air suci (Mual Paridian)</li>
-                        <li>Dijaga oleh 3 garis keturunan utama</li>
+                        <li>Awalnya berbentuk seperti payung, direnovasi 2012</li>
+                        <li>Dikelola oleh keturunan OP. JORLANG SIMARMATA</li>
+                        <li>Terdapat Mual Paridian (mata air suci) di dekat sopo</li>
+                        <li>Ada pusaka kain tenun sepanjang ±7 meter</li>
+                        <li>Terbuka untuk seluruh marga yang menghormati adat</li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 reveal delay-4">
                 <div class="card shadow p-3">
                     <h5 class="text-primary"><i class="bi bi-shield-fill"></i> Aturan Adat</h5>
                     <ul>
-                        <li>Pengunjung harus ditemani warga setempat</li>
-                        <li>Menjaga sikap dan tutur kata</li>
-                        <li>Persembahan: babi hitam utuh</li>
-                        <li>Ulaon berdasarkan kesepakatan adat</li>
+                        <li>Pengunjung harus didampingi keturunan OP. JORLANG SIMARMATA</li>
+                        <li>Dilarang duduk di dua kursi yang dipercaya untuk pasukan penjaga</li>
+                        <li>Menjaga sikap, tutur kata, dan perilaku</li>
+                        <li>Persembahan ulaon: babi DALU (hitam, cacat, belum dikebiri)</li>
+                        <li>Pelaksanaan ulaon berdasarkan kesepakatan adat</li>
                     </ul>
                 </div>
             </div>
@@ -342,6 +405,31 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- ===== JAVASCRIPT SCROLL REVEAL ===== -->
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < (window.innerHeight || document.documentElement.clientHeight) - 50 && rect.bottom > 50;
+        }
+
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('visible');
+                    el.classList.remove('reverse');
+                } else {
+                    el.classList.remove('visible');
+                    el.classList.add('reverse');
+                }
+            });
+        }
+
+        window.addEventListener('load', handleScrollReveal);
+        window.addEventListener('scroll', handleScrollReveal);
+        window.addEventListener('resize', handleScrollReveal);
     </script>
 
 </body>
