@@ -40,11 +40,53 @@
         .navbar {
             background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
             box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+            padding: 10px 0;
         }
 
         .navbar-brand {
             font-size: 24px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* ===== LOGO KKN DENGAN ANIMASI ===== */
+        .navbar-logo {
+            height: 45px;
+            width: auto;
+            border-radius: 10px;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                        box-shadow 0.3s ease,
+                        filter 0.3s ease;
+            animation: fadeSlideDown 0.8s ease forwards;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-logo:hover {
+            transform: scale(1.08) rotate(-3deg);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+            filter: brightness(1.1);
+        }
+
+        @keyframes fadeSlideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-25px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .navbar-brand span {
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand span:hover {
+            color: #ffd54f !important;
         }
 
         .nav-link {
@@ -94,6 +136,7 @@
             border-radius: 15px;
             overflow: hidden;
             transition: .4s;
+            cursor: pointer;
         }
 
         .card:hover {
@@ -104,6 +147,11 @@
         .card img {
             height: 230px;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.03);
         }
 
         .card-body h4,
@@ -172,37 +220,20 @@
         }
 
         /* ===== RESPONSIVE ===== */
-        @media(max-width:992px) {
-            .hero h1 {
-                font-size: 45px;
-            }
-            .hero p {
-                font-size: 20px;
-            }
-        }
-
         @media(max-width:768px) {
-            .hero {
-                height: 60vh;
-            }
-            .hero h1 {
-                font-size: 35px;
-            }
-            .hero p {
-                font-size: 18px;
-            }
             .card img {
                 height: 200px;
+            }
+            .navbar-logo {
+                height: 35px;
+            }
+            .navbar-brand {
+                font-size: 20px;
+                gap: 8px;
             }
         }
 
         @media(max-width:576px) {
-            .hero h1 {
-                font-size: 28px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
             section {
                 padding: 40px 15px;
             }
@@ -210,22 +241,54 @@
                 height: 180px;
             }
             .navbar-brand {
-                font-size: 20px;
+                font-size: 18px;
+            }
+            .navbar-logo {
+                height: 30px;
             }
         }
 
-        /* ===== VIDEO ===== */
-        .ratio-16x9 {
-            border-radius: 15px;
-            overflow: hidden;
+        /* ===========================================
+           ANIMASI SCROLL REVEAL
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        iframe {
-            border: none;
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .text-primary {
-            color: #7c0e0e !important;
+        .reveal.reverse {
+            transform: translateY(-50px);
+        }
+
+        .reveal.reverse.visible {
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+        .delay-6 { transition-delay: 0.6s; }
+        .delay-7 { transition-delay: 0.7s; }
+        .delay-8 { transition-delay: 0.8s; }
+        .delay-9 { transition-delay: 0.9s; }
+
+        /* ===== MODAL GAMBAR ===== */
+        .modal-body img {
+            max-height: 80vh;
+            object-fit: contain;
+            width: 100%;
+        }
+
+        .modal-header .modal-title {
+            color: #7c0e0e;
         }
     </style>
 
@@ -237,8 +300,11 @@
     <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-camera-fill"></i>
-                Desa Simarmata
+                <!-- ===== LOGO KKN DENGAN ANIMASI ===== -->
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/28e102b5e877c1f41ab210e479c150db5ca184a9/logo%203%20web.png" 
+                     alt="Logo KKN Desa Simarmata" 
+                     class="navbar-logo">
+                <span>Desa Simarmata</span>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -282,8 +348,8 @@
     <!-- ===== HEADER ===== -->
     <section class="bg-primary text-white text-center py-5">
         <div class="container">
-            <h1 class="text-white">Galeri Desa Simarmata</h1>
-            <p>Dokumentasi Wisata, Budaya, Alam, dan Kehidupan Masyarakat</p>
+            <h1 class="text-white reveal delay-1">Galeri Desa Simarmata</h1>
+            <p class="reveal delay-2">Dokumentasi Wisata, Budaya, Alam, dan Kehidupan Masyarakat</p>
         </div>
     </section>
 
@@ -292,8 +358,10 @@
         <div class="row g-4">
 
             <!-- Galeri 1 -->
-            <div class="col-md-4">
-                <div class="card shadow">
+            <div class="col-md-4 reveal delay-1">
+                <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                     data-image="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/galeri1.jpg"
+                     data-title="Danau Toba">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMjUiIHI9IjcwIiBmaWxsPSIjZmZkNTQ4Ii8+PHRleHQgeD0iNTAiIHk9IjIzMCIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+RGFuYXUgVG9iYTwvdGV4dD48L3N2Zz4=" class="card-img-top" alt="Danau Toba">
                     <div class="card-body text-center">
                         <h5>Danau Toba</h5>
@@ -302,8 +370,10 @@
             </div>
 
             <!-- Galeri 2 -->
-            <div class="col-md-4">
-                <div class="card shadow">
+            <div class="col-md-4 reveal delay-2">
+                <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
+                     data-image="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/galeri2.jpg"
+                     data-title="Huta Adat Simarmata">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSIxMDAiIHk9IjUwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgZmlsbD0iI2ZmZDU0OCIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjIwIiBmb250LWZhbWlseT0iQXJpYWwiPkh1dGEgQWRhdCBTaW1hcm1hdGE8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Huta Adat Simarmata">
                     <div class="card-body text-center">
                         <h5>Huta Adat Simarmata</h5>
@@ -312,8 +382,10 @@
             </div>
 
             <!-- Galeri 3 -->
-            <div class="col-md-4">
-                <div class="card shadow">
+            <div class="col-md-4 reveal delay-3">
+                <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
+                     data-image="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/galeri3.jpg"
+                     data-title="Rumah Bolon">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cG9seWdvbiBwb2ludHM9IjIwMCw1MCA3MCwxOTAgMzMwLDE5MCIgZmlsbD0iI2ZmZDU0OCIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjIwIiBmb250LWZhbWlseT0iQXJpYWwiPlJ1bWFoIEJvbG9uPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Rumah Bolon">
                     <div class="card-body text-center">
                         <h5>Rumah Bolon</h5>
@@ -322,8 +394,10 @@
             </div>
 
             <!-- Galeri 4 -->
-            <div class="col-md-4">
-                <div class="card shadow">
+            <div class="col-md-4 reveal delay-4">
+                <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
+                     data-image="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/galeri4.jpg"
+                     data-title="Pertunjukan Tortor">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSIxMjAiIGN5PSIxMjAiIHI9IjQwIiBmaWxsPSIjZmZkNTQ4Ii8+PGNpcmNsZSBjeD0iMjgwIiBjeT0iMTIwIiByPSI0MCIgZmlsbD0iI2ZmZDU0OCIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE4MCIgcj0iNDAiIGZpbGw9IiNmZmQ1NDgiLz48dGV4dCB4PSI1MCIgeT0iMjMwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyMCIgZm9udC1mYW1pbHk9IkFyaWFsIj5QZXJ0dW5qdWthbiBUb3J0b3I8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Pertunjukan Tortor">
                     <div class="card-body text-center">
                         <h5>Pertunjukan Tortor</h5>
@@ -332,8 +406,10 @@
             </div>
 
             <!-- Galeri 5 -->
-            <div class="col-md-4">
-                <div class="card shadow">
+            <div class="col-md-4 reveal delay-5">
+                <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
+                     data-image="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/galeri5.jpg"
+                     data-title="Tenun Ulos">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSI1MCIgeT0iNTAiIHdpZHRoPSI1MCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNmZmQ1NDgiLz48cmVjdCB4PSIxMjAiIHk9IjcwIiB3aWR0aD0iNTAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmQ1NDgiLz48cmVjdCB4PSIxOTAiIHk9IjUwIiB3aWR0aD0iNTAiIGhlaWdodD0iMTAwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iMjYwIiB5PSI4MCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjcwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iMzMwIiB5PSI2MCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjkwIiBmaWxsPSIjZmZkNTQ4Ii8+PHRleHQgeD0iNTAiIHk9IjIzMCIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+VGVudW4gVWxvczwvdGV4dD48L3N2Zz4=" class="card-img-top" alt="Tenun Ulos">
                     <div class="card-body text-center">
                         <h5>Tenun Ulos</h5>
@@ -342,8 +418,10 @@
             </div>
 
             <!-- Galeri 6 -->
-            <div class="col-md-4">
-                <div class="card shadow">
+            <div class="col-md-4 reveal delay-6">
+                <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
+                     data-image="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/galeri6.jpg"
+                     data-title="Pemandangan Desa">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSI1MCIgeT0iNTAgd2lkdGg9IjMwMCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2ZmZDU0OCIvPjxyZWN0IHg9IjUwIiB5PSIxNTAiIHdpZHRoPSIxNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNmZmQ1NDgiLz48cmVjdCB4PSIyMDAiIHk9IjE1MCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI2ZmZDU0OCIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjIwIiBmb250LWZhbWlseT0iQXJpYWwiPlBlbWFuZGFuZ2FuIERlc2E8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Pemandangan Desa">
                     <div class="card-body text-center">
                         <h5>Pemandangan Desa</h5>
@@ -352,8 +430,10 @@
             </div>
 
             <!-- Galeri 7 -->
-            <div class="col-md-4">
-                <div class="card shadow">
+            <div class="col-md-4 reveal delay-7">
+                <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
+                     data-image="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/galeri7.jpg"
+                     data-title="Sunset Danau Toba">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMjAiIHI9IjcwIiBmaWxsPSIjZmZkNTQ4Ii8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTIwIiByPSI1MCIgZmlsbD0iI2ZmODAwMCIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjEyMCIgcj0iMzAiIGZpbGw9IiNmZmQ1NDgiLz48dGV4dCB4PSI1MCIgeT0iMjMwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyMCIgZm9udC1mYW1pbHk9IkFyaWFsIj5TdW5zZXQgRGFuYXUgVG9iYTwvdGV4dD48L3N2Zz4=" class="card-img-top" alt="Sunset Danau Toba">
                     <div class="card-body text-center">
                         <h5>Sunset Danau Toba</h5>
@@ -362,8 +442,10 @@
             </div>
 
             <!-- Galeri 8 -->
-            <div class="col-md-4">
-                <div class="card shadow">
+            <div class="col-md-4 reveal delay-8">
+                <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
+                     data-image="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/galeri8.jpg"
+                     data-title="Festival Budaya">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjEyMCIgcj0iNDAiIGZpbGw9IiNmZmQ1NDgiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSI4MCIgcj0iNDAiIGZpbGw9IiNmZmQ1NDgiLz48Y2lyY2xlIGN4PSIzMjAiIGN5PSIxMjAiIHI9IjQwIiBmaWxsPSIjZmZkNTQ4Ii8+PGNpcmNsZSBjeD0iMTQwIiBjeT0iMTgwIiByPSI0MCIgZmlsbD0iI2ZmZDU0OCIvPjxjaXJjbGUgY3g9IjI2MCIgY3k9IjE4MCIgcj0iNDAiIGZpbGw9IiNmZmQ1NDgiLz48dGV4dCB4PSI1MCIgeT0iMjMwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyMCIgZm9udC1mYW1pbHk9IkFyaWFsIj5GZXN0aXZhbCBCdWRheWE8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Festival Budaya">
                     <div class="card-body text-center">
                         <h5>Festival Budaya</h5>
@@ -372,8 +454,10 @@
             </div>
 
             <!-- Galeri 9 -->
-            <div class="col-md-4">
-                <div class="card shadow">
+            <div class="col-md-4 reveal delay-9">
+                <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
+                     data-image="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/galeri9.jpg"
+                     data-title="Panorama Alam">
                     <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cG9seWdvbiBwb2ludHM9IjUwLDE4MCAyMDAsNzAgMzUwLDE4MCIgZmlsbD0iI2ZmZDU0OCIvPjxjaXJjbGUgY3g9IjE1MCIgY3k9IjE1MCIgcj0iMjAiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSIyNTAiIGN5PSIxNTAiIHI9IjIwIiBmaWxsPSIjN2MwZTBlIi8+PHRleHQgeD0iNTAiIHk9IjIzMCIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+UGFub3JhbWEgQWxhbTwvdGV4dD48L3N2Zz4=" class="card-img-top" alt="Panorama Alam">
                     <div class="card-body text-center">
                         <h5>Panorama Alam</h5>
@@ -384,15 +468,23 @@
         </div>
     </section>
 
-    <!-- ===== VIDEO ===== -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Video Desa</h2>
-            <div class="ratio ratio-16x9">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    <!-- ===== MODAL GALLERY (POP-UP GAMBAR) ===== -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="galleryModalTitle">Gambar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" id="galleryModalImage" class="img-fluid rounded" alt="Galeri">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer class="pt-5 pb-3">
@@ -451,6 +543,53 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- ===== JAVASCRIPT MODAL ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryModal = document.getElementById('galleryModal');
+            const modalImage = document.getElementById('galleryModalImage');
+            const modalTitle = document.getElementById('galleryModalTitle');
+
+            galleryModal.addEventListener('show.bs.modal', function(event) {
+                const trigger = event.relatedTarget; // elemen yang membuka modal (card)
+                const imageSrc = trigger.getAttribute('data-image');
+                const title = trigger.getAttribute('data-title') || 'Gambar Galeri';
+                modalImage.src = imageSrc;
+                modalTitle.textContent = title;
+            });
+
+            // Reset gambar saat modal ditutup (opsional)
+            galleryModal.addEventListener('hidden.bs.modal', function() {
+                modalImage.src = '';
+            });
+        });
+    </script>
+
+    <!-- ===== JAVASCRIPT SCROLL REVEAL ===== -->
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < (window.innerHeight || document.documentElement.clientHeight) - 50 && rect.bottom > 50;
+        }
+
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('visible');
+                    el.classList.remove('reverse');
+                } else {
+                    el.classList.remove('visible');
+                    el.classList.add('reverse');
+                }
+            });
+        }
+
+        window.addEventListener('load', handleScrollReveal);
+        window.addEventListener('scroll', handleScrollReveal);
+        window.addEventListener('resize', handleScrollReveal);
     </script>
 
 </body>
