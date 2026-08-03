@@ -45,6 +45,15 @@
         .navbar-brand {
             font-size: 24px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-brand img {
+            height: 45px;
+            width: auto;
+            border-radius: 8px;
         }
 
         .nav-link {
@@ -202,24 +211,12 @@
         }
 
         /* ===== RESPONSIVE ===== */
-        @media(max-width:992px) {
-            .hero h1 {
-                font-size: 45px;
-            }
-            .hero p {
+        @media(max-width:768px) {
+            .navbar-brand {
                 font-size: 20px;
             }
-        }
-
-        @media(max-width:768px) {
-            .hero {
-                height: 60vh;
-            }
-            .hero h1 {
-                font-size: 35px;
-            }
-            .hero p {
-                font-size: 18px;
+            .navbar-brand img {
+                height: 35px;
             }
             .card img {
                 height: 200px;
@@ -227,20 +224,11 @@
         }
 
         @media(max-width:576px) {
-            .hero h1 {
-                font-size: 28px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
             section {
                 padding: 40px 15px;
             }
             .card img {
                 height: 180px;
-            }
-            .navbar-brand {
-                font-size: 20px;
             }
         }
 
@@ -248,6 +236,34 @@
         .list-unstyled li {
             margin-bottom: 5px;
         }
+
+        /* ===========================================
+           ANIMASI SCROLL REVEAL
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal.reverse {
+            transform: translateY(-50px);
+        }
+
+        .reveal.reverse.visible {
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
     </style>
 
 </head>
@@ -258,7 +274,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark shadow">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-geo-alt-fill"></i>
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/28e102b5e877c1f41ab210e479c150db5ca184a9/logo%203%20web.png" 
+                     alt="Logo Desa Simarmata">
                 Desa Simarmata
             </a>
 
@@ -303,24 +320,25 @@
     <!-- ===== HEADER ===== -->
     <section class="bg-primary text-white text-center py-5">
         <div class="container">
-            <h1 class="text-white">Destinasi Wisata Desa Simarmata</h1>
-            <p>Pesona Alam, Budaya, dan Sejarah di Kawasan Danau Toba</p>
+            <h1 class="text-white reveal delay-1">Destinasi Wisata Desa Simarmata</h1>
+            <p class="reveal delay-2">Pesona Alam, Budaya, dan Sejarah di Kawasan Danau Toba</p>
         </div>
     </section>
 
-        <!-- ===== WISATA ===== -->
+    <!-- ===== WISATA ===== -->
     <section class="container py-5">
         <div class="row">
 
             <!-- Wisata 1 - Huta Adat Simarmata -->
-            <div class="col-lg-6 col-md-6 mb-4">
+            <div class="col-lg-6 col-md-6 mb-4 reveal delay-1">
                 <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSI1MCIgeT0iNTAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iMjUwIiB5PSI4MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNmZmQ1NDgiLz48dGV4dCB4PSI1MCIgeT0iMjMwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyMCIgZm9udC1mYW1pbHk9IkFyaWFsIj5IdXRhIEFkYXQgU2ltYXJtYXRhPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Huta Adat Simarmata">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg" 
+                         class="card-img-top" alt="Huta Adat Simarmata">
                     <div class="card-body">
                         <h4>Huta Adat Simarmata</h4>
                         <p>Kawasan rumah adat Batak Toba yang masih terjaga dan menjadi pusat wisata budaya.</p>
                         <p><b>Jam Buka :</b> 08.00 - 17.00 WIB</p>
-                        <a href="#" class="btn btn-primary w-100">
+                        <a href="detail-huta-adat.html" class="btn btn-primary w-100">
                             <i class="bi bi-eye"></i> Lihat Detail
                         </a>
                     </div>
@@ -328,9 +346,10 @@
             </div>
 
             <!-- Wisata 2 - Danau Toba -->
-            <div class="col-lg-6 col-md-6 mb-4">
+            <div class="col-lg-6 col-md-6 mb-4 reveal delay-2">
                 <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMjAiIHI9IjcwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iNTAiIHk9IjE4MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZDU0OCIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPkRhbmF1IFRvYmE8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Danau Toba">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMjAiIHI9IjcwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iNTAiIHk9IjE4MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZDU0OCIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPkRhbmF1IFRvYmE8L3RleHQ+PC9zdmc+" 
+                         class="card-img-top" alt="Danau Toba">
                     <div class="card-body">
                         <h4>Danau Toba</h4>
                         <p>Menikmati panorama Danau Toba dengan udara sejuk dan pemandangan yang indah.</p>
@@ -343,9 +362,10 @@
             </div>
 
             <!-- Wisata 3 - Makam Raja Simarmata -->
-            <div class="col-lg-6 col-md-6 mb-4">
+            <div class="col-lg-6 col-md-6 mb-4 reveal delay-3">
                 <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSIxNTAiIHk9IjcwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2ZmZDU0OCIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjEwMCIgcj0iMzAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCIgeT0iMjMwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxOCIgZm9udC1mYW1pbHk9IkFyaWFsIj5NYWthbSBSYWphIFNpbWFybWF0YTwvdGV4dD48L3N2Zz4=" class="card-img-top" alt="Makam Raja Simarmata">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSIxNTAiIHk9IjcwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2ZmZDU0OCIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjEwMCIgcj0iMzAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCIgeT0iMjMwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxOCIgZm9udC1mYW1pbHk9IkFyaWFsIj5NYWthbSBSYWphIFNpbWFybWF0YTwvdGV4dD48L3N2Zz4=" 
+                         class="card-img-top" alt="Makam Raja Simarmata">
                     <div class="card-body">
                         <h4>Makam Raja Simarmata</h4>
                         <p>Wisata sejarah yang menjadi bagian penting dari asal-usul marga Simarmata.</p>
@@ -357,37 +377,37 @@
                 </div>
             </div>
 
-     <!-- Wisata 4 - Tugu Simarmata -->
-<div class="col-lg-6 col-md-6 mb-4">
-    <div class="card shadow h-100">
-        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg" class="card-img-top" alt="Tugu Simarmata" style="height: 230px; object-fit: cover;">
-        <div class="card-body">
-            <h4>Tugu Simarmata</h4>
-            <p>Tugu Simarmata merupakan monumen bersejarah yang menjadi simbol persatuan, identitas, dan penghormatan kepada leluhur marga Simarmata di Desa Simarmata.</p>
-            <p><b>Lokasi :</b> Toguan, Negeri Simarmata</p>
-            <a href="detail-tugu-simarmata.html" class="btn btn-primary w-100">
-                <i class="bi bi-eye"></i> Lihat Detail
-            </a>
-        </div>
-    </div>
-</div>
-            
+            <!-- Wisata 4 - Tugu Simarmata -->
+            <div class="col-lg-6 col-md-6 mb-4 reveal delay-4">
+                <div class="card shadow h-100">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg" 
+                         class="card-img-top" alt="Tugu Simarmata" style="height: 230px; object-fit: cover;">
+                    <div class="card-body">
+                        <h4>Tugu Simarmata</h4>
+                        <p>Tugu Simarmata merupakan monumen bersejarah yang menjadi simbol persatuan, identitas, dan penghormatan kepada leluhur marga Simarmata di Desa Simarmata.</p>
+                        <p><b>Lokasi :</b> Toguan, Negeri Simarmata</p>
+                        <a href="detail-tugu-simarmata.html" class="btn btn-primary w-100">
+                            <i class="bi bi-eye"></i> Lihat Detail
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
-  
-         
+
     <!-- ===== MAPS ===== -->
     <section class="bg-light py-5">
         <div class="container">
-            <h2 class="text-center mb-4">
+            <h2 class="text-center mb-4 reveal delay-1">
                 <i class="bi bi-map-fill"></i>
                 Peta Digital Wisata Desa Simarmata
             </h2>
-            <p class="text-center mb-4">
+            <p class="text-center mb-4 reveal delay-2">
                 Temukan lokasi wisata, budaya, UMKM, homestay, dan fasilitas Desa Simarmata.
             </p>
 
-            <div class="card shadow">
+            <div class="card shadow reveal delay-3">
                 <div class="card-body p-2">
                     <div class="ratio ratio-16x9">
                         <iframe
@@ -409,7 +429,7 @@
             <div class="row">
 
                 <!-- Alamat -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 reveal delay-1">
                     <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
                     <p>
                         Desa Simarmata<br>
@@ -421,7 +441,7 @@
                 </div>
 
                 <!-- Menu -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 reveal delay-2">
                     <h5><i class="bi bi-list"></i> Menu</h5>
                     <ul class="list-unstyled">
                         <li><a href="index.html">Home</a></li>
@@ -434,7 +454,7 @@
                 </div>
 
                 <!-- Media Sosial -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 reveal delay-3">
                     <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
                     <p>
                         Instagram:<br>
@@ -460,6 +480,31 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- ===== JAVASCRIPT SCROLL REVEAL ===== -->
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < (window.innerHeight || document.documentElement.clientHeight) - 50 && rect.bottom > 50;
+        }
+
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('visible');
+                    el.classList.remove('reverse');
+                } else {
+                    el.classList.remove('visible');
+                    el.classList.add('reverse');
+                }
+            });
+        }
+
+        window.addEventListener('load', handleScrollReveal);
+        window.addEventListener('scroll', handleScrollReveal);
+        window.addEventListener('resize', handleScrollReveal);
     </script>
 
 </body>
