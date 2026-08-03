@@ -45,6 +45,15 @@
         .navbar-brand {
             font-size: 24px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-brand img {
+            height: 45px;
+            width: auto;
+            border-radius: 8px;
         }
 
         .nav-link {
@@ -109,6 +118,7 @@
         .card img {
             height: 230px;
             object-fit: cover;
+            cursor: pointer;
         }
 
         .card-body h4,
@@ -211,24 +221,12 @@
         }
 
         /* ===== RESPONSIVE ===== */
-        @media(max-width:992px) {
-            .hero h1 {
-                font-size: 45px;
-            }
-            .hero p {
+        @media(max-width:768px) {
+            .navbar-brand {
                 font-size: 20px;
             }
-        }
-
-        @media(max-width:768px) {
-            .hero {
-                height: 60vh;
-            }
-            .hero h1 {
-                font-size: 35px;
-            }
-            .hero p {
-                font-size: 18px;
+            .navbar-brand img {
+                height: 35px;
             }
             .card img {
                 height: 200px;
@@ -236,20 +234,11 @@
         }
 
         @media(max-width:576px) {
-            .hero h1 {
-                font-size: 28px;
-            }
-            .hero p {
-                font-size: 16px;
-            }
             section {
                 padding: 40px 15px;
             }
             .card img {
                 height: 180px;
-            }
-            .navbar-brand {
-                font-size: 20px;
             }
         }
 
@@ -266,6 +255,60 @@
         ul li i {
             color: #25D366;
         }
+
+        /* ===========================================
+           ANIMASI SCROLL REVEAL
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal.reverse {
+            transform: translateY(-50px);
+        }
+
+        .reveal.reverse.visible {
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+
+        /* ===== GAMBAR BISA DIKLIK UNTUK MODAL ===== */
+        .clickable-img {
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .clickable-img:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+
+        /* ===== MODAL KONTEN ===== */
+        .modal-body h6 {
+            margin-top: 18px;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        .modal-body ul {
+            padding-left: 20px;
+        }
+        .modal-body ul li {
+            margin-bottom: 8px;
+        }
+        .modal-body .btn-success {
+            margin-top: 10px;
+        }
     </style>
 
 </head>
@@ -273,14 +316,15 @@
 <body>
 
     <!-- ===== NAVBAR ===== -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-house-door-fill"></i>
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/28e102b5e877c1f41ab210e479c150db5ca184a9/logo%203%20web.png" 
+                     alt="Logo Desa Simarmata">
                 Desa Simarmata
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -321,8 +365,8 @@
     <!-- ===== HEADER ===== -->
     <section class="bg-primary text-white text-center py-5">
         <div class="container">
-            <h1 class="text-white">Homestay Desa Simarmata</h1>
-            <p>Nikmati pengalaman menginap dengan suasana khas Batak Toba.</p>
+            <h1 class="text-white reveal delay-1">Homestay Desa Simarmata</h1>
+            <p class="reveal delay-2">Nikmati pengalaman menginap dengan suasana khas Batak Toba.</p>
         </div>
     </section>
 
@@ -330,68 +374,72 @@
     <section class="container py-5">
         <div class="row">
 
-            <!-- Homestay 1 -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <!-- Homestay 1 - Wariska Sinaga -->
+            <div class="col-lg-4 col-md-6 mb-4 reveal delay-1">
                 <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cmVjdCB4PSI1MCIgeT0iNTAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iMTgwIiB5PSI4MCIgd2lkdGg9IjcwIiBoZWlnaHQ9IjcwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iMjgwIiB5PSI1MCIgd2lkdGg9IjcwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2ZmZDU0OCIvPjx0ZXh0IHg9IjUwIiB5PSIyMjAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjIwIiBmb250LWZhbWlseT0iQXJpYWwiPkhvbWVzdGF5IFNpbWFybWF0YTwvdGV4dD48L3N2Zz4=" class="card-img-top" alt="Homestay Simarmata Indah">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-wariska1.jpeg" 
+                         class="card-img-top clickable-img" 
+                         alt="Homestay Wariska Sinaga"
+                         data-bs-toggle="modal" data-bs-target="#modalWariska">
                     <div class="card-body">
-                        <h4>Homestay Simarmata Indah</h4>
+                        <h4>Homestay Wariska Sinaga</h4>
                         <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
-                        <p>⭐⭐⭐⭐☆</p>
-                        <p>Harga : <strong>Rp250.000 / malam</strong></p>
+                        <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐⭐</p>
                         <ul>
-                            <li><i class="bi bi-check-circle-fill"></i> WiFi</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Air Panas</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Parkir</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Sarapan</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 1 Kamar</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Ruang Tamu</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Kamar Mandi</li>
                         </ul>
-                        <a href="https://wa.me/6289681434178?text=Halo,%20saya%20ingin%20booking%20Homestay%20Simarmata%20Indah." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Booking Sekarang
-                        </a>
+                        <!-- Tombol modal -->
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalWariska">
+                            <i class="bi bi-eye"></i> Lihat Detail
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Homestay 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <!-- Homestay 2 - Buk Gisel -->
+            <div class="col-lg-4 col-md-6 mb-4 reveal delay-2">
                 <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMjAiIHI9IjcwIiBmaWxsPSIjZmZkNTQ4Ii8+PHJlY3QgeD0iNTAiIHk9IjE4MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2ZmZDU0OCIvPjx0ZXh0IHg9IjUwIiB5PSIyMjAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjIwIiBmb250LWZhbWlseT0iQXJpYWwiPkxha2UgVmlldyBIb21lc3RheTwvdGV4dD48L3N2Zz4=" class="card-img-top" alt="Lake View Homestay">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-gisel.jpeg" 
+                         class="card-img-top clickable-img" 
+                         alt="Homestay Buk Gisel"
+                         data-bs-toggle="modal" data-bs-target="#modalGisel">
                     <div class="card-body">
-                        <h4>Lake View Homestay</h4>
-                        <p><i class="bi bi-geo-alt-fill text-danger"></i> Danau Toba</p>
-                        <p>⭐⭐⭐⭐⭐</p>
-                        <p>Harga : <strong>Rp350.000 / malam</strong></p>
+                        <h4>Homestay Buk Gisel</h4>
+                        <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
+                        <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐⭐</p>
                         <ul>
-                            <li><i class="bi bi-check-circle-fill"></i> Danau View</li>
-                            <li><i class="bi bi-check-circle-fill"></i> WiFi</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Air Panas</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Balkon</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 1 Kamar</li>
+                            <li><i class="bi bi-check-circle-fill"></i> 2 Kamar Mandi</li>
                         </ul>
-                        <a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20booking%20Lake%20View%20Homestay." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Booking Sekarang
-                        </a>
+                        <!-- Tombol modal -->
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalGisel">
+                            <i class="bi bi-eye"></i> Lihat Detail
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Homestay 3 -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <!-- Homestay 3 - Sridewi Manihuruk -->
+            <div class="col-lg-4 col-md-6 mb-4 reveal delay-3">
                 <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48cG9seWdvbiBwb2ludHM9IjIwMCw1MCA3MCwxOTAgMzMwLDE5MCIgZmlsbD0iI2ZmZDU0OCIvPjxyZWN0IHg9IjE1MCIgeT0iMTUwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjcwIiBmaWxsPSIjN2MwZTBlIi8+PHRleHQgeD0iNTAiIHk9IjIyMCIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+UnVtYWggQmF0YWsgSG9tZXN0YXk8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Rumah Batak Homestay">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-sridewi.jpeg" 
+                         class="card-img-top clickable-img" 
+                         alt="Homestay Sridewi Manihuruk"
+                         data-bs-toggle="modal" data-bs-target="#modalSridewi">
                     <div class="card-body">
-                        <h4>Rumah Batak Homestay</h4>
-                        <p><i class="bi bi-geo-alt-fill text-danger"></i> Simarmata</p>
-                        <p>⭐⭐⭐⭐☆</p>
-                        <p>Harga : <strong>Rp300.000 / malam</strong></p>
+                        <h4>Homestay Sridewi Manihuruk</h4>
+                        <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
+                        <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐</p>
                         <ul>
-                            <li><i class="bi bi-check-circle-fill"></i> Rumah Adat</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Air Panas</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Parkir</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Sarapan</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Tikar & Bantal</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Kamar Mandi</li>
                         </ul>
-                        <a href="https://wa.me/6282268592713?text=Halo,%20saya%20ingin%20booking%20Rumah%20Batak%20Homestay." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Booking Sekarang
-                        </a>
+                        <!-- Tombol modal -->
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSridewi">
+                            <i class="bi bi-eye"></i> Lihat Detail
+                        </button>
                     </div>
                 </div>
             </div>
@@ -402,23 +450,23 @@
     <!-- ===== FASILITAS ===== -->
     <section class="bg-light py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Fasilitas Homestay</h2>
+            <h2 class="text-center mb-5 reveal">Fasilitas Homestay</h2>
             <div class="row text-center">
-                <div class="col-md-3">
-                    <i class="bi bi-wifi display-4 fasilitas-icon"></i>
-                    <h5>WiFi Gratis</h5>
+                <div class="col-md-3 reveal delay-1">
+                    <i class="bi bi-door-closed display-4 fasilitas-icon"></i>
+                    <h5>Kamar Nyaman</h5>
                 </div>
-                <div class="col-md-3">
-                    <i class="bi bi-cup-hot display-4 fasilitas-icon"></i>
-                    <h5>Sarapan</h5>
+                <div class="col-md-3 reveal delay-2">
+                    <i class="bi bi-house display-4 fasilitas-icon"></i>
+                    <h5>Ruang Tamu</h5>
                 </div>
-                <div class="col-md-3">
-                    <i class="bi bi-car-front-fill display-4 fasilitas-icon"></i>
-                    <h5>Parkir</h5>
+                <div class="col-md-3 reveal delay-3">
+                    <i class="bi bi-droplet display-4 fasilitas-icon"></i>
+                    <h5>Kamar Mandi</h5>
                 </div>
-                <div class="col-md-3">
-                    <i class="bi bi-water display-4 fasilitas-icon"></i>
-                    <h5>Air Panas</h5>
+                <div class="col-md-3 reveal delay-4">
+                    <i class="bi bi-whatsapp display-4 fasilitas-icon"></i>
+                    <h5>Booking via WA</h5>
                 </div>
             </div>
         </div>
@@ -430,7 +478,7 @@
             <div class="row">
 
                 <!-- Alamat -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 reveal delay-1">
                     <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
                     <p>
                         Desa Simarmata<br>
@@ -442,7 +490,7 @@
                 </div>
 
                 <!-- Menu -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 reveal delay-2">
                     <h5><i class="bi bi-list"></i> Menu</h5>
                     <ul class="list-unstyled">
                         <li><a href="index.html">Home</a></li>
@@ -455,7 +503,7 @@
                 </div>
 
                 <!-- Media Sosial -->
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 reveal delay-3">
                     <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
                     <p>
                         Instagram:<br>
@@ -480,7 +528,200 @@
         </div>
     </footer>
 
+
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 1: HOMESTAY WARISKA SINAGA ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalWariska" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">
+                        <i class="bi bi-house-fill"></i> Homestay Wariska Sinaga
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-wariska1.jpeg"
+                         class="img-fluid rounded mb-3 w-100" alt="Homestay Wariska Sinaga">
+
+                    <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                    <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                    <p>
+                        <strong>Homestay Wariska Sinaga</strong> menawarkan pengalaman menginap yang nyaman 
+                        dengan fasilitas lengkap untuk keluarga atau rombongan kecil. Terletak di pusat 
+                        Desa Simarmata, homestay ini memiliki akses mudah ke berbagai tempat wisata seperti 
+                        Danau Toba, Huta Adat, dan Makam Raja.
+                    </p>
+                    <p>
+                        Dilengkapi dengan ruang tamu yang luas dan kamar mandi bersih, homestay ini cocok 
+                        untuk wisatawan yang menginginkan kenyamanan dan ketenangan.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-check-circle-fill"></i> Fasilitas</h6>
+                    <ul>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> 1 Kamar tidur</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Ruang tamu</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Kamar mandi</li>
+                    </ul>
+
+                    <h6 class="text-danger"><i class="bi bi-star-fill text-warning"></i> Rating</h6>
+                    <p>⭐⭐⭐ (3 bintang)</p>
+
+                    <!-- Tombol WhatsApp -->
+                    <a href="https://wa.me/6287897257318?text=Halo,%20saya%20ingin%20booking%20Homestay%20Wariskaindo." 
+                       target="_blank" class="btn btn-success w-100">
+                        <i class="bi bi-whatsapp"></i> Booking Sekarang via WhatsApp
+                    </a>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 2: HOMESTAY BUK GISEL ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalGisel" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">
+                        <i class="bi bi-house-heart-fill"></i> Homestay Buk Gisel
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-gisel.jpeg"
+                         class="img-fluid rounded mb-3 w-100" alt="Homestay Buk Gisel">
+
+                    <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                    <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                    <p>
+                        <strong>Homestay Buk Gisel</strong> adalah pilihan tepat bagi wisatawan yang menginginkan 
+                        privasi dan kenyamanan. Dengan 1 kamar tidur dan 2 kamar mandi, homestay ini cocok 
+                        untuk pasangan atau keluarga kecil yang ingin menikmati suasana pedesaan yang tenang 
+                        di Desa Simarmata.
+                    </p>
+                    <p>
+                        Lokasinya strategis dan dekat dengan berbagai objek wisata budaya dan alam.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-check-circle-fill"></i> Fasilitas</h6>
+                    <ul>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> 1 Kamar tidur</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> 2 Kamar mandi</li>
+                    </ul>
+
+                    <h6 class="text-danger"><i class="bi bi-star-fill text-warning"></i> Rating</h6>
+                    <p>⭐⭐⭐ (3 bintang)</p>
+
+                    <!-- Tombol WhatsApp -->
+                    <a href="https://wa.me/6287838016297?text=Halo,%20saya%20ingin%20booking%20Homestay%20Buk%20Gisel." 
+                       target="_blank" class="btn btn-success w-100">
+                        <i class="bi bi-whatsapp"></i> Booking Sekarang via WhatsApp
+                    </a>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 3: HOMESTAY SRIDEWI MANIHURUK ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalSridewi" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">
+                        <i class="bi bi-house-fill"></i> Homestay Sridewi Manihuruk
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-sridewi.jpeg"
+                         class="img-fluid rounded mb-3 w-100" alt="Homestay Sridewi Manihuruk">
+
+                    <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                    <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                    <p>
+                        <strong>Homestay Sridewi Manihuruk</strong> adalah pilihan homestay sederhana dengan 
+                        suasana pedesaan yang khas. Tempat tidur masih menggunakan tikar dan bantal, 
+                        namun tersedia kamar mandi bersih. Cocok bagi wisatawan petualang atau backpacker 
+                        yang ingin merasakan pengalaman menginap sederhana namun autentik di Desa Simarmata.
+                    </p>
+                    <div class="alert alert-warning mt-2" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Catatan:</strong> Tempat tidur masih terbatas 
+                        (hanya tikar dan bantal). Harap menjadi perhatian bagi calon tamu.
+                    </div>
+
+                    <h6 class="text-danger"><i class="bi bi-check-circle-fill"></i> Fasilitas</h6>
+                    <ul>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Tikar dan bantal</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Kamar mandi</li>
+                    </ul>
+
+                    <h6 class="text-danger"><i class="bi bi-star-fill text-warning"></i> Rating</h6>
+                    <p>⭐⭐ (2 bintang)</p>
+
+                    <!-- Tombol WhatsApp -->
+                    <a href="https://wa.me/6287730573395?text=Halo,%20saya%20ingin%20booking%20Homestay%20Sridewi%20Manihuruk." 
+                       target="_blank" class="btn btn-success w-100">
+                        <i class="bi bi-whatsapp"></i> Booking Sekarang via WhatsApp
+                    </a>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== SCRIPTS ===== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- ===== JAVASCRIPT SCROLL REVEAL ===== -->
+    <script>
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < (window.innerHeight || document.documentElement.clientHeight) - 50 && rect.bottom > 50;
+        }
+
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('visible');
+                    el.classList.remove('reverse');
+                } else {
+                    el.classList.remove('visible');
+                    el.classList.add('reverse');
+                }
+            });
+        }
+
+        window.addEventListener('load', handleScrollReveal);
+        window.addEventListener('scroll', handleScrollReveal);
+        window.addEventListener('resize', handleScrollReveal);
     </script>
 
 </body>
