@@ -270,6 +270,16 @@
         .delay-3 { transition-delay: 0.3s; }
         .delay-4 { transition-delay: 0.4s; }
         .delay-5 { transition-delay: 0.5s; }
+
+        /* ===== GAMBAR BISA DIKLIK UNTUK MODAL ===== */
+        .clickable-img {
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .clickable-img:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
     </style>
 
 </head>
@@ -360,9 +370,10 @@
         <div class="row align-items-center">
             <div class="col-lg-6 reveal delay-1">
                 <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/6b4e93c2aa7d0a0b32e870b82eb0c8a84a2692fe/desa6.jpg" 
-                     class="img-fluid rounded shadow" 
+                     class="img-fluid rounded shadow clickable-img" 
                      style="width: 100%; height: 400px; object-fit: cover;"
-                     alt="Sejarah Desa">
+                     alt="Sejarah Desa"
+                     data-bs-toggle="modal" data-bs-target="#modalSejarah">
             </div>
             <div class="col-lg-6 reveal delay-2">
                 <h2>Asal Usul Desa</h2>
@@ -579,6 +590,23 @@
 
         </div>
     </footer>
+
+    <!-- ===== MODAL UNTUK GAMBAR SEJARAH ===== -->
+    <div class="modal fade" id="modalSejarah" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">Sejarah Desa Simarmata</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/6b4e93c2aa7d0a0b32e870b82eb0c8a84a2692fe/desa6.jpg"
+                         class="img-fluid"
+                         alt="Sejarah Desa Simarmata">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
