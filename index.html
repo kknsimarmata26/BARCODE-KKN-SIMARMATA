@@ -326,6 +326,16 @@
             transition-delay: 0.5s;
         }
 
+        /* ===== GAMBAR BISA DIKLIK UNTUK MODAL ===== */
+        .clickable-img {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .clickable-img:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media(max-width:992px) {
             .hero-section h1 {
@@ -466,9 +476,10 @@
         <div class="row align-items-center">
             <div class="col-lg-6 scroll-animate">
                 <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/kantor-desa.jpeg"
-                     class="img-fluid rounded shadow"
+                     class="img-fluid rounded shadow clickable-img"
                      alt="Kantor Desa Simarmata"
-                     style="width:100%; height:350px; object-fit:cover;">
+                     style="width:100%; height:350px; object-fit:cover;"
+                     data-bs-toggle="modal" data-bs-target="#modalProfil">
             </div>
             <div class="col-lg-6 scroll-animate delay-2">
                 <h2>Tentang Desa Simarmata</h2>
@@ -494,9 +505,10 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 scroll-animate">
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/gorga%20batak.jpeg"
-                         class="img-fluid rounded shadow"
+                         class="img-fluid rounded shadow clickable-img"
                          alt="Gorga Batak - Sejarah Desa Simarmata"
-                         style="width:100%; height:350px; object-fit:cover;">
+                         style="width:100%; height:350px; object-fit:cover;"
+                         data-bs-toggle="modal" data-bs-target="#modalSejarah">
                 </div>
                 <div class="col-lg-6 scroll-animate delay-2">
                     <h2>Sejarah Desa Simarmata</h2>
@@ -649,6 +661,40 @@
 
         </div>
     </footer>
+
+    <!-- ===== MODAL UNTUK GAMBAR PROFIL ===== -->
+    <div class="modal fade" id="modalProfil" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">Kantor Desa Simarmata</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/kantor-desa.jpeg"
+                         class="img-fluid"
+                         alt="Kantor Desa Simarmata">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL UNTUK GAMBAR SEJARAH ===== -->
+    <div class="modal fade" id="modalSejarah" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">Gorga Batak - Sejarah Desa Simarmata</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/gorga%20batak.jpeg"
+                         class="img-fluid"
+                         alt="Gorga Batak - Sejarah Desa Simarmata">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
