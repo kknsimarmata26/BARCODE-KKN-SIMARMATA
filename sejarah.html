@@ -398,327 +398,350 @@
                 font-size: 20px;
             }
         }
+
+        /* ============================================================
+           FITUR BLUR SAAT MODAL TERBUKA (METODE WRAPPER)
+        ============================================================ */
+        #main-content {
+            transition: filter 0.3s ease;
+        }
+        #main-content.blur {
+            filter: blur(6px);
+            -webkit-filter: blur(6px);
+            pointer-events: none; /* Mencegah klik pada background saat modal terbuka */
+        }
+        /* Pastikan tombol Back-to-Top tidak ikut terkunci */
+        .back-to-top {
+            pointer-events: auto !important;
+        }
     </style>
 
 </head>
 
 <body>
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef969438973ac8f198dc8c488428a20c54fe8bd6/logo%203%20web.png"
-                alt="Logo Desa Simarmata">
-                Desa Simarmata
-            </a>
+    <!-- ===== PENTING: BUNGKUS SEMUA KONTEN WEBSITE ===== -->
+    <div id="main-content">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <!-- ===== NAVBAR ===== -->
+        <nav class="navbar navbar-expand-lg navbar-dark shadow">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef969438973ac8f198dc8c488428a20c54fe8bd6/logo%203%20web.png"
+                    alt="Logo Desa Simarmata">
+                    Desa Simarmata
+                </a>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profil.html">Profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="sejarah.html">Sejarah</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="wisata.html">Wisata</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="budaya.html">Budaya</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="umkm.html">UMKM</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="homestay.html">Homestay</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="galeri.html">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kontak.html">Kontak</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- ===== HERO CAROUSEL DENGAN LQIP ===== -->
-    <div class="hero-carousel-wrapper position-relative">
-
-        <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
-            <!-- Indikator -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="3"></button>
-                <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="4"></button>
-            </div>
-
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/18d9a98e36da9126dfbe75f8700c40760c3d4ec6/desa9.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 2 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/18d9a98e36da9126dfbe75f8700c40760c3d4ec6/desa10.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 3 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/77a1581bf703b4c909a284ff27b3ad03ecc395bc/desa11.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 4 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/77a1581bf703b4c909a284ff27b3ad03ecc395bc/desa12.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 5 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/77a1581bf703b4c909a284ff27b3ad03ecc395bc/desa13.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-            </div>
-
-            <!-- Tombol navigasi -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#headerCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-        <!-- Overlay Teks -->
-        <div class="hero-content">
-            <h1>Sejarah Desa Simarmata</h1>
-            <p class="lead">Melestarikan sejarah sebagai identitas dan warisan budaya masyarakat.</p>
-        </div>
-
-    </div>
-
-    <!-- ===== SEJARAH (Asal Usul - Diperbesar agar sesuai frame) ===== -->
-    <section class="container py-5">
-        <div class="row align-items-center">
-            <div class="col-lg-6 reveal delay-1">
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/6b4e93c2aa7d0a0b32e870b82eb0c8a84a2692fe/desa6.jpg"
-                class="img-fluid rounded shadow clickable-img"
-                style="width: 100%; height: 400px; object-fit: cover;"
-                alt="Sejarah Desa"
-                data-bs-toggle="modal" data-bs-target="#modalSejarah">
-            </div>
-            <div class="col-lg-6 reveal delay-2">
-                <h2>Asal Usul Desa</h2>
-                <p style="text-align:justify;">
-                    Masyarakat Simarmata sejak dahulu hidup berdampingan dengan alam dan menggantungkan kehidupan pada sektor pertanian serta perikanan Danau Toba. Kehidupan masyarakat juga diatur oleh lembaga adat <strong>Bius Sitolu Tali</strong>, yang menjadi simbol persatuan sekaligus pedoman dalam menjaga ketertiban, budaya, dan keharmonisan masyarakat.
-                </p>
-                <p style="text-align:justify;">
-                    Memasuki masa pemerintahan modern, Desa Simarmata terus mengalami perkembangan. Pada tahun <strong>1993</strong>, Desa Simarmata, Galungan, dan Sidaji resmi digabungkan menjadi satu wilayah administratif yang kini dikenal sebagai <strong>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir</strong>.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== LOKASI BERSEJARAH ===== -->
-    <section class="container py-5">
-        <h2 class="text-center mb-4 reveal">Lokasi Bersejarah Desa Simarmata</h2>
-        <div class="row">
-
-            <!-- Huta Adat Simarmata -->
-            <div class="col-lg-6 col-md-6 mb-4">
-                <div class="card shadow h-100 reveal delay-1">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
-                    class="card-img-top"
-                    alt="Huta Adat Simarmata">
-                    <div class="card-body">
-                        <h5>Huta Adat Simarmata</h5>
-                        <p>Kawasan adat yang menjadi bagian penting dari sejarah dan budaya masyarakat Simarmata.</p>
-                        <a href="detail-huta-adat.html" target="_blank" class="btn btn-primary w-100">
-                            <i class="bi bi-book-fill"></i> Selengkapnya
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Rumah Adat Batak -->
-            <div class="col-lg-6 col-md-6 mb-4">
-                <div class="card shadow h-100 reveal delay-2">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa14.jpeg"
-                    class="card-img-top"
-                    alt="Rumah Adat Batak">
-                    <div class="card-body">
-                        <h5>Rumah Adat Batak</h5>
-                        <p>Warisan arsitektur tradisional Batak Toba yang memiliki nilai budaya tinggi.</p>
-                        <a href="detail-rumah-adat.html" target="_blank" class="btn btn-primary w-100">
-                            <i class="bi bi-book-fill"></i> Selengkapnya
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tugu Simarmata -->
-            <div class="col-lg-6 col-md-6 mb-4">
-                <div class="card shadow h-100 reveal delay-3">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
-                    class="card-img-top"
-                    alt="Tugu Simarmata"
-                    style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5>Tugu Simarmata</h5>
-                        <p>Tugu Simarmata merupakan salah satu simbol sejarah dan identitas marga Simarmata yang menjadi pengingat asal-usul, silsilah, serta warisan budaya masyarakat Batak Toba di Desa Simarmata.</p>
-                        <a href="detail-tugu-simarmata.html" target="_blank" class="btn btn-primary w-100">
-                            <i class="bi bi-book-fill"></i> Selengkapnya
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sopo Ni Opung Sisaurmatua Simarmata (Card dengan deskripsi singkat) -->
-            <div class="col-lg-6 col-md-6 mb-4">
-                <div class="card shadow h-100 reveal delay-4">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/soponiopung.jpg"
-                    class="card-img-top"
-                    alt="Sopo Ni Opung Sisaurmatua Simarmata"
-                    style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5>Sopo Ni Opung Sisaurmatua Simarmata</h5>
-                        <p>Sopo Ni Opung Sisaurmatua Simarmata merupakan situs adat warisan OP. JORLANG SIMARMATA yang menjadi simbol penghormatan kepada leluhur. Kawasan ini juga memiliki Mual Paridian, mata air bersejarah yang masih dijaga kesakralannya hingga saat ini.</p>
-                        <a href="detail-sopo-opung.html" target="_blank" class="btn btn-primary w-100">
-                            <i class="bi bi-book-fill"></i> Selengkapnya
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ===== PERJALANAN SEJARAH ===== -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 reveal">Perjalanan Sejarah</h2>
-
-            <!-- Awal Permukiman -->
-            <div class="card shadow mb-4 reveal delay-1">
-                <div class="card-body">
-                    <h4><i class="bi bi-clock-history text-primary"></i> Awal Permukiman</h4>
-                    <p style="text-align:justify;">
-                        Awal pemukiman Desa Simarmata diperkirakan dimulai sekitar tahun <strong>1600</strong>, ketika <strong>Simataraja Simarmata</strong>, putra ketiga Op. Tuan Binur, datang dari Huta Namoora Tahuan (Rianiate). Ia mendirikan sebuah rumah (bale-bale) di wilayah yang kemudian dikenal sebagai Simarmata, serta hidup dengan bertani dan menangkap ikan.
-                    </p>
-                    <p style="text-align:justify;">
-                        Simataraja Simarmata menikah dengan Boru Limbong dan memiliki tiga orang anak, yaitu <strong>Halihi Raja, Dosi Raja, dan Datuktuk Raja</strong>. Ketiga anaknya kemudian menggunakan marga Simarmata dan membentuk keluarga masing-masing.
-                    </p>
-                    <p style="text-align:justify;">
-                        Seiring bertambahnya keturunan, mereka membuka tiga perkampungan (huta), yaitu:
-                    </p>
-                    <ul>
-                        <li><strong>Huta Uruk</strong> (ditempati Halihi Raja)</li>
-                        <li><strong>Huta Toruan</strong> (ditempati Dosi Raja dan menjadi lokasi tugu Simataraja)</li>
-                        <li><strong>Huta Balian</strong> (ditempati Datuktuk Raja)</li>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profil.html">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="sejarah.html">Sejarah</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wisata.html">Wisata</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="budaya.html">Budaya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="umkm.html">UMKM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="homestay.html">Homestay</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeri.html">Galeri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontak.html">Kontak</a>
+                        </li>
                     </ul>
-                    <p style="text-align:justify;">
-                        Ketiga huta tersebut kemudian dikenal sebagai <strong>Huta Simarmata</strong> dan menjadi cikal bakal berkembangnya Desa Simarmata.
-                    </p>
                 </div>
             </div>
+        </nav>
 
-            <!-- Sistem Adat Bius Sitolu Tali -->
-            <div class="card shadow mb-4 reveal delay-2">
-                <div class="card-body">
-                    <h4><i class="bi bi-people-fill text-primary"></i> Sistem Adat Bius Sitolu Tali</h4>
-                    <p style="text-align:justify;">
-                        Untuk mengatur kehidupan masyarakat, dibentuk lembaga adat <strong>Bius Sitolu Tali</strong>, yang mencakup Huta Uruk, Huta Toruan, Huta Balian, serta Boru Bius Marga Sinaga. Kepemimpinan bius dipegang oleh <strong>Raja Jolo</strong> secara bergiliran berdasarkan garis keturunan Simataraja. Bius berfungsi menjaga ketertiban, kesejahteraan, pelaksanaan adat-istiadat, serta kepercayaan kepada Mula Jadi Na Bolon.
-                    </p>
+        <!-- ===== HERO CAROUSEL DENGAN LQIP ===== -->
+        <div class="hero-carousel-wrapper position-relative">
+
+            <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+                <!-- Indikator -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                    <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="4"></button>
                 </div>
+
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/18d9a98e36da9126dfbe75f8700c40760c3d4ec6/desa9.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/18d9a98e36da9126dfbe75f8700c40760c3d4ec6/desa10.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/77a1581bf703b4c909a284ff27b3ad03ecc395bc/desa11.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/77a1581bf703b4c909a284ff27b3ad03ecc395bc/desa12.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/77a1581bf703b4c909a284ff27b3ad03ecc395bc/desa13.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                </div>
+
+                <!-- Tombol navigasi -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#headerCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
 
-            <!-- Masa Kolonial -->
-            <div class="card shadow mb-4 reveal delay-3">
-                <div class="card-body">
-                    <h4><i class="bi bi-building text-primary"></i> Masa Kolonial dan Perubahan Pemerintahan</h4>
-                    <p style="text-align:justify;">
-                        Pada masa kolonial Belanda sekitar <strong>1910</strong>, sistem pemerintahan adat mulai mengalami perubahan. Kekuasaan Raja Bius dikurangi dan diganti dengan sistem pemerintahan kolonial melalui <strong>Raja Ihutan</strong>. Selanjutnya pada <strong>1913–1917</strong>, dibentuk pemerintahan Kepala Negeri dan Kepala Kampung. Wilayah Kenegerian Simarmata saat itu meliputi delapan kampung, yang kemudian berkembang menjadi beberapa desa, termasuk Desa Simarmata seperti yang dikenal sekarang.
-                    </p>
-                </div>
+            <!-- Overlay Teks -->
+            <div class="hero-content">
+                <h1>Sejarah Desa Simarmata</h1>
+                <p class="lead">Melestarikan sejarah sebagai identitas dan warisan budaya masyarakat.</p>
             </div>
 
         </div>
-    </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="pt-5 pb-3">
-        <div class="container">
+        <!-- ===== SEJARAH (Asal Usul - Diperbesar agar sesuai frame) ===== -->
+        <section class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 reveal delay-1">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/6b4e93c2aa7d0a0b32e870b82eb0c8a84a2692fe/desa6.jpg"
+                    class="img-fluid rounded shadow clickable-img"
+                    style="width: 100%; height: 400px; object-fit: cover;"
+                    alt="Sejarah Desa"
+                    data-bs-toggle="modal" data-bs-target="#modalSejarah">
+                </div>
+                <div class="col-lg-6 reveal delay-2">
+                    <h2>Asal Usul Desa</h2>
+                    <p style="text-align:justify;">
+                        Masyarakat Simarmata sejak dahulu hidup berdampingan dengan alam dan menggantungkan kehidupan pada sektor pertanian serta perikanan Danau Toba. Kehidupan masyarakat juga diatur oleh lembaga adat <strong>Bius Sitolu Tali</strong>, yang menjadi simbol persatuan sekaligus pedoman dalam menjaga ketertiban, budaya, dan keharmonisan masyarakat.
+                    </p>
+                    <p style="text-align:justify;">
+                        Memasuki masa pemerintahan modern, Desa Simarmata terus mengalami perkembangan. Pada tahun <strong>1993</strong>, Desa Simarmata, Galungan, dan Sidaji resmi digabungkan menjadi satu wilayah administratif yang kini dikenal sebagai <strong>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LOKASI BERSEJARAH ===== -->
+        <section class="container py-5">
+            <h2 class="text-center mb-4 reveal">Lokasi Bersejarah Desa Simarmata</h2>
             <div class="row">
 
-                <!-- Alamat -->
-                <div class="col-md-4 mb-4">
-                    <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
-                    <p>
-                        Desa Simarmata<br>
-                        Kecamatan Simanindo<br>
-                        Kabupaten Samosir<br>
-                        Provinsi Sumatera Utara<br>
-                        Kode Pos: 22395
-                    </p>
+                <!-- Huta Adat Simarmata -->
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="card shadow h-100 reveal delay-1">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
+                        class="card-img-top"
+                        alt="Huta Adat Simarmata">
+                        <div class="card-body">
+                            <h5>Huta Adat Simarmata</h5>
+                            <p>Kawasan adat yang menjadi bagian penting dari sejarah dan budaya masyarakat Simarmata.</p>
+                            <a href="detail-huta-adat.html" target="_blank" class="btn btn-primary w-100">
+                                <i class="bi bi-book-fill"></i> Selengkapnya
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Menu -->
-                <div class="col-md-4 mb-4">
-                    <h5><i class="bi bi-list"></i> Menu</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="profil.html">Profil Desa</a></li>
-                        <li><a href="sejarah.html">Sejarah</a></li>
-                        <li><a href="wisata.html">Wisata</a></li>
-                        <li><a href="budaya.html">Budaya</a></li>
-                        <li><a href="umkm.html">UMKM</a></li>
-                        <li><a href="homestay.html">Homestay</a></li>
-                        <li><a href="galeri.html">Galeri</a></li>
-                        <li><a href="kontak.html">Kontak</a></li>
-                    </ul>
+                <!-- Rumah Adat Batak -->
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="card shadow h-100 reveal delay-2">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa14.jpeg"
+                        class="card-img-top"
+                        alt="Rumah Adat Batak">
+                        <div class="card-body">
+                            <h5>Rumah Adat Batak</h5>
+                            <p>Warisan arsitektur tradisional Batak Toba yang memiliki nilai budaya tinggi.</p>
+                            <a href="detail-rumah-adat.html" target="_blank" class="btn btn-primary w-100">
+                                <i class="bi bi-book-fill"></i> Selengkapnya
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Media Sosial -->
-                <div class="col-md-4 mb-4">
-                    <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
-                    <p>
-                        Instagram:<br>
-                        <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
-                    </p>
-                    <p>
-                        TikTok:<br>
-                        <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
-                    </p>
+                <!-- Tugu Simarmata -->
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="card shadow h-100 reveal delay-3">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
+                        class="card-img-top"
+                        alt="Tugu Simarmata"
+                        style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5>Tugu Simarmata</h5>
+                            <p>Tugu Simarmata merupakan salah satu simbol sejarah dan identitas marga Simarmata yang menjadi pengingat asal-usul, silsilah, serta warisan budaya masyarakat Batak Toba di Desa Simarmata.</p>
+                            <a href="detail-tugu-simarmata.html" target="_blank" class="btn btn-primary w-100">
+                                <i class="bi bi-book-fill"></i> Selengkapnya
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sopo Ni Opung Sisaurmatua Simarmata (Card dengan deskripsi singkat) -->
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="card shadow h-100 reveal delay-4">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/soponiopung.jpg"
+                        class="card-img-top"
+                        alt="Sopo Ni Opung Sisaurmatua Simarmata"
+                        style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5>Sopo Ni Opung Sisaurmatua Simarmata</h5>
+                            <p>Sopo Ni Opung Sisaurmatua Simarmata merupakan situs adat warisan OP. JORLANG SIMARMATA yang menjadi simbol penghormatan kepada leluhur. Kawasan ini juga memiliki Mual Paridian, mata air bersejarah yang masih dijaga kesakralannya hingga saat ini.</p>
+                            <a href="detail-sopo-opung.html" target="_blank" class="btn btn-primary w-100">
+                                <i class="bi bi-book-fill"></i> Selengkapnya
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
+        </section>
 
-            <hr>
+        <!-- ===== PERJALANAN SEJARAH ===== -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 reveal">Perjalanan Sejarah</h2>
 
-            <div class="text-center">
-                <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
-                <br>
-                <small>Dibuat untuk Program KKN UNIMED 2026</small>
+                <!-- Awal Permukiman -->
+                <div class="card shadow mb-4 reveal delay-1">
+                    <div class="card-body">
+                        <h4><i class="bi bi-clock-history text-primary"></i> Awal Permukiman</h4>
+                        <p style="text-align:justify;">
+                            Awal pemukiman Desa Simarmata diperkirakan dimulai sekitar tahun <strong>1600</strong>, ketika <strong>Simataraja Simarmata</strong>, putra ketiga Op. Tuan Binur, datang dari Huta Namoora Tahuan (Rianiate). Ia mendirikan sebuah rumah (bale-bale) di wilayah yang kemudian dikenal sebagai Simarmata, serta hidup dengan bertani dan menangkap ikan.
+                        </p>
+                        <p style="text-align:justify;">
+                            Simataraja Simarmata menikah dengan Boru Limbong dan memiliki tiga orang anak, yaitu <strong>Halihi Raja, Dosi Raja, dan Datuktuk Raja</strong>. Ketiga anaknya kemudian menggunakan marga Simarmata dan membentuk keluarga masing-masing.
+                        </p>
+                        <p style="text-align:justify;">
+                            Seiring bertambahnya keturunan, mereka membuka tiga perkampungan (huta), yaitu:
+                        </p>
+                        <ul>
+                            <li><strong>Huta Uruk</strong> (ditempati Halihi Raja)</li>
+                            <li><strong>Huta Toruan</strong> (ditempati Dosi Raja dan menjadi lokasi tugu Simataraja)</li>
+                            <li><strong>Huta Balian</strong> (ditempati Datuktuk Raja)</li>
+                        </ul>
+                        <p style="text-align:justify;">
+                            Ketiga huta tersebut kemudian dikenal sebagai <strong>Huta Simarmata</strong> dan menjadi cikal bakal berkembangnya Desa Simarmata.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sistem Adat Bius Sitolu Tali -->
+                <div class="card shadow mb-4 reveal delay-2">
+                    <div class="card-body">
+                        <h4><i class="bi bi-people-fill text-primary"></i> Sistem Adat Bius Sitolu Tali</h4>
+                        <p style="text-align:justify;">
+                            Untuk mengatur kehidupan masyarakat, dibentuk lembaga adat <strong>Bius Sitolu Tali</strong>, yang mencakup Huta Uruk, Huta Toruan, Huta Balian, serta Boru Bius Marga Sinaga. Kepemimpinan bius dipegang oleh <strong>Raja Jolo</strong> secara bergiliran berdasarkan garis keturunan Simataraja. Bius berfungsi menjaga ketertiban, kesejahteraan, pelaksanaan adat-istiadat, serta kepercayaan kepada Mula Jadi Na Bolon.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Masa Kolonial -->
+                <div class="card shadow mb-4 reveal delay-3">
+                    <div class="card-body">
+                        <h4><i class="bi bi-building text-primary"></i> Masa Kolonial dan Perubahan Pemerintahan</h4>
+                        <p style="text-align:justify;">
+                            Pada masa kolonial Belanda sekitar <strong>1910</strong>, sistem pemerintahan adat mulai mengalami perubahan. Kekuasaan Raja Bius dikurangi dan diganti dengan sistem pemerintahan kolonial melalui <strong>Raja Ihutan</strong>. Selanjutnya pada <strong>1913–1917</strong>, dibentuk pemerintahan Kepala Negeri dan Kepala Kampung. Wilayah Kenegerian Simarmata saat itu meliputi delapan kampung, yang kemudian berkembang menjadi beberapa desa, termasuk Desa Simarmata seperti yang dikenal sekarang.
+                        </p>
+                    </div>
+                </div>
+
             </div>
+        </section>
 
-        </div>
-    </footer>
+        <!-- ===== FOOTER ===== -->
+        <footer class="pt-5 pb-3">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Alamat -->
+                    <div class="col-md-4 mb-4">
+                        <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
+                        <p>
+                            Desa Simarmata<br>
+                            Kecamatan Simanindo<br>
+                            Kabupaten Samosir<br>
+                            Provinsi Sumatera Utara<br>
+                            Kode Pos: 22395
+                        </p>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="col-md-4 mb-4">
+                        <h5><i class="bi bi-list"></i> Menu</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="profil.html">Profil Desa</a></li>
+                            <li><a href="sejarah.html">Sejarah</a></li>
+                            <li><a href="wisata.html">Wisata</a></li>
+                            <li><a href="budaya.html">Budaya</a></li>
+                            <li><a href="umkm.html">UMKM</a></li>
+                            <li><a href="homestay.html">Homestay</a></li>
+                            <li><a href="galeri.html">Galeri</a></li>
+                            <li><a href="kontak.html">Kontak</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Media Sosial -->
+                    <div class="col-md-4 mb-4">
+                        <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
+                        <p>
+                            Instagram:<br>
+                            <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
+                        </p>
+                        <p>
+                            TikTok:<br>
+                            <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
+                        </p>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="text-center">
+                    <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
+                    <br>
+                    <small>Dibuat untuk Program KKN UNIMED 2026</small>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+    <!-- ===== PENUTUP WRAPPER MAIN-CONTENT ===== -->
 
     <!-- ===== MODAL UNTUK GAMBAR SEJARAH ===== -->
+    <!-- DILETAKKAN DI LUAR WRAPPER AGAR TIDAK IKUT BLUR -->
     <div class="modal fade" id="modalSejarah" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -743,7 +766,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
-    <!-- ===== JAVASCRIPT SCROLL REVEAL & LQIP & BACK TO TOP ===== -->
+    <!-- ===== JAVASCRIPT SCROLL REVEAL, LQIP, BACK TO TOP, & BLUR ===== -->
     <script>
         // ===== 1. SCROLL REVEAL =====
         function isElementInViewport(el) {
@@ -809,6 +832,21 @@
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
+            });
+        });
+
+        // ===== 4. BLUR BACKGROUND SAAT MODAL DIBUKA =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainContent = document.getElementById('main-content');
+
+            // Saat modal mulai terbuka
+            document.addEventListener('show.bs.modal', function (e) {
+                if (mainContent) mainContent.classList.add('blur');
+            });
+
+            // Saat modal selesai ditutup
+            document.addEventListener('hidden.bs.modal', function (e) {
+                if (mainContent) mainContent.classList.remove('blur');
             });
         });
     </script>
