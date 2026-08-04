@@ -434,283 +434,305 @@
                 font-size: 20px;
             }
         }
+
+        /* ============================================================
+           FITUR BLUR SAAT MODAL TERBUKA (METODE WRAPPER)
+        ============================================================ */
+        #main-content {
+            transition: filter 0.3s ease;
+        }
+        #main-content.blur {
+            filter: blur(6px);
+            -webkit-filter: blur(6px);
+            pointer-events: none; /* Mencegah klik pada background saat modal terbuka */
+        }
+        /* Pastikan tombol Back-to-Top tidak ikut terkunci saat blur */
+        .back-to-top {
+            pointer-events: auto !important;
+        }
     </style>
 
 </head>
 
 <body>
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/28e102b5e877c1f41ab210e479c150db5ca184a9/logo%203%20web.png"
-                alt="Logo Desa Simarmata">
-                Desa Simarmata
-            </a>
+    <!-- ===== PENTING: BUNGKUS SEMUA KONTEN WEBSITE ===== -->
+    <div id="main-content">
 
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <!-- ===== NAVBAR ===== -->
+        <nav class="navbar navbar-expand-lg navbar-dark shadow">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/28e102b5e877c1f41ab210e479c150db5ca184a9/logo%203%20web.png"
+                    alt="Logo Desa Simarmata">
+                    Desa Simarmata
+                </a>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profil.html">Profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sejarah.html">Sejarah</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="wisata.html">Wisata</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="budaya.html">Budaya</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="umkm.html">UMKM</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="homestay.html">Homestay</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="galeri.html">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kontak.html">Kontak</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- ===== HERO CAROUSEL DENGAN LQIP ===== -->
-    <div class="hero-carousel-wrapper position-relative">
-
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
-            <!-- Indikator -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
-            </div>
-
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa1.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 2 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa2.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 3 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa3.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 4 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa4.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 5 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa5.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-            </div>
-
-            <!-- Tombol navigasi -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-        <!-- Overlay Teks -->
-        <div class="hero-content">
-            <h1>Homestay Desa Simarmata</h1>
-            <p class="lead">Nikmati pengalaman menginap dengan suasana khas Batak Toba.</p>
-        </div>
-
-    </div>
-
-    <!-- ===== HOMESTAY ===== -->
-    <section class="container py-5">
-        <div class="row">
-
-            <!-- Homestay 1 - Wariska Sinaga -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal delay-1">
-                <div class="card shadow h-100">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-wariska1.jpeg"
-                    class="card-img-top clickable-img"
-                    alt="Homestay Wariska Sinaga"
-                    data-bs-toggle="modal" data-bs-target="#modalWariska">
-                    <div class="card-body">
-                        <h4>Homestay Wariska Sinaga</h4>
-                        <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
-                        <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐⭐</p>
-                        <ul>
-                            <li><i class="bi bi-check-circle-fill"></i> 1 Kamar</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Ruang Tamu</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Kamar Mandi</li>
-                        </ul>
-                        <!-- Tombol modal -->
-                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalWariska">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Homestay 2 - Buk Gisel -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal delay-2">
-                <div class="card shadow h-100">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-gisel.jpeg"
-                    class="card-img-top clickable-img"
-                    alt="Homestay Buk Gisel"
-                    data-bs-toggle="modal" data-bs-target="#modalGisel">
-                    <div class="card-body">
-                        <h4>Homestay Buk Gisel</h4>
-                        <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
-                        <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐⭐</p>
-                        <ul>
-                            <li><i class="bi bi-check-circle-fill"></i> 1 Kamar</li>
-                            <li><i class="bi bi-check-circle-fill"></i> 2 Kamar Mandi</li>
-                        </ul>
-                        <!-- Tombol modal -->
-                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalGisel">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Homestay 3 - Sridewi Manihuruk -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal delay-3">
-                <div class="card shadow h-100">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-sridewi.jpeg"
-                    class="card-img-top clickable-img"
-                    alt="Homestay Sridewi Manihuruk"
-                    data-bs-toggle="modal" data-bs-target="#modalSridewi">
-                    <div class="card-body">
-                        <h4>Homestay Sridewi Manihuruk</h4>
-                        <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
-                        <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐</p>
-                        <ul>
-                            <li><i class="bi bi-check-circle-fill"></i> Tikar & Bantal</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Kamar Mandi</li>
-                        </ul>
-                        <!-- Tombol modal -->
-                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSridewi">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ===== FASILITAS ===== -->
-    <section class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 reveal">Fasilitas Homestay</h2>
-            <div class="row text-center">
-                <div class="col-md-3 reveal delay-1">
-                    <i class="bi bi-door-closed display-4 fasilitas-icon"></i>
-                    <h5>Kamar Nyaman</h5>
-                </div>
-                <div class="col-md-3 reveal delay-2">
-                    <i class="bi bi-house display-4 fasilitas-icon"></i>
-                    <h5>Ruang Tamu</h5>
-                </div>
-                <div class="col-md-3 reveal delay-3">
-                    <i class="bi bi-droplet display-4 fasilitas-icon"></i>
-                    <h5>Kamar Mandi</h5>
-                </div>
-                <div class="col-md-3 reveal delay-4">
-                    <i class="bi bi-whatsapp display-4 fasilitas-icon"></i>
-                    <h5>Booking via WA</h5>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="pt-5 pb-3">
-        <div class="container">
-            <div class="row">
-
-                <!-- Alamat -->
-                <div class="col-md-4 mb-4 reveal delay-1">
-                    <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
-                    <p>
-                        Desa Simarmata<br>
-                        Kecamatan Simanindo<br>
-                        Kabupaten Samosir<br>
-                        Provinsi Sumatera Utara<br>
-                        Kode Pos: 22395
-                    </p>
-                </div>
-
-                <!-- Menu -->
-                <div class="col-md-4 mb-4 reveal delay-2">
-                    <h5><i class="bi bi-list"></i> Menu</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="profil.html">Profil Desa</a></li>
-                        <li><a href="sejarah.html">Sejarah</a></li>
-                        <li><a href="wisata.html">Wisata</a></li>
-                        <li><a href="budaya.html">Budaya</a></li>
-                        <li><a href="umkm.html">UMKM</a></li>
-                        <li><a href="homestay.html">Homestay</a></li>
-                        <li><a href="galeri.html">Galeri</a></li>
-                        <li><a href="kontak.html">Kontak</a></li>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profil.html">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sejarah.html">Sejarah</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wisata.html">Wisata</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="budaya.html">Budaya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="umkm.html">UMKM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="homestay.html">Homestay</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeri.html">Galeri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontak.html">Kontak</a>
+                        </li>
                     </ul>
                 </div>
+            </div>
+        </nav>
 
-                <!-- Media Sosial -->
-                <div class="col-md-4 mb-4 reveal delay-3">
-                    <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
-                    <p>
-                        Instagram:<br>
-                        <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
-                    </p>
-                    <p>
-                        TikTok:<br>
-                        <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
-                    </p>
+        <!-- ===== HERO CAROUSEL DENGAN LQIP ===== -->
+        <div class="hero-carousel-wrapper position-relative">
+
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+                <!-- Indikator -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
                 </div>
 
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa1.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa2.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa3.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa4.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa5.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                </div>
+
+                <!-- Tombol navigasi -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
 
-            <hr>
-
-            <div class="text-center">
-                <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
-                <br>
-                <small>Dibuat untuk Program KKN UNIMED 2026</small>
+            <!-- Overlay Teks -->
+            <div class="hero-content">
+                <h1>Homestay Desa Simarmata</h1>
+                <p class="lead">Nikmati pengalaman menginap dengan suasana khas Batak Toba.</p>
             </div>
 
         </div>
-    </footer>
+
+        <!-- ===== HOMESTAY ===== -->
+        <section class="container py-5">
+            <div class="row">
+
+                <!-- Homestay 1 - Wariska Sinaga -->
+                <div class="col-lg-4 col-md-6 mb-4 reveal delay-1">
+                    <div class="card shadow h-100">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-wariska1.jpeg"
+                        class="card-img-top clickable-img"
+                        alt="Homestay Wariska Sinaga"
+                        data-bs-toggle="modal" data-bs-target="#modalWariska">
+                        <div class="card-body">
+                            <h4>Homestay Wariska Sinaga</h4>
+                            <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
+                            <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐⭐</p>
+                            <ul>
+                                <li><i class="bi bi-check-circle-fill"></i> 1 Kamar</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Ruang Tamu</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Kamar Mandi</li>
+                            </ul>
+                            <!-- Tombol modal -->
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalWariska">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Homestay 2 - Buk Gisel -->
+                <div class="col-lg-4 col-md-6 mb-4 reveal delay-2">
+                    <div class="card shadow h-100">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-gisel.jpeg"
+                        class="card-img-top clickable-img"
+                        alt="Homestay Buk Gisel"
+                        data-bs-toggle="modal" data-bs-target="#modalGisel">
+                        <div class="card-body">
+                            <h4>Homestay Buk Gisel</h4>
+                            <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
+                            <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐⭐</p>
+                            <ul>
+                                <li><i class="bi bi-check-circle-fill"></i> 1 Kamar</li>
+                                <li><i class="bi bi-check-circle-fill"></i> 2 Kamar Mandi</li>
+                            </ul>
+                            <!-- Tombol modal -->
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalGisel">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Homestay 3 - Sridewi Manihuruk -->
+                <div class="col-lg-4 col-md-6 mb-4 reveal delay-3">
+                    <div class="card shadow h-100">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-sridewi.jpeg"
+                        class="card-img-top clickable-img"
+                        alt="Homestay Sridewi Manihuruk"
+                        data-bs-toggle="modal" data-bs-target="#modalSridewi">
+                        <div class="card-body">
+                            <h4>Homestay Sridewi Manihuruk</h4>
+                            <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
+                            <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐</p>
+                            <ul>
+                                <li><i class="bi bi-check-circle-fill"></i> Tikar & Bantal</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Kamar Mandi</li>
+                            </ul>
+                            <!-- Tombol modal -->
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSridewi">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== FASILITAS ===== -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-5 reveal">Fasilitas Homestay</h2>
+                <div class="row text-center">
+                    <div class="col-md-3 reveal delay-1">
+                        <i class="bi bi-door-closed display-4 fasilitas-icon"></i>
+                        <h5>Kamar Nyaman</h5>
+                    </div>
+                    <div class="col-md-3 reveal delay-2">
+                        <i class="bi bi-house display-4 fasilitas-icon"></i>
+                        <h5>Ruang Tamu</h5>
+                    </div>
+                    <div class="col-md-3 reveal delay-3">
+                        <i class="bi bi-droplet display-4 fasilitas-icon"></i>
+                        <h5>Kamar Mandi</h5>
+                    </div>
+                    <div class="col-md-3 reveal delay-4">
+                        <i class="bi bi-whatsapp display-4 fasilitas-icon"></i>
+                        <h5>Booking via WA</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="pt-5 pb-3">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Alamat -->
+                    <div class="col-md-4 mb-4 reveal delay-1">
+                        <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
+                        <p>
+                            Desa Simarmata<br>
+                            Kecamatan Simanindo<br>
+                            Kabupaten Samosir<br>
+                            Provinsi Sumatera Utara<br>
+                            Kode Pos: 22395
+                        </p>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="col-md-4 mb-4 reveal delay-2">
+                        <h5><i class="bi bi-list"></i> Menu</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="profil.html">Profil Desa</a></li>
+                            <li><a href="sejarah.html">Sejarah</a></li>
+                            <li><a href="wisata.html">Wisata</a></li>
+                            <li><a href="budaya.html">Budaya</a></li>
+                            <li><a href="umkm.html">UMKM</a></li>
+                            <li><a href="homestay.html">Homestay</a></li>
+                            <li><a href="galeri.html">Galeri</a></li>
+                            <li><a href="kontak.html">Kontak</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Media Sosial -->
+                    <div class="col-md-4 mb-4 reveal delay-3">
+                        <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
+                        <p>
+                            Instagram:<br>
+                            <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
+                        </p>
+                        <p>
+                            TikTok:<br>
+                            <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
+                        </p>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="text-center">
+                    <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
+                    <br>
+                    <small>Dibuat untuk Program KKN UNIMED 2026</small>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+    <!-- ===== PENUTUP WRAPPER MAIN-CONTENT ===== -->
 
 
     <!-- ========================================================== -->
-    <!-- ===== MODAL 1: HOMESTAY WARISKA SINAGA ===== -->
+    <!-- ===== MODAL 1: HOMESTAY WARISKA SINAGA (DI LUAR WRAPPER) ===== -->
     <!-- ========================================================== -->
     <div class="modal fade" id="modalWariska" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -766,7 +788,7 @@
 </div>
 
 <!-- ========================================================== -->
-<!-- ===== MODAL 2: HOMESTAY BUK GISEL ===== -->
+<!-- ===== MODAL 2: HOMESTAY BUK GISEL (DI LUAR WRAPPER) ===== -->
 <!-- ========================================================== -->
 <div class="modal fade" id="modalGisel" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -820,7 +842,7 @@
 </div>
 
 <!-- ========================================================== -->
-<!-- ===== MODAL 3: HOMESTAY SRIDEWI MANIHURUK ===== -->
+<!-- ===== MODAL 3: HOMESTAY SRIDEWI MANIHURUK (DI LUAR WRAPPER) ===== -->
 <!-- ========================================================== -->
 <div class="modal fade" id="modalSridewi" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -883,7 +905,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
-    <!-- ===== JAVASCRIPT SCROLL REVEAL + LQIP + BACK TO TOP ===== -->
+    <!-- ===== JAVASCRIPT SCROLL REVEAL, LQIP, BACK TO TOP, & BLUR ===== -->
     <script>
         // ===== 1. SCROLL REVEAL =====
         function isElementInViewport(el) {
@@ -945,6 +967,21 @@
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
+            });
+        });
+
+        // ===== 4. BLUR BACKGROUND SAAT MODAL DIBUKA =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainContent = document.getElementById('main-content');
+
+            // Saat modal mulai terbuka
+            document.addEventListener('show.bs.modal', function (e) {
+                if (mainContent) mainContent.classList.add('blur');
+            });
+
+            // Saat modal selesai ditutup
+            document.addEventListener('hidden.bs.modal', function (e) {
+                if (mainContent) mainContent.classList.remove('blur');
             });
         });
     </script>
