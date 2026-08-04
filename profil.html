@@ -519,509 +519,533 @@
                 font-size: 20px;
             }
         }
+
+        /* ============================================================
+           FITUR BLUR SAAT MODAL TERBUKA (METODE WRAPPER)
+        ============================================================ */
+        #main-content {
+            transition: filter 0.3s ease;
+        }
+        #main-content.blur {
+            filter: blur(6px);
+            -webkit-filter: blur(6px);
+            pointer-events: none; /* Mencegah pengguna mengklik background saat modal terbuka */
+        }
+        /* Pastikan tombol Back-to-Top tetap bisa diklik saat background blur */
+        .back-to-top {
+            pointer-events: auto !important;
+        }
     </style>
 
 </head>
 
 <body>
 
-<!-- ==================== NAVBAR ==================== -->
-<nav class="navbar navbar-expand-lg navbar-dark shadow">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html" style="display: flex; align-items: center; gap: 12px;">
-            <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/c9d95601ccd5694c296b00673c5a80c73059efd6/logo%203%20web.png" 
-                 alt="Logo Desa Simarmata" 
-                 style="height: 45px; width: auto; border-radius: 8px;">
-            Desa Simarmata
-        </a>
+<!-- ===== PENTING: BUNGKUS SEMUA KONTEN WEBSITE ===== -->
+<div id="main-content">
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" 
-                aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html" style="display: flex; align-items: center; gap: 12px;">
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/c9d95601ccd5694c296b00673c5a80c73059efd6/logo%203%20web.png" 
+                     alt="Logo Desa Simarmata" 
+                     style="height: 45px; width: auto; border-radius: 8px;">
+                Desa Simarmata
+            </a>
 
-        <div class="collapse navbar-collapse" id="menu">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link active" href="profil.html">Profil</a></li>
-                <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
-                <li class="nav-item"><a class="nav-link" href="wisata.html">Wisata</a></li>
-                <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya</a></li>
-                <li class="nav-item"><a class="nav-link" href="umkm.html">UMKM</a></li>
-                <li class="nav-item"><a class="nav-link" href="homestay.html">Homestay</a></li>
-                <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
-                <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
-            </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" 
+                    aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="profil.html">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
+                    <li class="nav-item"><a class="nav-link" href="wisata.html">Wisata</a></li>
+                    <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya</a></li>
+                    <li class="nav-item"><a class="nav-link" href="umkm.html">UMKM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="homestay.html">Homestay</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO CAROUSEL DENGAN LQIP ==================== -->
+    <div class="hero-carousel-wrapper position-relative">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+            <!-- Indikator -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
+            </div>
+
+            <!-- Slide dengan LQIP -->
+            <div class="carousel-inner">
+                <div class="carousel-item active" 
+                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa1.jpeg"
+                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                </div>
+                <div class="carousel-item" 
+                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa2.jpeg"
+                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                </div>
+                <div class="carousel-item" 
+                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa3.jpeg"
+                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                </div>
+                <div class="carousel-item" 
+                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa4.jpeg"
+                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                </div>
+                <div class="carousel-item" 
+                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa5.jpeg"
+                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                </div>
+            </div>
+
+            <!-- Overlay Teks -->
+            <div class="hero-overlay-text">
+                <h1 class="display-4 fw-bold">Profil Desa Simarmata</h1>
+                <p class="lead">Desa Wisata • Desa Budaya • Desa Digital</p>
+            </div>
+
+            <!-- Tombol navigasi -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
-</nav>
 
-<!-- ==================== HERO CAROUSEL DENGAN LQIP ==================== -->
-<div class="hero-carousel-wrapper position-relative">
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
-        <!-- Indikator -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
-        </div>
-
-        <!-- Slide dengan LQIP -->
-        <div class="carousel-inner">
-            <div class="carousel-item active" 
-                 data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa1.jpeg"
-                 style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+    <!-- ==================== TENTANG DESA ==================== -->
+    <section class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 reveal">
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/kantor-desa.jpeg" 
+                     class="img-fluid rounded shadow clickable-img" 
+                     alt="Kantor Desa Simarmata"
+                     data-bs-toggle="modal" data-bs-target="#modalKantorDesa"
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjAwIDQwMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48cGF0aCBkPSJNMCAwaDYwMHY0MDBIMHoiIGZpbGw9IiM5YzFhMWEiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxNTAiIHI9IjUwIiBmaWxsPSIjZmZkNTQ4Ii8+PGNpcmNsZSBjeD0iNDUwIiBjeT0iMjUwIiByPSI3MCIgZmlsbD0iI2ZmZDU0OCIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjMwMCIgcj0iNDAiIGZpbGw9IiNmZmQ1NDgiLz48L3N2Zz4='">
             </div>
-            <div class="carousel-item" 
-                 data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa2.jpeg"
-                 style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-            </div>
-            <div class="carousel-item" 
-                 data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa3.jpeg"
-                 style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-            </div>
-            <div class="carousel-item" 
-                 data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa4.jpeg"
-                 style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-            </div>
-            <div class="carousel-item" 
-                 data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa5.jpeg"
-                 style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+            <div class="col-lg-6 reveal delay-1">
+                <h2>Tentang Desa</h2>
+                <p style="text-align:justify;">
+                    Desa Simarmata merupakan salah satu desa yang berada di Kecamatan Simanindo, Kabupaten Samosir, Provinsi Sumatera Utara. Desa ini terletak di kawasan strategis Danau Toba dan dikenal sebagai desa yang kaya akan sejarah, budaya Batak Toba, serta memiliki potensi wisata alam dan budaya yang masih terjaga hingga saat ini.
+                </p>
+                <p style="text-align:justify;">
+                    Secara administratif, Desa Simarmata terdiri atas tiga dusun, yaitu Dusun Simarmata, Dusun Galungan, dan Dusun Sidaji. Ketiga dusun tersebut menjadi pusat kehidupan masyarakat yang sebagian besar bermata pencaharian sebagai petani, nelayan, peternak, serta pelaku usaha mikro, kecil, dan menengah (UMKM).
+                </p>
+                <p style="text-align:justify;">
+                    Selain memiliki kekayaan sumber daya alam, Desa Simarmata juga dikenal sebagai salah satu desa yang masih mempertahankan adat istiadat Batak Toba. Berbagai situs sejarah, rumah adat, tugu leluhur, serta tradisi budaya yang diwariskan secara turun-temurun menjadi identitas masyarakat sekaligus daya tarik bagi wisatawan yang berkunjung ke kawasan Danau Toba.
+                </p>
+                <p style="text-align:justify;">
+                    Dengan potensi wisata, budaya, sejarah, dan sumber daya masyarakat yang dimiliki, Desa Simarmata terus berupaya berkembang sebagai desa wisata yang maju, berbudaya, mandiri, dan berkelanjutan melalui pelestarian kearifan lokal serta pemanfaatan teknologi digital dalam pembangunan desa.
+                </p>
             </div>
         </div>
+    </section>
 
-        <!-- Overlay Teks -->
-        <div class="hero-overlay-text">
-            <h1 class="display-4 fw-bold">Profil Desa Simarmata</h1>
-            <p class="lead">Desa Wisata • Desa Budaya • Desa Digital</p>
+    <!-- ==================== PETA ADMINISTRASI ==================== -->
+    <section class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-7 reveal">
+                <h2>Peta Administrasi Desa Simarmata</h2>
+                <p style="text-align:justify;">
+                    Peta administrasi Desa Simarmata menunjukkan letak dan batas wilayah Desa Simarmata yang berada di Kecamatan Simanindo, Kabupaten Samosir, Provinsi Sumatera Utara. Desa ini terdiri atas tiga dusun, yaitu <strong>Dusun I Simarmata</strong>, <strong>Dusun II Galungan</strong>, dan <strong>Dusun III Sidaji</strong>. Secara geografis, Desa Simarmata berbatasan dengan Desa Dosroha, Desa Sihusapi, dan Desa Cinta Dame, serta memiliki wilayah yang berbatasan langsung dengan Danau Toba di bagian barat. Peta juga menampilkan jaringan jalan dan aliran sungai yang menghubungkan setiap dusun sehingga mendukung mobilitas masyarakat.
+                </p>
+                <p style="text-align:justify;">
+                    Selain itu, peta administrasi memperlihatkan persebaran berbagai fasilitas umum yang terdapat di Desa Simarmata, antara lain <strong>Kantor Desa Simarmata</strong> sebagai pusat pemerintahan desa, <strong>Gereja GKPI Galungan</strong> sebagai sarana ibadah masyarakat, <strong>SD Negeri 6 Simarmata</strong> dan <strong>SD Negeri 18 Galungan</strong> sebagai fasilitas pendidikan dasar, serta beberapa titik penting seperti Binanga Sisia-sia dan Binanga Rajabosi. Informasi penggunaan lahan pada peta menunjukkan adanya kawasan permukiman, pertanian lahan kering, dan pertanian lahan basah yang mencerminkan karakteristik wilayah desa yang didominasi oleh aktivitas pertanian dan permukiman penduduk. Peta administrasi ini menjadi acuan penting dalam perencanaan dan pelaksanaan program KKN karena memberikan gambaran mengenai kondisi wilayah, persebaran fasilitas, serta aksesibilitas antarwilayah di Desa Simarmata.
+                </p>
+            </div>
+            <div class="col-lg-5 reveal delay-1">
+                <div class="card shadow">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/peta-desa-simarmata.jpg" 
+                         class="card-img-top peta-gambar clickable-img" 
+                         alt="Peta Administrasi Desa Simarmata"
+                         data-bs-toggle="modal" data-bs-target="#modalPeta">
+                    <div class="card-body text-center">
+                        <small class="text-muted">Peta Administrasi Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir</small>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Tombol navigasi -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div>
-
-<!-- ==================== TENTANG DESA ==================== -->
-<section class="container py-5">
-    <div class="row align-items-center">
-        <div class="col-lg-6 reveal">
-            <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/kantor-desa.jpeg" 
-                 class="img-fluid rounded shadow clickable-img" 
-                 alt="Kantor Desa Simarmata"
-                 data-bs-toggle="modal" data-bs-target="#modalKantorDesa"
-                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjAwIDQwMCI+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiM3YzBlMGUiLz48cGF0aCBkPSJNMCAwaDYwMHY0MDBIMHoiIGZpbGw9IiM5YzFhMWEiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSIxNTAiIHI9IjUwIiBmaWxsPSIjZmZkNTQ4Ii8+PGNpcmNsZSBjeD0iNDUwIiBjeT0iMjUwIiByPSI3MCIgZmlsbD0iI2ZmZDU0OCIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjMwMCIgcj0iNDAiIGZpbGw9IiNmZmQ1NDgiLz48L3N2Zz4='">
-        </div>
-        <div class="col-lg-6 reveal delay-1">
-            <h2>Tentang Desa</h2>
-            <p style="text-align:justify;">
-                Desa Simarmata merupakan salah satu desa yang berada di Kecamatan Simanindo, Kabupaten Samosir, Provinsi Sumatera Utara. Desa ini terletak di kawasan strategis Danau Toba dan dikenal sebagai desa yang kaya akan sejarah, budaya Batak Toba, serta memiliki potensi wisata alam dan budaya yang masih terjaga hingga saat ini.
+    </section>
+        
+    <!-- ==================== VISI ==================== -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 reveal">Visi Desa</h2>
+            <p class="text-center fs-5 fw-semibold reveal delay-1">
+                "Damai Negeriku, Sejahtera Desaku, Membangun Bersama Kita Menuju Masyarakat yang Adil dan Sejahtera."
             </p>
-            <p style="text-align:justify;">
-                Secara administratif, Desa Simarmata terdiri atas tiga dusun, yaitu Dusun Simarmata, Dusun Galungan, dan Dusun Sidaji. Ketiga dusun tersebut menjadi pusat kehidupan masyarakat yang sebagian besar bermata pencaharian sebagai petani, nelayan, peternak, serta pelaku usaha mikro, kecil, dan menengah (UMKM).
-            </p>
-            <p style="text-align:justify;">
-                Selain memiliki kekayaan sumber daya alam, Desa Simarmata juga dikenal sebagai salah satu desa yang masih mempertahankan adat istiadat Batak Toba. Berbagai situs sejarah, rumah adat, tugu leluhur, serta tradisi budaya yang diwariskan secara turun-temurun menjadi identitas masyarakat sekaligus daya tarik bagi wisatawan yang berkunjung ke kawasan Danau Toba.
-            </p>
-            <p style="text-align:justify;">
-                Dengan potensi wisata, budaya, sejarah, dan sumber daya masyarakat yang dimiliki, Desa Simarmata terus berupaya berkembang sebagai desa wisata yang maju, berbudaya, mandiri, dan berkelanjutan melalui pelestarian kearifan lokal serta pemanfaatan teknologi digital dalam pembangunan desa.
+            <p style="text-align:justify;" class="reveal delay-2">
+                Visi ini menjadi arah pembangunan Desa Simarmata dalam mewujudkan kehidupan masyarakat yang hidup rukun, damai, dan saling menghormati berdasarkan nilai-nilai budaya Batak, khususnya falsafah <i>Dalihan Na Tolu</i>. Melalui semangat kebersamaan, pemerintah desa berkomitmen membangun desa secara transparan, adil, dan berkelanjutan demi terciptanya masyarakat yang semakin maju, makmur, dan sejahtera.
             </p>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ==================== PETA ADMINISTRASI ==================== -->
-<section class="container py-5">
-    <div class="row align-items-center">
-        <div class="col-lg-7 reveal">
-            <h2>Peta Administrasi Desa Simarmata</h2>
-            <p style="text-align:justify;">
-                Peta administrasi Desa Simarmata menunjukkan letak dan batas wilayah Desa Simarmata yang berada di Kecamatan Simanindo, Kabupaten Samosir, Provinsi Sumatera Utara. Desa ini terdiri atas tiga dusun, yaitu <strong>Dusun I Simarmata</strong>, <strong>Dusun II Galungan</strong>, dan <strong>Dusun III Sidaji</strong>. Secara geografis, Desa Simarmata berbatasan dengan Desa Dosroha, Desa Sihusapi, dan Desa Cinta Dame, serta memiliki wilayah yang berbatasan langsung dengan Danau Toba di bagian barat. Peta juga menampilkan jaringan jalan dan aliran sungai yang menghubungkan setiap dusun sehingga mendukung mobilitas masyarakat.
-            </p>
-            <p style="text-align:justify;">
-                Selain itu, peta administrasi memperlihatkan persebaran berbagai fasilitas umum yang terdapat di Desa Simarmata, antara lain <strong>Kantor Desa Simarmata</strong> sebagai pusat pemerintahan desa, <strong>Gereja GKPI Galungan</strong> sebagai sarana ibadah masyarakat, <strong>SD Negeri 6 Simarmata</strong> dan <strong>SD Negeri 18 Galungan</strong> sebagai fasilitas pendidikan dasar, serta beberapa titik penting seperti Binanga Sisia-sia dan Binanga Rajabosi. Informasi penggunaan lahan pada peta menunjukkan adanya kawasan permukiman, pertanian lahan kering, dan pertanian lahan basah yang mencerminkan karakteristik wilayah desa yang didominasi oleh aktivitas pertanian dan permukiman penduduk. Peta administrasi ini menjadi acuan penting dalam perencanaan dan pelaksanaan program KKN karena memberikan gambaran mengenai kondisi wilayah, persebaran fasilitas, serta aksesibilitas antarwilayah di Desa Simarmata.
-            </p>
-        </div>
-        <div class="col-lg-5 reveal delay-1">
-            <div class="card shadow">
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/peta-desa-simarmata.jpg" 
-                     class="card-img-top peta-gambar clickable-img" 
-                     alt="Peta Administrasi Desa Simarmata"
-                     data-bs-toggle="modal" data-bs-target="#modalPeta">
-                <div class="card-body text-center">
-                    <small class="text-muted">Peta Administrasi Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir</small>
+    <!-- ==================== MISI ==================== -->
+    <section class="container py-5">
+        <h2 class="text-center mb-5 reveal">Misi Desa</h2>
+        <div class="row g-4">
+            <div class="col-md-6 reveal delay-1">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <h5 class="text-primary">1. Mewujudkan kehidupan masyarakat yang aman, tertib, rukun, dan harmonis</h5>
+                        <p style="text-align:justify;">Membangun kehidupan sosial yang damai dengan menjunjung tinggi nilai budaya, agama, serta semangat persatuan dan toleransi antarwarga.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 reveal delay-2">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <h5 class="text-primary">2. Meningkatkan kualitas kesehatan dan kebersihan lingkungan desa</h5>
+                        <p style="text-align:justify;">Mengembangkan pelayanan kesehatan, membudayakan pola hidup bersih dan sehat, serta meningkatkan kesadaran masyarakat dalam menjaga lingkungan.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 reveal delay-3">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <h5 class="text-primary">3. Meningkatkan kesejahteraan masyarakat melalui penguatan ekonomi desa</h5>
+                        <p style="text-align:justify;">Mengembangkan Badan Usaha Milik Desa (BUMDes), membuka peluang kerja, meningkatkan sarana dan prasarana, serta mengoptimalkan potensi ekonomi lokal.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 reveal delay-4">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <h5 class="text-primary">4. Memberdayakan potensi sumber daya manusia dan sumber daya alam</h5>
+                        <p style="text-align:justify;">Mengembangkan kemampuan masyarakat, meningkatkan produktivitas sektor pertanian dan peternakan, menjaga kelestarian lingkungan, serta mengoptimalkan potensi desa secara berkelanjutan.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 reveal delay-5">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="text-primary">5. Mewujudkan tata kelola pemerintahan desa yang profesional, transparan, dan akuntabel</h5>
+                        <p style="text-align:justify;">Meningkatkan kualitas pelayanan publik melalui pemerintahan yang cepat, tepat, terbuka, bertanggung jawab, serta berorientasi pada kepentingan masyarakat.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-    
-<!-- ==================== VISI ==================== -->
-<section class="bg-light py-5">
-    <div class="container">
-        <h2 class="text-center mb-4 reveal">Visi Desa</h2>
-        <p class="text-center fs-5 fw-semibold reveal delay-1">
-            "Damai Negeriku, Sejahtera Desaku, Membangun Bersama Kita Menuju Masyarakat yang Adil dan Sejahtera."
-        </p>
-        <p style="text-align:justify;" class="reveal delay-2">
-            Visi ini menjadi arah pembangunan Desa Simarmata dalam mewujudkan kehidupan masyarakat yang hidup rukun, damai, dan saling menghormati berdasarkan nilai-nilai budaya Batak, khususnya falsafah <i>Dalihan Na Tolu</i>. Melalui semangat kebersamaan, pemerintah desa berkomitmen membangun desa secara transparan, adil, dan berkelanjutan demi terciptanya masyarakat yang semakin maju, makmur, dan sejahtera.
-        </p>
-    </div>
-</section>
+    </section>
 
-<!-- ==================== MISI ==================== -->
-<section class="container py-5">
-    <h2 class="text-center mb-5 reveal">Misi Desa</h2>
-    <div class="row g-4">
-        <div class="col-md-6 reveal delay-1">
-            <div class="card shadow h-100">
-                <div class="card-body">
-                    <h5 class="text-primary">1. Mewujudkan kehidupan masyarakat yang aman, tertib, rukun, dan harmonis</h5>
-                    <p style="text-align:justify;">Membangun kehidupan sosial yang damai dengan menjunjung tinggi nilai budaya, agama, serta semangat persatuan dan toleransi antarwarga.</p>
-                </div>
-            </div>
+    <!-- ==================== DATA DESA ==================== -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 reveal">Data Desa</h2>
+            <table class="table table-bordered table-striped reveal delay-1">
+                <tr><th>Nama Desa</th><td>Desa Simarmata</td></tr>
+                <tr><th>Kecamatan</th><td>Simanindo</td></tr>
+                <tr><th>Kabupaten</th><td>Samosir</td></tr>
+                <tr><th>Provinsi</th><td>Sumatera Utara</td></tr>
+                <tr><th>Luas Wilayah</th><td>±4,5 Km²</td></tr>
+                <tr><th>Jumlah Dusun</th><td>3 Dusun</td></tr>
+                <tr><th>Jumlah Penduduk</th><td>±1.091 Jiwa</td></tr>
+                <tr><th>Mata Pencaharian</th><td>Pertanian, Perikanan, Pariwisata, UMKM</td></tr>
+            </table>
         </div>
-        <div class="col-md-6 reveal delay-2">
-            <div class="card shadow h-100">
-                <div class="card-body">
-                    <h5 class="text-primary">2. Meningkatkan kualitas kesehatan dan kebersihan lingkungan desa</h5>
-                    <p style="text-align:justify;">Mengembangkan pelayanan kesehatan, membudayakan pola hidup bersih dan sehat, serta meningkatkan kesadaran masyarakat dalam menjaga lingkungan.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 reveal delay-3">
-            <div class="card shadow h-100">
-                <div class="card-body">
-                    <h5 class="text-primary">3. Meningkatkan kesejahteraan masyarakat melalui penguatan ekonomi desa</h5>
-                    <p style="text-align:justify;">Mengembangkan Badan Usaha Milik Desa (BUMDes), membuka peluang kerja, meningkatkan sarana dan prasarana, serta mengoptimalkan potensi ekonomi lokal.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 reveal delay-4">
-            <div class="card shadow h-100">
-                <div class="card-body">
-                    <h5 class="text-primary">4. Memberdayakan potensi sumber daya manusia dan sumber daya alam</h5>
-                    <p style="text-align:justify;">Mengembangkan kemampuan masyarakat, meningkatkan produktivitas sektor pertanian dan peternakan, menjaga kelestarian lingkungan, serta mengoptimalkan potensi desa secara berkelanjutan.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12 reveal delay-5">
-            <div class="card shadow">
-                <div class="card-body">
-                    <h5 class="text-primary">5. Mewujudkan tata kelola pemerintahan desa yang profesional, transparan, dan akuntabel</h5>
-                    <p style="text-align:justify;">Meningkatkan kualitas pelayanan publik melalui pemerintahan yang cepat, tepat, terbuka, bertanggung jawab, serta berorientasi pada kepentingan masyarakat.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- ==================== DATA DESA ==================== -->
-<section class="bg-light py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 reveal">Data Desa</h2>
-        <table class="table table-bordered table-striped reveal delay-1">
-            <tr><th>Nama Desa</th><td>Desa Simarmata</td></tr>
-            <tr><th>Kecamatan</th><td>Simanindo</td></tr>
-            <tr><th>Kabupaten</th><td>Samosir</td></tr>
-            <tr><th>Provinsi</th><td>Sumatera Utara</td></tr>
-            <tr><th>Luas Wilayah</th><td>±4,5 Km²</td></tr>
-            <tr><th>Jumlah Dusun</th><td>3 Dusun</td></tr>
-            <tr><th>Jumlah Penduduk</th><td>±1.091 Jiwa</td></tr>
-            <tr><th>Mata Pencaharian</th><td>Pertanian, Perikanan, Pariwisata, UMKM</td></tr>
-        </table>
-    </div>
-</section>
+    <!-- ==================== POTENSI DESA ==================== -->
+    <section class="container py-5">
+        <h2 class="text-center mb-5 reveal">Potensi Desa</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 reveal delay-1">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <h4 class="text-success"><i class="bi bi-flower1"></i> Pertanian</h4>
+                        <ul class="mb-0">
+                            <li>Jagung</li>
+                            <li>Kopi</li>
+                            <li>Cabai</li>
+                            <li>Bawang</li>
+                            <li>Cengkeh</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 reveal delay-2">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <h4 class="text-primary"><i class="bi bi-water"></i> Perikanan</h4>
+                        <ul class="mb-0">
+                            <li>Perikanan Danau Toba</li>
+                            <li>Budidaya ikan air tawar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 reveal delay-3">
+                <div class="card shadow h-100">
+                    <div class="card-body">
+                        <h4 class="text-warning"><i class="bi bi-emoji-smile"></i> Peternakan</h4>
+                        <ul class="mb-0">
+                            <li>Sapi</li>
+                            <li>Kerbau</li>
+                            <li>Kambing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ==================== POTENSI DESA ==================== -->
-<section class="container py-5">
-    <h2 class="text-center mb-5 reveal">Potensi Desa</h2>
-    <div class="row g-4">
-        <div class="col-lg-4 reveal delay-1">
-            <div class="card shadow h-100">
-                <div class="card-body">
-                    <h4 class="text-success"><i class="bi bi-flower1"></i> Pertanian</h4>
-                    <ul class="mb-0">
-                        <li>Jagung</li>
-                        <li>Kopi</li>
-                        <li>Cabai</li>
-                        <li>Bawang</li>
-                        <li>Cengkeh</li>
-                    </ul>
+    <!-- ==================== PARIWISATA ==================== -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 reveal">Potensi Pariwisata</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 reveal delay-1">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h4 class="text-primary"><i class="bi bi-geo-alt-fill"></i> Objek Wisata dan Budaya</h4>
+                            <ul class="mb-0">
+                                <li>Panorama Danau Toba</li>
+                                <li>Wisata Budaya Batak Toba</li>
+                                <li>Kehidupan Masyarakat Tradisional</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 reveal delay-2">
-            <div class="card shadow h-100">
-                <div class="card-body">
-                    <h4 class="text-primary"><i class="bi bi-water"></i> Perikanan</h4>
-                    <ul class="mb-0">
-                        <li>Perikanan Danau Toba</li>
-                        <li>Budidaya ikan air tawar</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 reveal delay-3">
-            <div class="card shadow h-100">
-                <div class="card-body">
-                    <h4 class="text-warning"><i class="bi bi-emoji-smile"></i> Peternakan</h4>
-                    <ul class="mb-0">
-                        <li>Sapi</li>
-                        <li>Kerbau</li>
-                        <li>Kambing</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- ==================== PARIWISATA ==================== -->
-<section class="bg-light py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 reveal">Potensi Pariwisata</h2>
+    <!-- ==================== PENDIDIKAN ==================== -->
+    <section class="container py-5">
+        <h2 class="text-center mb-5 reveal">Pendidikan</h2>
         <div class="row justify-content-center">
             <div class="col-lg-8 reveal delay-1">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h4 class="text-primary"><i class="bi bi-geo-alt-fill"></i> Objek Wisata dan Budaya</h4>
-                        <ul class="mb-0">
-                            <li>Panorama Danau Toba</li>
-                            <li>Wisata Budaya Batak Toba</li>
-                            <li>Kehidupan Masyarakat Tradisional</li>
+                        <p style="text-align:justify;">
+                            Fasilitas pendidikan di Desa Simarmata terus mendukung peningkatan kualitas sumber daya manusia. Masyarakat juga memiliki kepedulian yang tinggi terhadap pendidikan generasi muda sebagai investasi bagi masa depan desa.
+                        </p>
+                        <ul>
+                            <li>Pendidikan Anak Usia Dini (PAUD)</li>
+                            <li>SD N 18 Simarmata</li>
+                            <li>SD N 6 Sidaji</li>
+                            <li>SMP N 2 Simanindo</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ==================== PENDIDIKAN ==================== -->
-<section class="container py-5">
-    <h2 class="text-center mb-5 reveal">Pendidikan</h2>
-    <div class="row justify-content-center">
-        <div class="col-lg-8 reveal delay-1">
-            <div class="card shadow">
-                <div class="card-body">
-                    <p style="text-align:justify;">
-                        Fasilitas pendidikan di Desa Simarmata terus mendukung peningkatan kualitas sumber daya manusia. Masyarakat juga memiliki kepedulian yang tinggi terhadap pendidikan generasi muda sebagai investasi bagi masa depan desa.
+    <!-- ==================== SARANA & PRASARANA ==================== -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 reveal">Sarana dan Prasarana</h2>
+            <div class="row g-4">
+                <div class="col-md-4 reveal delay-1">
+                    <div class="card shadow h-100">
+                        <div class="card-body">
+                            <h5 class="text-primary"><i class="bi bi-building"></i> Fasilitas Pemerintahan</h5>
+                            <ul class="mb-0">
+                                <li>Kantor Desa</li>
+                                <li>Balai Desa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal delay-2">
+                    <div class="card shadow h-100">
+                        <div class="card-body">
+                            <h5 class="text-success"><i class="bi bi-hospital"></i> Fasilitas Umum</h5>
+                            <ul class="mb-0">
+                                <li>Puskesmas</li>
+                                <li>Polindes</li>
+                                <li>Gereja</li>
+                                <li>PAUD</li>
+                                <li>SD Negeri</li>
+                                <li>SMP Negeri</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal delay-3">
+                    <div class="card shadow h-100">
+                        <div class="card-body">
+                            <h5 class="text-warning"><i class="bi bi-signpost-2"></i> Infrastruktur</h5>
+                            <ul class="mb-0">
+                                <li>Jalan Hotmix</li>
+                                <li>Jalan Aspal</li>
+                                <li>Sumur Bor</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STRUKTUR PEMERINTAHAN ==================== -->
+    <section class="struktur py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5 reveal">
+                <i class="bi bi-diagram-3-fill text-danger"></i>
+                Struktur Organisasi Pemerintah Desa Simarmata
+            </h2>
+
+            <div class="org-chart">
+
+                <!-- Kepala Desa -->
+                <div class="level reveal delay-1">
+                    <div class="org-card kepala">
+                        <i class="bi bi-person-badge-fill"></i>
+                        <h5>Kepala Desa</h5>
+                        <p>Alboin Sinaga</p>
+                    </div>
+                </div>
+
+                <div class="line reveal delay-2"></div>
+
+                <!-- Level 2 -->
+                <div class="level dua reveal delay-3">
+                    <div class="org-card">
+                        <i class="bi bi-bank2"></i>
+                        <h5>BPD</h5>
+                        <p>Badan Permusyawaratan Desa</p>
+                    </div>
+                    <div class="org-card sekretaris">
+                        <i class="bi bi-person-workspace"></i>
+                        <h5>Sekretaris Desa</h5>
+                        <p>Sarma Diana Tumanggor</p>
+                    </div>
+                </div>
+
+                <div class="line reveal delay-4"></div>
+
+                <!-- Level 3 -->
+                <div class="level empat reveal delay-5">
+                    <div class="org-card">
+                        <i class="bi bi-building"></i>
+                        <h6>Kasi Pemerintahan</h6>
+                        <p>One Juni Situmorang</p>
+                    </div>
+                    <div class="org-card">
+                        <i class="bi bi-people"></i>
+                        <h6>Kasi Kesejahteraan & Pelayanan</h6>
+                        <p>Rudiwanto Ambarita</p>
+                    </div>
+                    <div class="org-card">
+                        <i class="bi bi-folder2-open"></i>
+                        <h6>Kaur Umum & Perencanaan</h6>
+                        <p>Sudin Sinaga</p>
+                    </div>
+                    <div class="org-card">
+                        <i class="bi bi-cash-stack"></i>
+                        <h6>Kaur Keuangan</h6>
+                        <p>Delima Royani Siagian</p>
+                    </div>
+                </div>
+
+                <div class="line reveal delay-1"></div>
+
+                <!-- Kepala Dusun -->
+                <div class="level tiga reveal delay-2">
+                    <div class="org-card dusun">
+                        <i class="bi bi-house-door-fill"></i>
+                        <h6>Kepala Dusun I</h6>
+                        <p>Franson M. Simarmata</p>
+                    </div>
+                    <div class="org-card dusun">
+                        <i class="bi bi-house-door-fill"></i>
+                        <h6>Kepala Dusun II</h6>
+                        <p>Meldiner Simarmata</p>
+                    </div>
+                    <div class="org-card dusun">
+                        <i class="bi bi-house-door-fill"></i>
+                        <h6>Kepala Dusun III</h6>
+                        <p>Janter Turnip</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+
+                <!-- Alamat -->
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
+                    <p>
+                        Desa Simarmata<br>
+                        Kecamatan Simanindo<br>
+                        Kabupaten Samosir<br>
+                        Provinsi Sumatera Utara<br>
+                        Kode Pos: 22395
                     </p>
-                    <ul>
-                        <li>Pendidikan Anak Usia Dini (PAUD)</li>
-                        <li>SD N 18 Simarmata</li>
-                        <li>SD N 6 Sidaji</li>
-                        <li>SMP N 2 Simanindo</li>
+                </div>
+
+                <!-- Menu -->
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-list"></i> Menu</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none">Home</a></li>
+                        <li><a href="profil.html" class="text-decoration-none">Profil Desa</a></li>
+                        <li><a href="sejarah.html" class="text-decoration-none">Sejarah</a></li>
+                        <li><a href="wisata.html" class="text-decoration-none">Wisata</a></li>
+                        <li><a href="budaya.html" class="text-decoration-none">Budaya</a></li>
+                        <li><a href="umkm.html" class="text-decoration-none">UMKM</a></li>
                     </ul>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- ==================== SARANA & PRASARANA ==================== -->
-<section class="bg-light py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 reveal">Sarana dan Prasarana</h2>
-        <div class="row g-4">
-            <div class="col-md-4 reveal delay-1">
-                <div class="card shadow h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary"><i class="bi bi-building"></i> Fasilitas Pemerintahan</h5>
-                        <ul class="mb-0">
-                            <li>Kantor Desa</li>
-                            <li>Balai Desa</li>
-                        </ul>
-                    </div>
+                <!-- Media Sosial -->
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
+                    <p>
+                        Instagram:<br>
+                        <a href="#" class="text-decoration-none">
+                            <i class="bi bi-instagram"></i> @kkn.simarmata26
+                        </a>
+                    </p>
+                    <p>
+                        TikTok:<br>
+                        <a href="#" class="text-decoration-none">
+                            <i class="bi bi-tiktok"></i> @kkn.simarmata26
+                        </a>
+                    </p>
                 </div>
-            </div>
-            <div class="col-md-4 reveal delay-2">
-                <div class="card shadow h-100">
-                    <div class="card-body">
-                        <h5 class="text-success"><i class="bi bi-hospital"></i> Fasilitas Umum</h5>
-                        <ul class="mb-0">
-                            <li>Puskesmas</li>
-                            <li>Polindes</li>
-                            <li>Gereja</li>
-                            <li>PAUD</li>
-                            <li>SD Negeri</li>
-                            <li>SMP Negeri</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 reveal delay-3">
-                <div class="card shadow h-100">
-                    <div class="card-body">
-                        <h5 class="text-warning"><i class="bi bi-signpost-2"></i> Infrastruktur</h5>
-                        <ul class="mb-0">
-                            <li>Jalan Hotmix</li>
-                            <li>Jalan Aspal</li>
-                            <li>Sumur Bor</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- ==================== STRUKTUR PEMERINTAHAN ==================== -->
-<section class="struktur py-5">
-    <div class="container">
-        <h2 class="text-center fw-bold mb-5 reveal">
-            <i class="bi bi-diagram-3-fill text-danger"></i>
-            Struktur Organisasi Pemerintah Desa Simarmata
-        </h2>
-
-        <div class="org-chart">
-
-            <!-- Kepala Desa -->
-            <div class="level reveal delay-1">
-                <div class="org-card kepala">
-                    <i class="bi bi-person-badge-fill"></i>
-                    <h5>Kepala Desa</h5>
-                    <p>Alboin Sinaga</p>
-                </div>
             </div>
 
-            <div class="line reveal delay-2"></div>
+            <hr>
 
-            <!-- Level 2 -->
-            <div class="level dua reveal delay-3">
-                <div class="org-card">
-                    <i class="bi bi-bank2"></i>
-                    <h5>BPD</h5>
-                    <p>Badan Permusyawaratan Desa</p>
-                </div>
-                <div class="org-card sekretaris">
-                    <i class="bi bi-person-workspace"></i>
-                    <h5>Sekretaris Desa</h5>
-                    <p>Sarma Diana Tumanggor</p>
-                </div>
-            </div>
-
-            <div class="line reveal delay-4"></div>
-
-            <!-- Level 3 -->
-            <div class="level empat reveal delay-5">
-                <div class="org-card">
-                    <i class="bi bi-building"></i>
-                    <h6>Kasi Pemerintahan</h6>
-                    <p>One Juni Situmorang</p>
-                </div>
-                <div class="org-card">
-                    <i class="bi bi-people"></i>
-                    <h6>Kasi Kesejahteraan & Pelayanan</h6>
-                    <p>Rudiwanto Ambarita</p>
-                </div>
-                <div class="org-card">
-                    <i class="bi bi-folder2-open"></i>
-                    <h6>Kaur Umum & Perencanaan</h6>
-                    <p>Sudin Sinaga</p>
-                </div>
-                <div class="org-card">
-                    <i class="bi bi-cash-stack"></i>
-                    <h6>Kaur Keuangan</h6>
-                    <p>Delima Royani Siagian</p>
-                </div>
-            </div>
-
-            <div class="line reveal delay-1"></div>
-
-            <!-- Kepala Dusun -->
-            <div class="level tiga reveal delay-2">
-                <div class="org-card dusun">
-                    <i class="bi bi-house-door-fill"></i>
-                    <h6>Kepala Dusun I</h6>
-                    <p>Franson M. Simarmata</p>
-                </div>
-                <div class="org-card dusun">
-                    <i class="bi bi-house-door-fill"></i>
-                    <h6>Kepala Dusun II</h6>
-                    <p>Meldiner Simarmata</p>
-                </div>
-                <div class="org-card dusun">
-                    <i class="bi bi-house-door-fill"></i>
-                    <h6>Kepala Dusun III</h6>
-                    <p>Janter Turnip</p>
-                </div>
+            <div class="text-center">
+                <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
+                <br>
+                <small>Dibuat untuk Program KKN UNIMED 2026</small>
             </div>
 
         </div>
-    </div>
-</section>
+    </footer>
 
-<!-- ==================== FOOTER ==================== -->
-<footer class="pt-5 pb-3">
-    <div class="container">
-        <div class="row">
+</div>
+<!-- ===== PENUTUP WRAPPER MAIN-CONTENT ===== -->
 
-            <!-- Alamat -->
-            <div class="col-md-4 mb-4">
-                <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
-                <p>
-                    Desa Simarmata<br>
-                    Kecamatan Simanindo<br>
-                    Kabupaten Samosir<br>
-                    Provinsi Sumatera Utara<br>
-                    Kode Pos: 22395
-                </p>
-            </div>
-
-            <!-- Menu -->
-            <div class="col-md-4 mb-4">
-                <h5><i class="bi bi-list"></i> Menu</h5>
-                <ul class="list-unstyled">
-                    <li><a href="index.html" class="text-decoration-none">Home</a></li>
-                    <li><a href="profil.html" class="text-decoration-none">Profil Desa</a></li>
-                    <li><a href="sejarah.html" class="text-decoration-none">Sejarah</a></li>
-                    <li><a href="wisata.html" class="text-decoration-none">Wisata</a></li>
-                    <li><a href="budaya.html" class="text-decoration-none">Budaya</a></li>
-                    <li><a href="umkm.html" class="text-decoration-none">UMKM</a></li>
-                </ul>
-            </div>
-
-            <!-- Media Sosial -->
-            <div class="col-md-4 mb-4">
-                <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
-                <p>
-                    Instagram:<br>
-                    <a href="#" class="text-decoration-none">
-                        <i class="bi bi-instagram"></i> @kkn.simarmata26
-                    </a>
-                </p>
-                <p>
-                    TikTok:<br>
-                    <a href="#" class="text-decoration-none">
-                        <i class="bi bi-tiktok"></i> @kkn.simarmata26
-                    </a>
-                </p>
-            </div>
-
-        </div>
-
-        <hr>
-
-        <div class="text-center">
-            <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
-            <br>
-            <small>Dibuat untuk Program KKN UNIMED 2026</small>
-        </div>
-
-    </div>
-</footer>
 
 <!-- ==================== MODAL UNTUK GAMBAR KANTOR DESA ==================== -->
+<!-- DILETAKKAN DI LUAR WRAPPER AGAR TIDAK IKUT BLUR -->
 <div class="modal fade" id="modalKantorDesa" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -1039,6 +1063,7 @@
 </div>
 
 <!-- ==================== MODAL UNTUK GAMBAR PETA ==================== -->
+<!-- DILETAKKAN DI LUAR WRAPPER AGAR TIDAK IKUT BLUR -->
 <div class="modal fade" id="modalPeta" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -1125,6 +1150,21 @@
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
+        });
+    });
+
+    // ===== 4. BLUR BACKGROUND SAAT MODAL DIBUKA =====
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainContent = document.getElementById('main-content');
+
+        // Saat modal mulai terbuka
+        document.addEventListener('show.bs.modal', function (e) {
+            if (mainContent) mainContent.classList.add('blur');
+        });
+
+        // Saat modal selesai ditutup
+        document.addEventListener('hidden.bs.modal', function (e) {
+            if (mainContent) mainContent.classList.remove('blur');
         });
     });
 </script>
