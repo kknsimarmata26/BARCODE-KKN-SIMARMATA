@@ -422,437 +422,460 @@
                 font-size: 20px;
             }
         }
+
+        /* ============================================================
+           FITUR BLUR SAAT MODAL TERBUKA (METODE WRAPPER)
+        ============================================================ */
+        #main-content {
+            transition: filter 0.3s ease;
+        }
+        #main-content.blur {
+            filter: blur(6px);
+            -webkit-filter: blur(6px);
+            pointer-events: none;
+        }
+        /* Pastikan tombol Back-to-Top tidak ikut terkunci saat blur */
+        .back-to-top {
+            pointer-events: auto !important;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/logo%203%20web.png" alt="Logo Desa Simarmata">
-                <span>Desa Simarmata</span>
-            </a>
+    <!-- ===== PENTING: BUNGKUS SEMUA KONTEN WEBSITE ===== -->
+    <div id="main-content">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <!-- ===== NAVBAR ===== -->
+        <nav class="navbar navbar-expand-lg navbar-dark shadow">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/logo%203%20web.png" alt="Logo Desa Simarmata">
+                    <span>Desa Simarmata</span>
+                </a>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="profil.html">Profil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
-                    <li class="nav-item"><a class="nav-link" href="wisata.html">Wisata</a></li>
-                    <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="umkm.html">UMKM</a></li>
-                    <li class="nav-item"><a class="nav-link" href="homestay.html">Homestay</a></li>
-                    <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
-                    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- ===== HERO CAROUSEL DENGAN LQIP ===== -->
-    <div class="hero-carousel-wrapper position-relative">
-
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
-            <!-- Indikator -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
-            </div>
-
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa1.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 2 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa2.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 3 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa3.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 4 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa4.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 5 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa5.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-            </div>
-
-            <!-- Tombol navigasi -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-        <!-- Overlay Teks -->
-        <div class="hero-content">
-            <h1>UMKM Desa Simarmata</h1>
-            <p class="lead">Mendukung Produk Lokal dan Ekonomi Masyarakat</p>
-        </div>
-
-    </div>
-
-    <!-- ===== FILTER KATEGORI ===== -->
-    <section class="container py-3">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h4 class="reveal delay-1">Filter Kategori</h4>
-                <div class="d-flex flex-wrap justify-content-center reveal delay-2">
-                    <button class="filter-btn active" data-filter="all">Semua</button>
-                    <button class="filter-btn" data-filter="kuliner">Kuliner</button>
-                    <button class="filter-btn" data-filter="sembako">Sembako</button>
-                    <button class="filter-btn" data-filter="bengkel">Bengkel</button>
-                    <button class="filter-btn" data-filter="salon">Salon</button>
-                    <button class="filter-btn" data-filter="jahit">Jahit</button>
-                    <button class="filter-btn" data-filter="kerajinan">Kerajinan</button>
-                    <button class="filter-btn" data-filter="coffee">Coffee Shop</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== DAFTAR UMKM ===== -->
-    <section class="container py-4">
-        <div class="row g-4" id="productGrid">
-
-            <!-- 1. Rumah Makan Pinggol Pinggol -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-1" data-category="kuliner">
-                <div class="card shadow">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/rm-pinggol.jpeg" class="card-img-top" alt="Rumah Makan Pinggol Pinggol">
-                    <div class="card-body">
-                        <span class="badge-category">Kuliner</span>
-                        <h4>Rumah Makan Pinggol Pinggol</h4>
-                        <p class="card-text">Rumah makan khas Batak dengan menu andalan panggang B2, saksang, dan ikan bakar. Cocok untuk makan siang atau acara keluarga.</p>
-                        <div class="price">Mulai Rp25.000</div>
-                        <a href="https://wa.me/6285805426639?text=Halo,%20saya%20ingin%20memesan%20di%20Rumah%20Makan%20Pinggol%20Pinggol." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. Lapo Aerse Sinaga -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-2" data-category="sembako">
-                <div class="card shadow">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/lapo-aerse.jpeg" class="card-img-top" alt="Lapo Aerse Sinaga">
-                    <div class="card-body">
-                        <span class="badge-category">Sembako</span>
-                        <h4>Lapo Aerse Sinaga</h4>
-                        <p class="card-text">Warung sederhana yang menjual kebutuhan pokok sehari-hari dan melayani pembayaran loket Sampri Simanindo.</p>
-                        <div class="price">Mulai Rp5.000</div>
-                        <a href="https://wa.me/6285178516076?text=Halo,%20saya%20ingin%20memesan%20di%20Lapo%20Aerse%20Sinaga." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Kunjungi Toko
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. Bengkel Jembatan -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-3" data-category="bengkel">
-                <div class="card shadow">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/296cb2317e421bd71e919ff2aa28945962f160c3/bengkel1.jpeg" class="card-img-top" alt="Bengkel Jembatan">
-                    <div class="card-body">
-                        <span class="badge-category">Bengkel Motor</span>
-                        <h4>Bengkel Jembatan</h4>
-                        <p class="card-text">Bengkel motor terpercaya untuk segala jenis perbaikan kendaraan roda dua. Buka 09.00 hingga selesai, siap siaga darurat.</p>
-                        <div class="price">Sesuai jasa perbaikan</div>
-                        <a href="https://wa.me/6281280066687?text=Halo,%20saya%20butuh%20bantuan%20bengkel." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Hubungi Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Grace Salon -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-4" data-category="salon">
-                <div class="card shadow">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNlYzZjZmYiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI5MCIgcj0iNDAiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSI4MCIgcj0iNDAiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSIzMDAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjZmZmZmZmIi8+PHRleHQgeD0iNTAiIHk9IjIzMCIgZmlsbD0iYmxhY2siIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+R3JhY2UgU2Fsb248L3RleHQ+PC9zdmc+" class="card-img-top" alt="Grace Salon">
-                    <div class="card-body">
-                        <span class="badge-category">Salon & Kecantikan</span>
-                        <h4>Grace Salon</h4>
-                        <p class="card-text">Salon kecantikan untuk perawatan rambut, wajah, dan tata rias. Buka 09.00 hingga selesai, booking prioritas.</p>
-                        <div class="price">Hubungi langsung</div>
-                        <a href="https://wa.me/6282272308155?text=Halo,%20saya%20ingin%20booking%20di%20Grace%20Salon." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Booking Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. Warung Boru Manik -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-5" data-category="kuliner">
-                <div class="card shadow">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNmZmM4MDgiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjEwMCIgcj0iNTAiIGZpbGw9IiNmZmUwYjAiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSI4MCIgcj0iNTAiIGZpbGw9IiNmZmUwYjAiLz48Y2lyY2xlIGN4PSIzMjAiIGN5PSIxMjAiIHI9IjUwIiBmaWxsPSIjZmZlMGIwIi8+PHRleHQgeD0iNTAiIHk9IjIzMCIgZmlsbD0iYmxhY2siIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+V2FydW5nIEJvcnUgTWFuZWs8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Warung Boru Manik">
-                    <div class="card-body">
-                        <span class="badge-category">Kuliner</span>
-                        <h4>Warung Boru Manik</h4>
-                        <p class="card-text">Warung sarapan pagi dengan aneka menu rumahan lezat. Buka 07.00 hingga selesai, sarapan praktis dan mengenyangkan.</p>
-                        <div class="price">Mulai Rp5.000</div>
-                        <a href="https://wa.me/6287751302860?text=Halo,%20saya%20ingin%20pesan%20sarapan%20di%20Warung%20Boru%20Manik." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Penjahit Cecan Br. Siringoringo -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-6" data-category="jahit">
-                <div class="card shadow">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YjVkNGIiLz48cmVjdCB4PSI2MCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2I4OTU3NSIvPjxyZWN0IHg9IjE4MCIgeT0iOTAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2I4OTU3NSIvPjxyZWN0IHg9IjMwMCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2I4OTU3NSIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjE4IiBmb250LWZhbWlseT0iQXJpYWwiPlBlbmphaGl0IENlY2FuPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Penjahit Cecan">
-                    <div class="card-body">
-                        <span class="badge-category">Jahit & Konveksi</span>
-                        <h4>Penjahit Cecan Br. Siringoringo</h4>
-                        <p class="card-text">Jasa jahit baju profesional berbagai model. Buka 08.00 hingga selesai, terima pesanan sesuai keinginan.</p>
-                        <div class="price">Sesuai desain</div>
-                        <a href="https://wa.me/6281387703984?text=Halo,%20saya%20ingin%20konsultasi%20jahitan." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Hubungi Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 7. Pasumanroan Sembako -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-7" data-category="sembako">
-                <div class="card shadow">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/pasumanroan-sembako.jpeg" class="card-img-top" alt="Pasumanroan Sembako">
-                    <div class="card-body">
-                        <span class="badge-category">Sembako</span>
-                        <h4>Pasumanroan Sembako</h4>
-                        <p class="card-text">Warung sederhana menyediakan berbagai kebutuhan pokok sehari-hari dengan harga ramah.</p>
-                        <div class="price">Mulai Rp2.000</div>
-                        <a href="https://wa.me/6281260027196?text=Halo,%20saya%20ingin%20belanja%20sembako." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Beli Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 8. Tenun Ulos br. Manik -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-8" data-category="kerajinan">
-                <div class="card shadow">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/296cb2317e421bd71e919ff2aa28945962f160c3/tenun-ulos.jpeg" class="card-img-top" alt="Tenun Ulos br. Manik">
-                    <div class="card-body">
-                        <span class="badge-category">Kerajinan</span>
-                        <h4>Tenun Ulos br. Manik</h4>
-                        <p class="card-text">Menjual kain ulos khas Batak berkualitas tinggi dan warung kebutuhan pokok. Satu tempat untuk ulos adat dan sembako.</p>
-                        <div class="price">Ulos mulai Rp150.000 / Sembako mulai Rp2.000</div>
-                        <a href="https://wa.me/6281262265085?text=Halo,%20saya%20ingin%20membeli%20ulos." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 9. SRC Diel -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-9" data-category="sembako">
-                <div class="card shadow">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM0Y2FmNTAiLz48cmVjdCB4PSI2MCIgeT0iNjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iIzhjZTY4MCIvPjxyZWN0IHg9IjE4MCIgeT0iOTAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iIzhjZTY4MCIvPjxyZWN0IHg9IjMwMCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iIzhjZTY4MCIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjIwIiBmb250LWZhbWlseT0iQXJpYWwiPlNSQyBEaWVsPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="SRC Diel">
-                    <div class="card-body">
-                        <span class="badge-category">Sembako</span>
-                        <h4>SRC Diel</h4>
-                        <p class="card-text">Toko kelontong menyediakan berbagai kebutuhan sehari-hari dengan harga terjangkau. Buka pagi hingga malam.</p>
-                        <div class="price">Mulai Rp2.000</div>
-                        <a href="https://wa.me/6282161303824?text=Halo,%20saya%20ingin%20belanja%20di%20SRC%20Diel." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Belanja Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 10. Warung Gasoli -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-1" data-category="sembako">
-                <div class="card shadow">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/warung-gasoli.jpg" class="card-img-top" alt="Warung Gasoli">
-                    <div class="card-body">
-                        <span class="badge-category">Sembako</span>
-                        <h4>Warung Gasoli</h4>
-                        <p class="card-text">Warung andalan sembako, Brilink, dan sarapan spesial Batak (Mie Gomak, telur bebek). Buka 06.00–23.00, QRIS.</p>
-                        <div class="price">Mulai Rp5.000</div>
-                        <a href="https://wa.me/6282363315095?text=Halo,%20saya%20ingin%20pesan%20di%20Warung%20Gasoli." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Beli Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 11. Rumah Makan Padeyobo -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-2" data-category="kuliner">
-                <div class="card shadow">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNmZmE3MDAiLz48cmVjdCB4PSI1MCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2ZmYzQwMCIvPjxyZWN0IHg9IjE1MCIgeT0iOTAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2ZmYzQwMCIvPjxyZWN0IHg9IjI1MCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2ZmYzQwMCIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9ImJsYWNrIiBmb250LXNpemU9IjE4IiBmb250LWZhbWlseT0iQXJpYWwiPlJ1bWFoIE1ha2FuIFBhZGV5b2JvPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Rumah Makan Padeyobo">
-                    <div class="card-body">
-                        <span class="badge-category">Kuliner</span>
-                        <h4>Rumah Makan Padeyobo</h4>
-                        <p class="card-text">Rumah makan halal dengan cita rasa lezat. Buka 06.00–22.00 (kecuali Minggu), pembayaran QRIS.</p>
-                        <div class="price">Mulai Rp10.000</div>
-                        <a href="https://wa.me/6282171970056?text=Halo,%20saya%20ingin%20memesan%20di%20RM%20Padeyobo." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 12. SRC Manuel -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-3" data-category="sembako">
-                <div class="card shadow">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM5YjU5YjYiLz48cmVjdCB4PSI2MCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2M4ODVkYyIvPjxyZWN0IHg9IjE4MCIgeT0iOTAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2M4ODVkYyIvPjxyZWN0IHg9IjMwMCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2M4ODVkYyIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjE4IiBmb250LWZhbWlseT0iQXJpYWwiPlNSQyBNYW51ZWw8L3RleHQ+PC9zdmc+" class="card-img-top" alt="SRC Manuel">
-                    <div class="card-body">
-                        <span class="badge-category">Sembako</span>
-                        <h4>SRC Manuel</h4>
-                        <p class="card-text">Toko serba ada: ATK, sembako, fotocopy, BRI Link. Buka sore hingga larut malam dan pagi.</p>
-                        <div class="price">Mulai Rp1.000</div>
-                        <a href="https://wa.me/6281376143911?text=Halo,%20saya%20butuh%20ATK%20atau%20fotocopy." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Hubungi Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 13. Kedai Kopi M Gibson Simarmata -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-4" data-category="kuliner">
-                <div class="card shadow">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/kedai-gibson.jpg" class="card-img-top" alt="Kedai Kopi M Gibson Simarmata">
-                    <div class="card-body">
-                        <span class="badge-category">Kuliner</span>
-                        <h4>Kedai Kopi M Gibson Simarmata</h4>
-                        <p class="card-text">Kedai favorit sarapan dengan gorengan, Mie Gomak, dan sembako. Buka pagi hingga malam.</p>
-                        <div class="price">Mulai Rp5.000</div>
-                        <a href="https://wa.me/6281397627458?text=Halo,%20saya%20ingin%20pesan%20di%20Kedai%20Kopi%20M%20Gibson." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 14. Elsa Silitonga -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-5" data-category="sembako">
-                <div class="card shadow">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNlOTFjMjMiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjEwMCIgcj0iNTAiIGZpbGw9IiNmZjQ1NDUiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSI4MCIgcj0iNTAiIGZpbGw9IiNmZjQ1NDUiLz48Y2lyY2xlIGN4PSIzMjAiIGN5PSIxMjAiIHI9IjUwIiBmaWxsPSIjZmY0NTQ1Ii8+PHRleHQgeD0iNTAiIHk9IjIzMCIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+RWxzYSBTaWxpdG9uZ2E8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Elsa Silitonga">
-                    <div class="card-body">
-                        <span class="badge-category">Sembako</span>
-                        <h4>Elsa Silitonga</h4>
-                        <p class="card-text">Warung sederhana menyediakan sembako dan menu sarapan pagi. Buka pagi hingga siang.</p>
-                        <div class="price">Mulai Rp5.000</div>
-                        <a href="https://wa.me/6281362029316?text=Halo,%20saya%20ingin%20pesan%20di%20Elsa%20Silitonga." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Pesan Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 15. Boto Lungun -->
-            <div class="col-lg-4 col-md-6 product-item reveal delay-6" data-category="coffee">
-                <div class="card shadow">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/boto-lungun%20(1).jpg" class="card-img-top" alt="Boto Lungun">
-                    <div class="card-body">
-                        <span class="badge-category">Coffee Shop</span>
-                        <h4>Boto Lungun</h4>
-                        <p class="card-text">Coffee shop kekinian, cocok untuk santai dan nongkrong malam. Aneka kopi dan minuman hangat, buka sore hingga dini hari.</p>
-                        <div class="price">Mulai Rp10.000</div>
-                        <a href="https://wa.me/6281260214808?text=Halo,%20saya%20ingin%20ke%20Boto%20Lungun." target="_blank" class="btn btn-success w-100">
-                            <i class="bi bi-whatsapp"></i> Hubungi Sekarang
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ===== STATISTIK ===== -->
-    <section class="bg-light py-5 statistik">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-3 reveal delay-1">
-                    <h2>20+</h2>
-                    <p>UMKM Aktif</p>
-                </div>
-                <div class="col-md-3 reveal delay-2">
-                    <h2>50+</h2>
-                    <p>Produk Lokal</p>
-                </div>
-                <div class="col-md-3 reveal delay-3">
-                    <h2>100+</h2>
-                    <p>Pelanggan</p>
-                </div>
-                <div class="col-md-3 reveal delay-4">
-                    <h2>6</h2>
-                    <p>Kategori Produk</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="pt-5 pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 reveal delay-1">
-                    <h5>Alamat Desa</h5>
-                    <p>
-                        Desa Simarmata<br>
-                        Kecamatan Simanindo<br>
-                        Kabupaten Samosir<br>
-                        Provinsi Sumatera Utara<br>
-                        Kode Pos: 22395
-                    </p>
-                </div>
-                <div class="col-md-4 mb-4 reveal delay-2">
-                    <h5>Menu</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="profil.html">Profil Desa</a></li>
-                        <li><a href="sejarah.html">Sejarah</a></li>
-                        <li><a href="wisata.html">Wisata</a></li>
-                        <li><a href="budaya.html">Budaya</a></li>
-                        <li><a href="umkm.html">UMKM</a></li>
-                        <li><a href="homestay.html">Homestay</a></li>
-                        <li><a href="galeri.html">Galeri</a></li>
-                        <li><a href="kontak.html">Kontak</a></li>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="profil.html">Profil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
+                        <li class="nav-item"><a class="nav-link" href="wisata.html">Wisata</a></li>
+                        <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="umkm.html">UMKM</a></li>
+                        <li class="nav-item"><a class="nav-link" href="homestay.html">Homestay</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 mb-4 reveal delay-3">
-                    <h5>Media Sosial</h5>
-                    <p>
-                        Instagram:<br>
-                        <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
-                    </p>
-                    <p>
-                        TikTok:<br>
-                        <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
-                    </p>
+            </div>
+        </nav>
+
+        <!-- ===== HERO CAROUSEL DENGAN LQIP ===== -->
+        <div class="hero-carousel-wrapper position-relative">
+
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+                <!-- Indikator -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa1.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa2.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa3.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa4.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa5.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                </div>
+
+                <!-- Tombol navigasi -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <!-- Overlay Teks -->
+            <div class="hero-content">
+                <h1>UMKM Desa Simarmata</h1>
+                <p class="lead">Mendukung Produk Lokal dan Ekonomi Masyarakat</p>
+            </div>
+
+        </div>
+
+        <!-- ===== FILTER KATEGORI ===== -->
+        <section class="container py-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h4 class="reveal delay-1">Filter Kategori</h4>
+                    <div class="d-flex flex-wrap justify-content-center reveal delay-2">
+                        <button class="filter-btn active" data-filter="all">Semua</button>
+                        <button class="filter-btn" data-filter="kuliner">Kuliner</button>
+                        <button class="filter-btn" data-filter="sembako">Sembako</button>
+                        <button class="filter-btn" data-filter="bengkel">Bengkel</button>
+                        <button class="filter-btn" data-filter="salon">Salon</button>
+                        <button class="filter-btn" data-filter="jahit">Jahit</button>
+                        <button class="filter-btn" data-filter="kerajinan">Kerajinan</button>
+                        <button class="filter-btn" data-filter="coffee">Coffee Shop</button>
+                    </div>
                 </div>
             </div>
-            <hr>
-            <div class="text-center reveal delay-4">
-                <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
-                <br>
-                <small>Dibuat untuk Program KKN UNIMED 2026</small>
+        </section>
+
+        <!-- ===== DAFTAR UMKM ===== -->
+        <section class="container py-4">
+            <div class="row g-4" id="productGrid">
+
+                <!-- 1. Rumah Makan Pinggol Pinggol -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-1" data-category="kuliner">
+                    <div class="card shadow">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/rm-pinggol.jpeg" class="card-img-top" alt="Rumah Makan Pinggol Pinggol">
+                        <div class="card-body">
+                            <span class="badge-category">Kuliner</span>
+                            <h4>Rumah Makan Pinggol Pinggol</h4>
+                            <p class="card-text">Rumah makan khas Batak dengan menu andalan panggang B2, saksang, dan ikan bakar. Cocok untuk makan siang atau acara keluarga.</p>
+                            <div class="price">Mulai Rp25.000</div>
+                            <a href="https://wa.me/6285805426639?text=Halo,%20saya%20ingin%20memesan%20di%20Rumah%20Makan%20Pinggol%20Pinggol." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Lapo Aerse Sinaga -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-2" data-category="sembako">
+                    <div class="card shadow">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/lapo-aerse.jpeg" class="card-img-top" alt="Lapo Aerse Sinaga">
+                        <div class="card-body">
+                            <span class="badge-category">Sembako</span>
+                            <h4>Lapo Aerse Sinaga</h4>
+                            <p class="card-text">Warung sederhana yang menjual kebutuhan pokok sehari-hari dan melayani pembayaran loket Sampri Simanindo.</p>
+                            <div class="price">Mulai Rp5.000</div>
+                            <a href="https://wa.me/6285178516076?text=Halo,%20saya%20ingin%20memesan%20di%20Lapo%20Aerse%20Sinaga." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Kunjungi Toko
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Bengkel Jembatan -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-3" data-category="bengkel">
+                    <div class="card shadow">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/296cb2317e421bd71e919ff2aa28945962f160c3/bengkel1.jpeg" class="card-img-top" alt="Bengkel Jembatan">
+                        <div class="card-body">
+                            <span class="badge-category">Bengkel Motor</span>
+                            <h4>Bengkel Jembatan</h4>
+                            <p class="card-text">Bengkel motor terpercaya untuk segala jenis perbaikan kendaraan roda dua. Buka 09.00 hingga selesai, siap siaga darurat.</p>
+                            <div class="price">Sesuai jasa perbaikan</div>
+                            <a href="https://wa.me/6281280066687?text=Halo,%20saya%20butuh%20bantuan%20bengkel." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Hubungi Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Grace Salon -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-4" data-category="salon">
+                    <div class="card shadow">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNlYzZjZmYiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI5MCIgcj0iNDAiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSI4MCIgcj0iNDAiIGZpbGw9IiNmZmZmZmYiLz48Y2lyY2xlIGN4PSIzMDAiIGN5PSIxMDAiIHI9IjQwIiBmaWxsPSIjZmZmZmZmIi8+PHRleHQgeD0iNTAiIHk9IjIzMCIgZmlsbD0iYmxhY2siIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+R3JhY2UgU2Fsb248L3RleHQ+PC9zdmc+" class="card-img-top" alt="Grace Salon">
+                        <div class="card-body">
+                            <span class="badge-category">Salon & Kecantikan</span>
+                            <h4>Grace Salon</h4>
+                            <p class="card-text">Salon kecantikan untuk perawatan rambut, wajah, dan tata rias. Buka 09.00 hingga selesai, booking prioritas.</p>
+                            <div class="price">Hubungi langsung</div>
+                            <a href="https://wa.me/6282272308155?text=Halo,%20saya%20ingin%20booking%20di%20Grace%20Salon." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Booking Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Warung Boru Manik -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-5" data-category="kuliner">
+                    <div class="card shadow">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNmZmM4MDgiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjEwMCIgcj0iNTAiIGZpbGw9IiNmZmUwYjAiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSI4MCIgcj0iNTAiIGZpbGw9IiNmZmUwYjAiLz48Y2lyY2xlIGN4PSIzMjAiIGN5PSIxMjAiIHI9IjUwIiBmaWxsPSIjZmZlMGIwIi8+PHRleHQgeD0iNTAiIHk9IjIzMCIgZmlsbD0iYmxhY2siIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+V2FydW5nIEJvcnUgTWFuZWs8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Warung Boru Manik">
+                        <div class="card-body">
+                            <span class="badge-category">Kuliner</span>
+                            <h4>Warung Boru Manik</h4>
+                            <p class="card-text">Warung sarapan pagi dengan aneka menu rumahan lezat. Buka 07.00 hingga selesai, sarapan praktis dan mengenyangkan.</p>
+                            <div class="price">Mulai Rp5.000</div>
+                            <a href="https://wa.me/6287751302860?text=Halo,%20saya%20ingin%20pesan%20sarapan%20di%20Warung%20Boru%20Manik." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Penjahit Cecan Br. Siringoringo -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-6" data-category="jahit">
+                    <div class="card shadow">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YjVkNGIiLz48cmVjdCB4PSI2MCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2I4OTU3NSIvPjxyZWN0IHg9IjE4MCIgeT0iOTAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2I4OTU3NSIvPjxyZWN0IHg9IjMwMCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2I4OTU3NSIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjE4IiBmb250LWZhbWlseT0iQXJpYWwiPlBlbmphaGl0IENlY2FuPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Penjahit Cecan">
+                        <div class="card-body">
+                            <span class="badge-category">Jahit & Konveksi</span>
+                            <h4>Penjahit Cecan Br. Siringoringo</h4>
+                            <p class="card-text">Jasa jahit baju profesional berbagai model. Buka 08.00 hingga selesai, terima pesanan sesuai keinginan.</p>
+                            <div class="price">Sesuai desain</div>
+                            <a href="https://wa.me/6281387703984?text=Halo,%20saya%20ingin%20konsultasi%20jahitan." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Hubungi Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Pasumanroan Sembako -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-7" data-category="sembako">
+                    <div class="card shadow">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/pasumanroan-sembako.jpeg" class="card-img-top" alt="Pasumanroan Sembako">
+                        <div class="card-body">
+                            <span class="badge-category">Sembako</span>
+                            <h4>Pasumanroan Sembako</h4>
+                            <p class="card-text">Warung sederhana menyediakan berbagai kebutuhan pokok sehari-hari dengan harga ramah.</p>
+                            <div class="price">Mulai Rp2.000</div>
+                            <a href="https://wa.me/6281260027196?text=Halo,%20saya%20ingin%20belanja%20sembako." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Beli Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Tenun Ulos br. Manik -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-8" data-category="kerajinan">
+                    <div class="card shadow">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/296cb2317e421bd71e919ff2aa28945962f160c3/tenun-ulos.jpeg" class="card-img-top" alt="Tenun Ulos br. Manik">
+                        <div class="card-body">
+                            <span class="badge-category">Kerajinan</span>
+                            <h4>Tenun Ulos br. Manik</h4>
+                            <p class="card-text">Menjual kain ulos khas Batak berkualitas tinggi dan warung kebutuhan pokok. Satu tempat untuk ulos adat dan sembako.</p>
+                            <div class="price">Ulos mulai Rp150.000 / Sembako mulai Rp2.000</div>
+                            <a href="https://wa.me/6281262265085?text=Halo,%20saya%20ingin%20membeli%20ulos." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. SRC Diel -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-9" data-category="sembako">
+                    <div class="card shadow">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM0Y2FmNTAiLz48cmVjdCB4PSI2MCIgeT0iNjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iIzhjZTY4MCIvPjxyZWN0IHg9IjE4MCIgeT0iOTAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iIzhjZTY4MCIvPjxyZWN0IHg9IjMwMCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iIzhjZTY4MCIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjIwIiBmb250LWZhbWlseT0iQXJpYWwiPlNSQyBEaWVsPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="SRC Diel">
+                        <div class="card-body">
+                            <span class="badge-category">Sembako</span>
+                            <h4>SRC Diel</h4>
+                            <p class="card-text">Toko kelontong menyediakan berbagai kebutuhan sehari-hari dengan harga terjangkau. Buka pagi hingga malam.</p>
+                            <div class="price">Mulai Rp2.000</div>
+                            <a href="https://wa.me/6282161303824?text=Halo,%20saya%20ingin%20belanja%20di%20SRC%20Diel." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Belanja Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Warung Gasoli -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-1" data-category="sembako">
+                    <div class="card shadow">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/warung-gasoli.jpg" class="card-img-top" alt="Warung Gasoli">
+                        <div class="card-body">
+                            <span class="badge-category">Sembako</span>
+                            <h4>Warung Gasoli</h4>
+                            <p class="card-text">Warung andalan sembako, Brilink, dan sarapan spesial Batak (Mie Gomak, telur bebek). Buka 06.00–23.00, QRIS.</p>
+                            <div class="price">Mulai Rp5.000</div>
+                            <a href="https://wa.me/6282363315095?text=Halo,%20saya%20ingin%20pesan%20di%20Warung%20Gasoli." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Beli Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Rumah Makan Padeyobo -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-2" data-category="kuliner">
+                    <div class="card shadow">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNmZmE3MDAiLz48cmVjdCB4PSI1MCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2ZmYzQwMCIvPjxyZWN0IHg9IjE1MCIgeT0iOTAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2ZmYzQwMCIvPjxyZWN0IHg9IjI1MCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2ZmYzQwMCIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9ImJsYWNrIiBmb250LXNpemU9IjE4IiBmb250LWZhbWlseT0iQXJpYWwiPlJ1bWFoIE1ha2FuIFBhZGV5b2JvPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Rumah Makan Padeyobo">
+                        <div class="card-body">
+                            <span class="badge-category">Kuliner</span>
+                            <h4>Rumah Makan Padeyobo</h4>
+                            <p class="card-text">Rumah makan halal dengan cita rasa lezat. Buka 06.00–22.00 (kecuali Minggu), pembayaran QRIS.</p>
+                            <div class="price">Mulai Rp10.000</div>
+                            <a href="https://wa.me/6282171970056?text=Halo,%20saya%20ingin%20memesan%20di%20RM%20Padeyobo." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. SRC Manuel -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-3" data-category="sembako">
+                    <div class="card shadow">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM5YjU5YjYiLz48cmVjdCB4PSI2MCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2M4ODVkYyIvPjxyZWN0IHg9IjE4MCIgeT0iOTAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2M4ODVkYyIvPjxyZWN0IHg9IjMwMCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgZmlsbD0iI2M4ODVkYyIvPjx0ZXh0IHg9IjUwIiB5PSIyMzAiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjE4IiBmb250LWZhbWlseT0iQXJpYWwiPlNSQyBNYW51ZWw8L3RleHQ+PC9zdmc+" class="card-img-top" alt="SRC Manuel">
+                        <div class="card-body">
+                            <span class="badge-category">Sembako</span>
+                            <h4>SRC Manuel</h4>
+                            <p class="card-text">Toko serba ada: ATK, sembako, fotocopy, BRI Link. Buka sore hingga larut malam dan pagi.</p>
+                            <div class="price">Mulai Rp1.000</div>
+                            <a href="https://wa.me/6281376143911?text=Halo,%20saya%20butuh%20ATK%20atau%20fotocopy." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Hubungi Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. Kedai Kopi M Gibson Simarmata -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-4" data-category="kuliner">
+                    <div class="card shadow">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/kedai-gibson.jpg" class="card-img-top" alt="Kedai Kopi M Gibson Simarmata">
+                        <div class="card-body">
+                            <span class="badge-category">Kuliner</span>
+                            <h4>Kedai Kopi M Gibson Simarmata</h4>
+                            <p class="card-text">Kedai favorit sarapan dengan gorengan, Mie Gomak, dan sembako. Buka pagi hingga malam.</p>
+                            <div class="price">Mulai Rp5.000</div>
+                            <a href="https://wa.me/6281397627458?text=Halo,%20saya%20ingin%20pesan%20di%20Kedai%20Kopi%20M%20Gibson." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Elsa Silitonga -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-5" data-category="sembako">
+                    <div class="card shadow">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNlOTFjMjMiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjEwMCIgcj0iNTAiIGZpbGw9IiNmZjQ1NDUiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSI4MCIgcj0iNTAiIGZpbGw9IiNmZjQ1NDUiLz48Y2lyY2xlIGN4PSIzMjAiIGN5PSIxMjAiIHI9IjUwIiBmaWxsPSIjZmY0NTQ1Ii8+PHRleHQgeD0iNTAiIHk9IjIzMCIgZmlsbD0id2hpdGUiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+RWxzYSBTaWxpdG9uZ2E8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Elsa Silitonga">
+                        <div class="card-body">
+                            <span class="badge-category">Sembako</span>
+                            <h4>Elsa Silitonga</h4>
+                            <p class="card-text">Warung sederhana menyediakan sembako dan menu sarapan pagi. Buka pagi hingga siang.</p>
+                            <div class="price">Mulai Rp5.000</div>
+                            <a href="https://wa.me/6281362029316?text=Halo,%20saya%20ingin%20pesan%20di%20Elsa%20Silitonga." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. Boto Lungun -->
+                <div class="col-lg-4 col-md-6 product-item reveal delay-6" data-category="coffee">
+                    <div class="card shadow">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/main/boto-lungun%20(1).jpg" class="card-img-top" alt="Boto Lungun">
+                        <div class="card-body">
+                            <span class="badge-category">Coffee Shop</span>
+                            <h4>Boto Lungun</h4>
+                            <p class="card-text">Coffee shop kekinian, cocok untuk santai dan nongkrong malam. Aneka kopi dan minuman hangat, buka sore hingga dini hari.</p>
+                            <div class="price">Mulai Rp10.000</div>
+                            <a href="https://wa.me/6281260214808?text=Halo,%20saya%20ingin%20ke%20Boto%20Lungun." target="_blank" class="btn btn-success w-100">
+                                <i class="bi bi-whatsapp"></i> Hubungi Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <!-- ===== STATISTIK ===== -->
+        <section class="bg-light py-5 statistik">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 reveal delay-1">
+                        <h2>20+</h2>
+                        <p>UMKM Aktif</p>
+                    </div>
+                    <div class="col-md-3 reveal delay-2">
+                        <h2>50+</h2>
+                        <p>Produk Lokal</p>
+                    </div>
+                    <div class="col-md-3 reveal delay-3">
+                        <h2>100+</h2>
+                        <p>Pelanggan</p>
+                    </div>
+                    <div class="col-md-3 reveal delay-4">
+                        <h2>6</h2>
+                        <p>Kategori Produk</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="pt-5 pb-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4 reveal delay-1">
+                        <h5>Alamat Desa</h5>
+                        <p>
+                            Desa Simarmata<br>
+                            Kecamatan Simanindo<br>
+                            Kabupaten Samosir<br>
+                            Provinsi Sumatera Utara<br>
+                            Kode Pos: 22395
+                        </p>
+                    </div>
+                    <div class="col-md-4 mb-4 reveal delay-2">
+                        <h5>Menu</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="profil.html">Profil Desa</a></li>
+                            <li><a href="sejarah.html">Sejarah</a></li>
+                            <li><a href="wisata.html">Wisata</a></li>
+                            <li><a href="budaya.html">Budaya</a></li>
+                            <li><a href="umkm.html">UMKM</a></li>
+                            <li><a href="homestay.html">Homestay</a></li>
+                            <li><a href="galeri.html">Galeri</a></li>
+                            <li><a href="kontak.html">Kontak</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4 reveal delay-3">
+                        <h5>Media Sosial</h5>
+                        <p>
+                            Instagram:<br>
+                            <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
+                        </p>
+                        <p>
+                            TikTok:<br>
+                            <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center reveal delay-4">
+                    <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
+                    <br>
+                    <small>Dibuat untuk Program KKN UNIMED 2026</small>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- ===== PENUTUP WRAPPER MAIN-CONTENT ===== -->
+
 
     <!-- ===== TOMBOL KEMBALI KE ATAS ===== -->
     <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">
@@ -883,7 +906,7 @@
         });
     </script>
 
-    <!-- ===== SCROLL REVEAL + LQIP + BACK TO TOP JS ===== -->
+    <!-- ===== SCROLL REVEAL + LQIP + BACK TO TOP + BLUR JS ===== -->
     <script>
         // ===== 1. SCROLL REVEAL =====
         function isElementInViewport(el) {
@@ -945,6 +968,21 @@
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
+            });
+        });
+
+        // ===== 4. BLUR BACKGROUND SAAT MODAL DIBUKA (INFRASTRUKTUR SIAP PAKAI) =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainContent = document.getElementById('main-content');
+
+            // Saat modal mulai terbuka (jika suatu saat Anda menambahkan modal di halaman ini)
+            document.addEventListener('show.bs.modal', function (e) {
+                if (mainContent) mainContent.classList.add('blur');
+            });
+
+            // Saat modal selesai ditutup
+            document.addEventListener('hidden.bs.modal', function (e) {
+                if (mainContent) mainContent.classList.remove('blur');
             });
         });
     </script>
