@@ -360,6 +360,54 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* ============================================================
+           TOMBOL KEMBALI KE ATAS (BACK TO TOP)
+        ============================================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9998;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #7c0e0e;
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(124, 14, 14, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-to-top:hover {
+            background: #5b0909;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(124, 14, 14, 0.6);
+            color: white;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media(max-width:576px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
     </style>
 
 </head>
@@ -812,10 +860,15 @@
         </div>
     </footer>
 
+    <!-- ===== TOMBOL KEMBALI KE ATAS ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
-    <!-- ===== JAVASCRIPT SCROLL REVEAL & LQIP ===== -->
+    <!-- ===== JAVASCRIPT SCROLL REVEAL & LQIP & BACK TO TOP ===== -->
     <script>
         // ===== 1. SCROLL REVEAL =====
         function isElementInViewport(el) {
@@ -849,20 +902,34 @@
                 if (src) {
                     const img = new Image();
                     img.onload = function() {
-                        // Set background-image ke gambar asli
                         item.style.backgroundImage = 'url("' + src + '")';
-                        // Tambahkan class 'loaded' untuk menghilangkan blur
                         item.classList.add('loaded');
                     };
                     img.onerror = function() {
-                        // Jika gagal, tetap hilangkan blur (tapi gambar placeholder tetap)
                         item.classList.add('loaded');
                     };
                     img.src = src;
                 } else {
-                    // Jika tidak ada data-src, langsung hilangkan blur
                     item.classList.add('loaded');
                 }
+            });
+        });
+
+        // ===== 3. TOMBOL KEMBALI KE ATAS (BACK TO TOP) =====
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
     </script>
