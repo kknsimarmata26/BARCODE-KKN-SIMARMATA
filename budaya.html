@@ -408,202 +408,284 @@
                 font-size: 20px;
             }
         }
+
+        /* ============================================================
+           FITUR BLUR SAAT MODAL TERBUKA (METODE WRAPPER)
+        ============================================================ */
+        #main-content {
+            transition: filter 0.3s ease;
+        }
+        #main-content.blur {
+            filter: blur(6px);
+            -webkit-filter: blur(6px);
+            pointer-events: none; /* Mencegah klik pada background saat modal terbuka */
+        }
+        /* Pastikan tombol Back-to-Top tidak ikut terkunci */
+        .back-to-top {
+            pointer-events: auto !important;
+        }
     </style>
 
 </head>
 
 <body>
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef969438973ac8f198dc8c488428a20c54fe8bd6/logo%203%20web.png"
-                alt="Logo Desa Simarmata">
-                Desa Simarmata
-            </a>
+    <!-- ===== PENTING: BUNGKUS SEMUA KONTEN WEBSITE ===== -->
+    <div id="main-content">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <!-- ===== NAVBAR ===== -->
+        <nav class="navbar navbar-expand-lg navbar-dark shadow">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef969438973ac8f198dc8c488428a20c54fe8bd6/logo%203%20web.png"
+                    alt="Logo Desa Simarmata">
+                    Desa Simarmata
+                </a>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profil.html">Profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sejarah.html">Sejarah</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="wisata.html">Wisata</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="budaya.html">Budaya</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="umkm.html">UMKM</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="homestay.html">Homestay</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="galeri.html">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kontak.html">Kontak</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- ===== HERO CAROUSEL DENGAN LQIP ===== -->
-    <div class="hero-carousel-wrapper position-relative">
-
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
-            <!-- Indikator -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
-            </div>
-
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa1.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 2 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa2.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 3 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa3.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 4 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa4.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 5 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa5.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profil.html">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sejarah.html">Sejarah</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wisata.html">Wisata</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="budaya.html">Budaya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="umkm.html">UMKM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="homestay.html">Homestay</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeri.html">Galeri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontak.html">Kontak</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </nav>
 
-            <!-- Tombol navigasi -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        <!-- ===== HERO CAROUSEL DENGAN LQIP ===== -->
+        <div class="hero-carousel-wrapper position-relative">
+
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+                <!-- Indikator -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa1.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa2.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa3.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa4.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa5.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                </div>
+
+                <!-- Tombol navigasi -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <!-- Overlay Teks -->
+            <div class="hero-content">
+                <h1>Budaya Desa Simarmata</h1>
+                <p class="lead">Melestarikan Warisan Budaya Batak Toba</p>
+            </div>
+
         </div>
 
-        <!-- Overlay Teks -->
-        <div class="hero-content">
-            <h1>Budaya Desa Simarmata</h1>
-            <p class="lead">Melestarikan Warisan Budaya Batak Toba</p>
-        </div>
+        <!-- ===== BUDAYA (Dengan Scroll Reveal) ===== -->
+        <section class="container py-5">
+
+            <!-- BARIS 1: 3 Budaya -->
+            <div class="row">
+                <!-- Budaya 1 - Ulos -->
+                <div class="col-lg-4 col-md-6 mb-4 reveal delay-1">
+                    <div class="card shadow h-100">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlVsb3M8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Ulos">
+                        <div class="card-body">
+                            <h4>Ulos</h4>
+                            <p>Ulos merupakan kain tenun tradisional Batak yang memiliki makna penghormatan, kasih sayang, dan doa dalam setiap acara adat.</p>
+                            <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalUlos">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budaya 2 - Tari Tortor -->
+                <div class="col-lg-4 col-md-6 mb-4 reveal delay-2">
+                    <div class="card shadow h-100">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlRhcmkgVG9ydG9yPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Tari Tortor">
+                        <div class="card-body">
+                            <h4>Tari Tortor</h4>
+                            <p>Tortor adalah tarian adat Batak Toba yang ditampilkan pada acara adat, penyambutan tamu, dan pesta budaya.</p>
+                            <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalTortor">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budaya 3 - Gondang Batak -->
+                <div class="col-lg-4 col-md-6 mb-4 reveal delay-3">
+                    <div class="card shadow h-100">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPkdvbmRhbmcgQmF0YWs8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Gondang Batak">
+                        <div class="card-body">
+                            <h4>Gondang Batak</h4>
+                            <p>Musik tradisional Batak yang dimainkan menggunakan taganing, ogung, sarune, dan alat musik tradisional lainnya.</p>
+                            <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalGondang">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BARIS 2: 2 Budaya -->
+            <div class="row">
+                <!-- Budaya 4 - Rumah Bolon -->
+                <div class="col-lg-6 col-md-6 mb-4 reveal delay-4">
+                    <div class="card shadow h-100">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlJ1bWFoIEJvbG9uPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Rumah Bolon">
+                        <div class="card-body">
+                            <h4>Rumah Bolon</h4>
+                            <p>Rumah adat Batak Toba yang menjadi simbol persatuan keluarga dan kekayaan budaya masyarakat Batak.</p>
+                            <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalRumahBolon">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budaya 5 - Upacara Adat -->
+                <div class="col-lg-6 col-md-6 mb-4 reveal delay-5">
+                    <div class="card shadow h-100">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlVwYWNhcmEgQWRhdDwvdGV4dD48L3N2Zz4=" class="card-img-top" alt="Upacara Adat">
+                        <div class="card-body">
+                            <h4>Upacara Adat</h4>
+                            <p>Berbagai upacara adat seperti pernikahan, mangulosi, dan pesta adat masih dilestarikan oleh masyarakat Desa Simarmata.</p>
+                            <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalUpacara">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="pt-5 pb-3">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Alamat -->
+                    <div class="col-md-4 mb-4">
+                        <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
+                        <p>
+                            Desa Simarmata<br>
+                            Kecamatan Simanindo<br>
+                            Kabupaten Samosir<br>
+                            Provinsi Sumatera Utara<br>
+                            Kode Pos: 22395
+                        </p>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="col-md-4 mb-4">
+                        <h5><i class="bi bi-list"></i> Menu</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="profil.html">Profil Desa</a></li>
+                            <li><a href="sejarah.html">Sejarah</a></li>
+                            <li><a href="wisata.html">Wisata</a></li>
+                            <li><a href="budaya.html">Budaya</a></li>
+                            <li><a href="umkm.html">UMKM</a></li>
+                            <li><a href="homestay.html">Homestay</a></li>
+                            <li><a href="galeri.html">Galeri</a></li>
+                            <li><a href="kontak.html">Kontak</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Media Sosial -->
+                    <div class="col-md-4 mb-4">
+                        <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
+                        <p>
+                            Instagram:<br>
+                            <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
+                        </p>
+                        <p>
+                            TikTok:<br>
+                            <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
+                        </p>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="text-center">
+                    <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
+                    <br>
+                    <small>Dibuat untuk Program KKN UNIMED 2026</small>
+                </div>
+
+            </div>
+        </footer>
 
     </div>
+    <!-- ===== PENUTUP WRAPPER MAIN-CONTENT ===== -->
 
-    <!-- ===== BUDAYA (Dengan Scroll Reveal) ===== -->
-    <section class="container py-5">
-
-        <!-- BARIS 1: 3 Budaya -->
-        <div class="row">
-            <!-- Budaya 1 - Ulos -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal delay-1">
-                <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlVsb3M8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Ulos">
-                    <div class="card-body">
-                        <h4>Ulos</h4>
-                        <p>Ulos merupakan kain tenun tradisional Batak yang memiliki makna penghormatan, kasih sayang, dan doa dalam setiap acara adat.</p>
-                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalUlos">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Budaya 2 - Tari Tortor -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal delay-2">
-                <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlRhcmkgVG9ydG9yPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Tari Tortor">
-                    <div class="card-body">
-                        <h4>Tari Tortor</h4>
-                        <p>Tortor adalah tarian adat Batak Toba yang ditampilkan pada acara adat, penyambutan tamu, dan pesta budaya.</p>
-                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalTortor">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Budaya 3 - Gondang Batak -->
-            <div class="col-lg-4 col-md-6 mb-4 reveal delay-3">
-                <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPkdvbmRhbmcgQmF0YWs8L3RleHQ+PC9zdmc+" class="card-img-top" alt="Gondang Batak">
-                    <div class="card-body">
-                        <h4>Gondang Batak</h4>
-                        <p>Musik tradisional Batak yang dimainkan menggunakan taganing, ogung, sarune, dan alat musik tradisional lainnya.</p>
-                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalGondang">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- BARIS 2: 2 Budaya -->
-        <div class="row">
-            <!-- Budaya 4 - Rumah Bolon -->
-            <div class="col-lg-6 col-md-6 mb-4 reveal delay-4">
-                <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlJ1bWFoIEJvbG9uPC90ZXh0Pjwvc3ZnPg==" class="card-img-top" alt="Rumah Bolon">
-                    <div class="card-body">
-                        <h4>Rumah Bolon</h4>
-                        <p>Rumah adat Batak Toba yang menjadi simbol persatuan keluarga dan kekayaan budaya masyarakat Batak.</p>
-                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalRumahBolon">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Budaya 5 - Upacara Adat -->
-            <div class="col-lg-6 col-md-6 mb-4 reveal delay-5">
-                <div class="card shadow h-100">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiM3YzBlMGUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjI0IiBmb250LWZhbWlseT0iQXJpYWwiPlVwYWNhcmEgQWRhdDwvdGV4dD48L3N2Zz4=" class="card-img-top" alt="Upacara Adat">
-                    <div class="card-body">
-                        <h4>Upacara Adat</h4>
-                        <p>Berbagai upacara adat seperti pernikahan, mangulosi, dan pesta adat masih dilestarikan oleh masyarakat Desa Simarmata.</p>
-                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalUpacara">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
 
     <!-- ========================================================== -->
-    <!-- ===== MODAL 1: ULOS ===== -->
+    <!-- ===== MODAL 1: ULOS (DI LUAR WRAPPER) ===== -->
     <!-- ========================================================== -->
     <div class="modal fade" id="modalUlos" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -640,7 +722,7 @@
     </div>
 
     <!-- ========================================================== -->
-    <!-- ===== MODAL 2: TARI TORTOR ===== -->
+    <!-- ===== MODAL 2: TARI TORTOR (DI LUAR WRAPPER) ===== -->
     <!-- ========================================================== -->
     <div class="modal fade" id="modalTortor" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -676,7 +758,7 @@
     </div>
 
     <!-- ========================================================== -->
-    <!-- ===== MODAL 3: GONDANG BATAK ===== -->
+    <!-- ===== MODAL 3: GONDANG BATAK (DI LUAR WRAPPER) ===== -->
     <!-- ========================================================== -->
     <div class="modal fade" id="modalGondang" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -716,7 +798,7 @@
     </div>
 
     <!-- ========================================================== -->
-    <!-- ===== MODAL 4: RUMAH BOLON ===== -->
+    <!-- ===== MODAL 4: RUMAH BOLON (DI LUAR WRAPPER) ===== -->
     <!-- ========================================================== -->
     <div class="modal fade" id="modalRumahBolon" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -754,7 +836,7 @@
     </div>
 
     <!-- ========================================================== -->
-    <!-- ===== MODAL 5: UPACARA ADAT ===== -->
+    <!-- ===== MODAL 5: UPACARA ADAT (DI LUAR WRAPPER) ===== -->
     <!-- ========================================================== -->
     <div class="modal fade" id="modalUpacara" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -801,65 +883,6 @@
         </div>
     </div>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="pt-5 pb-3">
-        <div class="container">
-            <div class="row">
-
-                <!-- Alamat -->
-                <div class="col-md-4 mb-4">
-                    <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
-                    <p>
-                        Desa Simarmata<br>
-                        Kecamatan Simanindo<br>
-                        Kabupaten Samosir<br>
-                        Provinsi Sumatera Utara<br>
-                        Kode Pos: 22395
-                    </p>
-                </div>
-
-                <!-- Menu -->
-                <div class="col-md-4 mb-4">
-                    <h5><i class="bi bi-list"></i> Menu</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="profil.html">Profil Desa</a></li>
-                        <li><a href="sejarah.html">Sejarah</a></li>
-                        <li><a href="wisata.html">Wisata</a></li>
-                        <li><a href="budaya.html">Budaya</a></li>
-                        <li><a href="umkm.html">UMKM</a></li>
-                        <li><a href="homestay.html">Homestay</a></li>
-                        <li><a href="galeri.html">Galeri</a></li>
-                        <li><a href="kontak.html">Kontak</a></li>
-                    </ul>
-                </div>
-
-                <!-- Media Sosial -->
-                <div class="col-md-4 mb-4">
-                    <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
-                    <p>
-                        Instagram:<br>
-                        <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
-                    </p>
-                    <p>
-                        TikTok:<br>
-                        <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
-                    </p>
-                </div>
-
-            </div>
-
-            <hr>
-
-            <div class="text-center">
-                <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
-                <br>
-                <small>Dibuat untuk Program KKN UNIMED 2026</small>
-            </div>
-
-        </div>
-    </footer>
-
     <!-- ===== TOMBOL KEMBALI KE ATAS ===== -->
     <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">
         <i class="bi bi-arrow-up"></i>
@@ -868,7 +891,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
-    <!-- ===== JAVASCRIPT SCROLL REVEAL & LQIP & BACK TO TOP ===== -->
+    <!-- ===== JAVASCRIPT SCROLL REVEAL, LQIP, BACK TO TOP, & BLUR ===== -->
     <script>
         // ===== 1. SCROLL REVEAL =====
         function isElementInViewport(el) {
@@ -930,6 +953,21 @@
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
+            });
+        });
+
+        // ===== 4. BLUR BACKGROUND SAAT MODAL DIBUKA =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainContent = document.getElementById('main-content');
+
+            // Saat modal mulai terbuka
+            document.addEventListener('show.bs.modal', function (e) {
+                if (mainContent) mainContent.classList.add('blur');
+            });
+
+            // Saat modal selesai ditutup
+            document.addEventListener('hidden.bs.modal', function (e) {
+                if (mainContent) mainContent.classList.remove('blur');
             });
         });
     </script>
