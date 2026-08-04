@@ -412,190 +412,236 @@
                 font-size: 20px;
             }
         }
+
+        /* ============================================================
+           FITUR BLUR SAAT MODAL TERBUKA (METODE WRAPPER)
+        ============================================================ */
+        #main-content {
+            transition: filter 0.3s ease;
+        }
+        #main-content.blur {
+            filter: blur(6px);
+            -webkit-filter: blur(6px);
+            pointer-events: none; /* Mencegah klik pada background saat modal terbuka */
+        }
+        /* Pastikan tombol Back-to-Top tidak ikut terkunci saat blur */
+        .back-to-top {
+            pointer-events: auto !important;
+        }
     </style>
 
 </head>
 
 <body>
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/28e102b5e877c1f41ab210e479c150db5ca184a9/logo%203%20web.png"
-                alt="Logo Desa Simarmata">
-                Desa Simarmata
-            </a>
+    <!-- ===== PENTING: BUNGKUS SEMUA KONTEN WEBSITE ===== -->
+    <div id="main-content">
 
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <!-- ===== NAVBAR ===== -->
+        <nav class="navbar navbar-expand-lg navbar-dark shadow">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/28e102b5e877c1f41ab210e479c150db5ca184a9/logo%203%20web.png"
+                    alt="Logo Desa Simarmata">
+                    Desa Simarmata
+                </a>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profil.html">Profil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sejarah.html">Sejarah</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="wisata.html">Wisata</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="budaya.html">Budaya</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="umkm.html">UMKM</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="homestay.html">Homestay</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="galeri.html">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kontak.html">Kontak</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- ===== HERO CAROUSEL DENGAN LQIP ===== -->
-    <div class="hero-carousel-wrapper position-relative">
-
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
-            <!-- Indikator -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
-            </div>
-
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 2 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 3 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 4 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                </div>
-                <!-- Slide 5 -->
-                <div class="carousel-item"
-                     data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa1.jpeg"
-                     style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profil.html">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sejarah.html">Sejarah</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="wisata.html">Wisata</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="budaya.html">Budaya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="umkm.html">UMKM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="homestay.html">Homestay</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeri.html">Galeri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontak.html">Kontak</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </nav>
 
-            <!-- Tombol navigasi -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+        <!-- ===== HERO CAROUSEL DENGAN LQIP ===== -->
+        <div class="hero-carousel-wrapper position-relative">
 
-        <!-- Overlay Teks -->
-        <div class="hero-content">
-            <h1>Destinasi Wisata Desa Simarmata</h1>
-            <p class="lead">Pesona Alam, Budaya, dan Sejarah di Kawasan Danau Toba</p>
-        </div>
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+                <!-- Indikator -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
+                </div>
 
-    </div>
-
-    <!-- ===== WISATA ===== -->
-    <section class="container py-5">
-        <div class="row">
-
-            <!-- Wisata 1 - Huta Adat Simarmata (POP MODAL) -->
-            <div class="col-lg-6 col-md-6 mb-4 reveal delay-1">
-                <div class="card shadow h-100">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
-                    class="card-img-top" alt="Huta Adat Simarmata">
-                    <div class="card-body">
-                        <h4>Huta Adat Simarmata</h4>
-                        <p>Kawasan rumah adat Batak Toba yang masih terjaga dan menjadi pusat wisata budaya.</p>
-                        <p><b>Jam Buka :</b> 08.00 - 17.00 WIB</p>
-                        <!-- TOMBOL MODAL -->
-                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalHutaAdat">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </button>
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa1.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
                     </div>
                 </div>
+
+                <!-- Tombol navigasi -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
 
-            <!-- Wisata 2 - Danau Toba (POP MODAL) -->
-            <div class="col-lg-6 col-md-6 mb-4 reveal delay-2">
-                <div class="card shadow h-100">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
-                    class="card-img-top" alt="Danau Toba">
-                    <div class="card-body">
-                        <h4>Danau Toba</h4>
-                        <p>Menikmati panorama Danau Toba dengan udara sejuk dan pemandangan yang indah.</p>
-                        <p><b>Tiket :</b> Gratis</p>
-                        <!-- TOMBOL MODAL -->
-                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalDanauToba">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </button>
+            <!-- Overlay Teks -->
+            <div class="hero-content">
+                <h1>Destinasi Wisata Desa Simarmata</h1>
+                <p class="lead">Pesona Alam, Budaya, dan Sejarah di Kawasan Danau Toba</p>
+            </div>
+
+        </div>
+
+        <!-- ===== WISATA ===== -->
+        <section class="container py-5">
+            <div class="row">
+
+                <!-- Wisata 1 - Huta Adat Simarmata (POP MODAL) -->
+                <div class="col-lg-6 col-md-6 mb-4 reveal delay-1">
+                    <div class="card shadow h-100">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
+                        class="card-img-top" alt="Huta Adat Simarmata">
+                        <div class="card-body">
+                            <h4>Huta Adat Simarmata</h4>
+                            <p>Kawasan rumah adat Batak Toba yang masih terjaga dan menjadi pusat wisata budaya.</p>
+                            <p><b>Jam Buka :</b> 08.00 - 17.00 WIB</p>
+                            <!-- TOMBOL MODAL -->
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalHutaAdat">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Wisata 3 - Makam Raja Simarmata (POP MODAL) -->
-            <div class="col-lg-6 col-md-6 mb-4 reveal delay-3">
-                <div class="card shadow h-100">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg"
-                    class="card-img-top clickable-img"
-                    alt="Makam Raja Simarmata"
-                    data-bs-toggle="modal" data-bs-target="#modalMakamRaja">
-                    <div class="card-body">
-                        <h4>Makam Raja Simarmata</h4>
-                        <p>Wisata sejarah yang menjadi bagian penting dari asal‑usul marga Simarmata. Makam ini berupa <strong>sarkofagus</strong> batu berusia ratusan tahun yang dikenal dengan nama <strong>Batu Munung</strong>.</p>
-                        <p><b>Lokasi :</b> Huta Simarmata, Desa Simarmata, Kec. Simanindo, Samosir</p>
-                        <p><b>Tiket :</b> Gratis</p>
-                        <!-- TOMBOL MODAL -->
-                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalMakamRaja">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </button>
+                <!-- Wisata 2 - Danau Toba (POP MODAL) -->
+                <div class="col-lg-6 col-md-6 mb-4 reveal delay-2">
+                    <div class="card shadow h-100">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
+                        class="card-img-top" alt="Danau Toba">
+                        <div class="card-body">
+                            <h4>Danau Toba</h4>
+                            <p>Menikmati panorama Danau Toba dengan udara sejuk dan pemandangan yang indah.</p>
+                            <p><b>Tiket :</b> Gratis</p>
+                            <!-- TOMBOL MODAL -->
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalDanauToba">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Wisata 4 - Tugu Simarmata (POP MODAL) -->
-            <div class="col-lg-6 col-md-6 mb-4 reveal delay-4">
-                <div class="card shadow h-100">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
-                    class="card-img-top" alt="Tugu Simarmata" style="height: 230px; object-fit: cover;">
-                    <div class="card-body">
-                        <h4>Tugu Simarmata</h4>
-                        <p>Tugu Simarmata merupakan monumen bersejarah yang menjadi simbol persatuan, identitas, dan penghormatan kepada leluhur marga Simarmata di Desa Simarmata.</p>
-                        <p><b>Lokasi :</b> Toguan, Negeri Simarmata</p>
-                        <!-- TOMBOL MODAL -->
-                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalTuguSimarmata">
-                            <i class="bi bi-eye"></i> Lihat Detail
-                        </button>
+                <!-- Wisata 3 - Makam Raja Simarmata (POP MODAL) -->
+                <div class="col-lg-6 col-md-6 mb-4 reveal delay-3">
+                    <div class="card shadow h-100">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg"
+                        class="card-img-top clickable-img"
+                        alt="Makam Raja Simarmata"
+                        data-bs-toggle="modal" data-bs-target="#modalMakamRaja">
+                        <div class="card-body">
+                            <h4>Makam Raja Simarmata</h4>
+                            <p>Wisata sejarah yang menjadi bagian penting dari asal‑usul marga Simarmata. Makam ini berupa <strong>sarkofagus</strong> batu berusia ratusan tahun yang dikenal dengan nama <strong>Batu Munung</strong>.</p>
+                            <p><b>Lokasi :</b> Huta Simarmata, Desa Simarmata, Kec. Simanindo, Samosir</p>
+                            <p><b>Tiket :</b> Gratis</p>
+                            <!-- TOMBOL MODAL -->
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalMakamRaja">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wisata 4 - Tugu Simarmata (POP MODAL) -->
+                <div class="col-lg-6 col-md-6 mb-4 reveal delay-4">
+                    <div class="card shadow h-100">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
+                        class="card-img-top" alt="Tugu Simarmata" style="height: 230px; object-fit: cover;">
+                        <div class="card-body">
+                            <h4>Tugu Simarmata</h4>
+                            <p>Tugu Simarmata merupakan monumen bersejarah yang menjadi simbol persatuan, identitas, dan penghormatan kepada leluhur marga Simarmata di Desa Simarmata.</p>
+                            <p><b>Lokasi :</b> Toguan, Negeri Simarmata</p>
+                            <!-- TOMBOL MODAL -->
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalTuguSimarmata">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== MAPS ===== -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-4 reveal delay-1">
+                    <i class="bi bi-map-fill"></i>
+                    Peta Digital Wisata Desa Simarmata
+                </h2>
+                <p class="text-center mb-4 reveal delay-2">
+                    Temukan lokasi wisata, budaya, UMKM, homestay, dan fasilitas Desa Simarmata.
+                </p>
+
+                <div class="card shadow reveal delay-3">
+                    <div class="card-body p-2">
+                        <div class="ratio ratio-16x9">
+                            <iframe
+                            src="https://www.google.com/maps/d/embed?mid=1P2RzGWf7c-gA99lna0Xd9fWNW-W_nkE&ehbc=2E312F"
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -603,423 +649,414 @@
         </div>
     </section>
 
-    <!-- ===== MAPS ===== -->
-    <section class="bg-light py-5">
+    <!-- ===== FOOTER ===== -->
+    <footer class="pt-5 pb-3">
         <div class="container">
-            <h2 class="text-center mb-4 reveal delay-1">
-                <i class="bi bi-map-fill"></i>
-                Peta Digital Wisata Desa Simarmata
-            </h2>
-            <p class="text-center mb-4 reveal delay-2">
-                Temukan lokasi wisata, budaya, UMKM, homestay, dan fasilitas Desa Simarmata.
-            </p>
+            <div class="row">
 
-            <div class="card shadow reveal delay-3">
-                <div class="card-body p-2">
-                    <div class="ratio ratio-16x9">
-                        <iframe
-                        src="https://www.google.com/maps/d/embed?mid=1P2RzGWf7c-gA99lna0Xd9fWNW-W_nkE&ehbc=2E312F"
-                        allowfullscreen
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <!-- Alamat -->
+                <div class="col-md-4 mb-4 reveal delay-1">
+                    <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
+                    <p>
+                        Desa Simarmata<br>
+                        Kecamatan Simanindo<br>
+                        Kabupaten Samosir<br>
+                        Provinsi Sumatera Utara<br>
+                        Kode Pos: 22395
+                    </p>
                 </div>
-            </div>
-        </div>
 
-    </div>
-</section>
+                <!-- Menu -->
+                <div class="col-md-4 mb-4 reveal delay-2">
+                    <h5><i class="bi bi-list"></i> Menu</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="profil.html">Profil Desa</a></li>
+                        <li><a href="sejarah.html">Sejarah</a></li>
+                        <li><a href="wisata.html">Wisata</a></li>
+                        <li><a href="budaya.html">Budaya</a></li>
+                        <li><a href="umkm.html">UMKM</a></li>
+                        <li><a href="homestay.html">Homestay</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
 
-<!-- ===== FOOTER ===== -->
-<footer class="pt-5 pb-3">
-    <div class="container">
-        <div class="row">
-
-            <!-- Alamat -->
-            <div class="col-md-4 mb-4 reveal delay-1">
-                <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
-                <p>
-                    Desa Simarmata<br>
-                    Kecamatan Simanindo<br>
-                    Kabupaten Samosir<br>
-                    Provinsi Sumatera Utara<br>
-                    Kode Pos: 22395
-                </p>
-            </div>
-
-            <!-- Menu -->
-            <div class="col-md-4 mb-4 reveal delay-2">
-                <h5><i class="bi bi-list"></i> Menu</h5>
-                <ul class="list-unstyled">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="profil.html">Profil Desa</a></li>
-                    <li><a href="sejarah.html">Sejarah</a></li>
-                    <li><a href="wisata.html">Wisata</a></li>
-                    <li><a href="budaya.html">Budaya</a></li>
-                    <li><a href="umkm.html">UMKM</a></li>
-                    <li><a href="homestay.html">Homestay</a></li>
-                    <li><a href="galeri.html">Galeri</a></li>
-                    <li><a href="kontak.html">Kontak</a></li>
-                </ul>
-            </div>
-
-            <!-- Media Sosial -->
-            <div class="col-md-4 mb-4 reveal delay-3">
-                <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
-                <p>
-                    Instagram:<br>
-                    <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
-                </p>
-                <p>
-                    TikTok:<br>
-                    <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
-                </p>
-            </div>
-
-        </div>
-
-        <hr>
-
-        <div class="text-center">
-            <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
-            <br>
-            <small>Dibuat untuk Program KKN UNIMED 2026</small>
-        </div>
-
-    </div>
-</footer>
-
-
-<!-- ========================================================== -->
-<!-- ===== MODAL 1: HUTA ADAT SIMARMATA ===== -->
-<!-- ========================================================== -->
-<div class="modal fade" id="modalHutaAdat" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-danger">
-                    <i class="bi bi-house-fill"></i> Huta Adat Simarmata
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
-                class="img-fluid rounded mb-3 w-100" alt="Huta Adat Simarmata">
-
-                <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
-                <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
-
-                <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
-                <p>
-                    <strong>Huta Adat Simarmata</strong> adalah kawasan pemukiman tradisional Batak Toba
-                    yang masih mempertahankan keaslian arsitektur leluhur. Di sini, pengunjung dapat melihat
-                    deretan <strong>rumah adat Batak</strong> dengan ornamen khas, <em>sopo</em> (lumbung padi),
-                    serta <em>parik</em> (pagar batu) yang mengelilingi huta.
-                </p>
-                <p>
-                    Selain itu, terdapat <strong>losung</strong> (lesung batu) yang menjadi pusat aktivitas
-                    menumbuk padi, mencerminkan tradisi agraris dan pola hidup komunal masyarakat setempat.
-                </p>
-
-                <h6 class="text-danger"><i class="bi bi-clock"></i> Jam Operasional</h6>
-                <p>Setiap hari: <strong>08.00 – 17.00 WIB</strong></p>
-
-                <h6 class="text-danger"><i class="bi bi-ticket-perforated-fill"></i> Tiket</h6>
-                <p><strong>Gratis</strong> (dengan donasi sukarela untuk pelestarian budaya).</p>
-
-                <div class="alert alert-info mt-3" role="alert">
-                    <i class="bi bi-info-circle"></i> <strong>Tips:</strong> Datanglah pagi hari untuk menikmati
-                    suasana adat yang lebih tenang dan berkesempatan berinteraksi dengan masyarakat setempat.
+                <!-- Media Sosial -->
+                <div class="col-md-4 mb-4 reveal delay-3">
+                    <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
+                    <p>
+                        Instagram:<br>
+                        <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
+                    </p>
+                    <p>
+                        TikTok:<br>
+                        <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
+                    </p>
                 </div>
 
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+
+            <hr>
+
+            <div class="text-center">
+                <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
+                <br>
+                <small>Dibuat untuk Program KKN UNIMED 2026</small>
             </div>
+
         </div>
+    </footer>
+
     </div>
-</div>
+    <!-- ===== PENUTUP WRAPPER MAIN-CONTENT ===== -->
 
-<!-- ========================================================== -->
-<!-- ===== MODAL 2: DANAU TOBA ===== -->
-<!-- ========================================================== -->
-<div class="modal fade" id="modalDanauToba" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-danger">
-                    <i class="bi bi-water"></i> Danau Toba – Pesona Kaldera
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
 
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
-                class="img-fluid rounded mb-3 w-100" alt="Danau Toba">
-
-                <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
-                <p>Kawasan Danau Toba, tepatnya di pesisir Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir.</p>
-
-                <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
-                <p>
-                    <strong>Danau Toba</strong> adalah danau vulkanik terbesar di Asia Tenggara dan salah
-                    satu keajaiban alam dunia. Berada di ketinggian sekitar 900 mdpl, udaranya terasa sejuk
-                    dan segar. Dari Desa Simarmata, pengunjung dapat menikmati pemandangan danau yang tenang
-                    dengan latar belakang Pulau Samosir di kejauhan.
-                </p>
-                <p>
-                    Aktivitas yang dapat dilakukan antara lain <strong>fotografi</strong> lanskap,
-                    <strong>berperahu</strong> menyusuri danau, atau sekadar duduk santai menikmati
-                    angin danau yang menenangkan. Saat matahari terbenam, pemandangan menjadi sangat
-                    magis dengan gradasi warna jingga keemasan di atas permukaan air.
-                </p>
-
-                <h6 class="text-danger"><i class="bi bi-ticket-perforated-fill"></i> Tiket</h6>
-                <p><strong>Gratis</strong> (akses umum terbuka untuk semua wisatawan).</p>
-
-                <div class="alert alert-info mt-3" role="alert">
-                    <i class="bi bi-info-circle"></i> <strong>Rekomendasi:</strong> Jangan lupa membawa
-                    jaket karena suhu di sekitar danau cukup dingin, terutama pada pagi dan sore hari.
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 1: HUTA ADAT SIMARMATA (DI LUAR WRAPPER) ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalHutaAdat" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">
+                        <i class="bi bi-house-fill"></i> Huta Adat Simarmata
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
+                <div class="modal-body">
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
-</div>
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
+                    class="img-fluid rounded mb-3 w-100" alt="Huta Adat Simarmata">
 
-<!-- ========================================================== -->
-<!-- ===== MODAL 3: MAKAM RAJA SIMARMATA (BATU MUNUNG) ===== -->
-<!-- ========================================================== -->
-<div class="modal fade" id="modalMakamRaja" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-danger">
-                    <i class="bi bi-building"></i> Makam Raja Simarmata – Batu Munung
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
+                    <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                    <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
 
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg"
-                class="img-fluid rounded mb-3 w-100" alt="Makam Raja Simarmata">
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                    <p>
+                        <strong>Huta Adat Simarmata</strong> adalah kawasan pemukiman tradisional Batak Toba
+                        yang masih mempertahankan keaslian arsitektur leluhur. Di sini, pengunjung dapat melihat
+                        deretan <strong>rumah adat Batak</strong> dengan ornamen khas, <em>sopo</em> (lumbung padi),
+                        serta <em>parik</em> (pagar batu) yang mengelilingi huta.
+                    </p>
+                    <p>
+                        Selain itu, terdapat <strong>losung</strong> (lesung batu) yang menjadi pusat aktivitas
+                        menumbuk padi, mencerminkan tradisi agraris dan pola hidup komunal masyarakat setempat.
+                    </p>
 
-                <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
-                <p>
-                    <strong>Huta Simarmata</strong>, Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir,
-                    Sumatera Utara.
-                </p>
+                    <h6 class="text-danger"><i class="bi bi-clock"></i> Jam Operasional</h6>
+                    <p>Setiap hari: <strong>08.00 – 17.00 WIB</strong></p>
 
-                <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi Fisik</h6>
-                <p>
-                    <strong>Batu Munung</strong> adalah sebuah <strong>sarkofagus</strong> (peti kubur batu)
-                    peninggalan leluhur. Batu besar ini dihiasi dengan ukiran rumah adat Batak Toba
-                    serta pahatan <strong>figur manusia dalam posisi jongkok</strong> yang mencerminkan
-                    kepercayaan Batak kuno. Sarkofagus ini termasuk salah satu yang terbesar dan terbaik
-                    di kawasan Danau Toba.
-                </p>
+                    <h6 class="text-danger"><i class="bi bi-ticket-perforated-fill"></i> Tiket</h6>
+                    <p><strong>Gratis</strong> (dengan donasi sukarela untuk pelestarian budaya).</p>
 
-                <h6 class="text-danger"><i class="bi bi-clock-history"></i> Sejarah &amp; Usia</h6>
-                <p>
-                    Makam ini diperkirakan sudah ada sejak <strong>250–400 tahun yang lalu</strong>,
-                    berdasarkan silsilah keturunan dari <strong>8 generasi</strong> (<em>Walu Sundut</em>).
-                    Dahulu, tempat ini disebut sebagai <strong>Tugu</strong> (makam) para tokoh atau
-                    raja huta Simarmata, dan berfungsi sebagai tempat <em>saring‑saring</em> (pemakaman)
-                    bagi pemuka adat.
-                </p>
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Tips:</strong> Datanglah pagi hari untuk menikmati
+                        suasana adat yang lebih tenang dan berkesempatan berinteraksi dengan masyarakat setempat.
+                    </div>
 
-                <h6 class="text-danger"><i class="bi bi-exclamation-triangle-fill"></i> Peristiwa Penting</h6>
-                <p>
-                    Pada tahun <strong>1963</strong>, makam ini pernah dibongkar oleh pihak yang menduga
-                    ada harta karun di dalamnya. Namun, isinya hanya berupa tulang belulang. Sejak saat itu,
-                    makam tetap dijaga dan dihormati oleh keturunan marga Simarmata.
-                </p>
-
-                <h6 class="text-danger"><i class="bi bi-book-fill"></i> Filosofi &amp; Nasihat Leluhur</h6>
-                <p>
-                    Ompu Simataraja Raja Simarmata meninggalkan <strong>Tona (Amanah)</strong> dan
-                    <strong>Poda (Nasihat)</strong> bagi seluruh keturunannya:
-                </p>
-                <ul>
-                    <li>
-                        <strong>Tona (Amanah):</strong><br>
-                        <em>“Sada ma hamu tu dolok tu toruan di desa naualu, denggan ma hamu marsiurupan,
-                        marsiiring‑iringan, marsiolo‑oluan.”</em><br>
-                        <small class="text-muted">(Bersatulah kalian, saling membantu, saling mengiring,
-                        saling menuruti.)</small>
-                    </li>
-                    <li>
-                        <strong>Poda (Nasihat):</strong><br>
-                        <em>“Hamu anakku natolu, marsianju‑anjuan ma hamu, jala rap ma hamu sapangan
-                        sian TATUAN na hutinggalhon i, dibagasan sada ni roha.”</em><br>
-                        <small class="text-muted">(Kamu anakku bertiga, berpeganganlah, dan bersama‑samalah
-                        makan dari warisan yang kutinggalkan, dengan satu hati.)</small>
-                    </li>
-                </ul>
-
-                <h6 class="text-danger"><i class="bi bi-trophy-fill"></i> Status &amp; Penghargaan</h6>
-                <p>
-                    Berdasarkan <strong>Keputusan Bupati Samosir Nomor 9 Tahun 2021</strong>, Batu Munung
-                    telah ditetapkan sebagai <strong>Cagar Budaya tingkat Kabupaten</strong> dan sedang
-                    diusulkan menjadi Cagar Budaya Nasional.
-                    Menteri Kebudayaan RI, <strong>Fadli Zon</strong>, setelah meninjau langsung pada
-                    Februari 2026, menyatakan:
-                    <em>“Saya baru melihat sarkofagus sebesar ini. Ini termasuk salah satu yang paling
-                    bagus dan gagah.”</em>
-                </p>
-
-                <div class="alert alert-info mt-3" role="alert">
-                    <i class="bi bi-info-circle"></i> <strong>Catatan:</strong> Makam ini merupakan situs
-                    sejarah yang dihormati. Pengunjung diharapkan menjaga kesopanan dan kebersihan
-                    saat berkunjung.
                 </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- ========================================================== -->
-<!-- ===== MODAL 4: TUGU SIMARMATA ===== -->
-<!-- ========================================================== -->
-<div class="modal fade" id="modalTuguSimarmata" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-danger">
-                    <i class="bi bi-trophy-fill"></i> Tugu Simarmata – Monumen Persatuan
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
-                class="img-fluid rounded mb-3 w-100" alt="Tugu Simarmata">
-
-                <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
-                <p><strong>Tanah Toguan</strong>, Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
-
-                <h6 class="text-danger"><i class="bi bi-clock-history"></i> Sejarah Pembangunan</h6>
-                <p>
-                    Tugu ini dibangun sebagai monumen pemersatu bagi seluruh keturunan marga Simarmata di dunia.
-                    Pembangunan dimulai dengan pembentukan panitia pada <strong>28 Januari 1973</strong>,
-                    peletakan batu pertama pada <strong>26 Juni 1973</strong>, dan baru selesai seluruhnya
-                    pada tahun <strong>1990</strong>. Proses pembangunan memakan waktu <strong>17 tahun</strong>
-                    penuh tantangan.
-                </p>
-                <p>
-                    Tinggi tugu mencapai <strong>17 meter</strong>, yang melambangkan 17 tahun perjuangan
-                    pembangunan. Penggagas utama adalah <strong>MA. Simarmata</strong> (Ketua Panitia)
-                    dan <strong>Manik Simarmata</strong> (Ketua Umum Punguan Pomparan Ompu Simataraja).
-                </p>
-
-                <h6 class="text-danger"><i class="bi bi-person-fill"></i> Patung &amp; Filosofi</h6>
-                <p>
-                    Di atas tugu terdapat patung <strong>Ompu Simataraja</strong> dan istrinya,
-                    <strong>Ompu Boru Lahatma Limbong Sihole</strong>. Monumen ini menjadi simbol
-                    <strong>persatuan</strong>, <strong>identitas</strong>, dan penghormatan kepada
-                    leluhur marga Simarmata. Tugu ini juga menjadi pusat kegiatan adat dan pertemuan
-                    keluarga besar Simarmata dari berbagai penjuru.
-                </p>
-
-                <h6 class="text-danger"><i class="bi bi-ticket-perforated-fill"></i> Tiket</h6>
-                <p><strong>Gratis</strong> untuk umum.</p>
-
-                <div class="alert alert-info mt-3" role="alert">
-                    <i class="bi bi-info-circle"></i> <strong>Fakta menarik:</strong> Tugu ini berdiri
-                    di atas lahan seluas ±1 hektar dengan batas: Timur (Jalan Raya), Barat (Tepian Danau Toba),
-                    Selatan (Kampung Lumban Toguan), dan Utara (Parit).
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                 </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>
-</div>
 
-<!-- ===== TOMBOL KEMBALI KE ATAS ===== -->
-<button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">
-    <i class="bi bi-arrow-up"></i>
-</button>
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 2: DANAU TOBA (DI LUAR WRAPPER) ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalDanauToba" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">
+                        <i class="bi bi-water"></i> Danau Toba – Pesona Kaldera
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
 
-<!-- ===== SCRIPTS ===== -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
+                    class="img-fluid rounded mb-3 w-100" alt="Danau Toba">
 
-<!-- ===== JAVASCRIPT SCROLL REVEAL & LQIP & BACK TO TOP ===== -->
-<script>
-    // ===== 1. SCROLL REVEAL =====
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return rect.top < (window.innerHeight || document.documentElement.clientHeight) - 50 && rect.bottom > 50;
-    }
+                    <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                    <p>Kawasan Danau Toba, tepatnya di pesisir Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir.</p>
 
-    function handleScrollReveal() {
-        const reveals = document.querySelectorAll('.reveal');
-        reveals.forEach(el => {
-            if (isElementInViewport(el)) {
-                el.classList.add('visible');
-                el.classList.remove('reverse');
-            } else {
-                el.classList.remove('visible');
-                el.classList.add('reverse');
-            }
-        });
-    }
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                    <p>
+                        <strong>Danau Toba</strong> adalah danau vulkanik terbesar di Asia Tenggara dan salah
+                        satu keajaiban alam dunia. Berada di ketinggian sekitar 900 mdpl, udaranya terasa sejuk
+                        dan segar. Dari Desa Simarmata, pengunjung dapat menikmati pemandangan danau yang tenang
+                        dengan latar belakang Pulau Samosir di kejauhan.
+                    </p>
+                    <p>
+                        Aktivitas yang dapat dilakukan antara lain <strong>fotografi</strong> lanskap,
+                        <strong>berperahu</strong> menyusuri danau, atau sekadar duduk santai menikmati
+                        angin danau yang menenangkan. Saat matahari terbenam, pemandangan menjadi sangat
+                        magis dengan gradasi warna jingga keemasan di atas permukaan air.
+                    </p>
 
-    window.addEventListener('load', handleScrollReveal);
-    window.addEventListener('scroll', handleScrollReveal);
-    window.addEventListener('resize', handleScrollReveal);
+                    <h6 class="text-danger"><i class="bi bi-ticket-perforated-fill"></i> Tiket</h6>
+                    <p><strong>Gratis</strong> (akses umum terbuka untuk semua wisatawan).</p>
 
-    // ===== 2. LQIP UNTUK HERO CAROUSEL =====
-    document.addEventListener('DOMContentLoaded', function() {
-        const carouselItems = document.querySelectorAll('.hero-carousel-wrapper .carousel-item');
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Rekomendasi:</strong> Jangan lupa membawa
+                        jaket karena suhu di sekitar danau cukup dingin, terutama pada pagi dan sore hari.
+                    </div>
 
-        carouselItems.forEach((item) => {
-            const src = item.getAttribute('data-src');
-            if (src) {
-                const img = new Image();
-                img.onload = function() {
-                    item.style.backgroundImage = 'url("' + src + '")';
-                    item.classList.add('loaded');
-                };
-                img.onerror = function() {
-                    item.classList.add('loaded');
-                };
-                img.src = src;
-            } else {
-                item.classList.add('loaded');
-            }
-        });
-    });
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    // ===== 3. TOMBOL KEMBALI KE ATAS (BACK TO TOP) =====
-    const backToTopBtn = document.getElementById('backToTop');
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 3: MAKAM RAJA SIMARMATA (BATU MUNUNG) (DI LUAR WRAPPER) ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalMakamRaja" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">
+                        <i class="bi bi-building"></i> Makam Raja Simarmata – Batu Munung
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg"
+                    class="img-fluid rounded mb-3 w-100" alt="Makam Raja Simarmata">
+
+                    <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                    <p>
+                        <strong>Huta Simarmata</strong>, Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir,
+                        Sumatera Utara.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi Fisik</h6>
+                    <p>
+                        <strong>Batu Munung</strong> adalah sebuah <strong>sarkofagus</strong> (peti kubur batu)
+                        peninggalan leluhur. Batu besar ini dihiasi dengan ukiran rumah adat Batak Toba
+                        serta pahatan <strong>figur manusia dalam posisi jongkok</strong> yang mencerminkan
+                        kepercayaan Batak kuno. Sarkofagus ini termasuk salah satu yang terbesar dan terbaik
+                        di kawasan Danau Toba.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-clock-history"></i> Sejarah &amp; Usia</h6>
+                    <p>
+                        Makam ini diperkirakan sudah ada sejak <strong>250–400 tahun yang lalu</strong>,
+                        berdasarkan silsilah keturunan dari <strong>8 generasi</strong> (<em>Walu Sundut</em>).
+                        Dahulu, tempat ini disebut sebagai <strong>Tugu</strong> (makam) para tokoh atau
+                        raja huta Simarmata, dan berfungsi sebagai tempat <em>saring‑saring</em> (pemakaman)
+                        bagi pemuka adat.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-exclamation-triangle-fill"></i> Peristiwa Penting</h6>
+                    <p>
+                        Pada tahun <strong>1963</strong>, makam ini pernah dibongkar oleh pihak yang menduga
+                        ada harta karun di dalamnya. Namun, isinya hanya berupa tulang belulang. Sejak saat itu,
+                        makam tetap dijaga dan dihormati oleh keturunan marga Simarmata.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-book-fill"></i> Filosofi &amp; Nasihat Leluhur</h6>
+                    <p>
+                        Ompu Simataraja Raja Simarmata meninggalkan <strong>Tona (Amanah)</strong> dan
+                        <strong>Poda (Nasihat)</strong> bagi seluruh keturunannya:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Tona (Amanah):</strong><br>
+                            <em>“Sada ma hamu tu dolok tu toruan di desa naualu, denggan ma hamu marsiurupan,
+                            marsiiring‑iringan, marsiolo‑oluan.”</em><br>
+                            <small class="text-muted">(Bersatulah kalian, saling membantu, saling mengiring,
+                            saling menuruti.)</small>
+                        </li>
+                        <li>
+                            <strong>Poda (Nasihat):</strong><br>
+                            <em>“Hamu anakku natolu, marsianju‑anjuan ma hamu, jala rap ma hamu sapangan
+                            sian TATUAN na hutinggalhon i, dibagasan sada ni roha.”</em><br>
+                            <small class="text-muted">(Kamu anakku bertiga, berpeganganlah, dan bersama‑samalah
+                            makan dari warisan yang kutinggalkan, dengan satu hati.)</small>
+                        </li>
+                    </ul>
+
+                    <h6 class="text-danger"><i class="bi bi-trophy-fill"></i> Status &amp; Penghargaan</h6>
+                    <p>
+                        Berdasarkan <strong>Keputusan Bupati Samosir Nomor 9 Tahun 2021</strong>, Batu Munung
+                        telah ditetapkan sebagai <strong>Cagar Budaya tingkat Kabupaten</strong> dan sedang
+                        diusulkan menjadi Cagar Budaya Nasional.
+                        Menteri Kebudayaan RI, <strong>Fadli Zon</strong>, setelah meninjau langsung pada
+                        Februari 2026, menyatakan:
+                        <em>“Saya baru melihat sarkofagus sebesar ini. Ini termasuk salah satu yang paling
+                        bagus dan gagah.”</em>
+                    </p>
+
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Catatan:</strong> Makam ini merupakan situs
+                        sejarah yang dihormati. Pengunjung diharapkan menjaga kesopanan dan kebersihan
+                        saat berkunjung.
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- ===== MODAL 4: TUGU SIMARMATA (DI LUAR WRAPPER) ===== -->
+    <!-- ========================================================== -->
+    <div class="modal fade" id="modalTuguSimarmata" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">
+                        <i class="bi bi-trophy-fill"></i> Tugu Simarmata – Monumen Persatuan
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
+                    class="img-fluid rounded mb-3 w-100" alt="Tugu Simarmata">
+
+                    <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                    <p><strong>Tanah Toguan</strong>, Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
+
+                    <h6 class="text-danger"><i class="bi bi-clock-history"></i> Sejarah Pembangunan</h6>
+                    <p>
+                        Tugu ini dibangun sebagai monumen pemersatu bagi seluruh keturunan marga Simarmata di dunia.
+                        Pembangunan dimulai dengan pembentukan panitia pada <strong>28 Januari 1973</strong>,
+                        peletakan batu pertama pada <strong>26 Juni 1973</strong>, dan baru selesai seluruhnya
+                        pada tahun <strong>1990</strong>. Proses pembangunan memakan waktu <strong>17 tahun</strong>
+                        penuh tantangan.
+                    </p>
+                    <p>
+                        Tinggi tugu mencapai <strong>17 meter</strong>, yang melambangkan 17 tahun perjuangan
+                        pembangunan. Penggagas utama adalah <strong>MA. Simarmata</strong> (Ketua Panitia)
+                        dan <strong>Manik Simarmata</strong> (Ketua Umum Punguan Pomparan Ompu Simataraja).
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-person-fill"></i> Patung &amp; Filosofi</h6>
+                    <p>
+                        Di atas tugu terdapat patung <strong>Ompu Simataraja</strong> dan istrinya,
+                        <strong>Ompu Boru Lahatma Limbong Sihole</strong>. Monumen ini menjadi simbol
+                        <strong>persatuan</strong>, <strong>identitas</strong>, dan penghormatan kepada
+                        leluhur marga Simarmata. Tugu ini juga menjadi pusat kegiatan adat dan pertemuan
+                        keluarga besar Simarmata dari berbagai penjuru.
+                    </p>
+
+                    <h6 class="text-danger"><i class="bi bi-ticket-perforated-fill"></i> Tiket</h6>
+                    <p><strong>Gratis</strong> untuk umum.</p>
+
+                    <div class="alert alert-info mt-3" role="alert">
+                        <i class="bi bi-info-circle"></i> <strong>Fakta menarik:</strong> Tugu ini berdiri
+                        di atas lahan seluas ±1 hektar dengan batas: Timur (Jalan Raya), Barat (Tepian Danau Toba),
+                        Selatan (Kampung Lumban Toguan), dan Utara (Parit).
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TOMBOL KEMBALI KE ATAS ===== -->
+    <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- ===== JAVASCRIPT SCROLL REVEAL & LQIP & BACK TO TOP & BLUR ===== -->
+    <script>
+        // ===== 1. SCROLL REVEAL =====
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < (window.innerHeight || document.documentElement.clientHeight) - 50 && rect.bottom > 50;
         }
-    });
 
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('visible');
+                    el.classList.remove('reverse');
+                } else {
+                    el.classList.remove('visible');
+                    el.classList.add('reverse');
+                }
+            });
+        }
+
+        window.addEventListener('load', handleScrollReveal);
+        window.addEventListener('scroll', handleScrollReveal);
+        window.addEventListener('resize', handleScrollReveal);
+
+        // ===== 2. LQIP UNTUK HERO CAROUSEL =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const carouselItems = document.querySelectorAll('.hero-carousel-wrapper .carousel-item');
+
+            carouselItems.forEach((item) => {
+                const src = item.getAttribute('data-src');
+                if (src) {
+                    const img = new Image();
+                    img.onload = function() {
+                        item.style.backgroundImage = 'url("' + src + '")';
+                        item.classList.add('loaded');
+                    };
+                    img.onerror = function() {
+                        item.classList.add('loaded');
+                    };
+                    img.src = src;
+                } else {
+                    item.classList.add('loaded');
+                }
+            });
         });
-    });
-</script>
+
+        // ===== 3. TOMBOL KEMBALI KE ATAS (BACK TO TOP) =====
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ===== 4. BLUR BACKGROUND SAAT MODAL DIBUKA =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainContent = document.getElementById('main-content');
+
+            // Saat modal mulai terbuka
+            document.addEventListener('show.bs.modal', function (e) {
+                if (mainContent) mainContent.classList.add('blur');
+            });
+
+            // Saat modal selesai ditutup
+            document.addEventListener('hidden.bs.modal', function (e) {
+                if (mainContent) mainContent.classList.remove('blur');
+            });
+        });
+    </script>
 
 </body>
 
