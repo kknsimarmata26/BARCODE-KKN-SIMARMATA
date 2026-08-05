@@ -179,26 +179,47 @@
             margin-bottom: 10px;
         }
 
-        /* ===== FOOTER ===== */
+        /* ============================================================
+           FOOTER BARU (KONSISTEN DENGAN HALAMAN LAIN)
+        ============================================================ */
         footer {
             background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
             color: white;
-            padding: 20px 0;
+            padding: 40px 0 20px;
             margin-top: 15px;
         }
 
-        footer h4,
         footer h5 {
-            color: white;
+            color: #ffd54f;
+            font-weight: bold;
+            margin-bottom: 18px;
+            border-bottom: 2px solid rgba(255, 213, 79, 0.3);
+            padding-bottom: 8px;
         }
 
         footer a {
-            color: #ffd54f !important;
+            color: #f8f9fa !important;
             text-decoration: none;
+            transition: 0.3s;
         }
 
         footer a:hover {
-            color: white !important;
+            color: #ffd54f !important;
+            text-decoration: underline;
+        }
+
+        footer .list-unstyled li {
+            margin-bottom: 6px;
+        }
+
+        footer hr {
+            border-color: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
+
+        footer .copyright {
+            font-size: 14px;
+            opacity: 0.9;
         }
 
         /* ===== FASILITAS ===== */
@@ -444,9 +465,8 @@
         #main-content.blur {
             filter: blur(6px);
             -webkit-filter: blur(6px);
-            pointer-events: none; /* Mencegah klik pada background saat modal terbuka */
+            pointer-events: none;
         }
-        /* Pastikan tombol Back-to-Top tidak ikut terkunci saat blur */
         .back-to-top {
             pointer-events: auto !important;
         }
@@ -456,7 +476,7 @@
 
 <body>
 
-    <!-- ===== PENTING: BUNGKUS SEMUA KONTEN WEBSITE ===== -->
+    <!-- ===== WRAPPER KONTEN UTAMA ===== -->
     <div id="main-content">
 
         <!-- ===== NAVBAR ===== -->
@@ -477,8 +497,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
+                        <!-- PERBAIKAN: "Profil" menjadi "Profil Desa" -->
                         <li class="nav-item">
-                            <a class="nav-link" href="profil.html">Profil</a>
+                            <a class="nav-link" href="profil.html">Profil Desa</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="sejarah.html">Sejarah</a>
@@ -586,7 +607,6 @@
                                 <li><i class="bi bi-check-circle-fill"></i> Ruang Tamu</li>
                                 <li><i class="bi bi-check-circle-fill"></i> Kamar Mandi</li>
                             </ul>
-                            <!-- Tombol modal -->
                             <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalWariska">
                                 <i class="bi bi-eye"></i> Lihat Detail
                             </button>
@@ -609,7 +629,6 @@
                                 <li><i class="bi bi-check-circle-fill"></i> 1 Kamar</li>
                                 <li><i class="bi bi-check-circle-fill"></i> 2 Kamar Mandi</li>
                             </ul>
-                            <!-- Tombol modal -->
                             <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalGisel">
                                 <i class="bi bi-eye"></i> Lihat Detail
                             </button>
@@ -632,7 +651,6 @@
                                 <li><i class="bi bi-check-circle-fill"></i> Tikar & Bantal</li>
                                 <li><i class="bi bi-check-circle-fill"></i> Kamar Mandi</li>
                             </ul>
-                            <!-- Tombol modal -->
                             <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSridewi">
                                 <i class="bi bi-eye"></i> Lihat Detail
                             </button>
@@ -668,49 +686,57 @@
             </div>
         </section>
 
-        <!-- ===== FOOTER ===== -->
-        <footer class="pt-5 pb-3">
+        <!-- ========================================================== -->
+        <!-- ===== FOOTER BARU (SESUAI PERMINTAAN) ===== -->
+        <!-- ========================================================== -->
+        <footer>
             <div class="container">
                 <div class="row">
 
-                    <!-- Alamat -->
-                    <div class="col-md-4 mb-4 reveal delay-1">
+                    <!-- Kolom 1: Alamat Desa -->
+                    <div class="col-md-4 mb-4">
                         <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
-                        <p>
-                            Desa Simarmata<br>
-                            Kecamatan Simanindo<br>
-                            Kabupaten Samosir<br>
-                            Provinsi Sumatera Utara<br>
-                            Kode Pos: 22395
-                        </p>
+                        <p class="mb-1">Desa Simarmata</p>
+                        <p class="mb-1">Kecamatan Simanindo</p>
+                        <p class="mb-1">Kabupaten Samosir</p>
+                        <p class="mb-1">Provinsi Sumatera Utara</p>
+                        <p class="mb-0">Kode Pos: 22395</p>
                     </div>
 
-                    <!-- Menu -->
-                    <div class="col-md-4 mb-4 reveal delay-2">
-                        <h5><i class="bi bi-list"></i> Menu</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="profil.html">Profil Desa</a></li>
-                            <li><a href="sejarah.html">Sejarah</a></li>
-                            <li><a href="wisata.html">Wisata</a></li>
-                            <li><a href="budaya.html">Budaya</a></li>
-                            <li><a href="umkm.html">UMKM</a></li>
-                            <li><a href="homestay.html">Homestay</a></li>
-                            <li><a href="galeri.html">Galeri</a></li>
-                            <li><a href="kontak.html">Kontak</a></li>
-                        </ul>
+                    <!-- Kolom 2: Menu LENGKAP (9 item) -->
+                    <div class="col-md-4 mb-4">
+                        <h5><i class="bi bi-list-ul"></i> Menu</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="profil.html">Profil Desa</a></li>
+                                    <li><a href="sejarah.html">Sejarah</a></li>
+                                    <li><a href="wisata.html">Wisata</a></li>
+                                    <li><a href="budaya.html">Budaya</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="umkm.html">UMKM</a></li>
+                                    <li><a href="homestay.html">Homestay</a></li>
+                                    <li><a href="galeri.html">Galeri</a></li>
+                                    <li><a href="kontak.html">Kontak</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Media Sosial -->
-                    <div class="col-md-4 mb-4 reveal delay-3">
+                    <!-- Kolom 3: Media Sosial (@kpn.simarmata26) -->
+                    <div class="col-md-4 mb-4">
                         <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
-                        <p>
-                            Instagram:<br>
-                            <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
+                        <p class="mb-1">
+                            <strong>Instagram:</strong><br>
+                            <a href="#" target="_blank">@kpn.simarmata26</a>
                         </p>
-                        <p>
-                            TikTok:<br>
-                            <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
+                        <p class="mb-0">
+                            <strong>TikTok:</strong><br>
+                            <a href="#" target="_blank">@kpn.simarmata26</a>
                         </p>
                     </div>
 
@@ -718,10 +744,10 @@
 
                 <hr>
 
-                <div class="text-center">
-                    <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
-                    <br>
-                    <small>Dibuat untuk Program KKN UNIMED 2026</small>
+                <!-- Copyright -->
+                <div class="text-center copyright">
+                    <p class="mb-1">&copy; 2026 KKN Desa Simarmata Kecamatan Simanindo *</p>
+                    <p class="mb-0">Dibuat untuk Program KKN UNIMED 2026</p>
                 </div>
 
             </div>
@@ -773,7 +799,6 @@
                     <h6 class="text-danger"><i class="bi bi-star-fill text-warning"></i> Rating</h6>
                     <p>⭐⭐⭐ (3 bintang)</p>
 
-                    <!-- Tombol WhatsApp -->
                     <a href="https://wa.me/6287897257318?text=Halo,%20saya%20ingin%20booking%20Homestay%20Wariskaindo."
                     target="_blank" class="btn btn-success w-100">
                     <i class="bi bi-whatsapp"></i> Booking Sekarang via WhatsApp
@@ -827,7 +852,6 @@
                 <h6 class="text-danger"><i class="bi bi-star-fill text-warning"></i> Rating</h6>
                 <p>⭐⭐⭐ (3 bintang)</p>
 
-                <!-- Tombol WhatsApp -->
                 <a href="https://wa.me/6287838016297?text=Halo,%20saya%20ingin%20booking%20Homestay%20Buk%20Gisel."
                 target="_blank" class="btn btn-success w-100">
                 <i class="bi bi-whatsapp"></i> Booking Sekarang via WhatsApp
@@ -882,7 +906,6 @@
                 <h6 class="text-danger"><i class="bi bi-star-fill text-warning"></i> Rating</h6>
                 <p>⭐⭐ (2 bintang)</p>
 
-                <!-- Tombol WhatsApp -->
                 <a href="https://wa.me/6287730573395?text=Halo,%20saya%20ingin%20booking%20Homestay%20Sridewi%20Manihuruk."
                 target="_blank" class="btn btn-success w-100">
                 <i class="bi bi-whatsapp"></i> Booking Sekarang via WhatsApp
@@ -974,12 +997,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             const mainContent = document.getElementById('main-content');
 
-            // Saat modal mulai terbuka
             document.addEventListener('show.bs.modal', function (e) {
                 if (mainContent) mainContent.classList.add('blur');
             });
 
-            // Saat modal selesai ditutup
             document.addEventListener('hidden.bs.modal', function (e) {
                 if (mainContent) mainContent.classList.remove('blur');
             });
