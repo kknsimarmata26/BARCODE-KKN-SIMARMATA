@@ -202,28 +202,6 @@
             color: #ffc107 !important;
         }
 
-        /* ===== FOOTER ===== */
-        footer {
-            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
-            color: white;
-            padding: 20px 0;
-            margin-top: 15px;
-        }
-
-        footer h4,
-        footer h5 {
-            color: white;
-        }
-
-        footer a {
-            color: #ffd54f !important;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: white !important;
-        }
-
         /* ============================================================
            HERO SECTION DENGAN SLIDESHOW + LQIP
         ============================================================ */
@@ -347,10 +325,10 @@
         #main-content.blur {
             filter: blur(6px);
             -webkit-filter: blur(6px);
-            pointer-events: none; /* Mencegah klik pada konten yang sedang blur */
+            pointer-events: none;
         }
-        /* Kembalikan pointer-events pada tombol WA & Back-to-Top yang ada di luar wrapper */
-        .back-to-top, .wa-float {
+        .back-to-top,
+        .wa-float {
             pointer-events: auto !important;
         }
         /* ============================================================ */
@@ -460,13 +438,54 @@
                 font-size: 20px;
             }
         }
+
+        /* ===== FOOTER SESUAI PERMINTAAN ===== */
+        footer {
+            background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 15px;
+        }
+
+        footer h5 {
+            color: #ffd54f;
+            font-weight: bold;
+            margin-bottom: 18px;
+            border-bottom: 2px solid rgba(255, 213, 79, 0.3);
+            padding-bottom: 8px;
+        }
+
+        footer a {
+            color: #f8f9fa !important;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: #ffd54f !important;
+            text-decoration: underline;
+        }
+
+        footer .list-unstyled li {
+            margin-bottom: 6px;
+        }
+
+        footer hr {
+            border-color: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
+
+        footer .copyright {
+            font-size: 14px;
+            opacity: 0.9;
+        }
     </style>
 
 </head>
 
 <body>
 
-    <!-- ===== PENTING: BUNGKUS SEMUA KONTEN WEBSITE KECUALI MODAL & WA ===== -->
+    <!-- ===== WRAPPER KONTEN UTAMA ===== -->
     <div id="main-content">
 
         <!-- ================= NAVBAR ================= -->
@@ -474,7 +493,7 @@
             <div class="container">
                 <a class="navbar-brand" href="index.html">
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9d01db11173e316b6cd4543a631806958c03ea39/logo%203%20web.png"
-                    alt="Logo KKN Desa Simarmata - UNIMED">
+                        alt="Logo KKN Desa Simarmata - UNIMED">
                 </a>
 
                 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -483,42 +502,23 @@
 
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="profil.html">Profil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sejarah.html">Sejarah</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="wisata.html">Wisata</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="budaya.html">Budaya</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="umkm.html">UMKM</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="homestay.html">Homestay</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="galeri.html">Galeri</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="kontak.html">Kontak</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="profil.html">Profil Desa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
+                        <li class="nav-item"><a class="nav-link" href="wisata.html">Wisata</a></li>
+                        <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya</a></li>
+                        <li class="nav-item"><a class="nav-link" href="umkm.html">UMKM</a></li>
+                        <li class="nav-item"><a class="nav-link" href="homestay.html">Homestay</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- ================= HERO DENGAN SLIDESHOW ================= -->
+        <!-- ================= HERO SLIDESHOW ================= -->
         <section class="hero-section" id="hero">
             <div class="hero-slideshow" id="heroSlideshow">
-                <!-- Slide 1 -->
                 <div class="slide active" data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.20.jpeg"></div>
                 <div class="slide" data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.30.jpeg"></div>
                 <div class="slide" data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b9c36e49018c070eb40e70ac8f43c1c347673104/WhatsApp%20Image%202026-07-30%20at%2011.31.27.jpeg"></div>
@@ -542,10 +542,10 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 scroll-animate">
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/kantor-desa.jpeg"
-                    class="img-fluid rounded shadow clickable-img"
-                    alt="Kantor Desa Simarmata"
-                    style="width:100%; height:350px; object-fit:cover;"
-                    data-bs-toggle="modal" data-bs-target="#modalProfil">
+                        class="img-fluid rounded shadow clickable-img"
+                        alt="Kantor Desa Simarmata"
+                        style="width:100%; height:350px; object-fit:cover;"
+                        data-bs-toggle="modal" data-bs-target="#modalProfil">
                 </div>
                 <div class="col-lg-6 scroll-animate delay-2">
                     <h2>Tentang Desa Simarmata</h2>
@@ -571,10 +571,10 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 scroll-animate">
                         <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/gorga%20batak.jpeg"
-                        class="img-fluid rounded shadow clickable-img"
-                        alt="Gorga Batak - Sejarah Desa Simarmata"
-                        style="width:100%; height:350px; object-fit:cover;"
-                        data-bs-toggle="modal" data-bs-target="#modalSejarah">
+                            class="img-fluid rounded shadow clickable-img"
+                            alt="Gorga Batak - Sejarah Desa Simarmata"
+                            style="width:100%; height:350px; object-fit:cover;"
+                            data-bs-toggle="modal" data-bs-target="#modalSejarah">
                     </div>
                     <div class="col-lg-6 scroll-animate delay-2">
                         <h2>Sejarah Desa Simarmata</h2>
@@ -632,9 +632,9 @@
                     <div class="col-md-4 scroll-animate delay-1">
                         <div class="card shadow">
                             <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
-                            class="card-img-top"
-                            alt="Huta Adat Simarmata"
-                            style="height:230px; object-fit:cover;">
+                                class="card-img-top"
+                                alt="Huta Adat Simarmata"
+                                style="height:230px; object-fit:cover;">
                             <div class="card-body">
                                 <h5>Huta Adat Simarmata</h5>
                                 <p>Kampung adat Batak Toba yang masih terjaga hingga saat ini.</p>
@@ -646,9 +646,9 @@
                     <div class="col-md-4 scroll-animate delay-2">
                         <div class="card shadow">
                             <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
-                            class="card-img-top"
-                            alt="Danau Toba"
-                            style="height:230px; object-fit:cover;">
+                                class="card-img-top"
+                                alt="Danau Toba"
+                                style="height:230px; object-fit:cover;">
                             <div class="card-body">
                                 <h5>Danau Toba</h5>
                                 <p>Panorama danau vulkanik terbesar di Indonesia.</p>
@@ -660,9 +660,9 @@
                     <div class="col-md-4 scroll-animate delay-3">
                         <div class="card shadow">
                             <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
-                            class="card-img-top"
-                            alt="Tugu Ompu Simataraja Simarmata"
-                            style="height:230px; object-fit:cover;">
+                                class="card-img-top"
+                                alt="Tugu Ompu Simataraja Simarmata"
+                                style="height:230px; object-fit:cover;">
                             <div class="card-body">
                                 <h5>Tugu Simarmata</h5>
                                 <p>Tugu Simarmata merupakan salah satu simbol sejarah dan identitas marga Simarmata.</p>
@@ -675,46 +675,57 @@
             </div>
         </section>
 
-        <!-- ================= FOOTER ================= -->
-        <footer class="pt-5 pb-3">
+        <!-- ========================================================== -->
+        <!-- ===== FOOTER SESUAI PERMINTAAN ANDA ===== -->
+        <!-- ========================================================== -->
+        <footer>
             <div class="container">
                 <div class="row">
 
+                    <!-- Kolom 1: Alamat Desa -->
                     <div class="col-md-4 mb-4 scroll-animate delay-1">
                         <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
-                        <p>
-                            Desa Simarmata<br>
-                            Kecamatan Simanindo<br>
-                            Kabupaten Samosir<br>
-                            Provinsi Sumatera Utara<br>
-                            Kode Pos: 22395
-                        </p>
+                        <p class="mb-1">Desa Simarmata</p>
+                        <p class="mb-1">Kecamatan Simanindo</p>
+                        <p class="mb-1">Kabupaten Samosir</p>
+                        <p class="mb-1">Provinsi Sumatera Utara</p>
+                        <p class="mb-0">Kode Pos: 22395</p>
                     </div>
 
+                    <!-- Kolom 2: Menu (lengkap 9 item) -->
                     <div class="col-md-4 mb-4 scroll-animate delay-2">
-                        <h5><i class="bi bi-list"></i> Menu</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="profil.html">Profil Desa</a></li>
-                            <li><a href="sejarah.html">Sejarah</a></li>
-                            <li><a href="wisata.html">Wisata</a></li>
-                            <li><a href="budaya.html">Budaya</a></li>
-                            <li><a href="umkm.html">UMKM</a></li>
-                            <li><a href="homestay.html">Homestay</a></li>
-                            <li><a href="galeri.html">Galeri</a></li>
-                            <li><a href="kontak.html">Kontak</a></li>
-                        </ul>
+                        <h5><i class="bi bi-list-ul"></i> Menu</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="profil.html">Profil Desa</a></li>
+                                    <li><a href="sejarah.html">Sejarah</a></li>
+                                    <li><a href="wisata.html">Wisata</a></li>
+                                    <li><a href="budaya.html">Budaya</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="umkm.html">UMKM</a></li>
+                                    <li><a href="homestay.html">Homestay</a></li>
+                                    <li><a href="galeri.html">Galeri</a></li>
+                                    <li><a href="kontak.html">Kontak</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
+                    <!-- Kolom 3: Media Sosial -->
                     <div class="col-md-4 mb-4 scroll-animate delay-3">
                         <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
-                        <p>
-                            Instagram:<br>
-                            <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
+                        <p class="mb-1">
+                            <strong>Instagram:</strong><br>
+                            <a href="#" target="_blank">@kpn.simarmata26</a>
                         </p>
-                        <p>
-                            TikTok:<br>
-                            <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
+                        <p class="mb-0">
+                            <strong>TikTok:</strong><br>
+                            <a href="#" target="_blank">@kpn.simarmata26</a>
                         </p>
                     </div>
 
@@ -722,23 +733,19 @@
 
                 <hr>
 
-                <div class="text-center scroll-animate delay-4">
-                    <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
-                    <br>
-                    <small>Dibuat untuk Program KKN UNIMED 2026</small>
+                <!-- Copyright -->
+                <div class="text-center scroll-animate delay-4 copyright">
+                    <p class="mb-1">&copy; 2026 KKN Desa Simarmata Kecamatan Simanindo *</p>
+                    <p class="mb-0">Dibuat untuk Program KKN UNIMED 2026</p>
                 </div>
 
             </div>
         </footer>
 
-    <!-- ===== PENUTUP WRAPPER MAIN-CONTENT ===== -->
+        <!-- ===== PENUTUP WRAPPER MAIN-CONTENT ===== -->
     </div>
 
-    <!-- ============================================================= -->
-    <!-- ===== MODAL (BERADA DI LUAR WRAPPER AGAR TURUT BLUR) ===== -->
-    <!-- ============================================================= -->
-    
-    <!-- ===== MODAL UNTUK GAMBAR PROFIL ===== -->
+    <!-- ===== MODAL GAMBAR ===== -->
     <div class="modal fade" id="modalProfil" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -748,14 +755,13 @@
                 </div>
                 <div class="modal-body text-center">
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/kantor-desa.jpeg"
-                    class="img-fluid"
-                    alt="Kantor Desa Simarmata">
+                        class="img-fluid"
+                        alt="Kantor Desa Simarmata">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ===== MODAL UNTUK GAMBAR SEJARAH ===== -->
     <div class="modal fade" id="modalSejarah" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -765,23 +771,149 @@
                 </div>
                 <div class="modal-body text-center">
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/gorga%20batak.jpeg"
-                    class="img-fluid"
-                    alt="Gorga Batak - Sejarah Desa Simarmata">
+                        class="img-fluid"
+                        alt="Gorga Batak - Sejarah Desa Simarmata">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ===== TOMBOL KEMBALI KE ATAS ===== -->
+    <!-- ===== TOMBOL BACK TO TOP ===== -->
     <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">
         <i class="bi bi-arrow-up"></i>
     </button>
+
+    <!-- ===== TOMBOL WHATSAPP ===== -->
+    <style>
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            animation: waPulse 2.5s ease-in-out infinite;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.12) rotate(-6deg);
+            box-shadow: 0 10px 35px rgba(37, 211, 102, 0.7);
+            background: #1ebe5c;
+        }
+
+        .wa-float i {
+            font-size: 36px;
+            color: white;
+            line-height: 1;
+        }
+
+        .wa-float .wa-tooltip {
+            position: absolute;
+            left: 80px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .wa-float .wa-tooltip::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 8px solid transparent;
+            border-right-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .wa-float:hover .wa-tooltip {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @keyframes waPulse {
+            0% {
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 6px 40px rgba(37, 211, 102, 0.85), 0 0 0 10px rgba(37, 211, 102, 0.15);
+            }
+            100% {
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            }
+        }
+
+        .wa-float .wa-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff3b30;
+            color: #fff;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(255, 59, 48, 0.5);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        @media(max-width:576px) {
+            .wa-float {
+                bottom: 20px;
+                left: 20px;
+                width: 55px;
+                height: 55px;
+            }
+            .wa-float i {
+                font-size: 30px;
+            }
+            .wa-float .wa-tooltip {
+                display: none;
+            }
+            .wa-float .wa-badge {
+                width: 20px;
+                height: 20px;
+                font-size: 10px;
+                top: -4px;
+                right: -4px;
+            }
+        }
+    </style>
+
+    <a href="https://wa.me/6281234567890?text=Halo%20KKN%20Desa%20Simarmata%2C%20saya%20ingin%20bertanya%20mengenai%20desa%20wisata."
+        class="wa-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Hubungi kami via WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+        <span class="wa-badge">1</span>
+        <span class="wa-tooltip">Hubungi Kami</span>
+    </a>
 
     <!-- ===== SCRIPT BOOTSTRAP ===== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
-    <!-- ===== SLIDESHOW + LQIP SCRIPT ===== -->
+    <!-- ===== SLIDESHOW ===== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const slides = document.querySelectorAll('.hero-slideshow .slide');
@@ -847,13 +979,13 @@
 
             setTimeout(function() {
                 if (typeof startSlideshow === 'function') {
-                    // Fallback
+                    // fallback
                 }
             }, 5000);
         });
     </script>
 
-    <!-- ===== SCROLL ANIMATION SCRIPT ===== -->
+    <!-- ===== SCROLL ANIMATION ===== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const animatedElements = document.querySelectorAll('.scroll-animate');
@@ -882,7 +1014,7 @@
         });
     </script>
 
-    <!-- ===== BACK TO TOP SCRIPT ===== -->
+    <!-- ===== BACK TO TOP ===== -->
     <script>
         const backToTopBtn = document.getElementById('backToTop');
 
@@ -902,150 +1034,24 @@
         });
     </script>
 
-    <!-- ============================================================= -->
-    <!-- ===== SCRIPT BLUR BACKGROUND SAAT MODAL TERBUKA ===== -->
-    <!-- ============================================================= -->
+    <!-- ===== BLUR SAAT MODAL ===== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mainContent = document.getElementById('main-content');
 
-            // Saat modal mulai ditampilkan
-            document.addEventListener('show.bs.modal', function (e) {
+            document.addEventListener('show.bs.modal', function(e) {
                 if (mainContent) {
                     mainContent.classList.add('blur');
                 }
             });
 
-            // Saat modal selesai ditutup
-            document.addEventListener('hidden.bs.modal', function (e) {
+            document.addEventListener('hidden.bs.modal', function(e) {
                 if (mainContent) {
                     mainContent.classList.remove('blur');
                 }
             });
         });
     </script>
-
-    <!-- ============================================================= -->
-    <!-- ===== TOMBOL WHATSAPP (DI LUAR WRAPPER) ===== -->
-    <!-- ============================================================= -->
-    <style>
-        .wa-float {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 65px;
-            height: 65px;
-            background: #25D366;
-            border-radius: 50%;
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            animation: waPulse 2.5s ease-in-out infinite;
-        }
-
-        .wa-float:hover {
-            transform: scale(1.12) rotate(-6deg);
-            box-shadow: 0 10px 35px rgba(37, 211, 102, 0.7);
-            background: #1ebe5c;
-        }
-
-        .wa-float i {
-            font-size: 36px;
-            color: white;
-            line-height: 1;
-        }
-
-        .wa-float .wa-tooltip {
-            position: absolute;
-            left: 80px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 500;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .wa-float .wa-tooltip::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 50%;
-            transform: translateY(-50%);
-            border: 8px solid transparent;
-            border-right-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .wa-float:hover .wa-tooltip {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        @keyframes waPulse {
-            0% { box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5); }
-            50% { box-shadow: 0 6px 40px rgba(37, 211, 102, 0.85), 0 0 0 10px rgba(37, 211, 102, 0.15); }
-            100% { box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5); }
-        }
-
-        .wa-float .wa-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: #ff3b30;
-            color: #fff;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            font-size: 12px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 10px rgba(255, 59, 48, 0.5);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        @media(max-width:576px) {
-            .wa-float {
-                bottom: 20px;
-                left: 20px;
-                width: 55px;
-                height: 55px;
-            }
-            .wa-float i {
-                font-size: 30px;
-            }
-            .wa-float .wa-tooltip {
-                display: none;
-            }
-            .wa-float .wa-badge {
-                width: 20px;
-                height: 20px;
-                font-size: 10px;
-                top: -4px;
-                right: -4px;
-            }
-        }
-    </style>
-
-    <a href="https://wa.me/6281234567890?text=Halo%20KKN%20Desa%20Simarmata%2C%20saya%20ingin%20bertanya%20mengenai%20desa%20wisata."
-       class="wa-float"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Hubungi kami via WhatsApp">
-        <i class="bi bi-whatsapp"></i>
-        <span class="wa-badge">1</span>
-        <span class="wa-tooltip">Hubungi Kami</span>
-    </a>
 
 </body>
 
