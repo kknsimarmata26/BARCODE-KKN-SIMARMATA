@@ -174,26 +174,45 @@
             margin-bottom: 10px;
         }
 
-        /* ===== FOOTER ===== */
+        /* ===== FOOTER BARU (SAMA DENGAN PROFIL.HTML) ===== */
         footer {
             background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
             color: white;
-            padding: 20px 0;
+            padding: 40px 0 20px;
             margin-top: 15px;
         }
 
-        footer h4,
         footer h5 {
-            color: white;
+            color: #ffd54f;
+            font-weight: bold;
+            margin-bottom: 18px;
+            border-bottom: 2px solid rgba(255, 213, 79, 0.3);
+            padding-bottom: 8px;
         }
 
         footer a {
-            color: #ffd54f !important;
+            color: #f8f9fa !important;
             text-decoration: none;
+            transition: 0.3s;
         }
 
         footer a:hover {
-            color: white !important;
+            color: #ffd54f !important;
+            text-decoration: underline;
+        }
+
+        footer .list-unstyled li {
+            margin-bottom: 6px;
+        }
+
+        footer hr {
+            border-color: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
+
+        footer .copyright {
+            font-size: 14px;
+            opacity: 0.9;
         }
 
         /* ===== MAPS ===== */
@@ -422,9 +441,8 @@
         #main-content.blur {
             filter: blur(6px);
             -webkit-filter: blur(6px);
-            pointer-events: none; /* Mencegah klik pada background saat modal terbuka */
+            pointer-events: none;
         }
-        /* Pastikan tombol Back-to-Top tidak ikut terkunci saat blur */
         .back-to-top {
             pointer-events: auto !important;
         }
@@ -434,7 +452,7 @@
 
 <body>
 
-    <!-- ===== PENTING: BUNGKUS SEMUA KONTEN WEBSITE ===== -->
+    <!-- ===== WRAPPER KONTEN UTAMA ===== -->
     <div id="main-content">
 
         <!-- ===== NAVBAR ===== -->
@@ -452,33 +470,16 @@
 
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="profil.html">Profil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sejarah.html">Sejarah</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="wisata.html">Wisata</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="budaya.html">Budaya</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="umkm.html">UMKM</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="homestay.html">Homestay</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="galeri.html">Galeri</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="kontak.html">Kontak</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <!-- PERBAIKAN: "Profil" menjadi "Profil Desa" -->
+                        <li class="nav-item"><a class="nav-link" href="profil.html">Profil Desa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sejarah.html">Sejarah</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="wisata.html">Wisata</a></li>
+                        <li class="nav-item"><a class="nav-link" href="budaya.html">Budaya</a></li>
+                        <li class="nav-item"><a class="nav-link" href="umkm.html">UMKM</a></li>
+                        <li class="nav-item"><a class="nav-link" href="homestay.html">Homestay</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
                     </ul>
                 </div>
             </div>
@@ -548,7 +549,7 @@
         <section class="container py-5">
             <div class="row">
 
-                <!-- Wisata 1 - Huta Adat Simarmata (POP MODAL) -->
+                <!-- Wisata 1 - Huta Adat Simarmata -->
                 <div class="col-lg-6 col-md-6 mb-4 reveal delay-1">
                     <div class="card shadow h-100">
                         <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
@@ -557,7 +558,6 @@
                             <h4>Huta Adat Simarmata</h4>
                             <p>Kawasan rumah adat Batak Toba yang masih terjaga dan menjadi pusat wisata budaya.</p>
                             <p><b>Jam Buka :</b> 08.00 - 17.00 WIB</p>
-                            <!-- TOMBOL MODAL -->
                             <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalHutaAdat">
                                 <i class="bi bi-eye"></i> Lihat Detail
                             </button>
@@ -565,7 +565,7 @@
                     </div>
                 </div>
 
-                <!-- Wisata 2 - Danau Toba (POP MODAL) -->
+                <!-- Wisata 2 - Danau Toba -->
                 <div class="col-lg-6 col-md-6 mb-4 reveal delay-2">
                     <div class="card shadow h-100">
                         <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
@@ -574,7 +574,6 @@
                             <h4>Danau Toba</h4>
                             <p>Menikmati panorama Danau Toba dengan udara sejuk dan pemandangan yang indah.</p>
                             <p><b>Tiket :</b> Gratis</p>
-                            <!-- TOMBOL MODAL -->
                             <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalDanauToba">
                                 <i class="bi bi-eye"></i> Lihat Detail
                             </button>
@@ -582,7 +581,7 @@
                     </div>
                 </div>
 
-                <!-- Wisata 3 - Makam Raja Simarmata (POP MODAL) -->
+                <!-- Wisata 3 - Makam Raja Simarmata -->
                 <div class="col-lg-6 col-md-6 mb-4 reveal delay-3">
                     <div class="card shadow h-100">
                         <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg"
@@ -594,7 +593,6 @@
                             <p>Wisata sejarah yang menjadi bagian penting dari asal‑usul marga Simarmata. Makam ini berupa <strong>sarkofagus</strong> batu berusia ratusan tahun yang dikenal dengan nama <strong>Batu Munung</strong>.</p>
                             <p><b>Lokasi :</b> Huta Simarmata, Desa Simarmata, Kec. Simanindo, Samosir</p>
                             <p><b>Tiket :</b> Gratis</p>
-                            <!-- TOMBOL MODAL -->
                             <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalMakamRaja">
                                 <i class="bi bi-eye"></i> Lihat Detail
                             </button>
@@ -602,7 +600,7 @@
                     </div>
                 </div>
 
-                <!-- Wisata 4 - Tugu Simarmata (POP MODAL) -->
+                <!-- Wisata 4 - Tugu Simarmata -->
                 <div class="col-lg-6 col-md-6 mb-4 reveal delay-4">
                     <div class="card shadow h-100">
                         <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
@@ -611,7 +609,6 @@
                             <h4>Tugu Simarmata</h4>
                             <p>Tugu Simarmata merupakan monumen bersejarah yang menjadi simbol persatuan, identitas, dan penghormatan kepada leluhur marga Simarmata di Desa Simarmata.</p>
                             <p><b>Lokasi :</b> Toguan, Negeri Simarmata</p>
-                            <!-- TOMBOL MODAL -->
                             <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalTuguSimarmata">
                                 <i class="bi bi-eye"></i> Lihat Detail
                             </button>
@@ -649,49 +646,57 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="pt-5 pb-3">
+    <!-- ========================================================== -->
+    <!-- ===== FOOTER BARU (SESUAI PERMINTAAN) ===== -->
+    <!-- ========================================================== -->
+    <footer>
         <div class="container">
             <div class="row">
 
-                <!-- Alamat -->
-                <div class="col-md-4 mb-4 reveal delay-1">
+                <!-- Kolom 1: Alamat Desa -->
+                <div class="col-md-4 mb-4">
                     <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
-                    <p>
-                        Desa Simarmata<br>
-                        Kecamatan Simanindo<br>
-                        Kabupaten Samosir<br>
-                        Provinsi Sumatera Utara<br>
-                        Kode Pos: 22395
-                    </p>
+                    <p class="mb-1">Desa Simarmata</p>
+                    <p class="mb-1">Kecamatan Simanindo</p>
+                    <p class="mb-1">Kabupaten Samosir</p>
+                    <p class="mb-1">Provinsi Sumatera Utara</p>
+                    <p class="mb-0">Kode Pos: 22395</p>
                 </div>
 
-                <!-- Menu -->
-                <div class="col-md-4 mb-4 reveal delay-2">
-                    <h5><i class="bi bi-list"></i> Menu</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="profil.html">Profil Desa</a></li>
-                        <li><a href="sejarah.html">Sejarah</a></li>
-                        <li><a href="wisata.html">Wisata</a></li>
-                        <li><a href="budaya.html">Budaya</a></li>
-                        <li><a href="umkm.html">UMKM</a></li>
-                        <li><a href="homestay.html">Homestay</a></li>
-                        <li><a href="galeri.html">Galeri</a></li>
-                        <li><a href="kontak.html">Kontak</a></li>
-                    </ul>
+                <!-- Kolom 2: Menu LENGKAP (9 item) -->
+                <div class="col-md-4 mb-4">
+                    <h5><i class="bi bi-list-ul"></i> Menu</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="profil.html">Profil Desa</a></li>
+                                <li><a href="sejarah.html">Sejarah</a></li>
+                                <li><a href="wisata.html">Wisata</a></li>
+                                <li><a href="budaya.html">Budaya</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a href="umkm.html">UMKM</a></li>
+                                <li><a href="homestay.html">Homestay</a></li>
+                                <li><a href="galeri.html">Galeri</a></li>
+                                <li><a href="kontak.html">Kontak</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Media Sosial -->
-                <div class="col-md-4 mb-4 reveal delay-3">
+                <!-- Kolom 3: Media Sosial (@kpn.simarmata26) -->
+                <div class="col-md-4 mb-4">
                     <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
-                    <p>
-                        Instagram:<br>
-                        <a href="#"><i class="bi bi-instagram"></i> @kkn.simarmata26</a>
+                    <p class="mb-1">
+                        <strong>Instagram:</strong><br>
+                        <a href="#" target="_blank">@kpn.simarmata26</a>
                     </p>
-                    <p>
-                        TikTok:<br>
-                        <a href="#"><i class="bi bi-tiktok"></i> @kkn.simarmata26</a>
+                    <p class="mb-0">
+                        <strong>TikTok:</strong><br>
+                        <a href="#" target="_blank">@kpn.simarmata26</a>
                     </p>
                 </div>
 
@@ -699,10 +704,10 @@
 
             <hr>
 
-            <div class="text-center">
-                <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
-                <br>
-                <small>Dibuat untuk Program KKN UNIMED 2026</small>
+            <!-- Copyright -->
+            <div class="text-center copyright">
+                <p class="mb-1">&copy; 2026 KKN Desa Simarmata Kecamatan Simanindo *</p>
+                <p class="mb-0">Dibuat untuk Program KKN UNIMED 2026</p>
             </div>
 
         </div>
@@ -713,7 +718,7 @@
 
 
     <!-- ========================================================== -->
-    <!-- ===== MODAL 1: HUTA ADAT SIMARMATA (DI LUAR WRAPPER) ===== -->
+    <!-- ===== MODAL 1: HUTA ADAT SIMARMATA ===== -->
     <!-- ========================================================== -->
     <div class="modal fade" id="modalHutaAdat" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -764,7 +769,7 @@
     </div>
 
     <!-- ========================================================== -->
-    <!-- ===== MODAL 2: DANAU TOBA (DI LUAR WRAPPER) ===== -->
+    <!-- ===== MODAL 2: DANAU TOBA ===== -->
     <!-- ========================================================== -->
     <div class="modal fade" id="modalDanauToba" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -814,7 +819,7 @@
     </div>
 
     <!-- ========================================================== -->
-    <!-- ===== MODAL 3: MAKAM RAJA SIMARMATA (BATU MUNUNG) (DI LUAR WRAPPER) ===== -->
+    <!-- ===== MODAL 3: MAKAM RAJA SIMARMATA (BATU MUNUNG) ===== -->
     <!-- ========================================================== -->
     <div class="modal fade" id="modalMakamRaja" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -909,7 +914,7 @@
     </div>
 
     <!-- ========================================================== -->
-    <!-- ===== MODAL 4: TUGU SIMARMATA (DI LUAR WRAPPER) ===== -->
+    <!-- ===== MODAL 4: TUGU SIMARMATA ===== -->
     <!-- ========================================================== -->
     <div class="modal fade" id="modalTuguSimarmata" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -1046,12 +1051,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             const mainContent = document.getElementById('main-content');
 
-            // Saat modal mulai terbuka
             document.addEventListener('show.bs.modal', function (e) {
                 if (mainContent) mainContent.classList.add('blur');
             });
 
-            // Saat modal selesai ditutup
             document.addEventListener('hidden.bs.modal', function (e) {
                 if (mainContent) mainContent.classList.remove('blur');
             });
