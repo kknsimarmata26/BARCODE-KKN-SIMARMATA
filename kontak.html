@@ -50,7 +50,6 @@
             gap: 12px;
         }
 
-        /* ===== LOGO KKN DENGAN ANIMASI ===== */
         .navbar-logo {
             height: 45px;
             width: auto;
@@ -181,26 +180,47 @@
             margin-bottom: 10px;
         }
 
-        /* ===== FOOTER ===== */
+        /* ============================================================
+           FOOTER BARU (KONSISTEN DENGAN HALAMAN LAIN)
+        ============================================================ */
         footer {
             background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
             color: white;
-            padding: 20px 0;
+            padding: 40px 0 20px;
             margin-top: 15px;
         }
 
-        footer h4,
         footer h5 {
-            color: white;
+            color: #ffd54f;
+            font-weight: bold;
+            margin-bottom: 18px;
+            border-bottom: 2px solid rgba(255, 213, 79, 0.3);
+            padding-bottom: 8px;
         }
 
         footer a {
-            color: #ffd54f !important;
+            color: #f8f9fa !important;
             text-decoration: none;
+            transition: 0.3s;
         }
 
         footer a:hover {
-            color: white !important;
+            color: #ffd54f !important;
+            text-decoration: underline;
+        }
+
+        footer .list-unstyled li {
+            margin-bottom: 6px;
+        }
+
+        footer hr {
+            border-color: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
+
+        footer .copyright {
+            font-size: 14px;
+            opacity: 0.9;
         }
 
         /* ===== KONTAK ===== */
@@ -420,9 +440,8 @@
         #main-content.blur {
             filter: blur(6px);
             -webkit-filter: blur(6px);
-            pointer-events: none; /* Mencegah klik pada background saat modal terbuka */
+            pointer-events: none;
         }
-        /* Pastikan tombol Back-to-Top tidak ikut terkunci saat blur */
         .back-to-top {
             pointer-events: auto !important;
         }
@@ -432,14 +451,13 @@
 
 <body>
 
-    <!-- ===== PENTING: BUNGKUS SEMUA KONTEN WEBSITE ===== -->
+    <!-- ===== WRAPPER KONTEN UTAMA ===== -->
     <div id="main-content">
 
         <!-- ===== NAVBAR ===== -->
         <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="index.html">
-                    <!-- ===== LOGO KKN DENGAN ANIMASI ===== -->
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/28e102b5e877c1f41ab210e479c150db5ca184a9/logo%203%20web.png" 
                          alt="Logo KKN Desa Simarmata" 
                          class="navbar-logo">
@@ -455,8 +473,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
+                        <!-- PERBAIKAN: "Profil" menjadi "Profil Desa" -->
                         <li class="nav-item">
-                            <a class="nav-link" href="profil.html">Profil</a>
+                            <a class="nav-link" href="profil.html">Profil Desa</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="sejarah.html">Sejarah</a>
@@ -638,47 +657,57 @@
             </div>
         </section>
 
-        <!-- ===== FOOTER ===== -->
-        <footer class="pt-5 pb-3">
+        <!-- ========================================================== -->
+        <!-- ===== FOOTER BARU (SESUAI PERMINTAAN) ===== -->
+        <!-- ========================================================== -->
+        <footer>
             <div class="container">
                 <div class="row">
 
-                    <!-- Alamat -->
-                    <div class="col-md-4 mb-4 reveal delay-1">
+                    <!-- Kolom 1: Alamat Desa -->
+                    <div class="col-md-4 mb-4">
                         <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
-                        <p>
-                            Desa Simarmata<br>
-                            Kecamatan Simanindo<br>
-                            Kabupaten Samosir<br>
-                            Provinsi Sumatera Utara<br>
-                            Kode Pos: 22395
-                        </p>
+                        <p class="mb-1">Desa Simarmata</p>
+                        <p class="mb-1">Kecamatan Simanindo</p>
+                        <p class="mb-1">Kabupaten Samosir</p>
+                        <p class="mb-1">Provinsi Sumatera Utara</p>
+                        <p class="mb-0">Kode Pos: 22395</p>
                     </div>
 
-                    <!-- Menu -->
-                    <div class="col-md-4 mb-4 reveal delay-2">
-                        <h5><i class="bi bi-list"></i> Menu</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="profil.html">Profil Desa</a></li>
-                            <li><a href="sejarah.html">Sejarah</a></li>
-                            <li><a href="wisata.html">Wisata</a></li>
-                            <li><a href="budaya.html">Budaya</a></li>
-                            <li><a href="umkm.html">UMKM</a></li>
-                            <li><a href="homestay.html">Homestay</a></li>
-                            <li><a href="galeri.html">Galeri</a></li>
-                            <li><a href="kontak.html">Kontak</a></li>
-                        </ul>
+                    <!-- Kolom 2: Menu LENGKAP (9 item) -->
+                    <div class="col-md-4 mb-4">
+                        <h5><i class="bi bi-list-ul"></i> Menu</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="profil.html">Profil Desa</a></li>
+                                    <li><a href="sejarah.html">Sejarah</a></li>
+                                    <li><a href="wisata.html">Wisata</a></li>
+                                    <li><a href="budaya.html">Budaya</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="umkm.html">UMKM</a></li>
+                                    <li><a href="homestay.html">Homestay</a></li>
+                                    <li><a href="galeri.html">Galeri</a></li>
+                                    <li><a href="kontak.html">Kontak</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Media Sosial -->
-                    <div class="col-md-4 mb-4 reveal delay-3">
+                    <!-- Kolom 3: Media Sosial (@kpn.simarmata26) -->
+                    <div class="col-md-4 mb-4">
                         <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
-                        <p>
-                            <i class="bi bi-instagram"></i> Instagram : @kkn.simarmata26
+                        <p class="mb-1">
+                            <strong>Instagram:</strong><br>
+                            <a href="#" target="_blank">@kpn.simarmata26</a>
                         </p>
-                        <p>
-                            <i class="bi bi-tiktok"></i> TikTok : @kkn.simarmata26
+                        <p class="mb-0">
+                            <strong>TikTok:</strong><br>
+                            <a href="#" target="_blank">@kpn.simarmata26</a>
                         </p>
                     </div>
 
@@ -686,10 +715,10 @@
 
                 <hr>
 
-                <div class="text-center reveal delay-4">
-                    <small>© 2026 KKN Desa Simarmata Kecamatan Simanindo *</small>
-                    <br>
-                    <small>Dibuat untuk Program KKN UNIMED 2026</small>
+                <!-- Copyright -->
+                <div class="text-center copyright">
+                    <p class="mb-1">&copy; 2026 KKN Desa Simarmata Kecamatan Simanindo *</p>
+                    <p class="mb-0">Dibuat untuk Program KKN UNIMED 2026</p>
                 </div>
 
             </div>
@@ -776,12 +805,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             const mainContent = document.getElementById('main-content');
 
-            // Saat modal mulai terbuka (jika suatu saat Anda menambahkan modal di halaman ini)
             document.addEventListener('show.bs.modal', function (e) {
                 if (mainContent) mainContent.classList.add('blur');
             });
 
-            // Saat modal selesai ditutup
             document.addEventListener('hidden.bs.modal', function (e) {
                 if (mainContent) mainContent.classList.remove('blur');
             });
