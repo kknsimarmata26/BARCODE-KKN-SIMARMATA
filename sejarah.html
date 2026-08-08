@@ -300,7 +300,7 @@
         }
 
         /* ============================================================
-           LQIP UNTUK HERO CAROUSEL
+           HERO CAROUSEL — FULL COVER TANPA LATAR HITAM
         ============================================================ */
         .hero-carousel-wrapper {
             position: relative;
@@ -312,7 +312,7 @@
             height: 450px;
             background-color: #1a1a1a;
             background-size: cover;
-            background-position: bottom center;
+            background-position: center;
             background-repeat: no-repeat;
             filter: blur(12px) saturate(0.8);
             transition: filter 0.9s ease, opacity 0.6s ease;
@@ -470,43 +470,31 @@
             </div>
         </nav>
 
-        <!-- ===== HERO CAROUSEL DENGAN LQIP ===== -->
+        <!-- ===== HERO CAROUSEL — 3 SLIDE FULL COVER ===== -->
         <div class="hero-carousel-wrapper position-relative">
 
             <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
-                <!-- Indikator -->
+                <!-- Indikator (3 slide) -->
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
                     <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="1"></button>
                     <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="2"></button>
-                    <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="3"></button>
-                    <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="4"></button>
                 </div>
 
                 <div class="carousel-inner">
-                    <!-- Slide 1 -->
+                    <!-- Slide 1: sejarah1 -->
                     <div class="carousel-item active"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/18d9a98e36da9126dfbe75f8700c40760c3d4ec6/desa9.jpeg"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/de631b19efee1f6ce0168596b90f737c1455c8dc/sejarah1.jpeg"
                          style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
                     </div>
-                    <!-- Slide 2 -->
+                    <!-- Slide 2: sejarah2 -->
                     <div class="carousel-item"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/18d9a98e36da9126dfbe75f8700c40760c3d4ec6/desa10.jpeg"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/de631b19efee1f6ce0168596b90f737c1455c8dc/sejarah2.jpeg"
                          style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
                     </div>
-                    <!-- Slide 3 -->
+                    <!-- Slide 3: sejarah3 -->
                     <div class="carousel-item"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/77a1581bf703b4c909a284ff27b3ad03ecc395bc/desa11.jpeg"
-                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                    </div>
-                    <!-- Slide 4 -->
-                    <div class="carousel-item"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/77a1581bf703b4c909a284ff27b3ad03ecc395bc/desa12.jpeg"
-                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                    </div>
-                    <!-- Slide 5 -->
-                    <div class="carousel-item"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/77a1581bf703b4c909a284ff27b3ad03ecc395bc/desa13.jpeg"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/de631b19efee1f6ce0168596b90f737c1455c8dc/sejarah3.jpeg"
                          style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
                     </div>
                 </div>
@@ -589,10 +577,10 @@
                     </div>
                 </div>
 
-                <!-- Tugu Simarmata -->
+                <!-- Tugu Simarmata — GAMBAR DIGANTI dengan sejarahtugu.jpeg -->
                 <div class="col-lg-6 col-md-6 mb-4">
                     <div class="card shadow h-100 reveal delay-3">
-                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/de631b19efee1f6ce0168596b90f737c1455c8dc/sejarahtugu.jpeg"
                         class="card-img-top"
                         alt="Tugu Simarmata"
                         style="height: 250px; object-fit: cover;">
@@ -679,7 +667,7 @@
         </section>
 
         <!-- ========================================================== -->
-        <!-- ===== FOOTER DENGAN LINK MEDSOS YANG SUDAH DIPERBAIKI ===== -->
+        <!-- ===== FOOTER ===== -->
         <!-- ========================================================== -->
         <footer>
             <div class="container">
@@ -719,7 +707,7 @@
                         </div>
                     </div>
 
-                    <!-- Kolom 3: Media Sosial dengan link langsung + rel="noopener noreferrer" -->
+                    <!-- Kolom 3: Media Sosial -->
                     <div class="col-md-4 mb-4">
                         <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
                         <p class="mb-1">
