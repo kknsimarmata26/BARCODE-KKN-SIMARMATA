@@ -174,7 +174,7 @@
             margin-bottom: 10px;
         }
 
-        /* ===== FOOTER BARU (SAMA DENGAN PROFIL.HTML) ===== */
+        /* ===== FOOTER ===== */
         footer {
             background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
             color: white;
@@ -315,6 +315,7 @@
 
         /* ============================================================
            LQIP UNTUK HERO CAROUSEL
+           — background-position diubah ke BOTTOM agar kaki terlihat
         ============================================================ */
         .hero-carousel-wrapper {
             position: relative;
@@ -326,7 +327,8 @@
             height: 450px;
             background-color: #1a1a1a;
             background-size: cover;
-            background-position: center;
+            background-position: bottom center;
+            /* <-- Diubah dari center ke bottom center */
             background-repeat: no-repeat;
             filter: blur(12px) saturate(0.8);
             transition: filter 0.9s ease, opacity 0.6s ease;
@@ -343,7 +345,7 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
             z-index: 10;
             width: 100%;
             padding: 0 20px;
@@ -484,7 +486,7 @@
             </div>
         </nav>
 
-        <!-- ===== HERO CAROUSEL DENGAN LQIP ===== -->
+        <!-- ===== HERO CAROUSEL — POSISI GAMBAR DI BOTTOM ===== -->
         <div class="hero-carousel-wrapper position-relative">
 
             <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
@@ -498,29 +500,29 @@
                 </div>
 
                 <div class="carousel-inner">
-                    <!-- Slide 1 -->
+                    <!-- Slide 1: wisata3 -->
                     <div class="carousel-item active"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/74bf92126fd159e7651205f7055987576a8292b4/wisata3.jpeg"
                          style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
                     </div>
-                    <!-- Slide 2 -->
+                    <!-- Slide 2: wisata2 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/1bf4b7f78893ca0b22c016fa6610658f2449fcfb/wisata2.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 3: desa15 -->
+                    <div class="carousel-item"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9e7b514405790ced30d65f7f4a0d5304c4d8f3f2/desa15.jpeg"
+                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                    </div>
+                    <!-- Slide 4: view-dantob -->
                     <div class="carousel-item"
                          data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
                          style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
                     </div>
-                    <!-- Slide 3 -->
+                    <!-- Slide 5: wisata5 -->
                     <div class="carousel-item"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg"
-                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                    </div>
-                    <!-- Slide 4 -->
-                    <div class="carousel-item"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
-                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                    </div>
-                    <!-- Slide 5 -->
-                    <div class="carousel-item"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/b66941e1e14235f6beb0ecd539ec5efd11bd2842/desa1.jpeg"
+                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/1bf4b7f78893ca0b22c016fa6610658f2449fcfb/wisata5.jpeg"
                          style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
                     </div>
                 </div>
@@ -551,7 +553,7 @@
                 <!-- Wisata 1 - Huta Adat Simarmata -->
                 <div class="col-lg-6 col-md-6 mb-4 reveal delay-1">
                     <div class="card shadow h-100">
-                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9e7b514405790ced30d65f7f4a0d5304c4d8f3f2/desa15.jpeg"
                         class="card-img-top" alt="Huta Adat Simarmata">
                         <div class="card-body">
                             <h4>Huta Adat Simarmata</h4>
@@ -583,7 +585,7 @@
                 <!-- Wisata 3 - Makam Raja Simarmata -->
                 <div class="col-lg-6 col-md-6 mb-4 reveal delay-3">
                     <div class="card shadow h-100">
-                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg"
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/1bf4b7f78893ca0b22c016fa6610658f2449fcfb/wisatamakamraja.jpeg"
                         class="card-img-top clickable-img"
                         alt="Makam Raja Simarmata"
                         data-bs-toggle="modal" data-bs-target="#modalMakamRaja">
@@ -602,7 +604,7 @@
                 <!-- Wisata 4 - Tugu Simarmata -->
                 <div class="col-lg-6 col-md-6 mb-4 reveal delay-4">
                     <div class="card shadow h-100">
-                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/1bf4b7f78893ca0b22c016fa6610658f2449fcfb/sejarahtugu.jpeg"
                         class="card-img-top" alt="Tugu Simarmata" style="height: 230px; object-fit: cover;">
                         <div class="card-body">
                             <h4>Tugu Simarmata</h4>
@@ -646,7 +648,7 @@
     </section>
 
     <!-- ========================================================== -->
-    <!-- ===== FOOTER DENGAN LINK MEDSOS YANG SUDAH DIPERBAIKI ===== -->
+    <!-- ===== FOOTER ===== -->
     <!-- ========================================================== -->
     <footer>
         <div class="container">
@@ -686,7 +688,7 @@
                     </div>
                 </div>
 
-                <!-- Kolom 3: Media Sosial dengan link langsung + rel="noopener noreferrer" -->
+                <!-- Kolom 3: Media Sosial -->
                 <div class="col-md-4 mb-4">
                     <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
                     <p class="mb-1">
@@ -738,7 +740,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9e7b514405790ced30d65f7f4a0d5304c4d8f3f2/desa15.jpeg"
                     class="img-fluid rounded mb-3 w-100" alt="Huta Adat Simarmata">
 
                     <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
@@ -839,7 +841,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/fdc0b134469c9f244502afee15f657922413d75a/makam-raja.jpeg"
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/1bf4b7f78893ca0b22c016fa6610658f2449fcfb/wisatamakamraja.jpeg"
                     class="img-fluid rounded mb-3 w-100" alt="Makam Raja Simarmata">
 
                     <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
@@ -934,7 +936,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5dc39b39296d8c84aec012e1bd3ac48a492b8dde/tugu-simarmata.jpg"
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/1bf4b7f78893ca0b22c016fa6610658f2449fcfb/sejarahtugu.jpeg"
                     class="img-fluid rounded mb-3 w-100" alt="Tugu Simarmata">
 
                     <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
