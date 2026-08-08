@@ -430,8 +430,8 @@
         }
 
         /* ============================================================
-           LQIP (Low Quality Image Placeholder) UNTUK HERO CAROUSEL
-           ============================================================ */
+           HERO CAROUSEL — FULL COVER TANPA LATAR HITAM
+        ============================================================ */
         .hero-carousel-wrapper {
             position: relative;
             overflow: hidden;
@@ -441,7 +441,8 @@
         .hero-carousel-wrapper .carousel-item {
             height: 500px;
             background-color: #1a1a1a;
-            background-size: contain;
+            /* FULL COVER — TIDAK ADA LATAR HITAM KOSONG */
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             filter: blur(12px) saturate(0.8);
@@ -623,7 +624,7 @@
         </div>
     </nav>
 
-    <!-- ==================== HERO CAROUSEL ==================== -->
+    <!-- ==================== HERO CAROUSEL — FULL COVER ==================== -->
     <div class="hero-carousel-wrapper position-relative">
         <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
             <!-- Indikator -->
@@ -635,7 +636,7 @@
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
             </div>
 
-            <!-- Slide -->
+            <!-- Slide — FULL COVER -->
             <div class="carousel-inner">
                 <div class="carousel-item active"
                 data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ba96b67b636d0b5351d7758f9c1bd51f291a4ff5/profil1.jpeg"
@@ -1029,7 +1030,7 @@ style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDov
 </section>
 
 <!-- ========================================================== -->
-<!-- ===== FOOTER DENGAN LINK MEDSOS YANG SUDAH DIPERBAIKI ===== -->
+<!-- ===== FOOTER ===== -->
 <!-- ========================================================== -->
 <footer>
     <div class="container">
@@ -1069,7 +1070,7 @@ style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDov
                 </div>
             </div>
 
-            <!-- Kolom 3: Media Sosial dengan link langsung + rel="noopener noreferrer" -->
+            <!-- Kolom 3: Media Sosial -->
             <div class="col-md-4 mb-4">
                 <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
                 <p class="mb-1">
