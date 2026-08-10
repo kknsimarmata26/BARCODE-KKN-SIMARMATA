@@ -8,14 +8,11 @@
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
         /* ===========================================
            WEBSITE DESA SIMARMATA
-           Theme Color : #7c0e0e
         ============================================ */
 
         * {
@@ -92,7 +89,6 @@
             font-weight: bold;
         }
 
-        /* ===== TOMBOL ===== */
         .btn-primary {
             background: #7c0e0e;
             border: #7c0e0e;
@@ -124,7 +120,6 @@
             color: #333;
         }
 
-        /* ===== CARD ===== */
         .card {
             border: none;
             border-radius: 15px;
@@ -148,12 +143,10 @@
             font-weight: bold;
         }
 
-        /* ===== SHADOW ===== */
         .shadow {
             box-shadow: 0 10px 20px rgba(0, 0, 0, .15) !important;
         }
 
-        /* ===== SCROLLBAR ===== */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -171,7 +164,6 @@
             background: #5b0909;
         }
 
-        /* ===== GAMBAR ===== */
         img {
             max-width: 100%;
             display: block;
@@ -185,33 +177,28 @@
             margin-bottom: 10px;
         }
 
-        /* ===== STATISTIK ===== */
         .text-primary {
             color: #7c0e0e !important;
         }
-
         .text-success {
             color: #198754 !important;
         }
-
         .text-danger {
             color: #dc3545 !important;
         }
-
         .text-warning {
             color: #ffc107 !important;
         }
 
         /* ============================================================
-           HERO SECTION — FRAME 950x558 FULL 100% TANPA LATAR HITAM
+           HERO — FULL GAMBAR TANPA LATAR HITAM
         ============================================================ */
         .hero-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 0;
-            /* HILANGKAN PADDING AGAR TIDAK ADA LATAR HITAM */
-            background: #1a1a1a;
+            background: transparent; /* ← HILANGKAN LATAR HITAM */
         }
 
         .hero-section {
@@ -220,10 +207,10 @@
             height: 558px;
             max-width: 100%;
             max-height: 90vh;
-            background-color: #1a1a1a;
+            background: transparent; /* ← HILANGKAN LATAR HITAM */
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -246,13 +233,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #1a1a1a;
-            /* MEMAKSA GAMBAR MEMENUHI 100% LEBAR & TINGGI */
-            background-size: 100% 100%;
+            background-color: transparent; /* ← HILANGKAN LATAR HITAM */
+            background-size: cover;        /* ← FULL, TANPA DISTORSI */
             background-position: center;
             background-repeat: no-repeat;
-            filter: blur(10px) saturate(0.8);
-            transition: filter 0.9s ease, opacity 1.5s ease-in-out;
+            filter: none;                  /* ← HAPUS BLUR AGAR JELAS */
+            transition: opacity 1.2s ease-in-out;
             opacity: 0;
         }
 
@@ -261,7 +247,7 @@
         }
 
         .hero-slideshow .slide.loaded {
-            filter: blur(0) saturate(1);
+            filter: none; /* ← TETAP JELAS */
         }
 
         .hero-overlay {
@@ -270,7 +256,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.55);
+            background: rgba(0, 0, 0, 0.35); /* ← LEBIH TIPIS AGAR GAMBAR TERLIHAT */
             z-index: 1;
             border-radius: 20px;
         }
@@ -285,16 +271,15 @@
         .hero-section h1 {
             font-size: 3.2rem;
             font-weight: bold;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
             margin-bottom: 15px;
         }
 
         .hero-section .lead {
             font-size: 1.5rem;
-            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
-        /* ===== RESPONSIVE HERO ===== */
         @media(max-width:1000px) {
             .hero-section {
                 width: 100%;
@@ -335,9 +320,7 @@
             }
         }
 
-        /* ============================================================
-           SCROLL ANIMATION - FADE SLIDE UP / DOWN
-        ============================================================ */
+        /* ===== SCROLL ANIMATION ===== */
         .scroll-animate {
             opacity: 0;
             transform: translateY(50px);
@@ -349,23 +332,12 @@
             transform: translateY(0);
         }
 
-        .scroll-animate.delay-1 {
-            transition-delay: 0.1s;
-        }
-        .scroll-animate.delay-2 {
-            transition-delay: 0.2s;
-        }
-        .scroll-animate.delay-3 {
-            transition-delay: 0.3s;
-        }
-        .scroll-animate.delay-4 {
-            transition-delay: 0.4s;
-        }
-        .scroll-animate.delay-5 {
-            transition-delay: 0.5s;
-        }
+        .scroll-animate.delay-1 { transition-delay: 0.1s; }
+        .scroll-animate.delay-2 { transition-delay: 0.2s; }
+        .scroll-animate.delay-3 { transition-delay: 0.3s; }
+        .scroll-animate.delay-4 { transition-delay: 0.4s; }
+        .scroll-animate.delay-5 { transition-delay: 0.5s; }
 
-        /* ===== GAMBAR BISA DIKLIK UNTUK MODAL ===== */
         .clickable-img {
             cursor: pointer;
             transition: transform 0.2s;
@@ -375,9 +347,7 @@
             opacity: 0.9;
         }
 
-        /* ============================================================
-           FITUR BLUR PALING STABIL (Metode Wrapper)
-        ============================================================ */
+        /* ===== BLUR MODAL ===== */
         #main-content {
             transition: filter 0.3s ease;
         }
@@ -391,9 +361,7 @@
             pointer-events: auto !important;
         }
 
-        /* ============================================================
-           TOMBOL KEMBALI KE ATAS (BACK TO TOP)
-        ============================================================ */
+        /* ===== BACK TO TOP ===== */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -480,9 +448,7 @@
             opacity: 0.9;
         }
 
-        /* ============================================================
-           TOMBOL WHATSAPP
-        ============================================================ */
+        /* ===== WHATSAPP FLOAT ===== */
         .wa-float {
             position: fixed;
             bottom: 30px;
@@ -545,15 +511,9 @@
         }
 
         @keyframes waPulse {
-            0% {
-                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
-            }
-            50% {
-                box-shadow: 0 6px 40px rgba(37, 211, 102, 0.85), 0 0 0 10px rgba(37, 211, 102, 0.15);
-            }
-            100% {
-                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
-            }
+            0% { box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5); }
+            50% { box-shadow: 0 6px 40px rgba(37, 211, 102, 0.85), 0 0 0 10px rgba(37, 211, 102, 0.15); }
+            100% { box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5); }
         }
 
         .wa-float .wa-badge {
@@ -596,26 +556,23 @@
             }
         }
     </style>
-
 </head>
 
 <body>
 
-    <!-- ===== WRAPPER KONTEN UTAMA ===== -->
+    <!-- ===== MAIN CONTENT ===== -->
     <div id="main-content">
 
-        <!-- ================= NAVBAR ================= -->
+        <!-- ===== NAVBAR ===== -->
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9d01db11173e316b6cd4543a631806958c03ea39/logo%203%20web.png"
                         alt="Logo KKN Desa Simarmata - UNIMED">
                 </a>
-
                 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -632,11 +589,10 @@
             </div>
         </nav>
 
-        <!-- ================= HERO SLIDESHOW — FULL 100% TANPA LATAR HITAM ================= -->
+        <!-- ===== HERO — FULL GAMBAR TANPA LATAR HITAM ===== -->
         <div class="hero-wrapper">
             <section class="hero-section" id="hero">
                 <div class="hero-slideshow" id="heroSlideshow">
-                    <!-- 5 GAMBAR — MEMAKSA 100% LEBAR & TINGGI -->
                     <div class="slide active" data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/e27f781649d79218360eae74bdaa7125eb39e286/sejarah1.jpeg"></div>
                     <div class="slide" data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/e27f781649d79218360eae74bdaa7125eb39e286/sejarah2.jpeg"></div>
                     <div class="slide" data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/0225c78507a4009d082527417d39aa09d35ef53e/sejarah3.jpeg"></div>
@@ -656,7 +612,7 @@
             </section>
         </div>
 
-        <!-- ================= PROFIL ================= -->
+        <!-- ===== PROFIL ===== -->
         <section class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 scroll-animate">
@@ -668,23 +624,14 @@
                 </div>
                 <div class="col-lg-6 scroll-animate delay-2">
                     <h2>Tentang Desa Simarmata</h2>
-                    <p>
-                        Desa Simarmata merupakan salah satu desa di Kecamatan Simanindo,
-                        Kabupaten Samosir, Provinsi Sumatera Utara yang berada di kawasan
-                        Danau Toba.
-                    </p>
-                    <p>
-                        Desa ini memiliki potensi wisata alam, budaya Batak Toba,
-                        UMKM lokal, homestay, serta panorama Danau Toba yang indah.
-                    </p>
-                    <a href="profil.html" class="btn btn-primary">
-                        <i class="bi bi-info-circle"></i> Selengkapnya
-                    </a>
+                    <p>Desa Simarmata merupakan salah satu desa di Kecamatan Simanindo, Kabupaten Samosir, Provinsi Sumatera Utara yang berada di kawasan Danau Toba.</p>
+                    <p>Desa ini memiliki potensi wisata alam, budaya Batak Toba, UMKM lokal, homestay, serta panorama Danau Toba yang indah.</p>
+                    <a href="profil.html" class="btn btn-primary"><i class="bi bi-info-circle"></i> Selengkapnya</a>
                 </div>
             </div>
         </section>
 
-        <!-- ================= SEJARAH ================= -->
+        <!-- ===== SEJARAH ===== -->
         <section class="bg-light py-5">
             <div class="container">
                 <div class="row align-items-center">
@@ -697,27 +644,15 @@
                     </div>
                     <div class="col-lg-6 scroll-animate delay-2">
                         <h2>Sejarah Desa Simarmata</h2>
-                        <p>
-                            Desa Simarmata merupakan salah satu desa di Kecamatan
-                            Simanindo, Kabupaten Samosir. Desa ini memiliki sejarah
-                            panjang yang berkaitan dengan perkembangan masyarakat
-                            Batak Toba serta menjadi bagian penting dari kawasan
-                            Geopark Kaldera Toba.
-                        </p>
-                        <p>
-                            Hingga saat ini masyarakat masih melestarikan rumah adat,
-                            tradisi tortor, gondang, ulos, serta nilai-nilai budaya
-                            Batak yang diwariskan secara turun-temurun.
-                        </p>
-                        <a href="sejarah.html" class="btn btn-primary">
-                            <i class="bi bi-clock-history"></i> Baca Sejarah Lengkap
-                        </a>
+                        <p>Desa Simarmata merupakan salah satu desa di Kecamatan Simanindo, Kabupaten Samosir. Desa ini memiliki sejarah panjang yang berkaitan dengan perkembangan masyarakat Batak Toba serta menjadi bagian penting dari kawasan Geopark Kaldera Toba.</p>
+                        <p>Hingga saat ini masyarakat masih melestarikan rumah adat, tradisi tortor, gondang, ulos, serta nilai-nilai budaya Batak yang diwariskan secara turun-temurun.</p>
+                        <a href="sejarah.html" class="btn btn-primary"><i class="bi bi-clock-history"></i> Baca Sejarah Lengkap</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= STATISTIK ================= -->
+        <!-- ===== STATISTIK ===== -->
         <section class="py-5">
             <div class="container">
                 <h2 class="text-center mb-5 scroll-animate">Statistik Desa</h2>
@@ -742,18 +677,15 @@
             </div>
         </section>
 
-        <!-- ================= WISATA ================= -->
+        <!-- ===== WISATA ===== -->
         <section class="bg-light py-5">
             <div class="container">
                 <h2 class="text-center mb-5 scroll-animate">Destinasi Wisata</h2>
                 <div class="row">
-
                     <div class="col-md-4 scroll-animate delay-1">
                         <div class="card shadow">
                             <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
-                                class="card-img-top"
-                                alt="Huta Adat Simarmata"
-                                style="height:230px; object-fit:cover;">
+                                class="card-img-top" alt="Huta Adat Simarmata" style="height:230px; object-fit:cover;">
                             <div class="card-body">
                                 <h5>Huta Adat Simarmata</h5>
                                 <p>Kampung adat Batak Toba yang masih terjaga hingga saat ini.</p>
@@ -761,13 +693,10 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-4 scroll-animate delay-2">
                         <div class="card shadow">
                             <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
-                                class="card-img-top"
-                                alt="Danau Toba"
-                                style="height:230px; object-fit:cover;">
+                                class="card-img-top" alt="Danau Toba" style="height:230px; object-fit:cover;">
                             <div class="card-body">
                                 <h5>Danau Toba</h5>
                                 <p>Panorama danau vulkanik terbesar di Indonesia.</p>
@@ -775,13 +704,10 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-4 scroll-animate delay-3">
                         <div class="card shadow">
                             <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home5.jpeg"
-                                class="card-img-top"
-                                alt="Tugu Simarmata"
-                                style="height:230px; object-fit:cover;">
+                                class="card-img-top" alt="Tugu Simarmata" style="height:230px; object-fit:cover;">
                             <div class="card-body">
                                 <h5>Tugu Simarmata</h5>
                                 <p>Tugu Simarmata merupakan salah satu simbol sejarah dan identitas marga Simarmata.</p>
@@ -789,18 +715,14 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- ========================================================== -->
         <!-- ===== FOOTER ===== -->
-        <!-- ========================================================== -->
         <footer>
             <div class="container">
                 <div class="row">
-
                     <div class="col-md-4 mb-4 scroll-animate delay-1">
                         <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
                         <p class="mb-1">Desa Simarmata</p>
@@ -809,7 +731,6 @@
                         <p class="mb-1">Provinsi Sumatera Utara</p>
                         <p class="mb-0">Kode Pos: 22395</p>
                     </div>
-
                     <div class="col-md-4 mb-4 scroll-animate delay-2">
                         <h5><i class="bi bi-list-ul"></i> Menu</h5>
                         <div class="row">
@@ -832,39 +753,29 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-4 mb-4 scroll-animate delay-3">
                         <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
                         <p class="mb-1">
                             <strong>Instagram:</strong><br>
-                            <a href="https://www.instagram.com/kkn.simarmata26?igsh=bTBmdWZpMGpudmIy" target="_blank">
-                                @kkn.simarmata26
-                            </a>
+                            <a href="https://www.instagram.com/kkn.simarmata26?igsh=bTBmdWZpMGpudmIy" target="_blank">@kkn.simarmata26</a>
                         </p>
                         <p class="mb-0">
                             <strong>TikTok:</strong><br>
-                            <a href="https://www.tiktok.com/@kkn.simarmata26?_r=1&_t=ZS-98clJAaNd81" target="_blank">
-                                @kkn.simarmata26
-                            </a>
+                            <a href="https://www.tiktok.com/@kkn.simarmata26?_r=1&_t=ZS-98clJAaNd81" target="_blank">@kkn.simarmata26</a>
                         </p>
                     </div>
-
                 </div>
-
                 <hr>
-
                 <div class="text-center scroll-animate delay-4 copyright">
                     <p class="mb-1">&copy; 2026 KKN Desa Simarmata Kecamatan Simanindo</p>
                     <p class="mb-0">Dibuat untuk Program KKN UNIMED 2026</p>
                 </div>
-
             </div>
         </footer>
 
-        <!-- ===== PENUTUP WRAPPER MAIN-CONTENT ===== -->
-    </div>
+    </div> <!-- /main-content -->
 
-    <!-- ===== MODAL GAMBAR ===== -->
+    <!-- ===== MODAL ===== -->
     <div class="modal fade" id="modalProfil" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -874,8 +785,7 @@
                 </div>
                 <div class="modal-body text-center">
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home_tentangdesa.jpeg"
-                        class="img-fluid"
-                        alt="Tentang Desa Simarmata">
+                        class="img-fluid" alt="Tentang Desa Simarmata">
                 </div>
             </div>
         </div>
@@ -890,30 +800,26 @@
                 </div>
                 <div class="modal-body text-center">
                     <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home_tentangsejarah.jpeg"
-                        class="img-fluid"
-                        alt="Sejarah Desa Simarmata">
+                        class="img-fluid" alt="Sejarah Desa Simarmata">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ===== TOMBOL BACK TO TOP ===== -->
+    <!-- ===== BACK TO TOP ===== -->
     <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">
         <i class="bi bi-arrow-up"></i>
     </button>
 
-    <!-- ===== TOMBOL WHATSAPP ===== -->
+    <!-- ===== WHATSAPP ===== -->
     <a href="https://wa.me/6281234567890?text=Halo%20KKN%20Desa%20Simarmata%2C%20saya%20ingin%20bertanya%20mengenai%20desa%20wisata."
-        class="wa-float"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Hubungi kami via WhatsApp">
+        class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi kami via WhatsApp">
         <i class="bi bi-whatsapp"></i>
         <span class="wa-badge">1</span>
         <span class="wa-tooltip">Hubungi Kami</span>
     </a>
 
-    <!-- ===== SCRIPT BOOTSTRAP ===== -->
+    <!-- ===== BOOTSTRAP ===== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
@@ -1021,7 +927,6 @@
     <!-- ===== BACK TO TOP ===== -->
     <script>
         const backToTopBtn = document.getElementById('backToTop');
-
         window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
                 backToTopBtn.classList.add('show');
@@ -1029,12 +934,8 @@
                 backToTopBtn.classList.remove('show');
             }
         });
-
         backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 
@@ -1042,17 +943,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mainContent = document.getElementById('main-content');
-
             document.addEventListener('show.bs.modal', function(e) {
-                if (mainContent) {
-                    mainContent.classList.add('blur');
-                }
+                if (mainContent) mainContent.classList.add('blur');
             });
-
             document.addEventListener('hidden.bs.modal', function(e) {
-                if (mainContent) {
-                    mainContent.classList.remove('blur');
-                }
+                if (mainContent) mainContent.classList.remove('blur');
             });
         });
     </script>
