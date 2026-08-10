@@ -108,7 +108,9 @@
 
         .card img {
             height: 230px;
+            width: 100%;
             object-fit: cover;
+            object-position: center; /* pusatkan objek agar rumah/gunung terlihat */
         }
 
         .card-body h4,
@@ -314,8 +316,8 @@
         }
 
         /* ============================================================
-           LQIP UNTUK HERO CAROUSEL
-           — background-position diubah ke BOTTOM agar kaki terlihat
+           HERO CAROUSEL — POSISI GAMBAR DI TENGAH (CENTER)
+           agar rumah/gunung lebih terlihat
         ============================================================ */
         .hero-carousel-wrapper {
             position: relative;
@@ -327,8 +329,7 @@
             height: 450px;
             background-color: #1a1a1a;
             background-size: cover;
-            background-position: bottom center;
-            /* <-- Diubah dari center ke bottom center */
+            background-position: center;   /* <-- diubah dari bottom center ke center */
             background-repeat: no-repeat;
             filter: blur(12px) saturate(0.8);
             transition: filter 0.9s ease, opacity 0.6s ease;
@@ -448,6 +449,21 @@
         .back-to-top {
             pointer-events: auto !important;
         }
+
+        /* ============================================================
+           PERBAIKAN OBJECT-POSITION PADA GAMBAR CARD
+           agar rumah/gunung lebih fokus
+        ============================================================ */
+        .card-img-top {
+            object-fit: cover;
+            object-position: center;
+            height: 230px;
+            width: 100%;
+        }
+        /* Untuk gambar danau agar gunung terlihat */
+        .card-img-top.danau {
+            object-position: center 30%; /* geser sedikit ke atas agar gunung masuk */
+        }
     </style>
 
 </head>
@@ -486,7 +502,7 @@
             </div>
         </nav>
 
-        <!-- ===== HERO CAROUSEL — POSISI GAMBAR DI BOTTOM ===== -->
+        <!-- ===== HERO CAROUSEL — POSISI GAMBAR DI TENGAH (CENTER) ===== -->
         <div class="hero-carousel-wrapper position-relative">
 
             <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
@@ -500,7 +516,7 @@
                 </div>
 
                 <div class="carousel-inner">
-                    <!-- Slide 1: wisata3 -->
+                    <!-- Slide 1: wisata3 — diatur ke center agar rumah/gunung terlihat -->
                     <div class="carousel-item active"
                          data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/74bf92126fd159e7651205f7055987576a8292b4/wisata3.jpeg"
                          style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
@@ -510,12 +526,12 @@
                          data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/1bf4b7f78893ca0b22c016fa6610658f2449fcfb/wisata2.jpeg"
                          style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
                     </div>
-                    <!-- Slide 3: desa15 -->
+                    <!-- Slide 3: desa15 (rumah adat) -->
                     <div class="carousel-item"
                          data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9e7b514405790ced30d65f7f4a0d5304c4d8f3f2/desa15.jpeg"
                          style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
                     </div>
-                    <!-- Slide 4: view-dantob -->
+                    <!-- Slide 4: view-dantob (danau + gunung) -->
                     <div class="carousel-item"
                          data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
                          style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
@@ -554,7 +570,8 @@
                 <div class="col-lg-6 col-md-6 mb-4 reveal delay-1">
                     <div class="card shadow h-100">
                         <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9e7b514405790ced30d65f7f4a0d5304c4d8f3f2/desa15.jpeg"
-                        class="card-img-top" alt="Huta Adat Simarmata">
+                        class="card-img-top" alt="Huta Adat Simarmata"
+                        style="object-position: center;"> <!-- pusatkan agar rumah adat terlihat -->
                         <div class="card-body">
                             <h4>Huta Adat Simarmata</h4>
                             <p>Kawasan rumah adat Batak Toba yang masih terjaga dan menjadi pusat wisata budaya.</p>
@@ -566,14 +583,15 @@
                     </div>
                 </div>
 
-                <!-- Wisata 2 - Danau Toba -->
+                <!-- Wisata 2 - Danau Toba (dengan posisi gambar diatur agar gunung terlihat) -->
                 <div class="col-lg-6 col-md-6 mb-4 reveal delay-2">
                     <div class="card shadow h-100">
                         <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
-                        class="card-img-top" alt="Danau Toba">
+                        class="card-img-top danau" alt="Danau Toba"
+                        style="object-position: center 30%;"> <!-- naikkan ke atas agar gunung masuk -->
                         <div class="card-body">
                             <h4>Danau Toba</h4>
-                            <p>Menikmati panorama Danau Toba dengan udara sejuk dan pemandangan yang indah.</p>
+                            <p>Menikmati panorama Danau Toba dengan udara sejuk dan pemandangan indah.</p>
                             <p><b>Tiket :</b> Gratis</p>
                             <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalDanauToba">
                                 <i class="bi bi-eye"></i> Lihat Detail
@@ -588,7 +606,8 @@
                         <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/1bf4b7f78893ca0b22c016fa6610658f2449fcfb/wisatamakamraja.jpeg"
                         class="card-img-top clickable-img"
                         alt="Makam Raja Simarmata"
-                        data-bs-toggle="modal" data-bs-target="#modalMakamRaja">
+                        data-bs-toggle="modal" data-bs-target="#modalMakamRaja"
+                        style="object-position: center;">
                         <div class="card-body">
                             <h4>Makam Raja Simarmata</h4>
                             <p>Wisata sejarah yang menjadi bagian penting dari asal‑usul marga Simarmata. Makam ini berupa <strong>sarkofagus</strong> batu berusia ratusan tahun yang dikenal dengan nama <strong>Batu Munung</strong>.</p>
@@ -605,7 +624,8 @@
                 <div class="col-lg-6 col-md-6 mb-4 reveal delay-4">
                     <div class="card shadow h-100">
                         <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/1bf4b7f78893ca0b22c016fa6610658f2449fcfb/sejarahtugu.jpeg"
-                        class="card-img-top" alt="Tugu Simarmata" style="height: 230px; object-fit: cover;">
+                        class="card-img-top" alt="Tugu Simarmata"
+                        style="object-position: center;">
                         <div class="card-body">
                             <h4>Tugu Simarmata</h4>
                             <p>Tugu Simarmata merupakan monumen bersejarah yang menjadi simbol persatuan, identitas, dan penghormatan kepada leluhur marga Simarmata di Desa Simarmata.</p>
