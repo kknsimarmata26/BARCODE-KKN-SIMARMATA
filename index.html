@@ -712,8 +712,17 @@
         <!-- ===== FOOTER ===== -->
         <footer>
             <div class="container">
+                <!-- ===== PENGUNJUNG HARIAN (tanpa teks tambahan) ===== -->
                 <div class="row">
-                    <div class="col-md-4 mb-4 scroll-animate delay-1">
+                    <div class="col-12 text-center mb-4 scroll-animate delay-1">
+                        <h5><i class="bi bi-eye-fill"></i> Pengunjung Hari Ini</h5>
+                        <p class="display-6 fw-bold text-warning" id="visitorCounter">0</p>
+                        <!-- Teks "Dihitung per sesi..." telah dihapus -->
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-4 scroll-animate delay-2">
                         <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
                         <p class="mb-1">Desa Simarmata</p>
                         <p class="mb-1">Kecamatan Simanindo</p>
@@ -721,7 +730,7 @@
                         <p class="mb-1">Provinsi Sumatera Utara</p>
                         <p class="mb-0">Kode Pos: 22395</p>
                     </div>
-                    <div class="col-md-4 mb-4 scroll-animate delay-2">
+                    <div class="col-md-4 mb-4 scroll-animate delay-3">
                         <h5><i class="bi bi-list-ul"></i> Menu</h5>
                         <div class="row">
                             <div class="col-6">
@@ -743,7 +752,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4 scroll-animate delay-3">
+                    <div class="col-md-4 mb-4 scroll-animate delay-4">
                         <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
                         <p class="mb-1">
                             <strong>Instagram:</strong><br>
@@ -756,7 +765,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="text-center scroll-animate delay-4 copyright">
+                <div class="text-center scroll-animate delay-5 copyright">
                     <p class="mb-1">&copy; 2026 KKN Desa Simarmata Kecamatan Simanindo</p>
                     <p class="mb-0">Dibuat untuk Program KKN UNIMED 2026</p>
                 </div>
@@ -940,6 +949,33 @@
                 if (mainContent) mainContent.classList.remove('blur');
             });
         });
+    </script>
+
+    <!-- ===== PENGUNJUNG HARIAN (RESET 00.00) ===== -->
+    <script>
+        (function() {
+            const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+            const storedDate = localStorage.getItem('visitorDate');
+            let count = parseInt(localStorage.getItem('visitorCount')) || 0;
+
+            // Reset jika hari berganti
+            if (storedDate !== today) {
+                count = 0;
+                localStorage.setItem('visitorDate', today);
+            }
+
+            // Cek apakah pengunjung sudah dihitung di sesi ini
+            const sessionKey = 'visitor_session_' + today;
+            if (!sessionStorage.getItem(sessionKey)) {
+                count++;
+                localStorage.setItem('visitorCount', count);
+                sessionStorage.setItem(sessionKey, 'true');
+            }
+
+            // Tampilkan di elemen
+            const counterEl = document.getElementById('visitorCounter');
+            if (counterEl) counterEl.textContent = count;
+        })();
     </script>
 
 </body>
