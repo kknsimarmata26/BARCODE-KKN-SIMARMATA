@@ -717,7 +717,6 @@
                     <div class="col-12 text-center mb-4 scroll-animate delay-1">
                         <h5><i class="bi bi-eye-fill"></i> Pengunjung Hari Ini</h5>
                         <p class="display-6 fw-bold text-warning" id="visitorCounter">0</p>
-                        <!-- Teks "Dihitung per sesi..." telah dihapus -->
                     </div>
                 </div>
 
@@ -951,28 +950,30 @@
         });
     </script>
 
-    <!-- ===== PENGUNJUNG HARIAN (RESET 00.00) ===== -->
+    <!-- ===== PENGUNJUNG HARIAN (RESET 00.00) – TIDAK BERTAMBAH SAAT REFRESH / BUKA ULANG DI HARI YANG SAMA ===== -->
     <script>
         (function() {
             const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
-            const storedDate = localStorage.getItem('visitorDate');
+            const lastVisit = localStorage.getItem('visitor_last_date');
             let count = parseInt(localStorage.getItem('visitorCount')) || 0;
 
-            // Reset jika hari berganti
-            if (storedDate !== today) {
+            // Jika hari berbeda, reset counter dan tandai hari ini
+            if (lastVisit !== today) {
                 count = 0;
-                localStorage.setItem('visitorDate', today);
+                localStorage.setItem('visitor_last_date', today);
             }
 
-            // Cek apakah pengunjung sudah dihitung di sesi ini
-            const sessionKey = 'visitor_session_' + today;
-            if (!sessionStorage.getItem(sessionKey)) {
+            // Cek apakah perangkat ini sudah dihitung hari ini
+            const countedKey = 'visitor_counted_' + today;
+            if (!localStorage.getItem(countedKey)) {
+                // Tambah pengunjung
                 count++;
                 localStorage.setItem('visitorCount', count);
-                sessionStorage.setItem(sessionKey, 'true');
+                localStorage.setItem('visitor_last_date', today);
+                localStorage.setItem(countedKey, 'true');
             }
 
-            // Tampilkan di elemen
+            // Tampilkan jumlah
             const counterEl = document.getElementById('visitorCounter');
             if (counterEl) counterEl.textContent = count;
         })();
