@@ -7,13 +7,15 @@
     <title>Desa Simarmata</title>
 
     <!-- ============================================================
-         STATCOUNTER — ganti sc_project, sc_security dengan milik Anda
-         Pastikan pilih opsi "Today" saat membuat counter.
+         STATCOUNTER — KODE ASLI DARI AKUN ANDA
+         sc_project = 13342247
+         sc_security = "ef0f8320"
+         sc_invisible = 0  (agar counter terlihat)
     ============================================================ -->
     <script type="text/javascript">
-        var sc_project = 12345678;        // !!! GANTI DENGAN MILIK ANDA !!!
-        var sc_invisible = 0;              // 0 = counter terlihat
-        var sc_security = "abcdef12";      // !!! GANTI DENGAN MILIK ANDA !!!
+        var sc_project = 13342247;
+        var sc_invisible = 0; // 0 = counter terlihat, 1 = tidak terlihat
+        var sc_security = "ef0f8320";
         var sc_https = 1;
         var scJsHost = "https://";
         document.write("<sc" + "ript type='text/javascript' src='" + scJsHost +
@@ -22,8 +24,8 @@
     <noscript>
         <div class="statcounter">
             <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
-                <img class="statcounter" src="https://c.statcounter.com/12345678/0/abcdef12/0/"
-                alt="Web Analytics" />
+                <img class="statcounter" src="https://c.statcounter.com/13342247/0/ef0f8320/0/"
+                alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade" />
             </a>
         </div>
     </noscript>
@@ -33,25 +35,80 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
     <style>
-        /* ===== SEMUA STYLE SAMA SEPERTI SEBELUMNYA ===== */
+        /* ===========================================
+               CSS VARIABLES — untuk Dark Mode
+            ============================================ */
+        :root {
+            --bg-body: #f8f9fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --section-bg: #f1f3f5;
+            --modal-bg: #ffffff;
+            --modal-text: #333;
+            --border-color: #dee2e6;
+            --hero-overlay: rgba(0, 0, 0, 0.35);
+            --scrollbar-track: #ececec;
+            --scrollbar-thumb: #7c0e0e;
+            --heading-color: #7c0e0e;
+            --statcounter-bg: rgba(255, 255, 255, 0.08);
+        }
+
+        /* ===== DARK MODE ===== */
+        .dark-mode {
+            --bg-body: #121212;
+            --text-color: #e4e4e4;
+            --card-bg: #1e1e1e;
+            --section-bg: #1a1a1a;
+            --modal-bg: #2a2a2a;
+            --modal-text: #e4e4e4;
+            --border-color: #444;
+            --hero-overlay: rgba(0, 0, 0, 0.7);
+            --scrollbar-track: #2a2a2a;
+            --scrollbar-thumb: #5b0909;
+            --heading-color: #ff8a80;
+            --statcounter-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        /* ===== GLOBAL ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
-            background: #f8f9fa;
-            color: #333;
+            background: var(--bg-body);
+            color: var(--text-color);
             overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
         }
+
         .container {
             padding-top: 10px;
             padding-bottom: 10px;
         }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--scrollbar-track);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+            border-radius: 20px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5b0909;
+        }
+
+        /* ===== NAVBAR ===== */
         .navbar {
             background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
             box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
@@ -59,6 +116,7 @@
             transition: all 0.3s ease;
             z-index: 1000;
         }
+
         .navbar-brand {
             display: flex;
             align-items: center;
@@ -68,15 +126,18 @@
             color: white !important;
             text-decoration: none;
         }
+
         .navbar-brand img {
             height: 40px;
             width: auto;
             object-fit: contain;
             display: block;
         }
+
         .navbar-brand span {
             color: white;
         }
+
         .nav-link {
             color: white !important;
             margin-left: 15px;
@@ -84,22 +145,54 @@
             font-size: 16px;
             font-weight: 500;
         }
+
         .nav-link:hover {
             color: #ffd54f !important;
         }
+
         .nav-link.active {
             color: #ffd54f !important;
             font-weight: bold;
         }
+
+        /* Tombol Dark Mode di Navbar */
+        #darkModeToggle {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-color: rgba(255, 255, 255, 0.5);
+            color: white;
+            transition: 0.3s;
+            padding: 0;
+        }
+        #darkModeToggle:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #ffd54f;
+            color: #ffd54f;
+        }
+
+        /* ===== HEADING ===== */
         h2 {
-            color: #7c0e0e;
+            color: var(--heading-color);
             font-weight: bold;
             margin-bottom: 15px;
+            transition: color 0.3s ease;
         }
         h5 {
-            color: #7c0e0e;
+            color: var(--heading-color);
             font-weight: bold;
+            transition: color 0.3s ease;
         }
+        .card-body h4,
+        .card-body h5 {
+            color: var(--heading-color);
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
         .btn-primary {
             background: #7c0e0e;
             border: #7c0e0e;
@@ -125,11 +218,15 @@
             background: #f0c040;
             color: #333;
         }
+
+        /* ===== CARD ===== */
         .card {
             border: none;
             border-radius: 15px;
             overflow: hidden;
-            transition: .4s;
+            transition: transform 0.4s, box-shadow 0.4s, background 0.3s ease, color 0.3s ease;
+            background: var(--card-bg);
+            color: var(--text-color);
         }
         .card:hover {
             transform: translateY(-8px);
@@ -139,49 +236,33 @@
             height: 230px;
             object-fit: cover;
         }
-        .card-body h4,
-        .card-body h5 {
-            color: #7c0e0e;
-            font-weight: bold;
-        }
         .shadow {
             box-shadow: 0 10px 20px rgba(0, 0, 0, .15) !important;
         }
-        ::-webkit-scrollbar {
-            width: 10px;
+
+        /* ===== SECTION ===== */
+        .bg-light {
+            background: var(--section-bg) !important;
+            transition: background 0.3s ease;
         }
-        ::-webkit-scrollbar-track {
-            background: #ececec;
+
+        /* ===== MODAL ===== */
+        .modal-content {
+            background: var(--modal-bg);
+            color: var(--modal-text);
+            transition: background 0.3s ease, color 0.3s ease;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #7c0e0e;
-            border-radius: 20px;
+        .modal-header .btn-close {
+            filter: var(--modal-close-filter, none);
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #5b0909;
+        .dark-mode .modal-header .btn-close {
+            --modal-close-filter: invert(1);
         }
-        img {
-            max-width: 100%;
-            display: block;
+        .modal-title {
+            color: var(--heading-color);
         }
-        p {
-            margin-bottom: 10px;
-        }
-        .row {
-            margin-bottom: 10px;
-        }
-        .text-primary {
-            color: #7c0e0e !important;
-        }
-        .text-success {
-            color: #198754 !important;
-        }
-        .text-danger {
-            color: #dc3545 !important;
-        }
-        .text-warning {
-            color: #ffc107 !important;
-        }
+
+        /* ===== HERO ===== */
         .hero-wrapper {
             display: flex;
             justify-content: center;
@@ -237,9 +318,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.35);
+            background: var(--hero-overlay);
             z-index: 1;
             border-radius: 0;
+            transition: background 0.3s ease;
         }
         .hero-content {
             position: relative;
@@ -273,6 +355,8 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* ===== SCROLL ANIMATION ===== */
         .scroll-animate {
             opacity: 0;
             transform: translateY(50px);
@@ -297,6 +381,7 @@
         .scroll-animate.delay-5 {
             transition-delay: 0.5s;
         }
+
         .clickable-img {
             cursor: pointer;
             transition: transform 0.2s;
@@ -305,6 +390,8 @@
             transform: scale(1.02);
             opacity: 0.9;
         }
+
+        /* ===== BLUR MODAL ===== */
         #main-content {
             transition: filter 0.3s ease;
         }
@@ -317,6 +404,8 @@
         .wa-float {
             pointer-events: auto !important;
         }
+
+        /* ===== BACK TO TOP ===== */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -358,6 +447,8 @@
                 font-size: 20px;
             }
         }
+
+        /* ===== FOOTER ===== */
         footer {
             background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
             color: white;
@@ -391,6 +482,8 @@
             font-size: 14px;
             opacity: 0.9;
         }
+
+        /* ===== WHATSAPP FLOAT ===== */
         .wa-float {
             position: fixed;
             bottom: 30px;
@@ -495,14 +588,16 @@
                 right: -4px;
             }
         }
+
         /* ===== COUNTER STATCOUNTER ===== */
         .statcounter-container {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.08);
+            background: var(--statcounter-bg);
             padding: 12px 24px;
             border-radius: 50px;
             border: 1px solid rgba(255, 213, 79, 0.2);
             backdrop-filter: blur(4px);
+            transition: background 0.3s ease;
         }
         .statcounter-container .statcounter {
             font-size: 2rem;
@@ -516,6 +611,28 @@
         .statcounter-container .statcounter img {
             display: none;
         }
+
+        /* ===== DARK MODE — OVERRIDE KHUSUS UNTUK TEXT MUTLAK ===== */
+        .dark-mode .text-primary {
+            color: #ff8a80 !important;
+        }
+        .dark-mode .text-success {
+            color: #81c784 !important;
+        }
+        .dark-mode .text-danger {
+            color: #ef9a9a !important;
+        }
+        .dark-mode .text-warning {
+            color: #ffd54f !important;
+        }
+        .dark-mode .btn-outline-primary {
+            color: #ff8a80;
+            border-color: #ff8a80;
+        }
+        .dark-mode .btn-outline-primary:hover {
+            background: #ff8a80;
+            color: #121212;
+        }
     </style>
 </head>
 
@@ -527,13 +644,20 @@
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9d01db11173e316b6cd4543a631806958c03ea39/logo%203%20web.png"
-                    alt="Logo Desa Simarmata - UNIMED" />
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9d01db11173e316b6cd4543a631806958c03ea39/logo%203%20web.png" alt="Logo Desa Simarmata - UNIMED" />
                     <span>Desa Simarmata</span>
                 </a>
-                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
+                <div class="d-flex align-items-center gap-2">
+                    <!-- Tombol Dark Mode -->
+                    <button class="btn btn-outline-light" id="darkModeToggle" aria-label="Toggle Dark Mode">
+                        <i class="bi bi-moon-fill" id="themeIcon"></i>
+                    </button>
+                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -575,11 +699,7 @@
         <section class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 scroll-animate">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home_tentangdesa.jpeg"
-                    class="img-fluid rounded shadow clickable-img"
-                    alt="Tentang Desa Simarmata"
-                    style="width:100%; height:350px; object-fit:cover;"
-                    data-bs-toggle="modal" data-bs-target="#modalProfil" />
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home_tentangdesa.jpeg" class="img-fluid rounded shadow clickable-img" alt="Tentang Desa Simarmata" style="width:100%; height:350px; object-fit:cover;" data-bs-toggle="modal" data-bs-target="#modalProfil" />
                 </div>
                 <div class="col-lg-6 scroll-animate delay-2">
                     <h2>Tentang Desa Simarmata</h2>
@@ -595,11 +715,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 scroll-animate">
-                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home_tentangsejarah.jpeg"
-                        class="img-fluid rounded shadow clickable-img"
-                        alt="Sejarah Desa Simarmata"
-                        style="width:100%; height:350px; object-fit:cover;"
-                        data-bs-toggle="modal" data-bs-target="#modalSejarah" />
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home_tentangsejarah.jpeg" class="img-fluid rounded shadow clickable-img" alt="Sejarah Desa Simarmata" style="width:100%; height:350px; object-fit:cover;" data-bs-toggle="modal" data-bs-target="#modalSejarah" />
                     </div>
                     <div class="col-lg-6 scroll-animate delay-2">
                         <h2>Sejarah Desa Simarmata</h2>
@@ -643,8 +759,7 @@
                 <div class="row">
                     <div class="col-md-4 scroll-animate delay-1">
                         <div class="card shadow">
-                            <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg"
-                            class="card-img-top" alt="Huta Adat Simarmata" style="height:230px; object-fit:cover;" />
+                            <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/db7fe7d1dc122389a4432b2ad07e7640c9e7f623/desa15.jpeg" class="card-img-top" alt="Huta Adat Simarmata" style="height:230px; object-fit:cover;" />
                             <div class="card-body">
                                 <h5>Huta Adat Simarmata</h5>
                                 <p>Kampung adat Batak Toba yang masih terjaga hingga saat ini.</p>
@@ -654,8 +769,7 @@
                     </div>
                     <div class="col-md-4 scroll-animate delay-2">
                         <div class="card shadow">
-                            <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg"
-                            class="card-img-top" alt="Danau Toba" style="height:230px; object-fit:cover;" />
+                            <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/ef278f1e4dfa88e873ad58476ad880fd22158bd5/view-dantob.jpeg" class="card-img-top" alt="Danau Toba" style="height:230px; object-fit:cover;" />
                             <div class="card-body">
                                 <h5>Danau Toba</h5>
                                 <p>Panorama danau vulkanik terbesar di Indonesia.</p>
@@ -665,8 +779,7 @@
                     </div>
                     <div class="col-md-4 scroll-animate delay-3">
                         <div class="card shadow">
-                            <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home5.jpeg"
-                            class="card-img-top" alt="Tugu Simarmata" style="height:230px; object-fit:cover;" />
+                            <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home5.jpeg" class="card-img-top" alt="Tugu Simarmata" style="height:230px; object-fit:cover;" />
                             <div class="card-body">
                                 <h5>Tugu Simarmata</h5>
                                 <p>Tugu Simarmata merupakan salah satu simbol sejarah dan identitas marga Simarmata.</p>
@@ -682,16 +795,14 @@
         <footer>
             <div class="container">
 
-                <!-- ===== COUNTER PENGUNJUNG HARI INI (tanpa teks "Data akurat") ===== -->
+                <!-- ===== COUNTER PENGUNJUNG HARI INI ===== -->
                 <div class="row">
                     <div class="col-12 text-center mb-4 scroll-animate delay-1">
-                        <h5><i class="bi bi-people-fill"></i> Pengunjung Hari Ini</h5>
+                        <h5 style="color:#ffd54f;"><i class="bi bi-people-fill"></i> Pengunjung Hari Ini</h5>
                         <div class="statcounter-container">
-                            <span class="statcounter">
-                                <!-- Statcounter otomatis menampilkan angka di sini -->
-                            </span>
+                            <!-- Di sinilah Statcounter akan menuliskan angka -->
+                            <span class="statcounter"></span>
                         </div>
-                        <!-- Tidak ada teks tambahan di bawah counter -->
                     </div>
                 </div>
 
@@ -730,23 +841,19 @@
                         <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
                         <p class="mb-1">
                             <strong>Instagram:</strong><br />
-                            <a href="https://www.instagram.com/desasimarmata?utm_source=qr&igsh=MTUzazZzb21sajJvaw=="
-                            target="_blank" rel="noopener noreferrer">@desasimarmata</a>
+                            <a href="https://www.instagram.com/desasimarmata?utm_source=qr&igsh=MTUzazZzb21sajJvaw==" target="_blank" rel="noopener noreferrer">@desasimarmata</a>
                         </p>
                         <p class="mb-1">
                             <strong>TikTok:</strong><br />
-                            <a href="https://www.tiktok.com/@desa.simarmata?_r=1&_t=ZS-98nPHpGU3RF"
-                            target="_blank" rel="noopener noreferrer">@desa.simarmata</a>
+                            <a href="https://www.tiktok.com/@desa.simarmata?_r=1&_t=ZS-98nPHpGU3RF" target="_blank" rel="noopener noreferrer">@desa.simarmata</a>
                         </p>
                         <p class="mb-1">
                             <strong>Facebook:</strong><br />
-                            <a href="https://www.facebook.com/share/188BmmqmUy/?mibextid=wwXIfr"
-                            target="_blank" rel="noopener noreferrer">Desa Simarmata</a>
+                            <a href="https://www.facebook.com/share/188BmmqmUy/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Desa Simarmata</a>
                         </p>
                         <p class="mb-0">
                             <strong>YouTube:</strong><br />
-                            <a href="https://youtube.com/@desasimarmata?si=Q1wXzjQu95o3HlPf"
-                            target="_blank" rel="noopener noreferrer">Desa Simarmata</a>
+                            <a href="https://youtube.com/@desasimarmata?si=Q1wXzjQu95o3HlPf" target="_blank" rel="noopener noreferrer">Desa Simarmata</a>
                         </p>
                     </div>
                 </div>
@@ -771,8 +878,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body text-center">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home_tentangdesa.jpeg"
-                    class="img-fluid" alt="Tentang Desa Simarmata" />
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home_tentangdesa.jpeg" class="img-fluid" alt="Tentang Desa Simarmata" />
                 </div>
             </div>
         </div>
@@ -786,8 +892,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body text-center">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home_tentangsejarah.jpeg"
-                    class="img-fluid" alt="Sejarah Desa Simarmata" />
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/578d577e35645cff4edec2fe84b3bf766410d66c/home_tentangsejarah.jpeg" class="img-fluid" alt="Sejarah Desa Simarmata" />
                 </div>
             </div>
         </div>
@@ -799,145 +904,175 @@
     </button>
 
     <!-- ===== WHATSAPP ===== -->
-    <a href="https://wa.me/6282276359095?text=Halo%20KKN%20Desa%20Simarmata%2C%20saya%20ingin%20bertanya%20mengenai%20desa%20wisata."
-    class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi kami via WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-    <span class="wa-badge">1</span>
-    <span class="wa-tooltip">Hubungi Kami</span>
-</a>
+    <a href="https://wa.me/6282276359095?text=Halo%20KKN%20Desa%20Simarmata%2C%20saya%20ingin%20bertanya%20mengenai%20desa%20wisata." class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi kami via WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+        <span class="wa-badge">1</span>
+        <span class="wa-tooltip">Hubungi Kami</span>
+    </a>
 
-<!-- ===== BOOTSTRAP ===== -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
+    <!-- ===== BOOTSTRAP ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
 
-<!-- ===== SLIDESHOW ===== -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const slides = document.querySelectorAll('.hero-slideshow .slide');
-        slides.forEach((slide, index) => {
-            const src = slide.getAttribute('data-src');
-            if (src) {
-                const img = new Image();
-                img.onload = function() {
-                    slide.style.backgroundImage = 'url("' + src + '")';
-                    slide.classList.add('loaded');
-                };
-                img.onerror = function() {
-                    slide.classList.add('loaded');
-                };
-                img.src = src;
-            } else {
-                slide.classList.add('loaded');
-            }
-        });
-
-        let currentIndex = 0;
-        const totalSlides = slides.length;
-        slides.forEach((slide, idx) => {
-            slide.classList.toggle('active', idx === 0);
-        });
-
-        function changeSlide() {
-            slides[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % totalSlides;
-            slides[currentIndex].classList.add('active');
-        }
-
-        let startSlideshow = function() {
-            setInterval(changeSlide, 3000);
-        };
-
-        let imagesLoaded = 0;
-        const totalImages = slides.length;
-        slides.forEach((slide) => {
-            const src = slide.getAttribute('data-src');
-            if (src) {
-                const img = new Image();
-                img.onload = function() {
-                    imagesLoaded++;
-                    if (imagesLoaded === totalImages) {
-                        startSlideshow();
-                    }
-                };
-                img.onerror = function() {
-                    imagesLoaded++;
-                    if (imagesLoaded === totalImages) {
-                        startSlideshow();
-                    }
-                };
-                img.src = src;
-            } else {
-                imagesLoaded++;
-                if (imagesLoaded === totalImages) {
-                    startSlideshow();
-                }
-            }
-        });
-
-        setTimeout(function() {
-            if (typeof startSlideshow === 'function') {
-                // fallback
-            }
-        }, 5000);
-    });
-</script>
-
-<!-- ===== SCROLL ANIMATION ===== -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const animatedElements = document.querySelectorAll('.scroll-animate');
-        const heroContent = document.querySelector('.hero-content');
-        if (heroContent) {
-            heroContent.classList.add('visible');
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+    <!-- ===== SLIDESHOW ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slideshow .slide');
+            slides.forEach((slide, index) => {
+                const src = slide.getAttribute('data-src');
+                if (src) {
+                    const img = new Image();
+                    img.onload = function() {
+                        slide.style.backgroundImage = 'url("' + src + '")';
+                        slide.classList.add('loaded');
+                    };
+                    img.onerror = function() {
+                        slide.classList.add('loaded');
+                    };
+                    img.src = src;
                 } else {
-                    entry.target.classList.remove('visible');
+                    slide.classList.add('loaded');
                 }
             });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -20px 0px'
-        });
 
-        animatedElements.forEach(el => {
-            if (el.classList.contains('hero-content')) return;
-            observer.observe(el);
-        });
-    });
-</script>
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle('active', idx === 0);
+            });
 
-<!-- ===== BACK TO TOP ===== -->
-<script>
-    const backToTopBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
-    });
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-</script>
+            function changeSlide() {
+                slides[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % totalSlides;
+                slides[currentIndex].classList.add('active');
+            }
 
-<!-- ===== BLUR SAAT MODAL ===== -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mainContent = document.getElementById('main-content');
-        document.addEventListener('show.bs.modal', function(e) {
-            if (mainContent) mainContent.classList.add('blur');
+            let startSlideshow = function() {
+                setInterval(changeSlide, 3000);
+            };
+
+            let imagesLoaded = 0;
+            const totalImages = slides.length;
+            slides.forEach((slide) => {
+                const src = slide.getAttribute('data-src');
+                if (src) {
+                    const img = new Image();
+                    img.onload = function() {
+                        imagesLoaded++;
+                        if (imagesLoaded === totalImages) {
+                            startSlideshow();
+                        }
+                    };
+                    img.onerror = function() {
+                        imagesLoaded++;
+                        if (imagesLoaded === totalImages) {
+                            startSlideshow();
+                        }
+                    };
+                    img.src = src;
+                } else {
+                    imagesLoaded++;
+                    if (imagesLoaded === totalImages) {
+                        startSlideshow();
+                    }
+                }
+            });
+
+            setTimeout(function() {
+                if (typeof startSlideshow === 'function') {
+                    // fallback
+                }
+            }, 5000);
         });
-        document.addEventListener('hidden.bs.modal', function(e) {
-            if (mainContent) mainContent.classList.remove('blur');
+    </script>
+
+    <!-- ===== SCROLL ANIMATION ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.scroll-animate');
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                heroContent.classList.add('visible');
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -20px 0px'
+            });
+
+            animatedElements.forEach(el => {
+                if (el.classList.contains('hero-content')) return;
+                observer.observe(el);
+            });
         });
-    });
-</script>
+    </script>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <script>
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+    <!-- ===== BLUR SAAT MODAL ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainContent = document.getElementById('main-content');
+            document.addEventListener('show.bs.modal', function(e) {
+                if (mainContent) mainContent.classList.add('blur');
+            });
+            document.addEventListener('hidden.bs.modal', function(e) {
+                if (mainContent) mainContent.classList.remove('blur');
+            });
+        });
+    </script>
+
+    <!-- ===== DARK MODE TOGGLE ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById('darkModeToggle');
+            const icon = document.getElementById('themeIcon');
+            const html = document.documentElement;
+
+            // Cek preferensi tersimpan
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                html.classList.add('dark-mode');
+                icon.classList.remove('bi-moon-fill');
+                icon.classList.add('bi-sun-fill');
+            }
+
+            toggleBtn.addEventListener('click', function() {
+                html.classList.toggle('dark-mode');
+                const isDark = html.classList.contains('dark-mode');
+                if (isDark) {
+                    icon.classList.remove('bi-moon-fill');
+                    icon.classList.add('bi-sun-fill');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    icon.classList.remove('bi-sun-fill');
+                    icon.classList.add('bi-moon-fill');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+    </script>
 
 </body>
 
