@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontak | Desa Simarmata</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
     <style>
         /* ===========================================
@@ -432,6 +432,46 @@
         }
 
         /* ============================================================
+           TOMBOL WHATSAPP FLOAT (POJOK KIRI BAWAH)
+        ============================================================ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 9999;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1ebe5c;
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+            color: white;
+        }
+
+        @media(max-width:576px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+
+        /* ============================================================
            FITUR BLUR SAAT MODAL TERBUKA (METODE WRAPPER)
         ============================================================ */
         #main-content {
@@ -442,7 +482,8 @@
             -webkit-filter: blur(6px);
             pointer-events: none;
         }
-        .back-to-top {
+        .back-to-top,
+        .whatsapp-float {
             pointer-events: auto !important;
         }
     </style>
@@ -562,7 +603,9 @@
 
         </div>
 
-        <!-- ===== KONTAK ===== -->
+        <!-- ========================================================== -->
+        <!-- ===== KONTAK (INFORMASI TELAH DIPERBAHARUI) ===== -->
+        <!-- ========================================================== -->
         <section class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-8 reveal delay-1">
@@ -574,52 +617,52 @@
                             <!-- Alamat -->
                             <p>
                                 <i class="bi bi-geo-alt-fill kontak-icon"></i>
-                                <strong>Alamat</strong><br>
-                                Desa Simarmata, Kecamatan Simanindo,<br>
-                                Kabupaten Samosir,<br>
+                                <strong>Alamat</strong><br />
+                                Desa Simarmata, Kecamatan Simanindo,<br />
+                                Kabupaten Samosir,<br />
                                 Provinsi Sumatera Utara 22395
                             </p>
 
-                            <hr>
+                            <hr />
 
-                            <!-- Telepon -->
+                            <!-- Telepon (DIUBAH) -->
                             <p>
                                 <i class="bi bi-telephone-fill kontak-icon"></i>
-                                <strong>Telepon</strong><br>
-                                +62 822-6859-2713
+                                <strong>Telepon</strong><br />
+                                +62 822-7635-9095
                             </p>
 
-                            <hr>
+                            <hr />
 
-                            <!-- Email -->
+                            <!-- Email (DIUBAH) -->
                             <p>
                                 <i class="bi bi-envelope-fill kontak-icon"></i>
-                                <strong>Email</strong><br>
-                                jhonbrendi2019@gmail.com
+                                <strong>Email</strong><br />
+                                pemdessimarmata@gmail.com
                             </p>
 
-                            <hr>
+                            <hr />
 
-                            <!-- Website -->
+                            <!-- Website (DIUBAH) -->
                             <p>
                                 <i class="bi bi-globe kontak-icon"></i>
-                                <strong>Website</strong><br>
-                                www.desasimarmata.id
+                                <strong>Website</strong><br />
+                                www.desasimarmata.com
                             </p>
 
-                            <hr>
+                            <hr />
 
                             <!-- Instagram -->
                             <p>
                                 <i class="bi bi-instagram kontak-icon"></i>
-                                <strong>Instagram</strong><br>
+                                <strong>Instagram</strong><br />
                                 @kkn.simarmata26
                             </p>
 
                             <!-- TikTok -->
                             <p>
                                 <i class="bi bi-tiktok kontak-icon"></i>
-                                <strong>TikTok</strong><br>
+                                <strong>TikTok</strong><br />
                                 @kkn.simarmata26
                             </p>
 
@@ -657,7 +700,7 @@
         </section>
 
         <!-- ========================================================== -->
-        <!-- ===== FOOTER DENGAN LINK MEDSOS YANG SUDAH DIPERBAIKI ===== -->
+        <!-- ===== FOOTER DENGAN LINK MEDSOS & HAK CIPTA ===== -->
         <!-- ========================================================== -->
         <footer>
             <div class="container">
@@ -697,11 +740,11 @@
                         </div>
                     </div>
 
-                    <!-- Kolom 3: Media Sosial dengan link langsung + rel="noopener noreferrer" -->
+                    <!-- Kolom 3: Media Sosial -->
                     <div class="col-md-4 mb-4">
                         <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
                         <p class="mb-1">
-                            <strong>Instagram:</strong><br>
+                            <strong>Instagram:</strong><br />
                             <a href="https://www.instagram.com/kkn.simarmata26?igsh=bTBmdWZpMGpudmIy" 
                                target="_blank" 
                                rel="noopener noreferrer">
@@ -709,7 +752,7 @@
                             </a>
                         </p>
                         <p class="mb-0">
-                            <strong>TikTok:</strong><br>
+                            <strong>TikTok:</strong><br />
                             <a href="https://www.tiktok.com/@kkn.simarmata26?_r=1&_t=ZS-98clJAaNd81" 
                                target="_blank" 
                                rel="noopener noreferrer">
@@ -720,12 +763,15 @@
 
                 </div>
 
-                <hr>
+                <hr />
 
-                <!-- Copyright -->
+                <!-- Copyright + Hak Cipta -->
                 <div class="text-center copyright">
                     <p class="mb-1">&copy; 2026 KKN Desa Simarmata Kecamatan Simanindo</p>
                     <p class="mb-0">Dibuat untuk Program KKN UNIMED 2026</p>
+                    <p class="mb-0 fw-bold" style="color: #ffd54f; margin-top: 6px;">
+                        <i class="bi bi-c-circle"></i> Hak Cipta Dilindungi
+                    </p>
                 </div>
 
             </div>
@@ -739,6 +785,15 @@
     <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">
         <i class="bi bi-arrow-up"></i>
     </button>
+
+    <!-- ===== TOMBOL WHATSAPP FLOAT (POJOK KIRI BAWAH) ===== -->
+    <a href="https://wa.me/6282276359095?text=Halo%20KKN%20Desa%20Simarmata%2C%20saya%20ingin%20bertanya%20mengenai%20galeri%20desa." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Hubungi via WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
@@ -823,5 +878,4 @@
     </script>
 
 </body>
-
 </html>
