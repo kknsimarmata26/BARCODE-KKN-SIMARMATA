@@ -5,15 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sejarah Desa Simarmata</title>
 
+    <!-- ============================================================
+         STATCOUNTER — KODE ASLI DARI AKUN ANDA
+         sc_project = 13342247, sc_security = "ef0f8320"
+    ============================================================ -->
+    <script type="text/javascript">
+        var sc_project = 13342247;
+        var sc_invisible = 0; // 0 = counter terlihat
+        var sc_security = "ef0f8320";
+        var sc_https = 1;
+        var scJsHost = "https://";
+        document.write("<sc" + "ript type='text/javascript' src='" + scJsHost +
+            "secure.statcounter.com/counter/counter.js'></" + "script>");
+    </script>
+    <noscript>
+        <div class="statcounter">
+            <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+                <img class="statcounter" src="https://c.statcounter.com/13342247/0/ef0f8320/0/"
+                alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade" />
+            </a>
+        </div>
+    </noscript>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
         /* ===========================================
-           WEBSITE DESA SIMARMATA
-           Theme Color : #7c0e0e
+           CSS VARIABLES — untuk Dark Mode
         ============================================ */
+        :root {
+            --bg-body: #f8f9fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --section-bg: #f1f3f5;
+            --modal-bg: #ffffff;
+            --modal-text: #333;
+            --border-color: #dee2e6;
+            --heading-color: #7c0e0e;
+            --scrollbar-track: #ececec;
+            --scrollbar-thumb: #7c0e0e;
+            --statcounter-bg: rgba(255, 255, 255, 0.08);
+            --org-card-bg: #ffffff;
+            --org-card-shadow: rgba(0, 0, 0, 0.12);
+            --org-card-border: #7c0e0e;
+            --struktur-bg: #f8f9fa;
+            --hero-overlay-bg: rgba(0, 0, 0, 0.4);
+            --card-hover-shadow: rgba(0, 0, 0, 0.2);
+        }
 
+        /* ===== DARK MODE ===== */
+        .dark-mode {
+            --bg-body: #121212;
+            --text-color: #e4e4e4;
+            --card-bg: #1e1e1e;
+            --section-bg: #1a1a1a;
+            --modal-bg: #2a2a2a;
+            --modal-text: #e4e4e4;
+            --border-color: #444;
+            --heading-color: #ff8a80;
+            --scrollbar-track: #2a2a2a;
+            --scrollbar-thumb: #5b0909;
+            --statcounter-bg: rgba(255, 255, 255, 0.05);
+            --org-card-bg: #2a2a2a;
+            --org-card-shadow: rgba(0, 0, 0, 0.5);
+            --org-card-border: #ff8a80;
+            --struktur-bg: #1a1a1a;
+            --hero-overlay-bg: rgba(0, 0, 0, 0.6);
+            --card-hover-shadow: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== GLOBAL ===== */
         * {
             margin: 0;
             padding: 0;
@@ -26,8 +88,10 @@
         }
 
         body {
-            background: #f8f9fa;
-            color: #333;
+            background: var(--bg-body);
+            color: var(--text-color);
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -35,18 +99,38 @@
             padding-bottom: 10px;
         }
 
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--scrollbar-track);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+            border-radius: 20px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5b0909;
+        }
+
         /* ===== NAVBAR ===== */
         .navbar {
             background: linear-gradient(90deg, #7c0e0e, #a11414) !important;
             box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
         }
 
         .navbar-brand {
-            font-size: 24px;
-            font-weight: bold;
             display: flex;
             align-items: center;
             gap: 12px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white !important;
+            text-decoration: none;
         }
 
         .navbar-brand img {
@@ -59,6 +143,7 @@
             color: white !important;
             margin-left: 10px;
             transition: .3s;
+            font-weight: 500;
         }
 
         .nav-link:hover {
@@ -70,55 +155,33 @@
             font-weight: bold;
         }
 
-        /* ===== HEADER ===== */
-        section {
-            padding: 30px 0;
+        /* Tombol Dark Mode di Navbar */
+        #darkModeToggle {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-color: rgba(255, 255, 255, 0.5);
+            color: white;
+            transition: 0.3s;
+            padding: 0;
+        }
+        #darkModeToggle:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #ffd54f;
+            color: #ffd54f;
         }
 
         /* ===== HEADING ===== */
-        h1 {
-            color: #7c0e0e;
+        h1, h2, h4, h5, .card-body h4, .card-body h5 {
+            color: var(--heading-color);
             font-weight: bold;
+            transition: color 0.3s ease;
         }
-
-        h2 {
-            color: #7c0e0e;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        h4 {
-            color: #7c0e0e;
-            font-weight: bold;
-        }
-
-        h5 {
-            color: #7c0e0e;
-            font-weight: bold;
-        }
-
-        /* ===== CARD ===== */
-        .card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: .4s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
-        }
-
-        .card img {
-            height: 230px;
-            object-fit: cover;
-        }
-
-        .card-body h4,
-        .card-body h5 {
-            color: #7c0e0e;
-            font-weight: bold;
+        .text-primary {
+            color: var(--heading-color) !important;
         }
 
         /* ===== TOMBOL ===== */
@@ -126,56 +189,70 @@
             background: #7c0e0e;
             border: #7c0e0e;
         }
-
         .btn-primary:hover {
             background: #5b0909;
         }
-
         .btn-outline-primary {
             color: #7c0e0e;
             border-color: #7c0e0e;
         }
-
         .btn-outline-primary:hover {
             background: #7c0e0e;
             color: white;
         }
+        .dark-mode .btn-outline-primary {
+            color: #ff8a80;
+            border-color: #ff8a80;
+        }
+        .dark-mode .btn-outline-primary:hover {
+            background: #ff8a80;
+            color: #121212;
+        }
 
-        /* ===== SHADOW ===== */
+        /* ===== CARD ===== */
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.4s, box-shadow 0.4s, background 0.3s ease, color 0.3s ease;
+            background: var(--card-bg);
+            color: var(--text-color);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px var(--card-hover-shadow);
+        }
+        .card img {
+            height: 230px;
+            object-fit: cover;
+        }
         .shadow {
             box-shadow: 0 10px 20px rgba(0, 0, 0, .15) !important;
         }
-
-        /* ===== SCROLLBAR ===== */
-        ::-webkit-scrollbar {
-            width: 10px;
+        .dark-mode .shadow {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .5) !important;
         }
 
-        ::-webkit-scrollbar-track {
-            background: #ececec;
+        /* ===== SECTION ===== */
+        .bg-light {
+            background: var(--section-bg) !important;
+            transition: background 0.3s ease;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: #7c0e0e;
-            border-radius: 20px;
+        /* ===== MODAL ===== */
+        .modal-content {
+            background: var(--modal-bg);
+            color: var(--modal-text);
+            transition: background 0.3s ease, color 0.3s ease;
         }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #5b0909;
+        .modal-header .btn-close {
+            filter: var(--modal-close-filter, none);
         }
-
-        /* ===== GAMBAR ===== */
-        img {
-            max-width: 100%;
-            display: block;
+        .dark-mode .modal-header .btn-close {
+            --modal-close-filter: invert(1);
         }
-
-        p {
-            margin-bottom: 10px;
-        }
-
-        .row {
-            margin-bottom: 10px;
+        .modal-title {
+            color: var(--heading-color);
         }
 
         /* ===== FOOTER ===== */
@@ -185,7 +262,6 @@
             padding: 40px 0 20px;
             margin-top: 15px;
         }
-
         footer h5 {
             color: #ffd54f;
             font-weight: bold;
@@ -193,121 +269,33 @@
             border-bottom: 2px solid rgba(255, 213, 79, 0.3);
             padding-bottom: 8px;
         }
-
         footer a {
             color: #f8f9fa !important;
             text-decoration: none;
             transition: 0.3s;
         }
-
         footer a:hover {
             color: #ffd54f !important;
             text-decoration: underline;
         }
-
         footer .list-unstyled li {
             margin-bottom: 6px;
         }
-
         footer hr {
             border-color: rgba(255, 255, 255, 0.2);
             margin: 20px 0;
         }
-
         footer .copyright {
             font-size: 14px;
             opacity: 0.9;
         }
 
-        /* ===== TEXT PRIMARY ===== */
-        .text-primary {
-            color: #7c0e0e !important;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media(max-width:768px) {
-            .card img {
-                height: 200px;
-            }
-        }
-
-        @media(max-width:576px) {
-            section {
-                padding: 40px 15px;
-            }
-            .card img {
-                height: 180px;
-            }
-            .navbar-brand {
-                font-size: 20px;
-            }
-            .navbar-brand img {
-                height: 35px;
-            }
-        }
-
-        /* ===== LIST ===== */
-        .list-unstyled li {
-            margin-bottom: 5px;
-        }
-
-        /* ===========================================
-           ANIMASI SCROLL REVEAL
-           ============================================ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal.reverse {
-            transform: translateY(-50px);
-        }
-
-        .reveal.reverse.visible {
-            transform: translateY(0);
-        }
-
-        .delay-1 {
-            transition-delay: 0.1s;
-        }
-        .delay-2 {
-            transition-delay: 0.2s;
-        }
-        .delay-3 {
-            transition-delay: 0.3s;
-        }
-        .delay-4 {
-            transition-delay: 0.4s;
-        }
-        .delay-5 {
-            transition-delay: 0.5s;
-        }
-
-        /* ===== GAMBAR BISA DIKLIK UNTUK MODAL ===== */
-        .clickable-img {
-            cursor: pointer;
-            transition: transform 0.2s, opacity 0.2s;
-        }
-        .clickable-img:hover {
-            transform: scale(1.02);
-            opacity: 0.9;
-        }
-
-        /* ============================================================
-           HERO CAROUSEL — FULL COVER TANPA LATAR HITAM
-        ============================================================ */
+        /* ===== HERO CAROUSEL ===== */
         .hero-carousel-wrapper {
             position: relative;
             overflow: hidden;
             min-height: 450px;
         }
-
         .hero-carousel-wrapper .carousel-item {
             height: 450px;
             background-color: #1a1a1a;
@@ -317,11 +305,9 @@
             filter: blur(12px) saturate(0.8);
             transition: filter 0.9s ease, opacity 0.6s ease;
         }
-
         .hero-carousel-wrapper .carousel-item.loaded {
             filter: blur(0) saturate(1);
         }
-
         .hero-content {
             position: absolute;
             top: 50%;
@@ -335,17 +321,14 @@
             padding: 0 20px;
             pointer-events: none;
         }
-
         .hero-content h1 {
             color: white;
             font-size: 3.5rem;
             font-weight: bold;
         }
-
         .hero-content p {
             font-size: 1.5rem;
         }
-
         @media(max-width:768px) {
             .hero-carousel-wrapper .carousel-item {
                 height: 350px;
@@ -357,7 +340,6 @@
                 font-size: 1.1rem;
             }
         }
-
         @media(max-width:576px) {
             .hero-carousel-wrapper .carousel-item {
                 height: 280px;
@@ -370,9 +352,53 @@
             }
         }
 
-        /* ============================================================
-           TOMBOL KEMBALI KE ATAS (BACK TO TOP)
-        ============================================================ */
+        /* ===== GAMBAR KLIK ===== */
+        .clickable-img {
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .clickable-img:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal.reverse {
+            transform: translateY(-50px);
+        }
+        .reveal.reverse.visible {
+            transform: translateY(0);
+        }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+
+        /* ===== BLUR MODAL ===== */
+        #main-content {
+            transition: filter 0.3s ease;
+        }
+        #main-content.blur {
+            filter: blur(6px);
+            -webkit-filter: blur(6px);
+            pointer-events: none;
+        }
+        .back-to-top,
+        .wa-float {
+            pointer-events: auto !important;
+        }
+
+        /* ===== BACK TO TOP ===== */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -395,19 +421,16 @@
             cursor: pointer;
             text-decoration: none;
         }
-
         .back-to-top:hover {
             background: #5b0909;
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(124, 14, 14, 0.6);
             color: white;
         }
-
         .back-to-top.show {
             opacity: 1;
             visibility: visible;
         }
-
         @media(max-width:576px) {
             .back-to-top {
                 bottom: 20px;
@@ -418,24 +441,7 @@
             }
         }
 
-        /* ============================================================
-           FITUR BLUR SAAT MODAL TERBUKA (METODE WRAPPER)
-        ============================================================ */
-        #main-content {
-            transition: filter 0.3s ease;
-        }
-        #main-content.blur {
-            filter: blur(6px);
-            -webkit-filter: blur(6px);
-            pointer-events: none;
-        }
-        .back-to-top {
-            pointer-events: auto !important;
-        }
-
-        /* ============================================================
-           WHATSAPP FLOAT (SESUAI DENGAN HALAMAN UTAMA)
-        ============================================================ */
+        /* ===== WHATSAPP FLOAT ===== */
         .wa-float {
             position: fixed;
             bottom: 30px;
@@ -453,19 +459,16 @@
             text-decoration: none;
             animation: waPulse 2.5s ease-in-out infinite;
         }
-
         .wa-float:hover {
             transform: scale(1.12) rotate(-6deg);
             box-shadow: 0 10px 35px rgba(37, 211, 102, 0.7);
             background: #1ebe5c;
         }
-
         .wa-float i {
             font-size: 36px;
             color: white;
             line-height: 1;
         }
-
         .wa-float .wa-tooltip {
             position: absolute;
             left: 80px;
@@ -481,7 +484,6 @@
             transition: all 0.3s ease;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         .wa-float .wa-tooltip::before {
             content: '';
             position: absolute;
@@ -491,18 +493,15 @@
             border: 8px solid transparent;
             border-right-color: rgba(0, 0, 0, 0.8);
         }
-
         .wa-float:hover .wa-tooltip {
             opacity: 1;
             pointer-events: auto;
         }
-
         @keyframes waPulse {
             0% { box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5); }
             50% { box-shadow: 0 6px 40px rgba(37, 211, 102, 0.85), 0 0 0 10px rgba(37, 211, 102, 0.15); }
             100% { box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5); }
         }
-
         .wa-float .wa-badge {
             position: absolute;
             top: -5px;
@@ -520,7 +519,6 @@
             box-shadow: 0 2px 10px rgba(255, 59, 48, 0.5);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         @media(max-width:576px) {
             .wa-float {
                 bottom: 20px;
@@ -542,6 +540,57 @@
                 right: -4px;
             }
         }
+
+        /* ===== COUNTER STATCOUNTER ===== */
+        .statcounter-container {
+            display: inline-block;
+            background: var(--statcounter-bg);
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 213, 79, 0.2);
+            backdrop-filter: blur(4px);
+            transition: background 0.3s ease;
+        }
+        .statcounter-container .statcounter {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffd54f;
+        }
+        .statcounter-container .statcounter a {
+            color: #ffd54f !important;
+            text-decoration: none;
+        }
+        .statcounter-container .statcounter img {
+            display: none;
+        }
+
+        /* ===== DARK MODE OVERRIDE UNTUK ELEMEN TERTENTU ===== */
+        .dark-mode .text-primary {
+            color: #ff8a80 !important;
+        }
+        .dark-mode .text-success {
+            color: #81c784 !important;
+        }
+        .dark-mode .text-danger {
+            color: #ef9a9a !important;
+        }
+        .dark-mode .text-warning {
+            color: #ffd54f !important;
+        }
+        .dark-mode .bg-primary {
+            background: #7c0e0e !important;
+        }
+        /* Tambahan untuk daftar di dalam card */
+        .dark-mode .card ul li {
+            color: var(--text-color);
+        }
+        /* Peta & gambar agar tidak terlalu terang */
+        .dark-mode .hero-carousel-wrapper .carousel-item {
+            filter: blur(12px) saturate(0.8) brightness(0.7);
+        }
+        .dark-mode .hero-carousel-wrapper .carousel-item.loaded {
+            filter: blur(0) saturate(1) brightness(0.85);
+        }
     </style>
 
 </head>
@@ -560,9 +609,15 @@
                     Desa Simarmata
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="d-flex align-items-center gap-2">
+                    <!-- Tombol Dark Mode -->
+                    <button class="btn btn-outline-light" id="darkModeToggle" aria-label="Toggle Dark Mode">
+                        <i class="bi bi-moon-fill" id="themeIcon"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
 
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="navbar-nav ms-auto">
@@ -687,7 +742,7 @@
                     </div>
                 </div>
 
-                <!-- Tugu Simarmata — GAMBAR DIGANTI dengan sejarahtugu.jpeg -->
+                <!-- Tugu Simarmata -->
                 <div class="col-lg-6 col-md-6 mb-4">
                     <div class="card shadow h-100 reveal delay-3">
                         <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/de631b19efee1f6ce0168596b90f737c1455c8dc/sejarahtugu.jpeg"
@@ -777,12 +832,22 @@
         </section>
 
         <!-- ========================================================== -->
-        <!-- ===== FOOTER (MEDIA SOSIAL SUDAH DIPERBAHARUI) ===== -->
+        <!-- ===== FOOTER ===== -->
         <!-- ========================================================== -->
         <footer>
             <div class="container">
-                <div class="row">
 
+                <!-- ===== COUNTER PENGUNJUNG HARI INI ===== -->
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <h5 style="color:#ffd54f;"><i class="bi bi-people-fill"></i> Pengunjung Hari Ini</h5>
+                        <div class="statcounter-container">
+                            <span class="statcounter"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
                     <!-- Kolom 1: Alamat Desa -->
                     <div class="col-md-4 mb-4">
                         <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
@@ -823,26 +888,22 @@
                         <p class="mb-1">
                             <strong>Instagram:</strong><br>
                             <a href="https://www.instagram.com/desasimarmata?utm_source=qr&igsh=MTUzazZzb21sajJvaw=="
-                               target="_blank"
-                               rel="noopener noreferrer">@desasimarmata</a>
+                               target="_blank" rel="noopener noreferrer">@desasimarmata</a>
                         </p>
                         <p class="mb-1">
                             <strong>TikTok:</strong><br>
                             <a href="https://www.tiktok.com/@desa.simarmata?_r=1&_t=ZS-98nPHpGU3RF"
-                               target="_blank"
-                               rel="noopener noreferrer">@desa.simarmata</a>
+                               target="_blank" rel="noopener noreferrer">@desa.simarmata</a>
                         </p>
                         <p class="mb-1">
                             <strong>Facebook:</strong><br>
                             <a href="https://www.facebook.com/share/188BmmqmUy/?mibextid=wwXIfr"
-                               target="_blank"
-                               rel="noopener noreferrer">Desa Simarmata</a>
+                               target="_blank" rel="noopener noreferrer">Desa Simarmata</a>
                         </p>
                         <p class="mb-0">
                             <strong>YouTube:</strong><br>
                             <a href="https://youtube.com/@desasimarmata?si=Q1wXzjQu95o3HlPf"
-                               target="_blank"
-                               rel="noopener noreferrer">Desa Simarmata</a>
+                               target="_blank" rel="noopener noreferrer">Desa Simarmata</a>
                         </p>
                     </div>
 
@@ -850,7 +911,6 @@
 
                 <hr>
 
-                <!-- Copyright + Hak Cipta -->
                 <div class="text-center copyright">
                     <p class="mb-1">&copy; 2026 KKN Desa Simarmata Kecamatan Simanindo</p>
                     <p class="mb-0">Dibuat untuk Program KKN UNIMED 2026</p>
@@ -896,7 +956,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 
-<!-- ===== JAVASCRIPT SCROLL REVEAL, LQIP, BACK TO TOP, & BLUR ===== -->
+<!-- ===== JAVASCRIPT ===== -->
 <script>
     // ===== 1. SCROLL REVEAL =====
     function isElementInViewport(el) {
@@ -971,6 +1031,35 @@
 
         document.addEventListener('hidden.bs.modal', function (e) {
             if (mainContent) mainContent.classList.remove('blur');
+        });
+    });
+
+    // ===== 5. DARK MODE TOGGLE =====
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('darkModeToggle');
+        const icon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        // Cek preferensi tersimpan
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark-mode');
+            icon.classList.remove('bi-moon-fill');
+            icon.classList.add('bi-sun-fill');
+        }
+
+        toggleBtn.addEventListener('click', function() {
+            html.classList.toggle('dark-mode');
+            const isDark = html.classList.contains('dark-mode');
+            if (isDark) {
+                icon.classList.remove('bi-moon-fill');
+                icon.classList.add('bi-sun-fill');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('bi-sun-fill');
+                icon.classList.add('bi-moon-fill');
+                localStorage.setItem('theme', 'light');
+            }
         });
     });
 </script>
