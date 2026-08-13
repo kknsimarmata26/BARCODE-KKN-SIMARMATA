@@ -2,8 +2,8 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galeri | Desa Simarmata</title>
 
     <!-- ============================================================
@@ -12,7 +12,7 @@
     ============================================================ -->
     <script type="text/javascript">
         var sc_project = 13342247;
-        var sc_invisible = 0; // 0 = counter terlihat
+        var sc_invisible = 0;
         var sc_security = "ef0f8320";
         var sc_https = 1;
         var scJsHost = "https://";
@@ -22,14 +22,14 @@
     <noscript>
         <div class="statcounter">
             <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
-                <img class="statcounter" src="https://c.statcounter.com/13342247/0/ef0f8320/0/"
-                alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade" />
+                <img class="statcounter" src="https://c.statcounter.com/13342247/0/ef0f8320/0/" alt="Web Analytics"
+                referrerPolicy="no-referrer-when-downgrade" />
             </a>
         </div>
     </noscript>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
     <style>
         /* ===========================================
@@ -53,6 +53,14 @@
             --footer-bg: linear-gradient(90deg, #7c0e0e, #a11414);
             --navbar-bg: linear-gradient(90deg, #7c0e0e, #a11414);
             --card-img-filter: none;
+            --album-bg: #0d0d0d;
+            --album-title-color: #fff;
+            --album-control-color: rgba(255, 255, 255, 0.6);
+            --album-control-hover: #fff;
+            --album-indicator-bg: rgba(255, 255, 255, 0.3);
+            --album-indicator-active: #ffd54f;
+            --album-caption-bg: rgba(0, 0, 0, 0.55);
+            --album-caption-color: #fff;
         }
 
         /* ===== DARK MODE ===== */
@@ -74,6 +82,14 @@
             --footer-bg: linear-gradient(90deg, #5b0909, #7c0e0e);
             --navbar-bg: linear-gradient(90deg, #5b0909, #7c0e0e);
             --card-img-filter: brightness(0.9);
+            --album-bg: #0a0a0a;
+            --album-title-color: #ffd54f;
+            --album-control-color: rgba(255, 255, 255, 0.5);
+            --album-control-hover: #ffd54f;
+            --album-indicator-bg: rgba(255, 255, 255, 0.2);
+            --album-indicator-active: #ffd54f;
+            --album-caption-bg: rgba(0, 0, 0, 0.7);
+            --album-caption-color: #f0f0f0;
         }
 
         /* ===== GLOBAL ===== */
@@ -137,8 +153,8 @@
             width: auto;
             border-radius: 10px;
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-                        box-shadow 0.3s ease,
-                        filter 0.3s ease;
+                box-shadow 0.3s ease,
+                filter 0.3s ease;
             animation: fadeSlideDown 0.8s ease forwards;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
@@ -164,7 +180,6 @@
             color: white;
             transition: color 0.3s ease;
         }
-
         .navbar-brand span:hover {
             color: #ffd54f !important;
         }
@@ -175,17 +190,14 @@
             transition: .3s;
             font-weight: 500;
         }
-
         .nav-link:hover {
             color: #ffd54f !important;
         }
-
         .nav-link.active {
             color: #ffd54f !important;
             font-weight: bold;
         }
 
-        /* Tombol Admin baru */
         .btn-admin {
             border-radius: 20px;
             padding: 5px 15px;
@@ -204,7 +216,6 @@
             color: #121212;
         }
 
-        /* Tombol Dark Mode di Navbar */
         #darkModeToggle {
             border-radius: 50%;
             width: 40px;
@@ -224,7 +235,10 @@
         }
 
         /* ===== HEADING ===== */
-        h1, h2, h5, .card-body h5 {
+        h1,
+        h2,
+        h5,
+        .card-body h5 {
             color: var(--heading-color);
             font-weight: bold;
             transition: color 0.3s ease;
@@ -248,12 +262,10 @@
             color: var(--text-color);
             cursor: pointer;
         }
-
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 25px var(--card-hover-shadow);
         }
-
         .card img {
             height: 230px;
             object-fit: cover;
@@ -261,18 +273,15 @@
             filter: var(--card-img-filter);
             background-color: var(--heading-color);
         }
-
         .card:hover img {
             transform: scale(1.03);
         }
-
         .card-body h5 {
             color: var(--heading-color);
             font-weight: bold;
             transition: color 0.3s ease;
         }
 
-        /* ===== SHADOW ===== */
         .shadow {
             box-shadow: 0 10px 20px rgba(0, 0, 0, .15) !important;
         }
@@ -308,7 +317,6 @@
             margin-top: 15px;
             transition: background 0.3s ease;
         }
-
         footer h5 {
             color: #ffd54f;
             font-weight: bold;
@@ -316,27 +324,22 @@
             border-bottom: 2px solid rgba(255, 213, 79, 0.3);
             padding-bottom: 8px;
         }
-
         footer a {
             color: #f8f9fa !important;
             text-decoration: none;
             transition: 0.3s;
         }
-
         footer a:hover {
             color: #ffd54f !important;
             text-decoration: underline;
         }
-
         footer .list-unstyled li {
             margin-bottom: 6px;
         }
-
         footer hr {
             border-color: rgba(255, 255, 255, 0.2);
             margin: 20px 0;
         }
-
         footer .copyright {
             font-size: 14px;
             opacity: 0.9;
@@ -350,7 +353,6 @@
             overflow: hidden;
             min-height: 450px;
         }
-
         .hero-carousel-wrapper .carousel-item {
             height: 450px;
             background-color: #1a1a1a;
@@ -360,7 +362,6 @@
             filter: var(--hero-filter);
             transition: filter 0.9s ease, opacity 0.6s ease;
         }
-
         .hero-carousel-wrapper .carousel-item.loaded {
             filter: blur(0) saturate(1);
         }
@@ -375,19 +376,17 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
             z-index: 10;
             width: 100%;
             padding: 0 20px;
             pointer-events: none;
         }
-
         .hero-content h1 {
             color: white;
             font-size: 3.5rem;
             font-weight: bold;
         }
-
         .hero-content p {
             font-size: 1.5rem;
         }
@@ -403,7 +402,6 @@
                 font-size: 1.1rem;
             }
         }
-
         @media(max-width:576px) {
             .hero-carousel-wrapper .carousel-item {
                 height: 280px;
@@ -441,19 +439,16 @@
             cursor: pointer;
             text-decoration: none;
         }
-
         .back-to-top:hover {
             background: #5b0909;
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(124, 14, 14, 0.6);
             color: white;
         }
-
         .back-to-top.show {
             opacity: 1;
             visibility: visible;
         }
-
         @media(max-width:576px) {
             .back-to-top {
                 bottom: 20px;
@@ -499,19 +494,16 @@
             text-decoration: none;
             animation: waPulse 2.5s ease-in-out infinite;
         }
-
         .wa-float:hover {
             transform: scale(1.12) rotate(-6deg);
             box-shadow: 0 10px 35px rgba(37, 211, 102, 0.7);
             background: #1ebe5c;
         }
-
         .wa-float i {
             font-size: 36px;
             color: white;
             line-height: 1;
         }
-
         .wa-float .wa-tooltip {
             position: absolute;
             left: 80px;
@@ -527,7 +519,6 @@
             transition: all 0.3s ease;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         .wa-float .wa-tooltip::before {
             content: '';
             position: absolute;
@@ -537,18 +528,21 @@
             border: 8px solid transparent;
             border-right-color: rgba(0, 0, 0, 0.8);
         }
-
         .wa-float:hover .wa-tooltip {
             opacity: 1;
             pointer-events: auto;
         }
-
         @keyframes waPulse {
-            0% { box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5); }
-            50% { box-shadow: 0 6px 40px rgba(37, 211, 102, 0.85), 0 0 0 10px rgba(37, 211, 102, 0.15); }
-            100% { box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5); }
+            0% {
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            }
+            50% {
+                box-shadow: 0 6px 40px rgba(37, 211, 102, 0.85), 0 0 0 10px rgba(37, 211, 102, 0.15);
+            }
+            100% {
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            }
         }
-
         .wa-float .wa-badge {
             position: absolute;
             top: -5px;
@@ -566,7 +560,6 @@
             box-shadow: 0 2px 10px rgba(255, 59, 48, 0.5);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         @media(max-width:576px) {
             .wa-float {
                 bottom: 20px;
@@ -616,35 +609,49 @@
 
         /* ===========================================
            ANIMASI SCROLL REVEAL
-           ============================================ */
+        ============================================ */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .reveal.reverse {
             transform: translateY(-50px);
         }
-
         .reveal.reverse.visible {
             transform: translateY(0);
         }
-
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-        .delay-4 { transition-delay: 0.4s; }
-        .delay-5 { transition-delay: 0.5s; }
-        .delay-6 { transition-delay: 0.6s; }
-        .delay-7 { transition-delay: 0.7s; }
-        .delay-8 { transition-delay: 0.8s; }
-        .delay-9 { transition-delay: 0.9s; }
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+        .delay-4 {
+            transition-delay: 0.4s;
+        }
+        .delay-5 {
+            transition-delay: 0.5s;
+        }
+        .delay-6 {
+            transition-delay: 0.6s;
+        }
+        .delay-7 {
+            transition-delay: 0.7s;
+        }
+        .delay-8 {
+            transition-delay: 0.8s;
+        }
+        .delay-9 {
+            transition-delay: 0.9s;
+        }
 
         /* ============================================================
            DARK MODE OVERRIDE UNTUK ELEMEN TERTENTU
@@ -662,7 +669,320 @@
             color: #ffd54f !important;
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* ============================================================
+           ALBUM "FOTO KITA BLUR" — FULL LANDSCAPE, SATU FRAME
+        ============================================================ */
+        .album-blur-section {
+            background: var(--album-bg);
+            padding: 60px 0 70px;
+            margin: 0;
+            transition: background 0.3s ease;
+            border-top: 2px solid rgba(255, 213, 79, 0.15);
+            border-bottom: 2px solid rgba(255, 213, 79, 0.10);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .album-blur-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(124, 14, 14, 0.12) 0%, transparent 70%),
+                radial-gradient(circle at 70% 60%, rgba(255, 213, 79, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .album-blur-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .album-title {
+            text-align: center;
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--album-title-color);
+            text-shadow: 0 0 20px rgba(255, 213, 79, 0.15), 0 0 60px rgba(124, 14, 14, 0.20);
+            margin-bottom: 12px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            filter: blur(0.6px);
+        }
+        .album-title:hover {
+            filter: blur(0px);
+            text-shadow: 0 0 30px rgba(255, 213, 79, 0.25), 0 0 80px rgba(124, 14, 14, 0.30);
+        }
+
+        .album-subtitle {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.95rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+        .dark-mode .album-subtitle {
+            color: rgba(255, 255, 255, 0.30);
+        }
+
+        /* Satu frame besar (landscape) */
+        .album-carousel-wrap {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 213, 79, 0.06);
+            background: #0a0a0a;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .album-carousel-wrap .carousel-item {
+            height: 0;
+            padding-bottom: 45%;
+            /* rasio landscape ~ 2.22:1 */
+            background-color: #111;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            position: relative;
+        }
+
+        .album-carousel-wrap .carousel-item .album-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 28px 30px 22px;
+            background: var(--album-caption-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--album-caption-color);
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: background 0.3s ease, color 0.3s ease;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .album-carousel-wrap .carousel-item .album-caption span {
+            display: inline-block;
+            padding: 0 16px;
+        }
+        .album-carousel-wrap .carousel-item .album-caption i {
+            margin-right: 10px;
+            opacity: 0.6;
+        }
+
+        /* navigasi panah */
+        .album-carousel-wrap .carousel-control-prev,
+        .album-carousel-wrap .carousel-control-next {
+            width: 60px;
+            opacity: 0;
+            transition: opacity 0.4s ease, background 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 0;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+        }
+
+        .album-carousel-wrap:hover .carousel-control-prev,
+        .album-carousel-wrap:hover .carousel-control-next {
+            opacity: 1;
+        }
+
+        .album-carousel-wrap .carousel-control-prev:hover,
+        .album-carousel-wrap .carousel-control-next:hover {
+            background: rgba(124, 14, 14, 0.40);
+        }
+
+        .album-carousel-wrap .carousel-control-prev-icon,
+        .album-carousel-wrap .carousel-control-next-icon {
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7));
+            width: 32px;
+            height: 32px;
+            background-size: 32px 32px;
+        }
+
+        /* indikator bulat */
+        .album-carousel-wrap .carousel-indicators {
+            bottom: 70px;
+            gap: 8px;
+            margin-bottom: 0;
+            z-index: 15;
+        }
+
+        .album-carousel-wrap .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            background: var(--album-indicator-bg);
+            transition: all 0.3s ease;
+            margin: 0 4px;
+            padding: 0;
+            flex: 0 0 auto;
+        }
+
+        .album-carousel-wrap .carousel-indicators button.active {
+            background: var(--album-indicator-active);
+            border-color: var(--album-indicator-active);
+            transform: scale(1.25);
+            box-shadow: 0 0 20px rgba(255, 213, 79, 0.35);
+        }
+
+        .album-carousel-wrap .carousel-indicators button:hover {
+            border-color: rgba(255, 255, 255, 0.7);
+            transform: scale(1.1);
+        }
+
+        /* counter slide */
+        .album-counter {
+            position: absolute;
+            top: 18px;
+            right: 24px;
+            z-index: 12;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            pointer-events: none;
+        }
+
+        .album-counter span {
+            color: #ffd54f;
+            font-weight: 700;
+        }
+
+        /* ===== RESPONSIVE ALBUM ===== */
+        @media(max-width:992px) {
+            .album-carousel-wrap .carousel-item {
+                padding-bottom: 50%;
+            }
+            .album-title {
+                font-size: 2.6rem;
+            }
+            .album-carousel-wrap .carousel-control-prev,
+            .album-carousel-wrap .carousel-control-next {
+                width: 44px;
+                opacity: 0.7;
+            }
+            .album-carousel-wrap .carousel-control-prev-icon,
+            .album-carousel-wrap .carousel-control-next-icon {
+                width: 26px;
+                height: 26px;
+                background-size: 26px 26px;
+            }
+            .album-carousel-wrap .carousel-indicators {
+                bottom: 60px;
+            }
+            .album-carousel-wrap .carousel-indicators button {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        @media(max-width:768px) {
+            .album-blur-section {
+                padding: 40px 0 50px;
+            }
+            .album-title {
+                font-size: 2.0rem;
+                letter-spacing: 1px;
+            }
+            .album-subtitle {
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+                margin-bottom: 22px;
+            }
+            .album-carousel-wrap .carousel-item {
+                padding-bottom: 60%;
+            }
+            .album-carousel-wrap .carousel-item .album-caption {
+                padding: 16px 16px 14px;
+                font-size: 0.85rem;
+            }
+            .album-carousel-wrap .carousel-control-prev,
+            .album-carousel-wrap .carousel-control-next {
+                width: 36px;
+                opacity: 0.8;
+            }
+            .album-carousel-wrap .carousel-control-prev-icon,
+            .album-carousel-wrap .carousel-control-next-icon {
+                width: 20px;
+                height: 20px;
+                background-size: 20px 20px;
+            }
+            .album-carousel-wrap .carousel-indicators {
+                bottom: 50px;
+                gap: 5px;
+            }
+            .album-carousel-wrap .carousel-indicators button {
+                width: 8px;
+                height: 8px;
+                margin: 0 3px;
+            }
+            .album-counter {
+                top: 12px;
+                right: 14px;
+                font-size: 0.7rem;
+                padding: 4px 12px;
+            }
+        }
+
+        @media(max-width:576px) {
+            .album-blur-section {
+                padding: 30px 0 40px;
+            }
+            .album-title {
+                font-size: 1.6rem;
+            }
+            .album-carousel-wrap .carousel-item {
+                padding-bottom: 70%;
+            }
+            .album-carousel-wrap .carousel-item .album-caption {
+                padding: 12px 12px 10px;
+                font-size: 0.75rem;
+            }
+            .album-carousel-wrap .carousel-control-prev,
+            .album-carousel-wrap .carousel-control-next {
+                width: 30px;
+                opacity: 0.9;
+            }
+            .album-carousel-wrap .carousel-control-prev-icon,
+            .album-carousel-wrap .carousel-control-next-icon {
+                width: 16px;
+                height: 16px;
+                background-size: 16px 16px;
+            }
+            .album-carousel-wrap .carousel-indicators {
+                bottom: 42px;
+                gap: 4px;
+            }
+            .album-carousel-wrap .carousel-indicators button {
+                width: 7px;
+                height: 7px;
+                margin: 0 2px;
+            }
+            .album-counter {
+                top: 10px;
+                right: 10px;
+                font-size: 0.6rem;
+                padding: 3px 10px;
+            }
+        }
+
+        /* ===== RESPONSIVE UMUM ===== */
         @media(max-width:768px) {
             .card img {
                 height: 200px;
@@ -675,7 +995,6 @@
                 gap: 8px;
             }
         }
-
         @media(max-width:576px) {
             section {
                 padding: 40px 15px;
@@ -691,7 +1010,6 @@
             }
         }
     </style>
-
 </head>
 
 <body>
@@ -703,19 +1021,16 @@
         <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="index.html">
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/28e102b5e877c1f41ab210e479c150db5ca184a9/logo%203%20web.png" 
-                         alt="Logo KKN Desa Simarmata" 
-                         class="navbar-logo">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/28e102b5e877c1f41ab210e479c150db5ca184a9/logo%203%20web.png"
+                    alt="Logo KKN Desa Simarmata"
+                    class="navbar-logo" />
                     <span>Desa Simarmata</span>
                 </a>
 
                 <div class="d-flex align-items-center gap-2">
-                    <!-- ===== TOMBOL ADMIN ===== -->
                     <a href="admin/login.php" class="btn btn-admin btn-sm">
                         <i class="bi bi-shield-lock-fill"></i> Admin
                     </a>
-
-                    <!-- Tombol Dark Mode -->
                     <button class="btn btn-outline-light" id="darkModeToggle" aria-label="Toggle Dark Mode">
                         <i class="bi bi-moon-fill" id="themeIcon"></i>
                     </button>
@@ -742,198 +1057,213 @@
 
         <!-- ===== HERO CAROUSEL ===== -->
         <div class="hero-carousel-wrapper position-relative">
-
             <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
-                <!-- Indikator -->
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true"></button>
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
                 </div>
-
                 <div class="carousel-inner">
-                    <!-- Slide 1 -->
                     <div class="carousel-item active"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/galeri1.jpeg"
-                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="carousel-item"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/galeri2.jpeg"
-                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="carousel-item"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/galeri3.jpeg"
-                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                    </div>
-                    <!-- Slide 4 -->
-                    <div class="carousel-item"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/galeri4.jpeg"
-                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                    </div>
-                    <!-- Slide 5 -->
-                    <div class="carousel-item"
-                         data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/galeri5%20(1).jpeg"
-                         style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
-                    </div>
+                    data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/galeri1.jpeg"
+                    style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+                </div>
+                <div class="carousel-item"
+                data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/galeri2.jpeg"
+                style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+            </div>
+            <div class="carousel-item"
+            data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/galeri3.jpeg"
+            style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+        </div>
+        <div class="carousel-item"
+        data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/galeri4.jpeg"
+        style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+    </div>
+    <div class="carousel-item"
+    data-src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/galeri5%20(1).jpeg"
+    style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9IiMzMzMiLz48cGF0aCBkPSJNMCAwaDgwMHY1MDBIMHoiIGZpbGw9IiM0NDQiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjcwIiBmaWxsPSIjNjY2Ii8+PC9zdmc+');">
+</div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+</button>
+</div>
+<div class="hero-content">
+    <h1>Galeri Desa Simarmata</h1>
+    <p class="lead">Dokumentasi Wisata, Budaya, Alam, dan Kehidupan Masyarakat</p>
+</div>
+</div>
+
+<!-- ===== GALERI DINAMIS (TETAP) ===== -->
+<section class="container py-5">
+    <h2 class="text-center mb-4" style="color: var(--heading-color);">📸 Koleksi Foto</h2>
+    <div id="galleryContainer" class="row g-4">
+        <!-- Akan diisi oleh JavaScript -->
+    </div>
+</section>
+
+<!-- ============================================================
+     ALBUM "FOTO KITA BLUR" — SATU FRAME BESAR, GESER MANUAL
+     ============================================================ -->
+<section class="album-blur-section" id="albumBlur">
+    <div class="container">
+
+        <h2 class="album-title">✦ foto kita blur ✦</h2>
+        <p class="album-subtitle">— geser untuk melihat —</p>
+
+        <div class="album-carousel-wrap">
+            <!-- counter -->
+            <div class="album-counter">
+                <span id="albumCurrentSlide">1</span> / <span id="albumTotalSlides">14</span>
+            </div>
+
+            <div id="albumCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+                <!-- indikator -->
+                <div class="carousel-indicators" id="albumIndicators">
+                    <!-- akan diisi JS -->
                 </div>
 
-                <!-- Tombol navigasi -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <!-- slide wrapper -->
+                <div class="carousel-inner" id="albumInner">
+                    <!-- akan diisi JS -->
+                </div>
+
+                <!-- kontrol panah -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#albumCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                    <span class="visually-hidden">Sebelumnya</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#albumCarousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                    <span class="visually-hidden">Selanjutnya</span>
                 </button>
             </div>
-
-            <!-- Overlay Teks -->
-            <div class="hero-content">
-                <h1>Galeri Desa Simarmata</h1>
-                <p class="lead">Dokumentasi Wisata, Budaya, Alam, dan Kehidupan Masyarakat</p>
-            </div>
-
         </div>
 
-        <!-- ===== GALERI DINAMIS ===== -->
-        <section class="container py-5">
-            <h2 class="text-center mb-4" style="color: var(--heading-color);">📸 Koleksi Foto</h2>
-            <div id="galleryContainer" class="row g-4">
-                <!-- Akan diisi oleh JavaScript -->
-            </div>
-        </section>
-
-        <!-- ===== FOOTER ===== -->
-        <footer>
-            <div class="container">
-
-                <!-- ===== COUNTER PENGUNJUNG HARI INI ===== -->
-                <div class="row">
-                    <div class="col-12 text-center mb-4">
-                        <h5 style="color:#ffd54f;"><i class="bi bi-people-fill"></i> Pengunjung Hari Ini</h5>
-                        <div class="statcounter-container">
-                            <span class="statcounter"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <!-- Kolom 1: Alamat Desa -->
-                    <div class="col-md-4 mb-4">
-                        <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
-                        <p class="mb-1">Desa Simarmata</p>
-                        <p class="mb-1">Kecamatan Simanindo</p>
-                        <p class="mb-1">Kabupaten Samosir</p>
-                        <p class="mb-1">Provinsi Sumatera Utara</p>
-                        <p class="mb-0">Kode Pos: 22395</p>
-                    </div>
-
-                    <!-- Kolom 2: Menu LENGKAP -->
-                    <div class="col-md-4 mb-4">
-                        <h5><i class="bi bi-list-ul"></i> Menu</h5>
-                        <div class="row">
-                            <div class="col-6">
-                                <ul class="list-unstyled">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="profil.html">Profil Desa</a></li>
-                                    <li><a href="sejarah.html">Sejarah</a></li>
-                                    <li><a href="wisata.html">Wisata</a></li>
-                                    <li><a href="budaya.html">Budaya</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-6">
-                                <ul class="list-unstyled">
-                                    <li><a href="umkm.html">UMKM</a></li>
-                                    <li><a href="homestay.html">Homestay</a></li>
-                                    <li><a href="galeri.html">Galeri</a></li>
-                                    <li><a href="kontak.html">Kontak</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Kolom 3: Media Sosial -->
-                    <div class="col-md-4 mb-4">
-                        <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
-                        <p class="mb-1">
-                            <strong>Instagram:</strong><br>
-                            <a href="https://www.instagram.com/desasimarmata?utm_source=qr&igsh=MTUzazZzb21sajJvaw=="
-                               target="_blank"
-                               rel="noopener noreferrer">@desasimarmata</a>
-                        </p>
-                        <p class="mb-1">
-                            <strong>TikTok:</strong><br>
-                            <a href="https://www.tiktok.com/@desa.simarmata?_r=1&_t=ZS-98nPHpGU3RF"
-                               target="_blank"
-                               rel="noopener noreferrer">@desa.simarmata</a>
-                        </p>
-                        <p class="mb-1">
-                            <strong>Facebook:</strong><br>
-                            <a href="https://www.facebook.com/share/188BmmqmUy/?mibextid=wwXIfr"
-                               target="_blank"
-                               rel="noopener noreferrer">Desa Simarmata</a>
-                        </p>
-                        <p class="mb-0">
-                            <strong>YouTube:</strong><br>
-                            <a href="https://youtube.com/@desasimarmata?si=Q1wXzjQu95o3HlPf"
-                               target="_blank"
-                               rel="noopener noreferrer">Desa Simarmata</a>
-                        </p>
-                    </div>
-
-                </div>
-
-                <hr>
-
-                <!-- Copyright + Hak Cipta -->
-                <div class="text-center copyright">
-                    <p class="mb-1">&copy; 2026 KKN Desa Simarmata Kecamatan Simanindo</p>
-                    <p class="mb-0">Dibuat untuk Program KKN UNIMED 2026</p>
-                    <p class="mt-2 fw-bold" style="color: #ffd54f;">Hak Cipta Dilindungi</p>
-                </div>
-
-            </div>
-        </footer>
-
     </div>
-    <!-- ===== PENUTUP WRAPPER MAIN-CONTENT ===== -->
+</section>
 
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
 
-    <!-- ===== MODAL GALLERY ===== -->
-    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="galleryModalTitle">Gambar</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <img src="" id="galleryModalImage" class="img-fluid rounded" alt="Galeri">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h5 style="color:#ffd54f;"><i class="bi bi-people-fill"></i> Pengunjung Hari Ini</h5>
+                <div class="statcounter-container">
+                    <span class="statcounter"></span>
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
+                <p class="mb-1">Desa Simarmata</p>
+                <p class="mb-1">Kecamatan Simanindo</p>
+                <p class="mb-1">Kabupaten Samosir</p>
+                <p class="mb-1">Provinsi Sumatera Utara</p>
+                <p class="mb-0">Kode Pos: 22395</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5><i class="bi bi-list-ul"></i> Menu</h5>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="profil.html">Profil Desa</a></li>
+                            <li><a href="sejarah.html">Sejarah</a></li>
+                            <li><a href="wisata.html">Wisata</a></li>
+                            <li><a href="budaya.html">Budaya</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li><a href="umkm.html">UMKM</a></li>
+                            <li><a href="homestay.html">Homestay</a></li>
+                            <li><a href="galeri.html">Galeri</a></li>
+                            <li><a href="kontak.html">Kontak</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
+                <p class="mb-1">
+                    <strong>Instagram:</strong><br />
+                    <a href="https://www.instagram.com/desasimarmata?utm_source=qr&igsh=MTUzazZzb21sajJvaw=="
+                    target="_blank" rel="noopener noreferrer">@desasimarmata</a>
+                </p>
+                <p class="mb-1">
+                    <strong>TikTok:</strong><br />
+                    <a href="https://www.tiktok.com/@desa.simarmata?_r=1&_t=ZS-98nPHpGU3RF"
+                    target="_blank" rel="noopener noreferrer">@desa.simarmata</a>
+                </p>
+                <p class="mb-1">
+                    <strong>Facebook:</strong><br />
+                    <a href="https://www.facebook.com/share/188BmmqmUy/?mibextid=wwXIfr"
+                    target="_blank" rel="noopener noreferrer">Desa Simarmata</a>
+                </p>
+                <p class="mb-0">
+                    <strong>YouTube:</strong><br />
+                    <a href="https://youtube.com/@desasimarmata?si=Q1wXzjQu95o3HlPf"
+                    target="_blank" rel="noopener noreferrer">Desa Simarmata</a>
+                </p>
+            </div>
+        </div>
+
+        <hr />
+        <div class="text-center copyright">
+            <p class="mb-1">&copy; 2026 KKN Desa Simarmata Kecamatan Simanindo</p>
+            <p class="mb-0">Dibuat untuk Program KKN UNIMED 2026</p>
+            <p class="mt-2 fw-bold" style="color: #ffd54f;">Hak Cipta Dilindungi</p>
+        </div>
+
     </div>
+</footer>
 
-    <!-- ===== BACK TO TOP ===== -->
-    <button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">
-        <i class="bi bi-arrow-up"></i>
-    </button>
+</div>
+<!-- ===== PENUTUP WRAPPER MAIN-CONTENT ===== -->
 
-    <!-- ===== WHATSAPP FLOAT ===== -->
-    <a href="https://wa.me/6282276359095?text=Halo%20KKN%20Desa%20Simarmata%2C%20saya%20ingin%20bertanya%20mengenai%20galeri%20desa."
-    class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi kami via WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-    <span class="wa-badge">1</span>
-    <span class="wa-tooltip">Hubungi Kami</span>
+
+<!-- ===== MODAL GALLERY ===== -->
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="galleryModalTitle">Gambar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="" id="galleryModalImage" class="img-fluid rounded" alt="Galeri" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== BACK TO TOP ===== -->
+<button class="back-to-top" id="backToTop" aria-label="Kembali ke Atas">
+    <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- ===== WHATSAPP FLOAT ===== -->
+<a href="https://wa.me/6282276359095?text=Halo%20KKN%20Desa%20Simarmata%2C%20saya%20ingin%20bertanya%20mengenai%20galeri%20desa."
+class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi kami via WhatsApp">
+<i class="bi bi-whatsapp"></i>
+<span class="wa-badge">1</span>
+<span class="wa-tooltip">Hubungi Kami</span>
 </a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
@@ -985,7 +1315,6 @@
 
         // ===== 3. LQIP UNTUK HERO CAROUSEL =====
         const carouselItems = document.querySelectorAll('.hero-carousel-wrapper .carousel-item');
-
         carouselItems.forEach((item) => {
             const src = item.getAttribute('data-src');
             if (src) {
@@ -1005,7 +1334,6 @@
 
         // ===== 4. BACK TO TOP =====
         const backToTopBtn = document.getElementById('backToTop');
-
         window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
                 backToTopBtn.classList.add('show');
@@ -1013,22 +1341,16 @@
                 backToTopBtn.classList.remove('show');
             }
         });
-
         backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // ===== 5. BLUR BACKGROUND SAAT MODAL =====
         const mainContent = document.getElementById('main-content');
-
-        document.addEventListener('show.bs.modal', function (e) {
+        document.addEventListener('show.bs.modal', function(e) {
             if (mainContent) mainContent.classList.add('blur');
         });
-
-        document.addEventListener('hidden.bs.modal', function (e) {
+        document.addEventListener('hidden.bs.modal', function(e) {
             if (mainContent) mainContent.classList.remove('blur');
         });
 
@@ -1058,110 +1380,170 @@
             }
         });
 
-        // ===== 7. GALERI DINAMIS DARI ADMIN PANEL =====
+        // ===== 7. GALERI DINAMIS DARI ADMIN PANEL (TETAP) =====
         const galleryContainer = document.getElementById('galleryContainer');
 
-        // Data default (cadangan jika admin tidak punya gambar)
-        const defaultGallery = [
-            {
-                src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/view-dantob.jpeg',
-                title: 'Danau Toba'
-            },
-            {
-                src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9e7b514405790ced30d65f7f4a0d5304c4d8f3f2/desa15.jpeg',
-                title: 'Huta Adat Simarmata'
-            },
-            {
-                src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/91f007479344a419d56223e898f34afa7439204e/budayarumahbolon.jpeg',
-                title: 'Rumah Bolon'
-            },
-            {
-                src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5c2932fbff8cf94a0e8d2ce7ca6b0ccae0820f15/budaya_tortor.jpeg',
-                title: 'Pertunjukan Tortor'
-            },
-            {
-                src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-tenunulos.jpeg',
-                title: 'Tenun Ulos'
-            },
-            {
-                src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-pemandangandesa.jpeg',
-                title: 'Pemandangan Desa'
-            },
-            {
-                src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-sunset.jpeg',
-                title: 'Sunset Danau Toba'
-            },
-            {
-                src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-festival.jpeg',
-                title: 'Festival Budaya'
-            },
-            {
-                src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-panorama.jpeg',
-                title: 'Panorama Alam'
-            }
-        ];
+        const defaultGallery = [{
+            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/view-dantob.jpeg',
+            title: 'Danau Toba'
+        }, {
+            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9e7b514405790ced30d65f7f4a0d5304c4d8f3f2/desa15.jpeg',
+            title: 'Huta Adat Simarmata'
+        }, {
+            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/91f007479344a419d56223e898f34afa7439204e/budayarumahbolon.jpeg',
+            title: 'Rumah Bolon'
+        }, {
+            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5c2932fbff8cf94a0e8d2ce7ca6b0ccae0820f15/budaya_tortor.jpeg',
+            title: 'Pertunjukan Tortor'
+        }, {
+            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-tenunulos.jpeg',
+            title: 'Tenun Ulos'
+        }, {
+            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-pemandangandesa.jpeg',
+            title: 'Pemandangan Desa'
+        }, {
+            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-sunset.jpeg',
+            title: 'Sunset Danau Toba'
+        }, {
+            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-festival.jpeg',
+            title: 'Festival Budaya'
+        }, {
+            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-panorama.jpeg',
+            title: 'Panorama Alam'
+        }];
 
-        // Fungsi render galeri
         function renderGallery(images) {
             if (!images || images.length === 0) {
                 galleryContainer.innerHTML = `
-                    <div class="col-12 text-center">
-                        <p class="text-muted">Belum ada foto. Silakan upload dokumentasi terbaru melalui Admin Panel.</p>
-                    </div>
-                `;
+                        <div class="col-12 text-center">
+                            <p class="text-muted">Belum ada foto. Silakan upload dokumentasi terbaru melalui Admin Panel.</p>
+                        </div>
+                    `;
                 return;
             }
-
             let html = '';
             images.forEach((item, index) => {
-                // Jika item adalah string (dari admin), kita buat title dari nama file
                 let src, title;
                 if (typeof item === 'string') {
                     src = 'admin/uploads/' + item;
-                    title = item.replace(/\.[^/.]+$/, "").replace(/_/g, ' '); // hapus ekstensi, ganti _ dengan spasi
+                    title = item.replace(/\.[^/.]+$/, "").replace(/_/g, ' ');
                 } else {
-                    // object dengan src dan title (dari default)
                     src = item.src;
                     title = item.title || 'Gambar';
                 }
-
                 const delayClass = 'delay-' + ((index % 9) + 1);
                 html += `
-                    <div class="col-md-4 reveal ${delayClass}">
-                        <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
-                             data-image="${src}"
-                             data-title="${title}">
-                            <img src="${src}" class="card-img-top" alt="${title}" style="background-color: #7c0e0e; height:230px; object-fit:cover;">
-                            <div class="card-body text-center">
-                                <h5>${title}</h5>
+                        <div class="col-md-4 reveal ${delayClass}">
+                            <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
+                                 data-image="${src}"
+                                 data-title="${title}">
+                                <img src="${src}" class="card-img-top" alt="${title}" style="background-color: #7c0e0e; height:230px; object-fit:cover;">
+                                <div class="card-body text-center">
+                                    <h5>${title}</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `;
+                    `;
             });
             galleryContainer.innerHTML = html;
-
-            // Re-trigger scroll reveal untuk elemen baru
             handleScrollReveal();
         }
 
-        // Ambil data dari admin API
         fetch('admin/api.php?action=get')
             .then(res => res.json())
             .then(data => {
                 if (data.galeri && Array.isArray(data.galeri) && data.galeri.length > 0) {
-                    // Gunakan gambar dari admin
                     renderGallery(data.galeri);
                 } else {
-                    // Gunakan default
                     renderGallery(defaultGallery);
                 }
             })
             .catch(err => {
                 console.error('Gagal mengambil data galeri:', err);
-                // Jika gagal, tampilkan default
                 renderGallery(defaultGallery);
             });
+
+        // ============================================================
+        // 8. ALBUM "FOTO KITA BLUR" — BUAT SLIDE DARI GAMBAR
+        //    (Satu frame besar, geser manual)
+        // ============================================================
+        const albumImages = [
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri1.jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri2.jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri3.jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri4.jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri5%20(1).jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri6.jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri8.jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri10.jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri11.jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri12.jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri13.jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri14.jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri16.jpeg',
+            'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri17.jpeg'
+        ];
+
+        const albumInner = document.getElementById('albumInner');
+        const albumIndicators = document.getElementById('albumIndicators');
+        const totalSlides = albumImages.length;
+        const currentSlideSpan = document.getElementById('albumCurrentSlide');
+        const totalSlidesSpan = document.getElementById('albumTotalSlides');
+
+        totalSlidesSpan.textContent = totalSlides;
+
+        let indicatorsHtml = '';
+        let slidesHtml = '';
+
+        albumImages.forEach((url, index) => {
+            const isActive = index === 0 ? 'active' : '';
+            const captionText = 'Galeri ' + (index + 1);
+
+            indicatorsHtml += `
+                    <button type="button" data-bs-target="#albumCarousel" data-bs-slide-to="${index}" 
+                            class="${isActive}" aria-current="${isActive ? 'true' : 'false'}"
+                            aria-label="Slide ${index + 1}"></button>
+                `;
+
+            slidesHtml += `
+                    <div class="carousel-item ${isActive}" 
+                         style="background-image: url('${url}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                        <div class="album-caption">
+                            <i class="bi bi-camera-fill"></i>
+                            <span>${captionText}</span>
+                        </div>
+                    </div>
+                `;
+        });
+
+        albumIndicators.innerHTML = indicatorsHtml;
+        albumInner.innerHTML = slidesHtml;
+
+        // Update counter saat slide berubah
+        const albumCarousel = document.getElementById('albumCarousel');
+        albumCarousel.addEventListener('slid.bs.carousel', function(e) {
+            const activeIndex = e.to;
+            currentSlideSpan.textContent = activeIndex + 1;
+        });
+
+        // Set initial counter
+        currentSlideSpan.textContent = 1;
+
+        // Fallback jika gambar gagal load (tampilkan placeholder)
+        document.querySelectorAll('#albumInner .carousel-item').forEach(item => {
+            const bg = item.style.backgroundImage;
+            if (bg && bg !== 'none') {
+                const url = bg.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+                const img = new Image();
+                img.onerror = function() {
+                    item.style.backgroundImage =
+                        'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiB2aWV3Qm94PSIwIDAgODAwIDQ1MCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0NTAiIGZpbGw9IiMyMjIiLz48dGV4dCB4PSI0MDAiIHk9IjIyNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkdhbWVyIGdhZ2FsPC90ZXh0Pjwvc3ZnPg==")';
+                    item.style.backgroundSize = 'cover';
+                    item.style.backgroundPosition = 'center';
+                };
+                img.src = url;
+            }
+        });
 
     });
 </script>
