@@ -252,7 +252,28 @@
             padding: 30px 0;
         }
 
-        /* ===== CARD ===== */
+        /* ============================================================
+           FITUR BARU: FRAME GAMBAR BESAR & TIDAK TERPOTONG
+        ============================================================ */
+        .card-img-wrapper {
+            width: 100%;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--section-bg);
+            overflow: hidden;
+            padding: 8px;
+            transition: background 0.3s ease;
+        }
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* ★ KUNCI: Memuat semua foto tanpa terpotong */
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: var(--card-img-filter);
+            border-radius: 8px;
+        }
         .card {
             border: none;
             border-radius: 15px;
@@ -266,15 +287,8 @@
             transform: translateY(-8px);
             box-shadow: 0 15px 25px var(--card-hover-shadow);
         }
-        .card img {
-            height: 230px;
-            object-fit: cover;
-            transition: transform 0.3s ease, filter 0.3s ease;
-            filter: var(--card-img-filter);
-            background-color: var(--heading-color);
-        }
-        .card:hover img {
-            transform: scale(1.03);
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.05);
         }
         .card-body h5 {
             color: var(--heading-color);
@@ -289,11 +303,16 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, .5) !important;
         }
 
-        /* ===== MODAL ===== */
+        /* ============================================================
+           MODAL & EFEK BLUR DI LUAR (BACKDROP-FILTER)
+        ============================================================ */
         .modal-content {
             background: var(--modal-bg);
             color: var(--modal-text);
             transition: background 0.3s ease, color 0.3s ease;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
         }
         .modal-header {
             border-bottom-color: var(--border-color);
@@ -303,8 +322,17 @@
         }
         .modal-body img {
             max-height: 80vh;
-            object-fit: contain;
             width: 100%;
+            object-fit: contain; /* Agar foto di popup juga tidak terpotong */
+            border-radius: 8px;
+        }
+
+        /* EFEK BLUR PADA BACKGROUND SAAT MODAL TERBUKA */
+        .modal-backdrop.show {
+            opacity: 0.8;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         /* ============================================================
@@ -460,21 +488,6 @@
         }
 
         /* ============================================================
-           BLUR SAAT MODAL
-        ============================================================ */
-        #main-content {
-            transition: filter 0.3s ease;
-        }
-        #main-content.blur {
-            filter: blur(6px);
-            -webkit-filter: blur(6px);
-            pointer-events: none;
-        }
-        .back-to-top {
-            pointer-events: auto !important;
-        }
-
-        /* ============================================================
            WHATSAPP FLOAT
         ============================================================ */
         .wa-float {
@@ -625,36 +638,18 @@
         .reveal.reverse.visible {
             transform: translateY(0);
         }
-        .delay-1 {
-            transition-delay: 0.1s;
-        }
-        .delay-2 {
-            transition-delay: 0.2s;
-        }
-        .delay-3 {
-            transition-delay: 0.3s;
-        }
-        .delay-4 {
-            transition-delay: 0.4s;
-        }
-        .delay-5 {
-            transition-delay: 0.5s;
-        }
-        .delay-6 {
-            transition-delay: 0.6s;
-        }
-        .delay-7 {
-            transition-delay: 0.7s;
-        }
-        .delay-8 {
-            transition-delay: 0.8s;
-        }
-        .delay-9 {
-            transition-delay: 0.9s;
-        }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+        .delay-6 { transition-delay: 0.6s; }
+        .delay-7 { transition-delay: 0.7s; }
+        .delay-8 { transition-delay: 0.8s; }
+        .delay-9 { transition-delay: 0.9s; }
 
         /* ============================================================
-           DARK MODE OVERRIDE UNTUK ELEMEN TERTENTU
+           DARK MODE OVERRIDE
         ============================================================ */
         .dark-mode .text-primary {
             color: #ff8a80 !important;
@@ -670,7 +665,7 @@
         }
 
         /* ============================================================
-           ALBUM "FOTO KITA BLUR" — FULL LANDSCAPE, SATU FRAME
+           ALBUM "FOTO KITA BLUR"
         ============================================================ */
         .album-blur-section {
             background: var(--album-bg);
@@ -727,7 +722,6 @@
             color: rgba(255, 255, 255, 0.30);
         }
 
-        /* Satu frame besar (landscape) */
         .album-carousel-wrap {
             position: relative;
             border-radius: 18px;
@@ -741,7 +735,6 @@
         .album-carousel-wrap .carousel-item {
             height: 0;
             padding-bottom: 45%;
-            /* rasio landscape ~ 2.22:1 */
             background-color: #111;
             background-size: cover;
             background-position: center;
@@ -777,7 +770,6 @@
             opacity: 0.6;
         }
 
-        /* navigasi panah */
         .album-carousel-wrap .carousel-control-prev,
         .album-carousel-wrap .carousel-control-next {
             width: 60px;
@@ -808,7 +800,6 @@
             background-size: 32px 32px;
         }
 
-        /* indikator bulat */
         .album-carousel-wrap .carousel-indicators {
             bottom: 70px;
             gap: 8px;
@@ -840,7 +831,6 @@
             transform: scale(1.1);
         }
 
-        /* counter slide */
         .album-counter {
             position: absolute;
             top: 18px;
@@ -864,150 +854,31 @@
             font-weight: 700;
         }
 
-        /* ===== RESPONSIVE ALBUM ===== */
         @media(max-width:992px) {
-            .album-carousel-wrap .carousel-item {
-                padding-bottom: 50%;
-            }
-            .album-title {
-                font-size: 2.6rem;
-            }
+            .album-carousel-wrap .carousel-item { padding-bottom: 50%; }
+            .album-title { font-size: 2.6rem; }
             .album-carousel-wrap .carousel-control-prev,
-            .album-carousel-wrap .carousel-control-next {
-                width: 44px;
-                opacity: 0.7;
-            }
-            .album-carousel-wrap .carousel-control-prev-icon,
-            .album-carousel-wrap .carousel-control-next-icon {
-                width: 26px;
-                height: 26px;
-                background-size: 26px 26px;
-            }
-            .album-carousel-wrap .carousel-indicators {
-                bottom: 60px;
-            }
-            .album-carousel-wrap .carousel-indicators button {
-                width: 10px;
-                height: 10px;
-            }
+            .album-carousel-wrap .carousel-control-next { width: 44px; opacity: 0.7; }
+            .album-carousel-wrap .carousel-indicators { bottom: 60px; }
         }
 
         @media(max-width:768px) {
-            .album-blur-section {
-                padding: 40px 0 50px;
-            }
-            .album-title {
-                font-size: 2.0rem;
-                letter-spacing: 1px;
-            }
-            .album-subtitle {
-                font-size: 0.75rem;
-                letter-spacing: 2px;
-                margin-bottom: 22px;
-            }
-            .album-carousel-wrap .carousel-item {
-                padding-bottom: 60%;
-            }
-            .album-carousel-wrap .carousel-item .album-caption {
-                padding: 16px 16px 14px;
-                font-size: 0.85rem;
-            }
+            .album-blur-section { padding: 40px 0 50px; }
+            .album-title { font-size: 2.0rem; }
+            .album-carousel-wrap .carousel-item { padding-bottom: 60%; }
+            .album-carousel-wrap .carousel-item .album-caption { padding: 16px; font-size: 0.85rem; }
             .album-carousel-wrap .carousel-control-prev,
-            .album-carousel-wrap .carousel-control-next {
-                width: 36px;
-                opacity: 0.8;
-            }
-            .album-carousel-wrap .carousel-control-prev-icon,
-            .album-carousel-wrap .carousel-control-next-icon {
-                width: 20px;
-                height: 20px;
-                background-size: 20px 20px;
-            }
-            .album-carousel-wrap .carousel-indicators {
-                bottom: 50px;
-                gap: 5px;
-            }
-            .album-carousel-wrap .carousel-indicators button {
-                width: 8px;
-                height: 8px;
-                margin: 0 3px;
-            }
-            .album-counter {
-                top: 12px;
-                right: 14px;
-                font-size: 0.7rem;
-                padding: 4px 12px;
-            }
+            .album-carousel-wrap .carousel-control-next { width: 36px; }
+            .album-carousel-wrap .carousel-indicators { bottom: 50px; }
         }
 
         @media(max-width:576px) {
-            .album-blur-section {
-                padding: 30px 0 40px;
-            }
-            .album-title {
-                font-size: 1.6rem;
-            }
-            .album-carousel-wrap .carousel-item {
-                padding-bottom: 70%;
-            }
-            .album-carousel-wrap .carousel-item .album-caption {
-                padding: 12px 12px 10px;
-                font-size: 0.75rem;
-            }
+            .album-title { font-size: 1.6rem; }
+            .album-carousel-wrap .carousel-item { padding-bottom: 70%; }
+            .album-carousel-wrap .carousel-item .album-caption { font-size: 0.75rem; padding: 12px; }
             .album-carousel-wrap .carousel-control-prev,
-            .album-carousel-wrap .carousel-control-next {
-                width: 30px;
-                opacity: 0.9;
-            }
-            .album-carousel-wrap .carousel-control-prev-icon,
-            .album-carousel-wrap .carousel-control-next-icon {
-                width: 16px;
-                height: 16px;
-                background-size: 16px 16px;
-            }
-            .album-carousel-wrap .carousel-indicators {
-                bottom: 42px;
-                gap: 4px;
-            }
-            .album-carousel-wrap .carousel-indicators button {
-                width: 7px;
-                height: 7px;
-                margin: 0 2px;
-            }
-            .album-counter {
-                top: 10px;
-                right: 10px;
-                font-size: 0.6rem;
-                padding: 3px 10px;
-            }
-        }
-
-        /* ===== RESPONSIVE UMUM ===== */
-        @media(max-width:768px) {
-            .card img {
-                height: 200px;
-            }
-            .navbar-logo {
-                height: 35px;
-            }
-            .navbar-brand {
-                font-size: 20px;
-                gap: 8px;
-            }
-        }
-        @media(max-width:576px) {
-            section {
-                padding: 40px 15px;
-            }
-            .card img {
-                height: 180px;
-            }
-            .navbar-brand {
-                font-size: 18px;
-            }
-            .navbar-logo {
-                height: 30px;
-            }
+            .album-carousel-wrap .carousel-control-next { width: 30px; }
+            .album-counter { top: 10px; right: 10px; font-size: 0.6rem; padding: 3px 10px; }
         }
     </style>
 </head>
@@ -1103,7 +974,7 @@
 </div>
 </div>
 
-<!-- ===== GALERI DINAMIS (TETAP) ===== -->
+<!-- ===== GALERI DINAMIS (DENGAN FRAME BESAR & CONTAIN) ===== -->
 <section class="container py-5">
     <h2 class="text-center mb-4" style="color: var(--heading-color);">📸 Koleksi Foto</h2>
     <div id="galleryContainer" class="row g-4">
@@ -1112,7 +983,7 @@
 </section>
 
 <!-- ============================================================
-     ALBUM "FOTO KITA BLUR" — SATU FRAME BESAR, GESER MANUAL
+     ALBUM "FOTO KITA BLUR" — SATU FRAME BESAR
      ============================================================ -->
 <section class="album-blur-section" id="albumBlur">
     <div class="container">
@@ -1235,19 +1106,16 @@
 <!-- ===== PENUTUP WRAPPER MAIN-CONTENT ===== -->
 
 
-<!-- ===== MODAL GALLERY ===== -->
+<!-- ===== MODAL GALLERY (POP-UP FOTO) ===== -->
 <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="galleryModalTitle">Gambar</h5>
+            <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title fw-bold" id="galleryModalTitle">Gambar</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body text-center">
+            <div class="modal-body text-center p-3">
                 <img src="" id="galleryModalImage" class="img-fluid rounded" alt="Galeri" />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>
@@ -1345,16 +1213,7 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // ===== 5. BLUR BACKGROUND SAAT MODAL =====
-        const mainContent = document.getElementById('main-content');
-        document.addEventListener('show.bs.modal', function(e) {
-            if (mainContent) mainContent.classList.add('blur');
-        });
-        document.addEventListener('hidden.bs.modal', function(e) {
-            if (mainContent) mainContent.classList.remove('blur');
-        });
-
-        // ===== 6. DARK MODE TOGGLE =====
+        // ===== 5. DARK MODE TOGGLE =====
         const toggleBtn = document.getElementById('darkModeToggle');
         const icon = document.getElementById('themeIcon');
         const html = document.documentElement;
@@ -1380,37 +1239,20 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
             }
         });
 
-        // ===== 7. GALERI DINAMIS DARI ADMIN PANEL (TETAP) =====
+        // ===== 6. GALERI DINAMIS DARI ADMIN PANEL =====
         const galleryContainer = document.getElementById('galleryContainer');
 
-        const defaultGallery = [{
-            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/view-dantob.jpeg',
-            title: 'Danau Toba'
-        }, {
-            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9e7b514405790ced30d65f7f4a0d5304c4d8f3f2/desa15.jpeg',
-            title: 'Huta Adat Simarmata'
-        }, {
-            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/91f007479344a419d56223e898f34afa7439204e/budayarumahbolon.jpeg',
-            title: 'Rumah Bolon'
-        }, {
-            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5c2932fbff8cf94a0e8d2ce7ca6b0ccae0820f15/budaya_tortor.jpeg',
-            title: 'Pertunjukan Tortor'
-        }, {
-            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-tenunulos.jpeg',
-            title: 'Tenun Ulos'
-        }, {
-            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-pemandangandesa.jpeg',
-            title: 'Pemandangan Desa'
-        }, {
-            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-sunset.jpeg',
-            title: 'Sunset Danau Toba'
-        }, {
-            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-festival.jpeg',
-            title: 'Festival Budaya'
-        }, {
-            src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-panorama.jpeg',
-            title: 'Panorama Alam'
-        }];
+        const defaultGallery = [
+            { src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/206aa8a6aeff73ea29841a48abbda4b661724fe1/view-dantob.jpeg', title: 'Danau Toba' },
+            { src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/9e7b514405790ced30d65f7f4a0d5304c4d8f3f2/desa15.jpeg', title: 'Huta Adat Simarmata' },
+            { src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/91f007479344a419d56223e898f34afa7439204e/budayarumahbolon.jpeg', title: 'Rumah Bolon' },
+            { src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/5c2932fbff8cf94a0e8d2ce7ca6b0ccae0820f15/budaya_tortor.jpeg', title: 'Pertunjukan Tortor' },
+            { src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-tenunulos.jpeg', title: 'Tenun Ulos' },
+            { src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-pemandangandesa.jpeg', title: 'Pemandangan Desa' },
+            { src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-sunset.jpeg', title: 'Sunset Danau Toba' },
+            { src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-festival.jpeg', title: 'Festival Budaya' },
+            { src: 'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/8e7c3cff182bc9d690e2e506f6fde912db84225e/galeri-panorama.jpeg', title: 'Panorama Alam' }
+        ];
 
         function renderGallery(images) {
             if (!images || images.length === 0) {
@@ -1432,12 +1274,16 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
                     title = item.title || 'Gambar';
                 }
                 const delayClass = 'delay-' + ((index % 9) + 1);
+                
+                // PERUBAHAN PENTING: Menggunakan card-img-wrapper dengan object-fit: contain
                 html += `
                         <div class="col-md-4 reveal ${delayClass}">
                             <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
                                  data-image="${src}"
                                  data-title="${title}">
-                                <img src="${src}" class="card-img-top" alt="${title}" style="background-color: #7c0e0e; height:230px; object-fit:cover;">
+                                <div class="card-img-wrapper">
+                                    <img src="${src}" alt="${title}" />
+                                </div>
                                 <div class="card-body text-center">
                                     <h5>${title}</h5>
                                 </div>
@@ -1464,8 +1310,7 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
             });
 
         // ============================================================
-        // 8. ALBUM "FOTO KITA BLUR" — BUAT SLIDE DARI GAMBAR
-        //    (Satu frame besar, geser manual)
+        // 7. ALBUM "FOTO KITA BLUR" — BUAT SLIDE DARI GAMBAR
         // ============================================================
         const albumImages = [
             'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri1.jpeg',
@@ -1519,17 +1364,14 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
         albumIndicators.innerHTML = indicatorsHtml;
         albumInner.innerHTML = slidesHtml;
 
-        // Update counter saat slide berubah
         const albumCarousel = document.getElementById('albumCarousel');
         albumCarousel.addEventListener('slid.bs.carousel', function(e) {
             const activeIndex = e.to;
             currentSlideSpan.textContent = activeIndex + 1;
         });
 
-        // Set initial counter
         currentSlideSpan.textContent = 1;
 
-        // Fallback jika gambar gagal load (tampilkan placeholder)
         document.querySelectorAll('#albumInner .carousel-item').forEach(item => {
             const bg = item.style.backgroundImage;
             if (bg && bg !== 'none') {
