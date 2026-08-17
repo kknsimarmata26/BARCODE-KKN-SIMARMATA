@@ -6,28 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homestay | Desa Simarmata</title>
 
-    <!-- ============================================================
-         STATCOUNTER — KODE ASLI DARI AKUN ANDA
-         sc_project = 13342247, sc_security = "ef0f8320"
-    ============================================================ -->
-    <script type="text/javascript">
-        var sc_project = 13342247;
-        var sc_invisible = 0; // 0 = counter terlihat
-        var sc_security = "ef0f8320";
-        var sc_https = 1;
-        var scJsHost = "https://";
-        document.write("<sc" + "ript type='text/javascript' src='" + scJsHost +
-            "secure.statcounter.com/counter/counter.js'></" + "script>");
-    </script>
-    <noscript>
-        <div class="statcounter">
-            <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
-                <img class="statcounter" src="https://c.statcounter.com/13342247/0/ef0f8320/0/"
-                alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade" />
-            </a>
-        </div>
-    </noscript>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
@@ -46,7 +24,6 @@
             --heading-color: #7c0e0e;
             --scrollbar-track: #ececec;
             --scrollbar-thumb: #7c0e0e;
-            --statcounter-bg: rgba(255, 255, 255, 0.08);
             --card-hover-shadow: rgba(0, 0, 0, 0.2);
             --fasilitas-icon-color: #7c0e0e;
             --border-color: #dee2e6;
@@ -71,7 +48,6 @@
             --heading-color: #ff8a80;
             --scrollbar-track: #2a2a2a;
             --scrollbar-thumb: #5b0909;
-            --statcounter-bg: rgba(255, 255, 255, 0.05);
             --card-hover-shadow: rgba(255, 255, 255, 0.1);
             --fasilitas-icon-color: #ff8a80;
             --border-color: #444;
@@ -639,31 +615,6 @@
             }
         }
 
-        /* ============================================================
-           COUNTER STATCOUNTER
-        ============================================================ */
-        .statcounter-container {
-            display: inline-block;
-            background: var(--statcounter-bg);
-            padding: 12px 24px;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 213, 79, 0.2);
-            backdrop-filter: blur(4px);
-            transition: background 0.3s ease;
-        }
-        .statcounter-container .statcounter {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ffd54f;
-        }
-        .statcounter-container .statcounter a {
-            color: #ffd54f !important;
-            text-decoration: none;
-        }
-        .statcounter-container .statcounter img {
-            display: none;
-        }
-
         /* ===========================================
            ANIMASI SCROLL REVEAL
            ============================================ */
@@ -839,79 +790,12 @@
             </div>
         </div>
 
-        <!-- ===== HOMESTAY ===== -->
+        <!-- ===== HOMESTAY (URUTAN BARU: Marhiteuli, Marlin, Wariska, Gisel, Sridewi) ===== -->
         <section class="container py-5">
             <div class="row">
 
-                <!-- Homestay 1 - Wariska Sinaga -->
+                <!-- 1. Homestay Marhiteuli -->
                 <div class="col-lg-4 col-md-6 mb-4 reveal delay-1">
-                    <div class="card shadow h-100">
-                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-wariska1.jpeg"
-                        class="card-img-top clickable-img"
-                        alt="Homestay Wariska Sinaga"
-                        data-bs-toggle="modal" data-bs-target="#modalWariska">
-                        <div class="card-body">
-                            <h4>Homestay Wariska Sinaga</h4>
-                            <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
-                            <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐⭐</p>
-                            <ul>
-                                <li><i class="bi bi-check-circle-fill"></i> 1 Kamar</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Ruang Tamu</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Kamar Mandi</li>
-                            </ul>
-                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalWariska">
-                                <i class="bi bi-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Homestay 2 - Buk Gisel -->
-                <div class="col-lg-4 col-md-6 mb-4 reveal delay-2">
-                    <div class="card shadow h-100">
-                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-gisel.jpeg"
-                        class="card-img-top clickable-img"
-                        alt="Homestay Buk Gisel"
-                        data-bs-toggle="modal" data-bs-target="#modalGisel">
-                        <div class="card-body">
-                            <h4>Homestay Buk Gisel</h4>
-                            <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
-                            <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐⭐</p>
-                            <ul>
-                                <li><i class="bi bi-check-circle-fill"></i> 1 Kamar</li>
-                                <li><i class="bi bi-check-circle-fill"></i> 2 Kamar Mandi</li>
-                            </ul>
-                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalGisel">
-                                <i class="bi bi-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Homestay 3 - Sridewi Manihuruk -->
-                <div class="col-lg-4 col-md-6 mb-4 reveal delay-3">
-                    <div class="card shadow h-100">
-                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-sridewi.jpeg"
-                        class="card-img-top clickable-img"
-                        alt="Homestay Sridewi Manihuruk"
-                        data-bs-toggle="modal" data-bs-target="#modalSridewi">
-                        <div class="card-body">
-                            <h4>Homestay Sridewi Manihuruk</h4>
-                            <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
-                            <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐⭐</p>
-                            <ul>
-                                <li><i class="bi bi-check-circle-fill"></i> Tikar & Bantal</li>
-                                <li><i class="bi bi-check-circle-fill"></i> Kamar Mandi</li>
-                            </ul>
-                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSridewi">
-                                <i class="bi bi-eye"></i> Lihat Detail
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Homestay 4 - Marhiteuli -->
-                <div class="col-lg-4 col-md-6 mb-4 reveal delay-4">
                     <div class="card shadow h-100">
                         <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/814473514e406a0b743115c1223732c30b38b6d8/homestay-marhite.jpeg"
                         class="card-img-top clickable-img"
@@ -934,8 +818,8 @@
                     </div>
                 </div>
 
-                <!-- Homestay 5 - Marlin Homestay (GAMBAR BARU) -->
-                <div class="col-lg-4 col-md-6 mb-4 reveal delay-5">
+                <!-- 2. Marlin Homestay -->
+                <div class="col-lg-4 col-md-6 mb-4 reveal delay-2">
                     <div class="card shadow h-100">
                         <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/09f46346cb99f40dcd0536273ecf9093d4da30cb/homestay-marlin.webp"
                         class="card-img-top clickable-img"
@@ -952,6 +836,73 @@
                                 <li><i class="bi bi-check-circle-fill"></i> Wi-Fi & Streaming</li>
                             </ul>
                             <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalMarlin">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Homestay Wariska Sinaga -->
+                <div class="col-lg-4 col-md-6 mb-4 reveal delay-3">
+                    <div class="card shadow h-100">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-wariska1.jpeg"
+                        class="card-img-top clickable-img"
+                        alt="Homestay Wariska Sinaga"
+                        data-bs-toggle="modal" data-bs-target="#modalWariska">
+                        <div class="card-body">
+                            <h4>Homestay Wariska Sinaga</h4>
+                            <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
+                            <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐⭐</p>
+                            <ul>
+                                <li><i class="bi bi-check-circle-fill"></i> 1 Kamar</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Ruang Tamu</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Kamar Mandi</li>
+                            </ul>
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalWariska">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Homestay Buk Gisel -->
+                <div class="col-lg-4 col-md-6 mb-4 reveal delay-4">
+                    <div class="card shadow h-100">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-gisel.jpeg"
+                        class="card-img-top clickable-img"
+                        alt="Homestay Buk Gisel"
+                        data-bs-toggle="modal" data-bs-target="#modalGisel">
+                        <div class="card-body">
+                            <h4>Homestay Buk Gisel</h4>
+                            <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
+                            <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐⭐</p>
+                            <ul>
+                                <li><i class="bi bi-check-circle-fill"></i> 1 Kamar</li>
+                                <li><i class="bi bi-check-circle-fill"></i> 2 Kamar Mandi</li>
+                            </ul>
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalGisel">
+                                <i class="bi bi-eye"></i> Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Homestay Sridewi Manihuruk -->
+                <div class="col-lg-4 col-md-6 mb-4 reveal delay-5">
+                    <div class="card shadow h-100">
+                        <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-sridewi.jpeg"
+                        class="card-img-top clickable-img"
+                        alt="Homestay Sridewi Manihuruk"
+                        data-bs-toggle="modal" data-bs-target="#modalSridewi">
+                        <div class="card-body">
+                            <h4>Homestay Sridewi Manihuruk</h4>
+                            <p><i class="bi bi-geo-alt-fill text-danger"></i> Desa Simarmata</p>
+                            <p><i class="bi bi-star-fill text-warning"></i> ⭐⭐⭐</p>
+                            <ul>
+                                <li><i class="bi bi-check-circle-fill"></i> Tikar & Bantal</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Kamar Mandi</li>
+                            </ul>
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSridewi">
                                 <i class="bi bi-eye"></i> Lihat Detail
                             </button>
                         </div>
@@ -991,16 +942,6 @@
         <!-- ========================================================== -->
         <footer>
             <div class="container">
-
-                <!-- ===== COUNTER PENGUNJUNG HARI INI ===== -->
-                <div class="row">
-                    <div class="col-12 text-center mb-4">
-                        <h5 style="color:#ffd54f;"><i class="bi bi-people-fill"></i> Pengunjung Hari Ini</h5>
-                        <div class="statcounter-container">
-                            <span class="statcounter"></span>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="row">
 
@@ -1084,48 +1025,52 @@
 
 
     <!-- ========================================================== -->
-    <!-- ===== MODAL 1: HOMESTAY WARISKA SINAGA ===== -->
+    <!-- ===== MODAL 1: HOMESTAY MARHITEULI ===== -->
     <!-- ========================================================== -->
-    <div class="modal fade" id="modalWariska" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="modalMarhiteuli" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title text-danger">
-                        <i class="bi bi-house-fill"></i> Homestay Wariska Sinaga
+                        <i class="bi bi-house-fill"></i> Homestay Marhiteuli
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
 
-                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-wariska1.jpeg"
-                    class="img-fluid rounded mb-3 w-100" alt="Homestay Wariska Sinaga">
+                    <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/814473514e406a0b743115c1223732c30b38b6d8/homestay-marhite.jpeg"
+                    class="img-fluid rounded mb-3 w-100" alt="Homestay Marhiteuli">
 
                     <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
                     <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
 
                     <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
                     <p>
-                        <strong>Homestay Wariska Sinaga</strong> menawarkan pengalaman menginap yang nyaman
-                        dengan fasilitas lengkap untuk keluarga atau rombongan kecil. Terletak di pusat
-                        Desa Simarmata, homestay ini memiliki akses mudah ke berbagai tempat wisata seperti
-                        Danau Toba, Huta Adat, dan Makam Raja.
+                        <strong>Homestay Marhiteuli</strong> menawarkan pengalaman menginap dengan
+                        pemandangan Danau Toba. Dilengkapi dengan berbagai fasilitas seperti
+                        TV LED, Wi-Fi, dan air panas, homestay ini cocok untuk keluarga atau pasangan.
                     </p>
                     <p>
-                        Dilengkapi dengan ruang tamu yang luas dan kamar mandi bersih, homestay ini cocok
-                        untuk wisatawan yang menginginkan kenyamanan dan ketenangan.
+                        Setiap kamar memiliki tempat tidur empuk dan bersih, kamar mandi dalam dengan shower
+                        dan closet duduk, serta area duduk pribadi. Tersedia juga parkir luas dan aman.
                     </p>
 
                     <h6 class="text-danger"><i class="bi bi-check-circle-fill"></i> Fasilitas</h6>
                     <ul>
-                        <li><i class="bi bi-check-circle-fill text-success"></i> 1 Kamar tidur</li>
-                        <li><i class="bi bi-check-circle-fill text-success"></i> Ruang tamu</li>
-                        <li><i class="bi bi-check-circle-fill text-success"></i> Kamar mandi</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Kamar Nyaman – Tempat tidur empuk dan bersih</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Kamar Mandi Dalam – Shower dan closet duduk</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> TV LED – Hiburan di dalam kamar</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Wi-Fi – Akses internet cepat</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Air Panas – Shower dengan air panas</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Meja & Kabinet – Ruang simpan & persiapan minuman</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Pemandangan Danau – Pemandangan Danau Toba</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Parkir Luas – Parkir kendaraan luas dan aman</li>
                     </ul>
 
                     <h6 class="text-danger"><i class="bi bi-star-fill text-warning"></i> Rating</h6>
                     <p>⭐⭐⭐ (3 bintang)</p>
 
-                    <a href="https://wa.me/6287897257318?text=Halo,%20saya%20ingin%20booking%20Homestay%20Wariskaindo."
+                    <a href="https://wa.me/6282113577600?text=Halo,%20saya%20ingin%20booking%20Homestay%20Marhiteuli."
                     target="_blank" class="btn btn-success w-100">
                     <i class="bi bi-whatsapp"></i> Booking Sekarang via WhatsApp
                 </a>
@@ -1139,7 +1084,122 @@
 </div>
 
 <!-- ========================================================== -->
-<!-- ===== MODAL 2: HOMESTAY BUK GISEL ===== -->
+<!-- ===== MODAL 2: MARLIN HOMESTAY ===== -->
+<!-- ========================================================== -->
+<div class="modal fade" id="modalMarlin" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger">
+                    <i class="bi bi-house-fill"></i> Marlin Homestay
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/09f46346cb99f40dcd0536273ecf9093d4da30cb/homestay-marlin.webp"
+                class="img-fluid rounded mb-3 w-100" alt="Marlin Homestay">
+
+                <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
+
+                <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                <p>
+                    <strong>Marlin Homestay</strong> adalah pilihan menginap yang luas dan nyaman untuk
+                    keluarga besar atau rombongan. Dengan 2 kamar tidur dan 3 kamar mandi (privat dan tamu),
+                    homestay ini memberikan privasi maksimal bagi setiap tamu. Dilengkapi dengan ruang tamu,
+                    dapur, dan teras santai, Anda dapat menikmati waktu berkualitas bersama keluarga.
+                </p>
+                <p>
+                    Fasilitas modern seperti Wi-Fi dan layanan streaming tersedia untuk hiburan, serta
+                    area parkir yang luas memudahkan tamu yang membawa kendaraan pribadi.
+                </p>
+
+                <h6 class="text-danger"><i class="bi bi-check-circle-fill"></i> Fasilitas</h6>
+                <ul>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> 2 Kamar tidur</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> 3 Kamar mandi (privat dan tamu)</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Ruang tamu</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Dapur</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Teras santai</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Wi-Fi</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Layanan streaming</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Parkir luas</li>
+                </ul>
+
+                <h6 class="text-danger"><i class="bi bi-star-fill text-warning"></i> Rating</h6>
+                <p>⭐⭐⭐ (3 bintang)</p>
+
+                <a href="https://wa.me/6282214048334?text=Halo,%20saya%20ingin%20booking%20Marlin%20Homestay."
+                target="_blank" class="btn btn-success w-100">
+                <i class="bi bi-whatsapp"></i> Booking Sekarang via WhatsApp
+            </a>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- ========================================================== -->
+<!-- ===== MODAL 3: HOMESTAY WARISKA SINAGA ===== -->
+<!-- ========================================================== -->
+<div class="modal fade" id="modalWariska" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger">
+                    <i class="bi bi-house-fill"></i> Homestay Wariska Sinaga
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+
+                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/518fbc3778034fc9d693435ff0d21c2d87fcc541/homestay-wariska1.jpeg"
+                class="img-fluid rounded mb-3 w-100" alt="Homestay Wariska Sinaga">
+
+                <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
+                <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
+
+                <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
+                <p>
+                    <strong>Homestay Wariska Sinaga</strong> menawarkan pengalaman menginap yang nyaman
+                    dengan fasilitas lengkap untuk keluarga atau rombongan kecil. Terletak di pusat
+                    Desa Simarmata, homestay ini memiliki akses mudah ke berbagai tempat wisata seperti
+                    Danau Toba, Huta Adat, dan Makam Raja.
+                </p>
+                <p>
+                    Dilengkapi dengan ruang tamu yang luas dan kamar mandi bersih, homestay ini cocok
+                    untuk wisatawan yang menginginkan kenyamanan dan ketenangan.
+                </p>
+
+                <h6 class="text-danger"><i class="bi bi-check-circle-fill"></i> Fasilitas</h6>
+                <ul>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> 1 Kamar tidur</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Ruang tamu</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Kamar mandi</li>
+                </ul>
+
+                <h6 class="text-danger"><i class="bi bi-star-fill text-warning"></i> Rating</h6>
+                <p>⭐⭐⭐ (3 bintang)</p>
+
+                <a href="https://wa.me/6287897257318?text=Halo,%20saya%20ingin%20booking%20Homestay%20Wariskaindo."
+                target="_blank" class="btn btn-success w-100">
+                <i class="bi bi-whatsapp"></i> Booking Sekarang via WhatsApp
+            </a>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- ========================================================== -->
+<!-- ===== MODAL 4: HOMESTAY BUK GISEL ===== -->
 <!-- ========================================================== -->
 <div class="modal fade" id="modalGisel" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -1192,7 +1252,7 @@
 </div>
 
 <!-- ========================================================== -->
-<!-- ===== MODAL 3: HOMESTAY SRIDEWI MANIHURUK ===== -->
+<!-- ===== MODAL 5: HOMESTAY SRIDEWI MANIHURUK ===== -->
 <!-- ========================================================== -->
 <div class="modal fade" id="modalSridewi" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -1233,125 +1293,6 @@
                 <p>⭐⭐⭐ (3 bintang)</p>
 
                 <a href="https://wa.me/6287730573395?text=Halo,%20saya%20ingin%20booking%20Homestay%20Sridewi%20Manihuruk."
-                target="_blank" class="btn btn-success w-100">
-                <i class="bi bi-whatsapp"></i> Booking Sekarang via WhatsApp
-            </a>
-
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-        </div>
-    </div>
-</div>
-</div>
-
-<!-- ========================================================== -->
-<!-- ===== MODAL 4: HOMESTAY MARHITEULI ===== -->
-<!-- ========================================================== -->
-<div class="modal fade" id="modalMarhiteuli" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-danger">
-                    <i class="bi bi-house-fill"></i> Homestay Marhiteuli
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/814473514e406a0b743115c1223732c30b38b6d8/homestay-marhite.jpeg"
-                class="img-fluid rounded mb-3 w-100" alt="Homestay Marhiteuli">
-
-                <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
-                <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
-
-                <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
-                <p>
-                    <strong>Homestay Marhiteuli</strong> menawarkan pengalaman menginap dengan
-                    pemandangan Danau Toba. Dilengkapi dengan berbagai fasilitas seperti
-                    TV LED, Wi-Fi, dan air panas, homestay ini cocok untuk keluarga atau pasangan.
-                </p>
-                <p>
-                    Setiap kamar memiliki tempat tidur empuk dan bersih, kamar mandi dalam dengan shower
-                    dan closet duduk, serta area duduk pribadi. Tersedia juga parkir luas dan aman.
-                </p>
-
-                <h6 class="text-danger"><i class="bi bi-check-circle-fill"></i> Fasilitas</h6>
-                <ul>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Kamar Nyaman – Tempat tidur empuk dan bersih</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Kamar Mandi Dalam – Shower dan closet duduk</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> TV LED – Hiburan di dalam kamar</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Wi-Fi – Akses internet cepat</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Air Panas – Shower dengan air panas</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Meja & Kabinet – Ruang simpan & persiapan minuman</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Pemandangan Danau – Pemandangan Danau Toba</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Parkir Luas – Parkir kendaraan luas dan aman</li>
-                </ul>
-
-                <h6 class="text-danger"><i class="bi bi-star-fill text-warning"></i> Rating</h6>
-                <p>⭐⭐⭐ (3 bintang)</p>
-
-                <a href="https://wa.me/6282113577600?text=Halo,%20saya%20ingin%20booking%20Homestay%20Marhiteuli."
-                target="_blank" class="btn btn-success w-100">
-                <i class="bi bi-whatsapp"></i> Booking Sekarang via WhatsApp
-            </a>
-
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-        </div>
-    </div>
-</div>
-</div>
-
-<!-- ========================================================== -->
-<!-- ===== MODAL 5: MARLIN HOMESTAY ===== -->
-<!-- ========================================================== -->
-<div class="modal fade" id="modalMarlin" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-danger">
-                    <i class="bi bi-house-fill"></i> Marlin Homestay
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-
-                <img src="https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/09f46346cb99f40dcd0536273ecf9093d4da30cb/homestay-marlin.webp"
-                class="img-fluid rounded mb-3 w-100" alt="Marlin Homestay">
-
-                <h6 class="text-danger"><i class="bi bi-geo-alt-fill"></i> Lokasi</h6>
-                <p>Desa Simarmata, Kecamatan Simanindo, Kabupaten Samosir, Sumatera Utara.</p>
-
-                <h6 class="text-danger"><i class="bi bi-info-circle-fill"></i> Deskripsi</h6>
-                <p>
-                    <strong>Marlin Homestay</strong> adalah pilihan menginap yang luas dan nyaman untuk
-                    keluarga besar atau rombongan. Dengan 2 kamar tidur dan 3 kamar mandi (privat dan tamu),
-                    homestay ini memberikan privasi maksimal bagi setiap tamu. Dilengkapi dengan ruang tamu,
-                    dapur, dan teras santai, Anda dapat menikmati waktu berkualitas bersama keluarga.
-                </p>
-                <p>
-                    Fasilitas modern seperti Wi-Fi dan layanan streaming tersedia untuk hiburan, serta
-                    area parkir yang luas memudahkan tamu yang membawa kendaraan pribadi.
-                </p>
-
-                <h6 class="text-danger"><i class="bi bi-check-circle-fill"></i> Fasilitas</h6>
-                <ul>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> 2 Kamar tidur</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> 3 Kamar mandi (privat dan tamu)</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Ruang tamu</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Dapur</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Teras santai</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Wi-Fi</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Layanan streaming</li>
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Parkir luas</li>
-                </ul>
-
-                <h6 class="text-danger"><i class="bi bi-star-fill text-warning"></i> Rating</h6>
-                <p>⭐⭐⭐ (3 bintang)</p>
-
-                <a href="https://wa.me/6282214048334?text=Halo,%20saya%20ingin%20booking%20Marlin%20Homestay."
                 target="_blank" class="btn btn-success w-100">
                 <i class="bi bi-whatsapp"></i> Booking Sekarang via WhatsApp
             </a>
