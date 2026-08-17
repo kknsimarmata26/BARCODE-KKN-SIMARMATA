@@ -6,28 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Galeri | Desa Simarmata</title>
 
-    <!-- ============================================================
-         STATCOUNTER — KODE ASLI DARI AKUN ANDA
-         sc_project = 13342247, sc_security = "ef0f8320"
-    ============================================================ -->
-    <script type="text/javascript">
-        var sc_project = 13342247;
-        var sc_invisible = 0;
-        var sc_security = "ef0f8320";
-        var sc_https = 1;
-        var scJsHost = "https://";
-        document.write("<sc" + "ript type='text/javascript' src='" + scJsHost +
-            "secure.statcounter.com/counter/counter.js'></" + "script>");
-    </script>
-    <noscript>
-        <div class="statcounter">
-            <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
-                <img class="statcounter" src="https://c.statcounter.com/13342247/0/ef0f8320/0/" alt="Web Analytics"
-                referrerPolicy="no-referrer-when-downgrade" />
-            </a>
-        </div>
-    </noscript>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
@@ -45,7 +23,6 @@
             --heading-color: #7c0e0e;
             --scrollbar-track: #ececec;
             --scrollbar-thumb: #7c0e0e;
-            --statcounter-bg: rgba(255, 255, 255, 0.08);
             --card-hover-shadow: rgba(0, 0, 0, 0.2);
             --border-color: #dee2e6;
             --hero-filter: blur(12px) saturate(0.8);
@@ -74,7 +51,6 @@
             --heading-color: #ff8a80;
             --scrollbar-track: #2a2a2a;
             --scrollbar-thumb: #5b0909;
-            --statcounter-bg: rgba(255, 255, 255, 0.05);
             --card-hover-shadow: rgba(255, 255, 255, 0.1);
             --border-color: #444;
             --hero-filter: blur(12px) saturate(0.8) brightness(0.7);
@@ -253,7 +229,7 @@
         }
 
         /* ============================================================
-           FITUR BARU: FRAME GAMBAR BESAR & TIDAK TERPOTONG
+           FRAME GAMBAR BESAR & TIDAK TERPOTONG
         ============================================================ */
         .card-img-wrapper {
             width: 100%;
@@ -290,11 +266,7 @@
         .card:hover .card-img-wrapper img {
             transform: scale(1.05);
         }
-        .card-body h5 {
-            color: var(--heading-color);
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+        /* Tidak ada .card-body, jadi kita tidak menampilkan teks */
 
         .shadow {
             box-shadow: 0 10px 20px rgba(0, 0, 0, .15) !important;
@@ -323,11 +295,10 @@
         .modal-body img {
             max-height: 80vh;
             width: 100%;
-            object-fit: contain; /* Agar foto di popup juga tidak terpotong */
+            object-fit: contain;
             border-radius: 8px;
         }
 
-        /* EFEK BLUR PADA BACKGROUND SAAT MODAL TERBUKA */
         .modal-backdrop.show {
             opacity: 0.8;
             backdrop-filter: blur(8px);
@@ -374,7 +345,7 @@
         }
 
         /* ============================================================
-           HERO CAROUSEL
+           HERO CAROUSEL — TEKS DI BAWAH AGAR TIDAK MENUTUPI FOTO
         ============================================================ */
         .hero-carousel-wrapper {
             position: relative;
@@ -399,46 +370,64 @@
 
         .hero-content {
             position: absolute;
-            top: 50%;
+            bottom: 8%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             text-align: center;
             color: white;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
             z-index: 10;
-            width: 100%;
-            padding: 0 20px;
+            width: 90%;
+            max-width: 700px;
+            padding: 18px 30px;
             pointer-events: none;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .hero-content h1 {
             color: white;
-            font-size: 3.5rem;
-            font-weight: bold;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 6px;
         }
         .hero-content p {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 0;
         }
 
         @media(max-width:768px) {
             .hero-carousel-wrapper .carousel-item {
                 height: 350px;
             }
+            .hero-content {
+                bottom: 5%;
+                padding: 12px 20px;
+                width: 95%;
+            }
             .hero-content h1 {
-                font-size: 2.2rem;
+                font-size: 2.0rem;
             }
             .hero-content p {
-                font-size: 1.1rem;
+                font-size: 1.0rem;
             }
         }
         @media(max-width:576px) {
             .hero-carousel-wrapper .carousel-item {
                 height: 280px;
             }
+            .hero-content {
+                bottom: 3%;
+                padding: 10px 16px;
+            }
             .hero-content h1 {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
             .hero-content p {
-                font-size: 0.9rem;
+                font-size: 0.8rem;
             }
         }
 
@@ -593,31 +582,6 @@
                 top: -4px;
                 right: -4px;
             }
-        }
-
-        /* ============================================================
-           COUNTER STATCOUNTER
-        ============================================================ */
-        .statcounter-container {
-            display: inline-block;
-            background: var(--statcounter-bg);
-            padding: 12px 24px;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 213, 79, 0.2);
-            backdrop-filter: blur(4px);
-            transition: background 0.3s ease;
-        }
-        .statcounter-container .statcounter {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ffd54f;
-        }
-        .statcounter-container .statcounter a {
-            color: #ffd54f !important;
-            text-decoration: none;
-        }
-        .statcounter-container .statcounter img {
-            display: none;
         }
 
         /* ===========================================
@@ -930,8 +894,7 @@
         <div class="hero-carousel-wrapper position-relative">
             <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
-                    aria-current="true"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
                     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
@@ -968,13 +931,15 @@
     <span class="visually-hidden">Next</span>
 </button>
 </div>
+
+<!-- Teks hero di bawah -->
 <div class="hero-content">
     <h1>Galeri Desa Simarmata</h1>
     <p class="lead">Dokumentasi Wisata, Budaya, Alam, dan Kehidupan Masyarakat</p>
 </div>
 </div>
 
-<!-- ===== GALERI DINAMIS (DENGAN FRAME BESAR & CONTAIN) ===== -->
+<!-- ===== GALERI DINAMIS (hanya foto, tanpa judul di bawah) ===== -->
 <section class="container py-5">
     <h2 class="text-center mb-4" style="color: var(--heading-color);">📸 Koleksi Foto</h2>
     <div id="galleryContainer" class="row g-4">
@@ -983,32 +948,21 @@
 </section>
 
 <!-- ============================================================
-     ALBUM "FOTO KITA BLUR" — SATU FRAME BESAR
+     ALBUM "FOTO KITA BLUR"
      ============================================================ -->
 <section class="album-blur-section" id="albumBlur">
     <div class="container">
-
         <h2 class="album-title">✦ foto kita blur ✦</h2>
         <p class="album-subtitle">— geser untuk melihat —</p>
 
         <div class="album-carousel-wrap">
-            <!-- counter -->
             <div class="album-counter">
                 <span id="albumCurrentSlide">1</span> / <span id="albumTotalSlides">14</span>
             </div>
 
             <div id="albumCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
-                <!-- indikator -->
-                <div class="carousel-indicators" id="albumIndicators">
-                    <!-- akan diisi JS -->
-                </div>
-
-                <!-- slide wrapper -->
-                <div class="carousel-inner" id="albumInner">
-                    <!-- akan diisi JS -->
-                </div>
-
-                <!-- kontrol panah -->
+                <div class="carousel-indicators" id="albumIndicators"></div>
+                <div class="carousel-inner" id="albumInner"></div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#albumCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Sebelumnya</span>
@@ -1019,23 +973,12 @@
                 </button>
             </div>
         </div>
-
     </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- ===== FOOTER (tanpa Pengunjung) ===== -->
 <footer>
     <div class="container">
-
-        <div class="row">
-            <div class="col-12 text-center mb-4">
-                <h5 style="color:#ffd54f;"><i class="bi bi-people-fill"></i> Pengunjung Hari Ini</h5>
-                <div class="statcounter-container">
-                    <span class="statcounter"></span>
-                </div>
-            </div>
-        </div>
-
         <div class="row">
             <div class="col-md-4 mb-4">
                 <h5><i class="bi bi-geo-alt-fill"></i> Alamat Desa</h5>
@@ -1071,34 +1014,28 @@
                 <h5><i class="bi bi-share-fill"></i> Media Sosial</h5>
                 <p class="mb-1">
                     <strong>Instagram:</strong><br />
-                    <a href="https://www.instagram.com/desasimarmata?utm_source=qr&igsh=MTUzazZzb21sajJvaw=="
-                    target="_blank" rel="noopener noreferrer">@desasimarmata</a>
+                    <a href="https://www.instagram.com/desasimarmata?utm_source=qr&igsh=MTUzazZzb21sajJvaw==" target="_blank">@desasimarmata</a>
                 </p>
                 <p class="mb-1">
                     <strong>TikTok:</strong><br />
-                    <a href="https://www.tiktok.com/@desa.simarmata?_r=1&_t=ZS-98nPHpGU3RF"
-                    target="_blank" rel="noopener noreferrer">@desa.simarmata</a>
+                    <a href="https://www.tiktok.com/@desa.simarmata?_r=1&_t=ZS-98nPHpGU3RF" target="_blank">@desa.simarmata</a>
                 </p>
                 <p class="mb-1">
                     <strong>Facebook:</strong><br />
-                    <a href="https://www.facebook.com/share/188BmmqmUy/?mibextid=wwXIfr"
-                    target="_blank" rel="noopener noreferrer">Desa Simarmata</a>
+                    <a href="https://www.facebook.com/share/188BmmqmUy/?mibextid=wwXIfr" target="_blank">Desa Simarmata</a>
                 </p>
                 <p class="mb-0">
                     <strong>YouTube:</strong><br />
-                    <a href="https://youtube.com/@desasimarmata?si=Q1wXzjQu95o3HlPf"
-                    target="_blank" rel="noopener noreferrer">Desa Simarmata</a>
+                    <a href="https://youtube.com/@desasimarmata?si=Q1wXzjQu95o3HlPf" target="_blank">Desa Simarmata</a>
                 </p>
             </div>
         </div>
-
         <hr />
         <div class="text-center copyright">
             <p class="mb-1">&copy; 2026 KKN Desa Simarmata Kecamatan Simanindo</p>
             <p class="mb-0">Dibuat untuk Program KKN UNIMED 2026</p>
             <p class="mt-2 fw-bold" style="color: #ffd54f;">Hak Cipta Dilindungi</p>
         </div>
-
     </div>
 </footer>
 
@@ -1137,11 +1074,10 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 
-<!-- ===== JAVASCRIPT ===== -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
-        // ===== 1. MODAL DINAMIS =====
+        // ===== MODAL DINAMIS =====
         const galleryModal = document.getElementById('galleryModal');
         const modalImage = document.getElementById('galleryModalImage');
         const modalTitle = document.getElementById('galleryModalTitle');
@@ -1158,7 +1094,7 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
             modalImage.src = '';
         });
 
-        // ===== 2. SCROLL REVEAL =====
+        // ===== SCROLL REVEAL =====
         function isElementInViewport(el) {
             const rect = el.getBoundingClientRect();
             return rect.top < (window.innerHeight || document.documentElement.clientHeight) - 50 && rect.bottom > 50;
@@ -1181,7 +1117,7 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
         window.addEventListener('scroll', handleScrollReveal);
         window.addEventListener('resize', handleScrollReveal);
 
-        // ===== 3. LQIP UNTUK HERO CAROUSEL =====
+        // ===== LQIP HERO =====
         const carouselItems = document.querySelectorAll('.hero-carousel-wrapper .carousel-item');
         carouselItems.forEach((item) => {
             const src = item.getAttribute('data-src');
@@ -1200,7 +1136,7 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
             }
         });
 
-        // ===== 4. BACK TO TOP =====
+        // ===== BACK TO TOP =====
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
@@ -1213,7 +1149,7 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // ===== 5. DARK MODE TOGGLE =====
+        // ===== DARK MODE TOGGLE =====
         const toggleBtn = document.getElementById('darkModeToggle');
         const icon = document.getElementById('themeIcon');
         const html = document.documentElement;
@@ -1239,7 +1175,7 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
             }
         });
 
-        // ===== 6. GALERI DINAMIS DARI ADMIN PANEL =====
+        // ===== GALERI DINAMIS (tanpa judul di bawah foto) =====
         const galleryContainer = document.getElementById('galleryContainer');
 
         const defaultGallery = [
@@ -1257,10 +1193,10 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
         function renderGallery(images) {
             if (!images || images.length === 0) {
                 galleryContainer.innerHTML = `
-                        <div class="col-12 text-center">
-                            <p class="text-muted">Belum ada foto. Silakan upload dokumentasi terbaru melalui Admin Panel.</p>
-                        </div>
-                    `;
+                    <div class="col-12 text-center">
+                        <p class="text-muted">Belum ada foto. Silakan upload dokumentasi terbaru melalui Admin Panel.</p>
+                    </div>
+                `;
                 return;
             }
             let html = '';
@@ -1274,22 +1210,18 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
                     title = item.title || 'Gambar';
                 }
                 const delayClass = 'delay-' + ((index % 9) + 1);
-                
-                // PERUBAHAN PENTING: Menggunakan card-img-wrapper dengan object-fit: contain
                 html += `
-                        <div class="col-md-4 reveal ${delayClass}">
-                            <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
-                                 data-image="${src}"
-                                 data-title="${title}">
-                                <div class="card-img-wrapper">
-                                    <img src="${src}" alt="${title}" />
-                                </div>
-                                <div class="card-body text-center">
-                                    <h5>${title}</h5>
-                                </div>
+                    <div class="col-md-4 reveal ${delayClass}">
+                        <div class="card shadow" data-bs-toggle="modal" data-bs-target="#galleryModal"
+                             data-image="${src}"
+                             data-title="${title}">
+                            <div class="card-img-wrapper">
+                                <img src="${src}" alt="${title}" />
                             </div>
+                            <!-- Tidak ada teks di bawah foto -->
                         </div>
-                    `;
+                    </div>
+                `;
             });
             galleryContainer.innerHTML = html;
             handleScrollReveal();
@@ -1309,9 +1241,7 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
                 renderGallery(defaultGallery);
             });
 
-        // ============================================================
-        // 7. ALBUM "FOTO KITA BLUR" — BUAT SLIDE DARI GAMBAR
-        // ============================================================
+        // ===== ALBUM "FOTO KITA BLUR" =====
         const albumImages = [
             'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri1.jpeg',
             'https://raw.githubusercontent.com/kknsimarmata26/BARCODE-KKN-SIMARMATA/891b35a7f29a93c4b72011540e1d92a923c3cdd7/galeri2.jpeg',
@@ -1345,20 +1275,20 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
             const captionText = 'Galeri ' + (index + 1);
 
             indicatorsHtml += `
-                    <button type="button" data-bs-target="#albumCarousel" data-bs-slide-to="${index}" 
-                            class="${isActive}" aria-current="${isActive ? 'true' : 'false'}"
-                            aria-label="Slide ${index + 1}"></button>
-                `;
+                <button type="button" data-bs-target="#albumCarousel" data-bs-slide-to="${index}" 
+                        class="${isActive}" aria-current="${isActive ? 'true' : 'false'}"
+                        aria-label="Slide ${index + 1}"></button>
+            `;
 
             slidesHtml += `
-                    <div class="carousel-item ${isActive}" 
-                         style="background-image: url('${url}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-                        <div class="album-caption">
-                            <i class="bi bi-camera-fill"></i>
-                            <span>${captionText}</span>
-                        </div>
+                <div class="carousel-item ${isActive}" 
+                     style="background-image: url('${url}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                    <div class="album-caption">
+                        <i class="bi bi-camera-fill"></i>
+                        <span>${captionText}</span>
                     </div>
-                `;
+                </div>
+            `;
         });
 
         albumIndicators.innerHTML = indicatorsHtml;
@@ -1366,8 +1296,7 @@ class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi k
 
         const albumCarousel = document.getElementById('albumCarousel');
         albumCarousel.addEventListener('slid.bs.carousel', function(e) {
-            const activeIndex = e.to;
-            currentSlideSpan.textContent = activeIndex + 1;
+            currentSlideSpan.textContent = e.to + 1;
         });
 
         currentSlideSpan.textContent = 1;
