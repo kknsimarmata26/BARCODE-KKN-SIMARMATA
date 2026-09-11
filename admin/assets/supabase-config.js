@@ -1,6 +1,3 @@
-// ============================================
-// KONFIGURASI SUPABASE
-// ============================================
 const SUPABASE_URL = 'https://uvvfwgcwmunfonolhmyy.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_tXWL_Qh2FxIei7JNC7TzUA_a4pxOYn-';
 
