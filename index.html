@@ -641,11 +641,10 @@
 <!-- ============================================
      SUPABASE AUTO-DETECT LOGIN UNTUK NAVBAR
      ============================================ -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script>
-    // ⚠️ GANTI DENGAN KREDENSIAL SUPABASE KAMU
-    const SUPABASE_URL = 'https://xxxxxxxxxxxxx.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...';
+    const SUPABASE_URL = 'https://uvvfwgcwmunfonolhmyy.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_tXWL_Qh2FxIei7JNC7TzUA_a4pxOYn-';
 
     (async () => {
         try {
@@ -656,18 +655,17 @@
             const txt = document.getElementById('adminText');
 
             if (session && btn && txt) {
-                // Sudah login → ubah tombol jadi "Dashboard"
                 btn.href = 'admin/dashboard.html';
                 btn.classList.add('btn-dashboard');
-                btn.innerHTML = '<i class="bi bi-speedometer2"></i> <span id="adminText">Dashboard</span>';
+                btn.innerHTML = '<i class="bi bi-speedometer2"></i> <span>Dashboard</span>';
                 btn.title = 'Login sebagai ' + session.user.email;
             }
         } catch (e) {
-            console.warn('Supabase tidak tersedia:', e);
+            console.warn('Supabase error:', e);
         }
     })();
 </script>
-
+    
 <!-- SLIDESHOW -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
